@@ -17,6 +17,14 @@ import test0 from '../assets/test0.jpg';
 import test1 from '../assets/test1.jpg';
 import test2 from '../assets/test2.jpeg';
 import test3 from '../assets/test3.jpeg';
+import hr_service from '../assets/hr_service.jpg';
+import digital_excellence from '../assets/digital_excellence.jpg';
+import counseling_service from '../assets/counseling_service.jpg';
+import corparate_training from '../assets/corparate_training.jpg';
+import blog_1 from '../assets/blog_1.jpg';
+import blog_2 from '../assets/blog_2.jpg';
+import blog_3 from '../assets/blog_3.jpg';
+import blog_4 from '../assets/blog_4.jpg';
 
 export {
     instagram_icon,
@@ -38,4 +46,12 @@ export {
     test1,
     test2,
     test3,
+    hr_service,
+    digital_excellence,
+    counseling_service,
+    corparate_training,
+    blog_1,
+    blog_2,
+    blog_3,
+    blog_4,
 }
