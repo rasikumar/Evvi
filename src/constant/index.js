@@ -1,16 +1,16 @@
 import {
-    // instagram_icon,
+    instagram_icon,
     date_icon,
-    // email_icon,
+    email_icon,
     // left_arrow,
-    // linkedin_icon,
-    // location_icon,
-    // medium_icon,
-    // phone_call_icon,
-    // right_arrow,
+    linkedin_icon,
+    location_icon,
+    medium_icon,
+    phone_call_icon,
+    right_arrow,
     // right_up_arrow,
     // search_icon,
-    // youtube_icon,
+    youtube_icon,
     tick_circle,
     list_style_icon,
     quote_icon,
@@ -27,6 +27,15 @@ import {
     blog_3,
     blog_4,
 } from '../assets/index';
+
+
+export const scrollItems =[ "Webservice" , "Digital Marketing" , "Counseling" , "Corparate Training"]
+
+export const HeroText = ["We are ready to Help your health Problems"]
+
+export const Social_icons = [instagram_icon, medium_icon, youtube_icon, linkedin_icon]
+
+export const Support = ["Emergency Care" , "Donate" , "Online Service"]
 
 export const Navigation = [
     {
@@ -55,10 +64,6 @@ export const Navigation = [
         url : '#Contact Us'
     },
 ]
-
-export const scrollItems =[ "Webservice" , "Digital Marketing" , "Counseling" , "Corparate Training"]
-
-export const HeroText = ["We are ready to Help your health Problems"]
 
 export const AboutUs = [
     {
@@ -382,8 +387,10 @@ export const Blogs = [
                 icon_1 : date_icon,
                 date : '03 June 2024',
                 title : "Here is Update of web Devlopments and Amazing",
-                description : "lorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur" ,
-                link : "Learn More"
+                description : "ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur ,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu" ,
+                link : "Learn More",
+                width : 18,
+                icon_2 : right_arrow
             },
             {
                 id : 1,
@@ -391,8 +398,10 @@ export const Blogs = [
                 icon_1 : date_icon,
                 date : '03 June 2024',
                 title : "Here is Update of web Devlopments and Amazing",
-                description : "lorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur" ,
-                link : "Learn More"
+                description : "ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur ,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu" ,
+                link : "Learn More",
+                width : 18,
+                icon_2 : right_arrow
             },
             {
                 id : 2,
@@ -400,8 +409,10 @@ export const Blogs = [
                 icon_1 : date_icon,
                 date : '03 June 2024',
                 title : "Here is Update of web Devlopments and Amazing",
-                description : "lorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur" ,
-                link : "Learn More"
+                description : "ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur ,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu" ,
+                link : "Learn More",
+                width : 18,
+                icon_2 : right_arrow
             },
             {
                 id : 3,
@@ -409,9 +420,59 @@ export const Blogs = [
                 icon_1 : date_icon,
                 date : '03 June 2024',
                 title : "Here is Update of web Devlopments and Amazing",
-                description : "lorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur" ,
-                link : "Learn More"
+                description : "ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur ,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu" ,
+                link : "Learn More",
+                width : 18,
+                icon_2 : right_arrow
             },
         ]
+    }
+]
+
+export const Faqs = [
+    {
+        id :0,
+        heading : 'FAQs',
+        title : "Frequently Asked Questions",
+        lists : [
+            {
+                id : 0,
+                question : "How do I book an appointment ?",
+                answer : "We Offer a wide range of healthcare service including general check-ups, specialist consultations, diagnostic tests, preventive care, and surgical procedures."
+            },
+            {
+                id : 1,
+                question : "How do I book an appointment ?",
+                answer : "We Offer a wide range of healthcare service including general check-ups, specialist consultations, diagnostic tests, preventive care, and surgical procedures."
+            },
+            {
+                id : 2,
+                question : "How do I book an appointment ?",
+                answer : "We Offer a wide range of healthcare service including general check-ups, specialist consultations, diagnostic tests, preventive care, and surgical procedures."
+            },
+            {
+                id : 3,
+                question : "How do I book an appointment ?",
+                answer : "We Offer a wide range of healthcare service including general check-ups, specialist consultations, diagnostic tests, preventive care, and surgical procedures."
+            }
+        ]
+    }
+]
+
+export const Address = [
+    {
+        id : 0,
+        icon : location_icon,
+        content : "Galaxy tower, textile circle, Sun city - 2530, Canada"
+    },
+    {
+        id : 1,
+        icon : phone_call_icon,
+        content : "+1 234 567 8901"
+    },
+    {
+        id : 2,
+        icon : email_icon,
+        content : "dummmy@gmail.com"
     }
 ]
