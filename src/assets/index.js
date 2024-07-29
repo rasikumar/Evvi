@@ -25,6 +25,7 @@ import blog_1 from '../assets/blog_1.jpg';
 import blog_2 from '../assets/blog_2.jpg';
 import blog_3 from '../assets/blog_3.jpg';
 import blog_4 from '../assets/blog_4.jpg';
+import Evvi_icon from '../assets/Evvi_new.png'
 
 export {
     instagram_icon,
@@ -54,4 +55,5 @@ export {
     blog_2,
     blog_3,
     blog_4,
+    Evvi_icon,
 }
