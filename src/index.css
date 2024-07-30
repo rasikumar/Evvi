@@ -5,12 +5,19 @@
 @tailwind utilities;
 @layer components {
     .btn-primary{
-         @apply bg-btn text-t-primary py-2 px-4 font-medium rounded transition outline-none delay-75;
+         @apply bg-btn text-t-primary py-2 px-4 font-medium text-center rounded transition outline-none delay-75;
          &:hover{
-             @apply bg-t-secondary scale-105;
+             @apply bg-t-secondary scale-105 cursor-pointer;
          }
     }
+    .btn-secondary{
+        @apply border-[1px] border-btn text-t-primary py-2 px-4 font-medium text-center rounded transition outline-none delay-75;
+        &:hover{
+            @apply border-t-secondary scale-105 cursor-pointer;
+        }
+   }
 }
+
 *{
     margin: 0;
     padding: 0;

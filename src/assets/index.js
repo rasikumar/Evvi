@@ -25,7 +25,11 @@ import blog_1 from '../assets/blog_1.jpg';
 import blog_2 from '../assets/blog_2.jpg';
 import blog_3 from '../assets/blog_3.jpg';
 import blog_4 from '../assets/blog_4.jpg';
-import Evvi_icon from '../assets/Evvi_new.png'
+import Evvi_icon from '../assets/Evvi_new.png';
+import hero from '../assets/hero.png';
+import analytics from '../assets/analytics.png'
+import codingImage from '../assets/coding.png'
+import bgvid from '../assets/bg.mp4'
 
 export {
     instagram_icon,
@@ -56,4 +60,8 @@ export {
     blog_3,
     blog_4,
     Evvi_icon,
+    hero,
+    codingImage,
+    analytics,
+    bgvid
 }

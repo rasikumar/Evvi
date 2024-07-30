@@ -14,7 +14,7 @@ export default {
       },
       colors:{
         'b-primary' : '#F2F2F2',
-        'white' : '#EBF5EE',
+        'white' : '#fafafa',
         't-primary' : '#0b1a5f',
         't-secondary' : '#F67629',
         'btn' : '#E7DEAB'

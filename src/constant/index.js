@@ -31,7 +31,25 @@ import {
 
 export const scrollItems =[ "Webservice" , "Digital Marketing" , "Counseling" , "Corparate Training"]
 
-export const HeroText = ["We are ready to Help your health Problems"]
+export const HeroText = [
+    {
+        id :0,
+        content: "Get Healthy, Be Happy"
+
+    },
+    {
+        id : 1,
+        content : "We are ready to Help your health Problems"
+    },
+    {
+        id : 2,
+        content : "Explore more"
+    },
+    {
+        id : 3,
+        content : "+91 9876543210"
+    }
+]
 
 export const Social_icons = [instagram_icon, medium_icon, youtube_icon, linkedin_icon]
 
