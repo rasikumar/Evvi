@@ -6,6 +6,15 @@ export default {
   ],
   theme: {
     extend: {
+      animation:{
+        scroll: 'scroll 10s linear infinite' 
+      },
+      keyframes:{
+        scroll:{
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
       screens:{
         'mobile' : '480px',
         'tablet' : '801px',
@@ -17,14 +26,13 @@ export default {
         'white' : '#fafafa',
         't-primary' : '#0b1a5f',
         't-secondary' : '#F67629',
-        'btn' : '#E7DEAB'
+        'btn' : '#E7DEAB',
+        'glass' : 'rgba( 255, 255, 255, 0 )',
 
         // t - Text, 
         // b - Background
       }
     },
-    
-    
   },
   plugins: [],
 }

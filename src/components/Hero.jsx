@@ -14,7 +14,7 @@ const Hero = () => {
     const itemFourRender = HeroText.slice(3,4)
 
     return (
-        <div className="relative flex w-[90%] gap-5 m-auto h-screen">
+        <div className="relative flex w-[90%] gap-5 m-auto h-full">
             <div className="absolute w-full -z-20">
                 <div className="absolute right-0 top-0 w-60 h-72 blur-[200px] -z-10 bg-t-secondary"></div>
                 {/* <img src={analytics} alt="" width={120} className="-top-3 opacity-50 right-36 absolute" />
@@ -52,7 +52,7 @@ const Hero = () => {
                 <div className="relative w-full h-96 rounded-xl overflow-hidden">
                     <video src={bgvid} className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted loop></video>
                 </div>
-                <div className="px-4 py-4 rounded-xl shadow-xl bg-white flex flex-col w-[35%] gap-2 absolute top-0 right-0 z-50">
+                <div className="px-4 py-4 rounded-xl shadow-xl bg-white flex flex-col w-[35%] gap-1 absolute top-0 right-0 z-50">
                     <div className="flex items-end justify-end">
                         <FaRegFaceGrinBeam className="text-xl"/>
                     </div>
@@ -80,7 +80,6 @@ const Hero = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     )

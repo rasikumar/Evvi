@@ -1,6 +1,6 @@
 import Header from "./components/Header"
 import Hero from "./components/Hero"
-
+import Sliding from "./components/Sliding"
 const App = () => {
 
 
@@ -8,6 +8,7 @@ const App = () => {
     <>
       <Header/>
       <Hero/>
+      <Sliding/>
     </>
   )
 }
