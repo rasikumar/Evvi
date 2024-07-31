@@ -18,8 +18,8 @@ export default {
       screens:{
         'mobile' : '480px',
         'tablet' : '801px',
-        'laptop' : '1025px',
-        'desktop' : '1281px',
+        'laptop' : '1100px',
+        'desktop' : '1500px',
       },
       colors:{
         'b-primary' : '#F2F2F2',

@@ -92,31 +92,27 @@ export const AboutUs = [
         lists : [
             {
                 id : 0,
-                content : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counseling',
+                content : 'We empower our clients to excel in their professional lives',
                 icon : tick_circle,
-                width : 40,
-                height : 36
+                width : 20,
             },
             {
                 id : 1,
                 content : 'We empower our clients to excel in their professional lives',
                 icon : tick_circle,
-                width : 40,
-                height : 36
+                width : 20,
             },
             {
                 id : 2,
-                content : 'We offer personalized, customized solutions tailored to each client’s unique needs and goals',
+                content : 'We empower our clients to excel in their professional lives',
                 icon : tick_circle,
-                width : 40,
-                height : 36
+                width : 20,
             },
             {
                 id : 3,
-                content : 'We strive to exceed our clien’s expectations and deliver a high-quality service',
+                content : 'We empower our clients to excel in their professional lives',
                 icon : tick_circle,
-                width : 40,
-                height : 36
+                width : 20,
             }
         ]
     }
@@ -135,8 +131,7 @@ export const Testimonials =[
                 cust_icon : test0,
                 cust_name : 'Sathya',
                 position : 'Digital Marketing',
-                width : 40,
-                height : 40
+                width : 20,
             },
             {
                 id : 1,

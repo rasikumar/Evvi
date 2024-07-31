@@ -1,6 +1,8 @@
+import About from "./components/About"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Sliding from "./components/Sliding"
+import Testimonials from "./components/Testimonial"
 const App = () => {
 
 
@@ -9,6 +11,8 @@ const App = () => {
       <Header/>
       <Hero/>
       <Sliding/>
+      <About/>
+      <Testimonials/>
     </>
   )
 }
@@ -89,28 +93,3 @@ export default App
 //   ))
 // }
 
-
-
-{/* <div className="relative">
-        <div className="absolute w-52 h-52 rounded-full bg-t-primary blur-[150px] -z-10">
-
-        </div>
-      </div>
-      <div className="z-50">
-        {
-          AboutUs.map((about, index) => (
-            <div key={index}>
-              <h1>{about.heading}</h1>
-              <h1>{about.title}</h1>
-              <p>{about.description}</p>
-              {about.lists.map((list, index) => (
-              <ul key={index} className="flex">
-                  <li><img src={list.icon} alt="" width={list.width} height={list.height}/></li>
-                  <li>{list.content}</li>
-              </ul>
-                ))}
-            </div>
-          ))
-        }
-        <button className="btn-primary">About More</button>
-      </div> */}
