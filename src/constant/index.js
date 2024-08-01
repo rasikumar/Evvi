@@ -131,7 +131,8 @@ export const Testimonials =[
                 cust_icon : test0,
                 cust_name : 'Sathya',
                 position : 'Digital Marketing',
-                width : 20,
+                height : 40,
+                width : 40,
             },
             {
                 id : 1,
