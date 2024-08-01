@@ -1,6 +1,7 @@
 import About from "./components/About"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
+import Service from "./components/services/Service"
 import Sliding from "./components/Sliding"
 import Testimonials from "./components/Testimonial"
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <Sliding/>
       <About/>
       <Testimonials/>
+      <Service/>
     </>
   )
 }

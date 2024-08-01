@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import '../index.css';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 const TestSlider = () => {
   return (
@@ -17,7 +17,11 @@ const TestSlider = () => {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        autoplay={{
+          delay : 2000,
+          disableOnInteraction: false,
+        }}
+        modules={[Pagination, Autoplay]}
         className="mySwiper bg-t-secondary rounded-3xl shadow-md"
       >
         {Testimonials[0].lists.map((list, index) => (
