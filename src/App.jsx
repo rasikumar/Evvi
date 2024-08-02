@@ -4,17 +4,35 @@ import Hero from "./components/Hero"
 import Service from "./components/services/Service"
 import Sliding from "./components/Sliding"
 import Testimonials from "./components/Testimonial"
+import { createTheme, ThemeProvider  } from "@mui/material"
+
+const theme = createTheme ({
+  palette: {
+    primary: {
+      main : '#0b1a5f'
+    },
+    secondary : {
+      main : '#F67629'
+    }
+  },
+  typography: {
+    fontWeight : 600,
+  }
+})
+
 const App = () => {
 
 
   return (
     <>
+     <ThemeProvider theme={theme}>
       <Header/>
       <Hero/>
       <Sliding/>
       <About/>
       <Testimonials/>
       <Service/>
+     </ThemeProvider>
     </>
   )
 }

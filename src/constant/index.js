@@ -92,25 +92,25 @@ export const AboutUs = [
         lists : [
             {
                 id : 0,
-                content : 'We empower our clients to excel in their professional lives',
+                content : 'Labouratory and Diagnostic Service',
                 icon : tick_circle,
                 width : 20,
             },
             {
                 id : 1,
-                content : 'We empower our clients to excel in their professional lives',
+                content : 'Labouratory and Diagnostic Service',
                 icon : tick_circle,
                 width : 20,
             },
             {
                 id : 2,
-                content : 'We empower our clients to excel in their professional lives',
+                content : 'Labouratory and Diagnostic Service',
                 icon : tick_circle,
                 width : 20,
             },
             {
                 id : 3,
-                content : 'We empower our clients to excel in their professional lives',
+                content : 'Labouratory and Diagnostic Service',
                 icon : tick_circle,
                 width : 20,
             }
@@ -195,195 +195,195 @@ export const OurServices = [
             {
                 id : 0,
                 heading : 'Explore Our Comprenensive Services',
-                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counseling',
+                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counselings',
                 img : hr_service,
-                lists : [
+                listo : [
                     {
                         id : 0,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 1,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 2,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 3,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 4,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 5,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 6,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 7,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                 ]
             },
             {
                 id : 1,
-                heading : 'Explore Our Comprenensive Services',
-                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counseling',
+                heading : 'Explowre Our Comprenensive Services',
+                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counselings',
                 img : digital_excellence,
-                lists : [
+                listo : [
                     {
                         id : 0,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 1,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 2,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 3,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 4,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 5,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 6,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 7,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                 ]
             },
             {
                 id : 2,
                 heading : 'Explore Our Comprenensive Services',
-                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counseling',
+                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counselings',
                 img : corparate_training,
-                lists : [
+                listo : [
                     {
                         id : 0,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 1,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 2,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 3,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 4,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 5,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 6,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 7,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                 ]
             },
             {
                 id : 3,
                 heading : 'Explore Our Comprenensive Services',
-                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counseling',
+                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counselings',
                 img : counseling_service,
-                lists : [
+                listo : [
                     {
                         id : 0,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 1,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 2,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 3,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 4,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 5,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 6,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                     {
                         id : 7,
                         icon : list_style_icon,
-                        content : 'We empower our clients to excel in their professional lives',
+                        content : 'Labouratory and Diagnostic Service',
                     },
                 ]
-            }
+            },
 
         ]
     },

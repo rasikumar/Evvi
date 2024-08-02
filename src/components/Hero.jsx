@@ -9,7 +9,7 @@ const Hero = () => {
             <div className="absolute w-[80%] -z-20">
                 <div className="absolute right-0 top-0 w-60 h-72 blur-[200px] -z-10 bg-t-secondary"></div>
             </div>
-            <div className="w-[50%] p-2 flex flex-col gap-10 mt-24 max-mobile:mt-20 max-tablet:w-full">
+            <div className="w-[50%] p-2 flex flex-col gap-10 max-mobile:gap-5 mt-24 max-mobile:mt-20 max-tablet:w-full">
                 <div>
                     <h3 className="bg-btn w-fit rounded-full desktop:px:5 desktop:py-3 px-3 py-1 max-mobile:text-xs max-mobile:px-5 max-mobile:py-3 max-mobile:w-48">
                         {HeroText[0].content}
@@ -27,14 +27,14 @@ const Hero = () => {
                         {HeroText[2].content}
                         <FaArrowUpRightFromSquare />
                     </p>
-                    <p className="btn-secondary desktop:text-2xl max-mobile:text-sm flex items-center max-mobile:w-[10rem] gap-1">
+                    <p className="btn-secondary desktop:text-2xl max-mobile:text-sm flex items-center max-mobile:w-[10.4rem] gap-1">
                         <FaSquarePhone />
                         {HeroText[3].content}
                     </p>
                 </div>
             </div>
 
-            <div className="w-[50%] max-tablet:w-full h-fit relative mt-24">
+            <div className="w-[50%] max-tablet:w-full h-fit relative mt-24 max-mobile:mt-10">
                 <div className="relative w-full h-96 desktop:h-[35rem] rounded-xl overflow-hidden">
                     <video src={bgvid} className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted loop></video>
                 </div>

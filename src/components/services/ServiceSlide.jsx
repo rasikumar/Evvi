@@ -47,29 +47,193 @@ export default function BasicTabs() {
   const itemThreeRender = lists[2].content;
   const itemFourthRender = lists[3].content;
 
+  const { lists_items } = OurServices[0];
+  const item1 = lists_items[0].listo;
+  const item2 = lists_items[1].listo;
+  const item3 = lists_items[2].listo;
+  const item4 = lists_items[3].listo;
+
+  const [showSecond, setShowSecond] = React.useState(false)
+  
   return (
-    <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label={itemOneRender} {...a11yProps(0)} />
-          <Tab label={itemTwoRender} {...a11yProps(1)} />
-          <Tab label={itemThreeRender} {...a11yProps(2)} />
-          <Tab label={itemFourthRender} {...a11yProps(3)} />
-        </Tabs>
+    <div className='bg-white p-5 rounded-3xl'>
+        <Box sx={{ width: '100%' }}>
+        <Box sx={{ borderBottom: 0 }}>
+            <Tabs value={value} onChange={handleChange} variant='scrollable' scrollButtons allowScrollButtonsMobile textColor='primary' indicatorColor='secondary' aria-label="scrollable basic tabs example">
+              <Tab label={itemOneRender} {...a11yProps(0)} />
+              <Tab label={itemTwoRender} {...a11yProps(1)} />
+              <Tab label={itemThreeRender} {...a11yProps(2)} />
+              <Tab label={itemFourthRender} {...a11yProps(3)} />
+            </Tabs>
+        </Box>
+        <CustomTabPanel value={value} index={0}>
+        <div className='flex max-laptop:flex-col flex-row w-full max-mobile:gap-3 gap-10 items-center'>
+          <div className='w-full min-w-[40%]'>
+            <img src={lists_items[0].img} alt="" className='w-full rounded-3xl'/>
+          </div>
+          <div className='flex flex-col gap-4 max-mobile:gap-2'>
+            <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-bold text-t-primary'>
+              {lists_items[0].heading}
+            </h1>
+            <p className='line-clamp-3 max-mobile:line-clamp-5 font-semibold max-mobile:text-sm'>{lists_items[0].description}</p>
+            <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
+              <div className='flex flex-col gap-4 max-mobile:gap-1'>
+                {item1.slice(0, 4).map(i => (
+                  <div key={i.content} className='flex items-center gap-2'>
+                    <img src={i.icon} alt="" width={15} />
+                    <p className='text-t-primary font-medium max-mobile:text-xs'>{i.content}</p>
+                  </div>
+                ))}
+              </div>
+              <div className={`flex flex-col gap-4 max-mobile:${showSecond ? 'block' : 'hidden'}`}>
+                {item1.slice(4, 8).map(i => (
+                  <div key={i.content} className='flex items-center gap-2'>
+                    <img src={i.icon} alt="" width={15} className='max-mobile:mt-1'/>
+                    <p className='text-t-primary font-medium max-mobile:text-xs max-mobile:mt-1'>{i.content}</p>
+                  </div>
+                ))}
+              </div>
+              {!showSecond && (
+                <button className='max-mobile:block hidden mt-5' onClick={() => setShowSecond(true)}>
+                  Read More
+                </button>
+              )}
+              {showSecond && (
+                <button className='max-mobile:block hidden mt-5' onClick={() => setShowSecond(false)}>
+                  Less
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+        </CustomTabPanel>
+
+        <CustomTabPanel value={value} index={1}>
+        <div className='flex max-laptop:flex-col flex-row w-full max-mobile:gap-3 gap-10 items-center'>
+          <div className='w-full min-w-[40%]'>
+            <img src={lists_items[1].img} alt="" className='w-full rounded-3xl'/>
+          </div>
+          <div className='flex flex-col gap-4 max-mobile:gap-2'>
+            <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
+              {lists_items[1].heading}
+            </h1>
+            <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[1].description}</p>
+            <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
+              <div className='flex flex-col gap-4 max-mobile:gap-1'>
+                {item2.slice(0, 4).map(i => (
+                  <div key={i.content} className='flex items-center gap-2'>
+                    <img src={i.icon} alt="" width={15} />
+                    <p className='text-t-primary font-medium max-mobile:text-xs'>{i.content}</p>
+                  </div>
+                ))}
+              </div>
+              <div className={`flex flex-col gap-4 max-mobile:${showSecond ? 'block' : 'hidden'}`}>
+                {item2.slice(4, 8).map(i => (
+                  <div key={i.content} className='flex items-center gap-2'>
+                    <img src={i.icon} alt="" width={15} className='max-mobile:mt-1'/>
+                    <p className='text-t-primary font-medium max-mobile:text-xs max-mobile:mt-1'>{i.content}</p>
+                  </div>
+                ))}
+              </div>
+              {!showSecond && (
+                <button className='max-mobile:block hidden mt-5' onClick={() => setShowSecond(true)}>
+                  Read More
+                </button>
+              )}
+              {showSecond && (
+                <button className='max-mobile:block hidden mt-5' onClick={() => setShowSecond(false)}>
+                  Less
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+        </CustomTabPanel>
+
+        <CustomTabPanel value={value} index={2}>
+        <div className='flex max-laptop:flex-col flex-row w-full max-mobile:gap-3 gap-10 items-center'>
+          <div className='w-full min-w-[40%]'>
+            <img src={lists_items[2].img} alt="" className='w-full rounded-3xl'/>
+          </div>
+          <div className='flex flex-col gap-4 max-mobile:gap-2'>
+            <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
+              {lists_items[2].heading}
+            </h1>
+            <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[2].description}</p>
+            <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
+              <div className='flex flex-col gap-4 max-mobile:gap-1'>
+                {item3.slice(0, 4).map(i => (
+                  <div key={i.content} className='flex items-center gap-2'>
+                    <img src={i.icon} alt="" width={15} />
+                    <p className='text-t-primary font-medium max-mobile:text-xs'>{i.content}</p>
+                  </div>
+                ))}
+              </div>
+              <div className={`flex flex-col gap-4 max-mobile:${showSecond ? 'block' : 'hidden'}`}>
+                {item3.slice(4, 8).map(i => (
+                  <div key={i.content} className='flex items-center gap-2'>
+                    <img src={i.icon} alt="" width={15} className='max-mobile:mt-1'/>
+                    <p className='text-t-primary font-medium max-mobile:text-xs max-mobile:mt-1'>{i.content}</p>
+                  </div>
+                ))}
+              </div>
+              {!showSecond && (
+                <button className='max-mobile:block hidden mt-5' onClick={() => setShowSecond(true)}>
+                  Read More
+                </button>
+              )}
+              {showSecond && (
+                <button className='max-mobile:block hidden mt-5' onClick={() => setShowSecond(false)}>
+                  Less
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+        </CustomTabPanel>
+
+        <CustomTabPanel value={value} index={3}>
+        <div className='flex max-laptop:flex-col flex-row w-full max-mobile:gap-3 gap-10 items-center'>
+          <div className='w-full min-w-[40%]'>
+            <img src={lists_items[3].img} alt="" className='w-full rounded-3xl'/>
+          </div>
+          <div className='flex flex-col gap-4 max-mobile:gap-2'>
+            <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
+              {lists_items[3].heading}
+            </h1>
+            <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[3].description}</p>
+            <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
+              <div className='flex flex-col gap-4 max-mobile:gap-1'>
+                {item4.slice(0, 4).map(i => (
+                  <div key={i.content} className='flex items-center gap-2'>
+                    <img src={i.icon} alt="" width={15} />
+                    <p className='text-t-primary font-medium max-mobile:text-xs'>{i.content}</p>
+                  </div>
+                ))}
+              </div>
+              <div className={`flex flex-col gap-4 max-mobile:${showSecond ? 'block' : 'hidden'}`}>
+                {item4.slice(4, 8).map(i => (
+                  <div key={i.content} className='flex items-center gap-2'>
+                    <img src={i.icon} alt="" width={15} className='max-mobile:mt-1'/>
+                    <p className='text-t-primary font-medium max-mobile:text-xs max-mobile:mt-1'>{i.content}</p>
+                  </div>
+                ))}
+              </div>
+              {!showSecond && (
+                <button className='max-mobile:block hidden mt-5' onClick={() => setShowSecond(true)}>
+                  Read More
+                </button>
+              )}
+              {showSecond && (
+                <button className='max-mobile:block hidden mt-5' onClick={() => setShowSecond(false)}>
+                  Less
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+        </CustomTabPanel>
       </Box>
-      <CustomTabPanel value={value} index={0}>
-        Item One
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
-        Item Two
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-        Item Three
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={3}>
-        Item Four
-      </CustomTabPanel>
-    </Box>
-    
+    </div>
   );
 }
