@@ -4,6 +4,8 @@ import Hero from "./components/Hero"
 import Service from "./components/services/Service"
 import Sliding from "./components/Sliding"
 import Testimonials from "./components/Testimonial"
+import Blog from "./components/blogs/Blog"
+
 import { createTheme, ThemeProvider  } from "@mui/material"
 
 const theme = createTheme ({
@@ -32,6 +34,7 @@ const App = () => {
       <About/>
       <Testimonials/>
       <Service/>
+      <Blog/>
      </ThemeProvider>
     </>
   )
