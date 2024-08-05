@@ -1,16 +1,12 @@
 import {
-    instagram_icon,
     date_icon,
     email_icon,
     // left_arrow,
-    linkedin_icon,
     location_icon,
-    medium_icon,
     phone_call_icon,
     right_arrow,
     // right_up_arrow,
     // search_icon,
-    youtube_icon,
     tick_circle,
     list_style_icon,
     quote_icon,
@@ -51,7 +47,6 @@ export const HeroText = [
     }
 ]
 
-export const Social_icons = [instagram_icon, medium_icon, youtube_icon, linkedin_icon]
 
 export const Support = ["Emergency Care" , "Donate" , "Online Service"]
 
