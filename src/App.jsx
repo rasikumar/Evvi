@@ -5,6 +5,7 @@ import Service from "./components/services/Service"
 import Sliding from "./components/Sliding"
 import Testimonials from "./components/Testimonial"
 import Blog from "./components/blogs/Blog"
+import CF from './components/contact & faq/CF'
 
 import { createTheme, ThemeProvider  } from "@mui/material"
 
@@ -28,13 +29,14 @@ const App = () => {
   return (
     <>
      <ThemeProvider theme={theme}>
-      <Header/>
-      <Hero/>
-      <Sliding/>
-      <About/>
-      <Testimonials/>
-      <Service/>
-      <Blog/>
+        <Header/>
+        <Hero/>
+        <Sliding/>
+        <About/>
+        <Testimonials/>
+        <Service/>
+        <Blog/>
+        <CF/>
      </ThemeProvider>
     </>
   )

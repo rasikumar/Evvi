@@ -48,7 +48,3 @@ const Testimonial = () => {
 }
 
 export default Testimonial
-
-{/* <div className='h-screen w-full'>
-     
-    </div> */}
