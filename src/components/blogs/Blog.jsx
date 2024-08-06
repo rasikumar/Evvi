@@ -32,7 +32,7 @@ const Blog = () => {
               <div className="bg-b-primary h-[120%] max-tablet:w-full w-[60%] rounded-lg">
                 {itemOneRender.map(item => (
                   <div key={item.id} className="flex max-mobile:flex-col gap-2 max-mobile:gap-0 bg-[white] rounded-lg">
-                    <div><img src={item.img} alt="" width={600} className="h-[380px] max-mobile:h-[200px] rounded-lg"/></div>
+                    <div><img src={item.img} alt="" width={800} className="h-[380px] max-mobile:h-[200px] rounded-lg"/></div>
                     <div className="flex flex-col w-full px-4 py-10 gap-4 max-mobile:gap-0">
                       <div className="flex items-center gap-2 w-[50%] text-t-primary">
                         <img src={item.icon_1} alt="" width={item.width} />
