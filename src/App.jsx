@@ -5,9 +5,8 @@ import Service from "./components/services/Service"
 import Sliding from "./components/Sliding"
 import Testimonials from "./components/Testimonial"
 import Blog from "./components/blogs/Blog"
-import Footer from "./components/footer/Footer"
 import CF from './components/contact & faq/CF'
-import Cs from "./components/footer/Cs"
+import Footer from "./components/footer/Footer"
 
 
 import { createTheme, ThemeProvider  } from "@mui/material"
@@ -41,7 +40,6 @@ const App = () => {
         <Blog/>
         <CF/>
         <Footer/>
-        <Cs/>
      </ThemeProvider>
     </>
   )

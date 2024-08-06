@@ -47,9 +47,6 @@ export const HeroText = [
     }
 ]
 
-
-export const Support = ["Emergency Care" , "Donate" , "Online Service"]
-
 export const Navigation = [
     {
         id : 0,
@@ -492,5 +489,37 @@ export const Address = [
         id : 2,
         icon : email_icon,
         content : "dummmy@gmail.com"
+    }
+]
+
+export const Supports = [
+    {
+        id : 0,
+        content : "Support",
+        lists : [
+            {
+                id : 0,
+                content : "Emergency Care"
+            },
+            {
+                id : 1,
+                content : "Donate"
+            },
+            {
+                id : 2,
+                content : "Online Service"
+            }
+        ]
+    }
+]
+
+export const Footerend = [
+    {
+        id : 0,
+        content : "@2023 All rights reserved."
+    },
+    {
+        id :1,
+        content : ["About Us", "News", "Career", "Privacy"]
     }
 ]

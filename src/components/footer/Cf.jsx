@@ -4,7 +4,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaMedium } from "react-icons/fa";
 
 const Cf = () => {
   return (
-    <div className="bg-t-primary rounded-xl py-20 max-w-80 gap-10 px-3 flex flex-col">
+    <div className="bg-t-primary rounded-xl py-20 max-w-72 gap-6 px-5 flex flex-col">
       <div className="flex items-center">
         <img src={Evvi_icon} alt="Evvi_icon" width={80} />
         <h1 className="text-white font-medium">Evvi Solutions</h1>
@@ -18,7 +18,7 @@ const Cf = () => {
           </div>
         ))}
       </div>
-      <div className="flex text-white gap-3 text-xl">
+      <div className="flex text-white gap-5 text-xl">
         <FaFacebook/>
         <FaTwitter/>
         <FaInstagram/>

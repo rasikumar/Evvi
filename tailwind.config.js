@@ -31,6 +31,9 @@ export default {
 
         // t - Text, 
         // b - Background
+      },
+      backgroundImage:{
+        'footerImage' : "url('/src/assets/footer.jpg')"
       }
     },
   },
