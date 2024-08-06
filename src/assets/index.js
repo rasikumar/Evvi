@@ -1,17 +1,10 @@
-import instagram_icon from '../assets/instagram_icon.svg';
 import date_icon from '../assets/date_icon.svg';
 import email_icon from '../assets/email_icon.svg';
-import left_arrow from '../assets/left_arrow.svg';
-import linkedin_icon from '../assets/linkedin_icon.svg';
+import right_arrow from '../assets/right_arrow.svg'
 import list_style_icon from '../assets/list_style_icon.svg';
 import location_icon from '../assets/location_icon.svg';
-import medium_icon from '../assets/medium_icon.svg';
 import phone_call_icon from '../assets/phone_call_icon.svg';
-import right_arrow from '../assets/right_arrow.svg';
-import right_up_arrow from '../assets/right_up_arrow.svg';
-import search_icon from '../assets/search_icon.svg';
 import tick_circle from '../assets/tick_circle.svg';
-import youtube_icon from '../assets/youtube_icon.svg';
 import quote_icon from '../assets/quote_icon.svg';
 import test0 from '../assets/test0.jpg';
 import test1 from '../assets/test1.jpg';
@@ -26,27 +19,19 @@ import blog_2 from '../assets/blog_2.jpg';
 import blog_3 from '../assets/blog_3.jpg';
 import blog_4 from '../assets/blog_4.jpg';
 import Evvi_icon from '../assets/Evvi_new.png';
-import hero from '../assets/hero.png';
 import digitalImage from '../assets/digital.jpg'
 import codingImage from '../assets/coding.jpg'
 import bgvid from '../assets/bg.mp4'
 
 export {
-    instagram_icon,
     date_icon,
     email_icon,
-    left_arrow,
-    linkedin_icon,
     list_style_icon,
     location_icon,
-    medium_icon,
     phone_call_icon,
-    right_arrow,
-    right_up_arrow,
-    search_icon,
     tick_circle,
-    youtube_icon,
     quote_icon,
+    right_arrow,
     test0,
     test1,
     test2,
@@ -60,7 +45,6 @@ export {
     blog_3,
     blog_4,
     Evvi_icon,
-    hero,
     codingImage,
     digitalImage,
     bgvid

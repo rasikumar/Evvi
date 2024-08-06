@@ -1,6 +1,7 @@
 import { bgvid } from "../assets";
 import { HeroText } from "../constant";
-import { FaArrowUpRightFromSquare, FaSquarePhone, FaRegFaceGrinBeam, FaStar } from "react-icons/fa6";
+import { FaArrowUpRightFromSquare, FaRegFaceGrinBeam, FaStar } from "react-icons/fa6";
+// import { FaArrowUpRightFromSquare, FaSquarePhone, FaRegFaceGrinBeam, FaStar } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 
 const Hero = () => {
@@ -27,10 +28,10 @@ const Hero = () => {
                         {HeroText[2].content}
                         <FaArrowUpRightFromSquare />
                     </p>
-                    <p className="btn-secondary desktop:text-2xl max-mobile:text-sm flex items-center max-mobile:w-[10.4rem] gap-1">
+                    {/* <p className="btn-secondary desktop:text-2xl max-mobile:text-sm flex items-center max-mobile:w-[10.4rem] gap-1">
                         <FaSquarePhone />
                         {HeroText[3].content}
-                    </p>
+                    </p> */}
                 </div>
             </div>
 
@@ -63,6 +64,7 @@ const Hero = () => {
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     );

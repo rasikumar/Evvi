@@ -5,7 +5,7 @@ const Cs = () => {
 
   return (
     <div className='bg-footerImage bg-cover'>
-      <div className="w-full p-20 max-tablet:p-10 justify-end gap-20 max-tablet:gap-5 flex max-tablet:flex-col bg-b-primary/90 ">
+      <div className="w-full p-20 max-tablet:p-10 justify-start gap-20 max-tablet:gap-5 flex max-tablet:flex-col bg-b-primary/90 ">
           {OurServices.map(service => (
             <div key={service.id} className='flex flex-col gap-5 max-tablet:gap-2'>
               <h1 className='font-bold'>{service.heading}</h1>
