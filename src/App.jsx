@@ -8,6 +8,7 @@ import Blog from "./components/blogs/Blog"
 import CF from './components/contact & faq/CF'
 import SideIcons from "./components/SideIcons"
 import Footer from "./components/footer/Footer"
+// import Testing from "./components/Testing"
 
 
 import { createTheme, ThemeProvider  } from "@mui/material"
@@ -44,6 +45,7 @@ const App = () => {
         <Blog/>
         <CF/>
         <Footer/>
+        {/* <Testing/> */}
      </ThemeProvider>
     </>
   )

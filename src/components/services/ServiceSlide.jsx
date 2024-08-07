@@ -56,16 +56,17 @@ export default function BasicTabs() {
   const [showSecond, setShowSecond] = React.useState(false)
   
   return (
-    <div className='bg-white p-5 rounded-3xl'>
+    <div className='bg-white p-5 rounded-3xl '>
         <Box sx={{ width: '100%' }}>
         <Box sx={{ borderBottom: 0 }}>
-            <Tabs value={value} onChange={handleChange} variant='scrollable' scrollButtons allowScrollButtonsMobile textColor='primary' indicatorColor='secondary' aria-label="scrollable basic tabs example">
+            <Tabs value={value} onChange={handleChange} variant='scrollable' scrollButtons allowScrollButtonsMobile textColor='primary' indicatorColor='secondary' aria-label="scrollable basic tabs example" >
               <Tab label={itemOneRender} {...a11yProps(0)} />
               <Tab label={itemTwoRender} {...a11yProps(1)} />
               <Tab label={itemThreeRender} {...a11yProps(2)} />
               <Tab label={itemFourthRender} {...a11yProps(3)} />
             </Tabs>
         </Box>
+        
         <CustomTabPanel value={value} index={0}>
         <div className='flex max-laptop:flex-col flex-row w-full max-mobile:gap-3 gap-10 items-center'>
           <div className='w-full min-w-[40%]'>
@@ -233,6 +234,7 @@ export default function BasicTabs() {
           </div>
         </div>
         </CustomTabPanel>
+
       </Box>
     </div>
   );
