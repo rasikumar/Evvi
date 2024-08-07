@@ -27,7 +27,7 @@ const TestSlider = () => {
         {Testimonials[0].lists.map((list, index) => (
           <SwiperSlide key={index} className="p-8">
             <div className="flex flex-col gap-6">
-              <img src={list.icon} alt="" width={list.width} height={list.height} />
+              <img src={list.icon} alt={list.icon} width={list.width} height={list.height} />
               <p className="text-white font-medium">&apos;&apos; {list.content} &apos;&apos;</p>
               <div className="flex items-center gap-4">
                 <img src={list.cust_icon} width={list.width + 10} alt={list.cust_icon} className="rounded-full" />

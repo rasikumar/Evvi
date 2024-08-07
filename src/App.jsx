@@ -1,15 +1,17 @@
-import About from "./components/About"
 import Header from "./components/Header"
+import About from "./components/About"
 import Hero from "./components/Hero"
 import Service from "./components/services/Service"
 import Sliding from "./components/Sliding"
 import Testimonials from "./components/Testimonial"
 import Blog from "./components/blogs/Blog"
 import CF from './components/contact & faq/CF'
+import SideIcons from "./components/SideIcons"
 import Footer from "./components/footer/Footer"
 
 
 import { createTheme, ThemeProvider  } from "@mui/material"
+import FloatingIcon from "./components/FloatingIcon"
 
 const theme = createTheme ({
   palette: {
@@ -32,6 +34,8 @@ const App = () => {
     <>
      <ThemeProvider theme={theme}>
         <Header/>
+        <SideIcons/>
+        <FloatingIcon/>
         <Hero/>
         <Sliding/>
         <About/>

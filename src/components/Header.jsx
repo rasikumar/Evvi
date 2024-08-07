@@ -33,7 +33,8 @@ const Header = () => {
 
 
   return (
-      <div className={`flex m-auto mt-8 items-center w-[90%] z-[1000] sticky top-0 justify-between tablet:px-16 mobile:px-10 py-5 max-mobile:px-4 ${scroll ?  'bg-white/50 w-full transition delay-150' : 'bg-white/0 border-2 border-t-secondary rounded-xl' }`}>
+    <>
+      <div className={`flex m-auto mt-8 items-center w-[90%] z-[1000] sticky top-0 backdrop-blur-sm justify-between tablet:px-16 mobile:px-10 py-5 max-mobile:px-4 ${scroll ?  'bg-white/50 w-full transition delay-150' : 'bg-white/0 border-2 border-t-secondary rounded-xl' }`}>
       <img src={Evvi_icon} alt="Evvi_icon" width={100} className="max-mobile:w-16 desktop:w-32"/>
       <div className="flex-1 flex justify-end items-center tablet:hidden">
         <button onClick={toggleMenu} className="text-t-primary transition-all delay-100 text-lg">
@@ -52,6 +53,7 @@ const Header = () => {
         {isOpen ? <button className='btn-primary w-full' onClick={closeMenu}>Contact Us</button> : ''}
       </div>
     </div>
+    </>
   );
 }
 

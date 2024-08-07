@@ -4,6 +4,7 @@ import { FaArrowUpRightFromSquare, FaRegFaceGrinBeam, FaStar } from "react-icons
 // import { FaArrowUpRightFromSquare, FaSquarePhone, FaRegFaceGrinBeam, FaStar } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 
+
 const Hero = () => {
     return (
         <div className="flex w-[90%] gap-5 m-auto h-full max-tablet:flex-col max-tablet:gap-0">
