@@ -523,3 +523,24 @@ export const Footerend = [
         content : ["About Us", "News", "Career", "Privacy"]
     }
 ]
+
+export const questions = [
+    "What is your name?",
+    "What is your favorite color?",
+    "What do you do?"
+];
+
+export const answers = {
+    "What is your name?": {
+        answer: "My name is ChatGPT.",
+        followUp: ["How old are you?", "Where are you from?"]
+    },
+    "What is your favorite color?": {
+        answer: "My favorite color is blue.",
+        followUp: ["Why do you like blue?", "What other colors do you like?"]
+    },
+    "What do you do?": {
+        answer: "I help people with information.",
+        followUp: ["How do you help?", "What else can you do?"]
+    }
+};

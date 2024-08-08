@@ -10,7 +10,7 @@ const Sliding = () => {
                             <Text className="w-full max-mobile:mr-10 object-contain rounded-[0.5rem] laptop:text-xl tablet:text-lg mobile:text-sm desktop:text-2xl ">{scrollitem}</Text>
                         </div>
                     ))}
-                </MarqueeGroup>
+            </MarqueeGroup>
                 <MarqueeGroup className="flex max-mobile:hidden p-4 flex-shrink-0 items-center justify-around whitespace-nowrap w-full">
                     {scrollItems.map(scrollitem => (
                         <div key={scrollitem.id} className="gride place-items-center">
