@@ -27,3 +27,43 @@
 }
 
 
+/* for Servicesliding */
+.box{
+    width: 100%;
+    margin: auto;
+}
+.tabs{
+    display: flex;
+    justify-content: space-between;
+}
+.tab{
+    background: transparent;
+    flex: 1;
+    padding: 10px;
+    padding-top: 15px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+.active-tab{
+    border: none;
+    background: #fff;
+}
+
+.contents{
+    position: absolute;
+}
+
+.content{
+    display: none;
+    position: relative;
+}
+.active-content{
+    display: block;
+    transition: all 1s ease-in-out;
+    background: #fff;
+    padding: 40px;
+    
+}

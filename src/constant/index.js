@@ -17,7 +17,7 @@ import {
     hr_service,
     digital_excellence,
     corparate_training,
-    counseling_service,
+    // counseling_service,
     blog_1,
     blog_2,
     blog_3,
@@ -61,7 +61,24 @@ export const Navigation = [
     {
         id : 2,
         title : 'Service',
-        url : '#Service'
+        url : '#Service',
+        sub : [
+            {
+                id : 0,
+                title : 'HR Service',
+                url : '',
+            },
+            {
+                id : 1,
+                title : 'Digital Marketing',
+                url : '',
+            },
+            {
+                id : 2,
+                title : 'IT Development',
+                url : '',
+            }
+        ]
     },
     {
         id : 3,
@@ -172,16 +189,18 @@ export const OurServices = [
             },
             {
                 id : 1,
-                content : 'Corparate Training',
+                // content : 'Corparate Training',
+                content : 'Digital Marketing',
             },
             {
                 id : 2,
-                content : 'Counseling Service',
+                // content : 'Counseling Service',
+                content : 'IT Development',
             },
-            {
-                id : 3,
-                content : 'Digital Excellence',
-            },
+            // {
+            //     id : 3,
+            //     content : 'Digital Excellence',
+            // },
         ],
         lists_items : [
             {
@@ -328,54 +347,54 @@ export const OurServices = [
                     },
                 ]
             },
-            {
-                id : 3,
-                heading : 'Explore Our Comprenensive Services',
-                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counselings',
-                img : counseling_service,
-                listo : [
-                    {
-                        id : 0,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 1,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 2,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 3,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 4,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 5,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 6,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 7,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                ]
-            },
+            // {
+            //     id : 3,
+            //     heading : 'Explore Our Comprenensive Services',
+            //     description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counselings',
+            //     img : counseling_service,
+            //     listo : [
+            //         {
+            //             id : 0,
+            //             icon : list_style_icon,
+            //             content : 'Labouratory and Diagnostic Service',
+            //         },
+            //         {
+            //             id : 1,
+            //             icon : list_style_icon,
+            //             content : 'Labouratory and Diagnostic Service',
+            //         },
+            //         {
+            //             id : 2,
+            //             icon : list_style_icon,
+            //             content : 'Labouratory and Diagnostic Service',
+            //         },
+            //         {
+            //             id : 3,
+            //             icon : list_style_icon,
+            //             content : 'Labouratory and Diagnostic Service',
+            //         },
+            //         {
+            //             id : 4,
+            //             icon : list_style_icon,
+            //             content : 'Labouratory and Diagnostic Service',
+            //         },
+            //         {
+            //             id : 5,
+            //             icon : list_style_icon,
+            //             content : 'Labouratory and Diagnostic Service',
+            //         },
+            //         {
+            //             id : 6,
+            //             icon : list_style_icon,
+            //             content : 'Labouratory and Diagnostic Service',
+            //         },
+            //         {
+            //             id : 7,
+            //             icon : list_style_icon,
+            //             content : 'Labouratory and Diagnostic Service',
+            //         },
+            //     ]
+            // },
 
         ]
     },

@@ -9,7 +9,6 @@ const FloatingIcon = () => {
     const [step, setStep] = useState(0)
     const [ selectedQuestion,setSelectedQuestion ] = useState(false)
     const icon = Testimonials[0].lists[0]
-    console.log(icon);
     
 
     const popOver = () => {
@@ -39,7 +38,7 @@ const FloatingIcon = () => {
         <div className="absolute max-tablet:top-8 max-tablet:right-8 p-4 bg-white rounded-full shadow-2xl">
               <span className="relative" onClick={popOver}>
                   <span className={`w-5 right-0 z-50 border-2 h-5 text-xs flex items-center text-white justify-center text-center bg-t-primary rounded-full absolute ${shake ? 'animate-shake' : ''} ${open ? 'hidden transition delay-300 animate-none': shake}`}>1</span>
-                  <FaWhatsapp className={`text-green-600 text-5xl ${shake ? 'animate-shake' : ''} ${open ? 'transition delay-75 animate-none': shake}`}/>
+                  <FaWhatsapp className={`text-green-600 text-5xl ${shake ? 'animate-shake' : ''} ${open ? 'transition animate-none': ''}`}/>
               </span>
               {open && (
                 <div className="absolute bottom-16 right-14 h-[50vh] w-[70vh] max-tablet:w-[30vh] max-tablet:h-[30vh] bg-white/40 backdrop-blur-sm border-[1px] shadow-xl transition delay-100 rounded-xl p-1">
