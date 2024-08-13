@@ -25,7 +25,7 @@ const About = () => {
                   <li key={list.id} className="flex items-center mb-2"><img src={list.icon} width={list.width} alt={list.icon} className="mr-2" />{list.content}</li>
                 ))}
               </ul>
-              <button className="btn-primary w-[25%] max-tablet:w-full">Read more</button>
+              <a href={about.url} className="btn-primary w-[25%] max-tablet:w-full" >{about.btn}</a>
           </div>
         ))}
       </div>

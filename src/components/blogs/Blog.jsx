@@ -6,7 +6,7 @@ const Blog = () => {
         const itemThreeRender = blog.lists.slice(0, 3);
   return (
 
-    <div className="bg-blue-50 max-tablet:px-6 max-tablet:py-10 py-20">
+    <div className="bg-blue-50 max-tablet:px-6 max-tablet:py-10 py-24">
       {
         Blogs.map((blog, index) => (
           <div key={index} className="list-none m-auto flex flex-col items-center justify-center gap-2 mb-4">

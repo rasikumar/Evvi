@@ -51,44 +51,56 @@ export const Navigation = [
     {
         id : 0,
         title : 'Home',
-        url : '#Home'
+        url : '/'
     },
     {
         id : 1,
-        title : 'Aboutus',
-        url : '#Aboutus'
+        title : 'About Us',
+        url : '/About',
     },
     {
         id : 2,
         title : 'Service',
-        url : '#Service',
+        url : '/',
         sub : [
             {
                 id : 0,
                 title : 'HR Service',
-                url : '',
+                url : '/HR_Service',
             },
             {
                 id : 1,
                 title : 'Digital Marketing',
-                url : '',
+                url : '/Digital_Marketing',
             },
             {
                 id : 2,
                 title : 'IT Development',
-                url : '',
+                url : '/IT_Development',
             }
         ]
     },
     {
         id : 3,
         title : 'Features',
-        url : '#Features'
+        url : '/',
+        sub : [
+            {
+                id : 0,
+                title : 'Blogs',
+                url : '/Blogs',
+            },
+            {
+                id : 1,
+                title : 'Products',
+                url : '/Products',
+            }
+        ]
     },
     {
         id : 4,
         title : 'Contact Us',
-        url : '#Contact Us'
+        url : '/Contact_Us'
     },
 ]
 
@@ -98,6 +110,8 @@ export const AboutUs = [
         heading : 'About Us',
         title : 'Make Your Choice for Greatness!',
         description : "Welcome to Evvi Solutions, Your Gateway to Success and Innovation. We integrate Comprehensive HR Consulting, groundbreaking Psychometric Assessments, transformative Behavioral Skills Training, and personalized Counseling. Seize the advantage of Digital Excellence. Trust our expertise, embrace bespoke solutions, and embark on a journey to unparalleled success. Evvi Solutions isn't just a choice; we're your Strategic Partner on the Path to Excellence. Make Evvi Your Choice for Greatness!",
+        btn : "Read More",
+        url : '/About',
         lists : [
             {
                 id : 0,
@@ -249,7 +263,9 @@ export const OurServices = [
                         icon : list_style_icon,
                         content : 'Labouratory and Diagnostic Service',
                     },
-                ]
+                ],
+                btn : 'Read More',
+                url : '/HR_Service',
             },
             {
                 id : 1,
@@ -297,7 +313,9 @@ export const OurServices = [
                         icon : list_style_icon,
                         content : 'Labouratory and Diagnostic Service',
                     },
-                ]
+                ],
+                btn : 'Read More',
+                url : '/Digital_Marketing',
             },
             {
                 id : 2,
@@ -345,7 +363,9 @@ export const OurServices = [
                         icon : list_style_icon,
                         content : 'Labouratory and Diagnostic Service',
                     },
-                ]
+                ],
+                btn : 'Read More',
+                url : '/IT_Development',
             },
             // {
             //     id : 3,
@@ -563,3 +583,4 @@ export const answers = {
         followUp: ["How do you help?", "What else can you do?"]
     }
 };
+

@@ -41,7 +41,7 @@ const FloatingIcon = () => {
                   <FaWhatsapp className={`text-green-600 text-5xl ${shake ? 'animate-shake' : ''} ${open ? 'transition animate-none': ''}`}/>
               </span>
               {open && (
-                <div className="absolute bottom-16 right-14 h-[50vh] w-[70vh] max-tablet:w-[30vh] max-tablet:h-[30vh] bg-white/40 backdrop-blur-sm border-[1px] shadow-xl transition delay-100 rounded-xl p-1">
+                <div className="absolute bottom-16 right-14 max-tablet:-right-5 h-[50vh] w-[70vh] max-tablet:w-[30vh] max-tablet:h-[30vh] bg-white/40 backdrop-blur-sm border-[1px] shadow-xl transition delay-100 rounded-xl p-1">
                    <img src={Evvi_icon} className="w-20 absolute top-1 rounded-sm p-1 right-4 max-tablet:w-16 max-tablet:hidden " alt="icon" />
                     <h3 className=" mb-3 p-3 bg-t-primary text-white text-base font-bold rounded-lg shadow-lg">Choose One of Our Service!</h3>
                   <div className="p-4 flex flex-col">

@@ -67,21 +67,22 @@ const ServiceSlide = () => {
                   </button>
                 )}
               </div>
+                <a href={lists_items[0].url} className="btn-secondary">{lists_items[0].btn}</a>
             </div>
           </div>
         </div>
 
         <div className={`content rounded-xl ${ state === 2 ? 'active-content': '' }`}>
-            <div className='flex max-laptop:flex-col flex-row w-full max-mobile:gap-3 gap-10 items-center'>
+          <div className='flex max-laptop:flex-col flex-row w-full max-mobile:gap-3 gap-10 items-center'>
                <div className='w-full min-w-[40%]'>
                  <img src={lists_items[1].img} alt="" className='w-full rounded-3xl'/>
                </div>
-               <div className='flex flex-col gap-4 max-mobile:gap-2'>
-                 <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
-                   {lists_items[1].heading}
-                 </h1>
-                 <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[1].description}</p>
-                 <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
+                <div className='flex flex-col gap-4 max-mobile:gap-2'>
+                  <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
+                    {lists_items[1].heading}
+                  </h1>
+                  <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[1].description}</p>
+                  <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
                    <div className='flex flex-col gap-4 max-mobile:gap-1'>
                      {item2.slice(0, 4).map(i => (
                   <div key={i.content} className='flex items-center gap-2'>
@@ -109,8 +110,9 @@ const ServiceSlide = () => {
                 </button>
               )}
             </div>
+            <a href={lists_items[1].url} className="btn-secondary">{lists_items[1].btn}</a>
           </div>
-        </div>
+          </div>
         </div>
 
         <div className={`content rounded-b-2xl rounded-tl-xl ${ state === 3 ? 'active-content': '' }`}>
@@ -151,6 +153,7 @@ const ServiceSlide = () => {
                   </button>
                 )}
               </div>
+            <a href={lists_items[2].url} className="btn-secondary">{lists_items[2].btn}</a>
             </div>
           </div>
         </div>

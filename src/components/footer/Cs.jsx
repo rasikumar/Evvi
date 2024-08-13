@@ -12,7 +12,7 @@ const Cs = () => {
               <div className='flex flex-col gap-2 max-tablet:gap-1 font-medium'>
                 {service.lists.map(i => (
                   <ul key={i.id}>
-                    <li className='text-sm'>{i.content}</li>
+                    <a href={''} className='text-sm'>{i.content}</a>
                   </ul>
                 ))}
               </div>
