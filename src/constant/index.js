@@ -200,16 +200,19 @@ export const OurServices = [
             {
                 id : 0,
                 content : 'HR Consulting',
+                url : '/HR_Service',
             },
             {
                 id : 1,
                 // content : 'Corparate Training',
                 content : 'Digital Marketing',
+                url : '/Digital_Marketing',
             },
             {
                 id : 2,
                 // content : 'Counseling Service',
                 content : 'IT Development',
+                url : '/IT_Development',
             },
             // {
             //     id : 3,

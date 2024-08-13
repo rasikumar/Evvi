@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Evvi_icon } from "../assets";
 import { Navigation } from "../constant";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -88,17 +89,22 @@ const Header = () => {
                   {navigate.title}
                 </a>
                 {hoveredNavId === navigate.id && (
-                  <div className="absolute transition delay-100  w-48  border rounded shadow-lg">
+                  <motion.div className="absolute transition delay-75 w-48 border rounded shadow-lg" 
+                    initial={{opacity : 0, x: -10}}
+                    animate={{opacity : 1, x: 2}}
+                    exit={{opacity: 0, x: -10}}
+                    transition={{duration: 0.2}}  
+                  >
                     {navigate.sub.map((subItem) => (
                       <a
                         key={subItem.id}
                         href={subItem.url}
-                        className="block px-4 py-2 font-medium text-sm text-b-primary bg-t-primary hover:text-t-primary hover:bg-b-primary"
+                        className="block px-4 py-2 font-medium text-sm text-b-primary bg-t-primary hover:text-t-primary hover:bg-b-primary transition "
                       >
                         {subItem.title}
                       </a>
                     ))}
-                  </div>
+                  </motion.div>
                 )}
               </div>
             );
