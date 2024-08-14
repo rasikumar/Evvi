@@ -1,8 +1,8 @@
 // HR_Service_Page
-export const HR_Service = [
+export const HR_Content = [
     {
         id : 0,
-        header : "Staffing Solutin for You & New Approach to Recruting",
+        header : "Staffing Solution for You & New Approach to Recruting",
         subheader : "To Attract, Challenge, Nuture and Retain High Quality Talent."
     },
     {

@@ -44,7 +44,7 @@ const ServiceSlide = () => {
                   {item1.slice(0, 4).map(i => (
                     <div key={i.content} className='flex items-center gap-2'  >
                       <img src={i.icon} alt="" width={15} />
-                      <p className='text-t-primary font-medium max-mobile:text-xs'>{i.content}</p>
+                      <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
                     </div>
                   ))}
                 </div>
@@ -52,7 +52,7 @@ const ServiceSlide = () => {
                   {item1.slice(4, 8).map(i => (
                     <div key={i.content} className='flex items-center gap-2'>
                       <img src={i.icon} alt="" width={15} className='max-mobile:mt-1'/>
-                      <p className='text-t-primary font-medium max-mobile:text-xs max-mobile:mt-1'>{i.content}</p>
+                      <p className='text-t-primary font-medium max-mobile:text-xs max-mobile:mt-1 text-sm'>{i.content}</p>
                     </div>
                   ))}
                 </div>

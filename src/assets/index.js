@@ -22,6 +22,7 @@ import Evvi_icon from '../assets/Evvi_new.png';
 import digitalImage from '../assets/digital.jpg'
 import codingImage from '../assets/coding.jpg'
 import bgvid from '../assets/bg.mp4'
+import HR_video from '../assets/HR_video.mp4'
 
 export {
     date_icon,
@@ -47,5 +48,6 @@ export {
     Evvi_icon,
     codingImage,
     digitalImage,
-    bgvid
+    bgvid,
+    HR_video,
 }
