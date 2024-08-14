@@ -3,6 +3,7 @@ import { Evvi_icon } from "../assets";
 import { Navigation } from "../constant";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,14 +48,14 @@ const Header = () => {
           : "bg-white/0 border-2 border-t-secondary rounded-xl"
       }`}
     >
-      <a href="/">
+      <Link to="/">
         <img
           src={Evvi_icon}
           alt="Evvi_icon"
           width={100}
           className="max-mobile:w-16 desktop:w-32"
         />
-      </a>
+      </Link>
       <div className="flex-1 flex justify-end items-center tablet:hidden">
         <button
           onClick={toggleMenu}
@@ -80,14 +81,14 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnter(navigate.id)}
                 onMouseLeave={handleMouseLeave}
               >
-                <a
-                  href={navigate.url}
+                <Link
+                  to={navigate.url}
                   className={`text-t-primary mr-7 font-medium hover:border-b-2 hover:text-t-secondary border-t-secondary desktop:text-2xl laptop:text-sm ${
                     isOpen ? "ml-7" : ""
                   }`}
                 >
                   {navigate.title}
-                </a>
+                </Link>
                 {hoveredNavId === navigate.id && (
                   <motion.div className="absolute transition delay-75 w-48 border rounded shadow-lg" 
                     initial={{opacity : 0, x: -10}}
@@ -96,13 +97,13 @@ const Header = () => {
                     transition={{duration: 0.2}}  
                   >
                     {navigate.sub.map((subItem) => (
-                      <a
+                      <Link
                         key={subItem.id}
-                        href={subItem.url}
+                        to={subItem.url}
                         className="block px-4 py-2 font-medium text-sm text-b-primary bg-t-primary hover:text-t-primary hover:bg-b-primary transition "
                       >
                         {subItem.title}
-                      </a>
+                      </Link>
                     ))}
                   </motion.div>
                 )}
@@ -110,16 +111,16 @@ const Header = () => {
             );
           } else {
             return (
-              <a
+              <Link
+                to={navigate.url}
                 key={navigate.id}
-                href={navigate.url}
                 onClick={closeMenu}
                 className={`text-t-primary mr-7 font-medium hover:border-b-2 hover:text-t-secondary border-t-secondary desktop:text-2xl laptop:text-sm ${
                   isOpen ? "ml-7" : ""
                 }`}
               >
                 {navigate.title}
-              </a>
+              </Link>
             );
           }
         })}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { codingImage, digitalImage } from "../assets"
 import { AboutUs } from "../constant"
 
@@ -25,7 +26,7 @@ const About = () => {
                   <li key={list.id} className="flex items-center mb-2"><img src={list.icon} width={list.width} alt={list.icon} className="mr-2" />{list.content}</li>
                 ))}
               </ul>
-              <a href={about.url} className="btn-primary w-[25%] max-tablet:w-full" >{about.btn}</a>
+              <Link to={about.url} className="btn-primary w-[25%] max-tablet:w-full" >{about.btn}</Link>
           </div>
         ))}
       </div>

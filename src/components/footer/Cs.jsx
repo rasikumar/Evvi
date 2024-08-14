@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Supports, OurServices, Blogs } from '../../constant/index'
 
 const Cs = () => {
@@ -12,7 +13,7 @@ const Cs = () => {
               <div className='flex flex-col gap-2 max-tablet:gap-1 font-medium'>
                 {service.lists.map(i => (
                   <ul key={i.id}>
-                    <a href={i.url} className='text-sm'>{i.content}</a>
+                    <Link to={i.url} className='text-sm'>{i.content}</Link>
                   </ul>
                 ))}
               </div>

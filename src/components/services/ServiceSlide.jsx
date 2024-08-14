@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { OurServices } from '../../constant';
+import { Link } from "react-router-dom";
 
 const ServiceSlide = () => {
   const [state, setState] = useState(1);
@@ -67,7 +68,7 @@ const ServiceSlide = () => {
                   </button>
                 )}
               </div>
-                <a href={lists_items[0].url} className="btn-secondary">{lists_items[0].btn}</a>
+                <Link to={lists_items[0].url} className="btn-secondary">{lists_items[0].btn}</Link>
             </div>
           </div>
         </div>
@@ -110,7 +111,7 @@ const ServiceSlide = () => {
                 </button>
               )}
             </div>
-            <a href={lists_items[1].url} className="btn-secondary">{lists_items[1].btn}</a>
+            <Link to={lists_items[1].url} className="btn-secondary">{lists_items[1].btn}</Link>
           </div>
           </div>
         </div>
@@ -153,7 +154,7 @@ const ServiceSlide = () => {
                   </button>
                 )}
               </div>
-            <a href={lists_items[2].url} className="btn-secondary">{lists_items[2].btn}</a>
+            <Link to={lists_items[2].url} className="btn-secondary">{lists_items[2].btn}</Link>
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Blogs } from "../../constant";
 
 const Blog = () => {
@@ -40,7 +41,7 @@ const Blog = () => {
                       </div>
                       <h3 className="line-clamp-2 font-bold">{item.title}</h3>
                       <p className="line-clamp-5 w-full font-medium border-t-[1px] mt-4 mb-4">{item.description}</p>
-                      <a href={item.link} className="text-t-secondary font-semibold w-[50%] flex">{item.link} <img src={item.icon_2} alt="" width={item.width}/></a>
+                      <Link to={item.link} className="text-t-secondary font-semibold w-[50%] flex">{item.link} <img src={item.icon_2} alt="" width={item.width}/></Link>
                     </div>
                   </div>
                 ))}
