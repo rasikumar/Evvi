@@ -13,6 +13,7 @@ import Digital_Marketing from "./components/services/digital_marketing/Digital_M
 import About_Full from "./components/about/About_Full";
 
 import { createTheme, ThemeProvider } from "@mui/material";
+import ScrollToTop from "./components/ScrollToTop";
 
 const theme = createTheme({
   palette: {
@@ -35,6 +36,7 @@ const App = () => {
     <>
       <ThemeProvider theme={theme}>
         <Header />
+        <ScrollToTop/>
 
         <Routes location={location}>
           <Route index path="/" element={<Heart />} />

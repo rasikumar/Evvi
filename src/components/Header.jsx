@@ -115,7 +115,7 @@ const Header = () => {
                 to={navigate.url}
                 key={navigate.id}
                 onClick={closeMenu}
-                className={`text-t-primary mr-7 font-medium hover:border-b-2 hover:text-t-secondary border-t-secondary desktop:text-2xl laptop:text-sm ${
+                className={`text-t-primary mr-7 font-medium hover:scale-90 border-t-secondary desktop:text-2xl laptop:text-sm ${
                   isOpen ? "ml-7" : ""
                 }`}
               >

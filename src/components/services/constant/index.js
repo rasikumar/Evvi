@@ -1,3 +1,6 @@
+import { codingImage } from "../../../assets"
+
+
 // HR_Service_Page
 export const HR_Content = [
     {
@@ -12,37 +15,37 @@ export const HR_Content = [
         items : [
             {
                 id : 0,
-                img : "f",
+                img : codingImage,
                 title : "Recruitment Excellence",
                 content : "Discover top talents effortlessly. We handle the hiring process, ensuring the perfect fit for your team."   
             },
             {
                 id : 1,
-                img : "f",
+                img : codingImage,
                 title : "Payroll Simplified",
                 content : "Streamline your payroll. Our experts manage everything from structuring to compliance, giving you peace of mind."
             },
             {
                 id : 2,
-                img : "f",
+                img : codingImage,
                 title : "Policy Craftsmanship",
                 content : "Tailor-made policies for your unique needs. Our experts ensure your workplace policies are clear, fair, and compliant."
             },
             {
                 id : 3,
-                img : "f",
+                img : codingImage,
                 title : "Employee Lifecycle Support",
                 content : "Nurture your team from onboarding to offboarding. We provide comprehensive support at every stage."
             },
             {
                 id : 4,
-                img : "f",
+                img : codingImage,
                 title : "Performance Mastery",
                 content : "Empower your team to excel. Our programs enhance performance and encourage professional growth."
             },
             {
                 id : 5,
-                img : "f",
+                img : codingImage,
                 title : "Compliance Assurance",
                 content : "Stay legally sound. Our team ensures your HR practices adhere to all regulations, minimizing risks."
             }
