@@ -23,7 +23,8 @@ import digitalImage from '../assets/digital.jpg'
 import codingImage from '../assets/coding.jpg'
 import bgvid from '../assets/bg.mp4'
 import HR_video from '../assets/HR_video.mp4'
-
+import service_image from '../assets/service_image.png'
+import domains from '../assets/domains.jpg'
 export {
     date_icon,
     email_icon,
@@ -50,4 +51,6 @@ export {
     digitalImage,
     bgvid,
     HR_video,
+    service_image,
+    domains,
 }

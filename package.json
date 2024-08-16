@@ -12,11 +12,13 @@
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@gsap/react": "^2.1.1",
     "@mui/material": "^5.16.6",
     "anchor-link": "^3.6.0",
     "bootstrap": "^5.3.3",
     "flowbite-react": "^0.10.1",
     "framer-motion": "^11.3.24",
+    "gsap": "^3.12.5",
     "react": "^18.3.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-bootstrap": "^2.10.4",
