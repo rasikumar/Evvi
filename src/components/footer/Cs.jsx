@@ -5,7 +5,7 @@ const Cs = () => {
   const first_Two = Blogs[0].lists.slice(0,2)
 
   return (
-    <div className='bg-footerImage bg-no-repeat  bg-cover'>
+    <div>
       <div className="w-full p-20 max-tablet:p-10 justify-end gap-20 max-tablet:gap-5 flex max-tablet:flex-col bg-t-secondary/30 ">
           {OurServices.map(service => (
             <div key={service.id} className='flex flex-col gap-5 max-tablet:gap-2'>

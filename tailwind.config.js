@@ -44,7 +44,8 @@ export default {
         // b - Background
       },
       backgroundImage:{
-        'footerImage' : "url('/src/assets/footer.jpg')"
+        'footerImage' : "url('/src/assets/footer.jpg')",
+        'heroImage' : "url('/src/assets/Hr_why.png')",
       }
     },
   },

@@ -95,7 +95,7 @@ export const HR_Content = [
         ]
     },
     {
-        id : 0,
+        id : 3,
         title : "Why Choose Our HR Services?",
         heading : "We Lead, We Find, You Win",
         description : "Evvi Solutions is a leading Recruitment Consultancy having corporate office & branch office in Madurai. Evvi Solutions has a rich customer base in all over india. We provide superior value added services within strict time constraints to offer maximum benefits to our clients.",
