@@ -61,7 +61,7 @@ export const Navigation = [
     {
         id : 2,
         title : 'Service',
-        url : '/',
+        url : '/Services',
         sub : [
             {
                 id : 0,
@@ -83,7 +83,7 @@ export const Navigation = [
     {
         id : 3,
         title : 'Features',
-        url : '/',
+        url : '/Features',
         sub : [
             {
                 id : 0,
@@ -438,7 +438,8 @@ export const Blogs = [
                 description : "ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur ,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu" ,
                 link : "Learn More",
                 width : 18,
-                icon_2 : right_arrow
+                icon_2 : right_arrow,
+                url:'/blog_1'
             },
             {
                 id : 1,
@@ -449,7 +450,8 @@ export const Blogs = [
                 description : "ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur ,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu" ,
                 link : "Learn More",
                 width : 18,
-                icon_2 : right_arrow
+                icon_2 : right_arrow,
+                url:'/blog_2'
             },
             {
                 id : 2,
@@ -460,7 +462,8 @@ export const Blogs = [
                 description : "ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur ,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu" ,
                 link : "Learn More",
                 width : 18,
-                icon_2 : right_arrow
+                icon_2 : right_arrow,
+                url:'/blog_3'
             },
             {
                 id : 3,
@@ -471,7 +474,8 @@ export const Blogs = [
                 description : "ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur ,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu" ,
                 link : "Learn More",
                 width : 18,
-                icon_2 : right_arrow
+                icon_2 : right_arrow,
+                url:'/blog_4'
             },
         ]
     }

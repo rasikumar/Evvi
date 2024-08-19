@@ -48,6 +48,9 @@ const App = () => {
           <Route path="/HR_Service" element={<HR_Service />} />
           <Route path="/Digital_Marketing" element={<Digital_Marketing />} />
           <Route path="/IT_Development" element={<IT_Development />} />
+
+          {/* BlogPages */}
+          
         </Routes>
         <Footer />
       </ThemeProvider>

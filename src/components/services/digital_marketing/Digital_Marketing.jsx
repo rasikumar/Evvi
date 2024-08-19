@@ -1,8 +1,15 @@
+import Hero from "./Hero"
+import Services from "./Services"
+import Domains from "./Domains"
+import Choose from "./Choose"
 
 const Digital_Marketing = () => {
   return (
     <div>
-      <h1>dsa</h1>
+      <Hero/>
+      <Services/>
+      <Domains/>
+      <Choose/>
     </div>
   )
 }

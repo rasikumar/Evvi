@@ -6,7 +6,7 @@ const Cs = () => {
 
   return (
     <div>
-      <div className="w-full p-20 max-tablet:p-10 justify-end gap-20 max-tablet:gap-5 flex max-tablet:flex-col bg-t-secondary/30 ">
+      <div className="w-full p-20 max-tablet:p-10 justify-end gap-20 max-tablet:gap-5 flex max-tablet:flex-col bg-t-secondary/60 ">
           {OurServices.map(service => (
             <div key={service.id} className='flex flex-col gap-5 max-tablet:gap-2'>
               <h1 className='font-bold'>{service.heading}</h1>
@@ -43,7 +43,7 @@ const Cs = () => {
                       </div>
                       <div className='flex flex-col'>
                         <h1 className='text-sm'>{first_two.date}</h1>
-                        <p className='font-bold text-sm line-clamp-2'>{first_two.title}</p>
+                        <Link to={first_two.url} className='font-bold text-sm line-clamp-2 hover:text-white hover:transition-all hover:delay-[.2ms]'>{first_two.title}</Link>
                       </div>
                     </li>
                   </ul>

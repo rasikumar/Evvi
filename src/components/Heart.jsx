@@ -3,7 +3,7 @@ import Hero from "./Hero"
 import Service from "./services/Service"
 import Sliding from "./Sliding"
 import Testimonials from "./Testimonial"
-import Blog from "./blogs/Blog"
+import Blog from "./features/blog/Blog"
 import CF from './contact & faq/CF'
 import SideIcons from "./SideIcons"
 // import Testing from "./components/Testing"

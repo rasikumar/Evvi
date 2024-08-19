@@ -3,18 +3,39 @@ import { Testimonials } from "../constant";
 import TestSlider from "./TestSlider";
 import { FcGoogle } from "react-icons/fc";
 import { FaRegFaceGrinBeam } from "react-icons/fa6";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Testimonial = () => {
+  const textRef = useRef(false);
+  const inview = useInView(textRef, { triggeronce: true });
   const { title, heading } = Testimonials[0];
+  
   return (
     <div className="flex items-end max-tablet:flex-col gap-4 w-full p-14 max-tablet:p-5 max-tablet:gap-10 max-mobile:gap-5">
       <div className="flex flex-col w-[55%] max-tablet:w-full gap-12">
-        <div className="flex flex-col gap-6">
+        <motion.div
+          initial="hidden"
+          animate={inview ? "visible" : "hidden"}
+          ref={textRef}
+          variants={{
+            hidden: { opacity: 0, y: 35 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{
+            duration: 1,
+            type: "spring",
+            damping: 5,
+            stiffness: 100,
+            ease: 'linear',
+          }}
+          className="flex flex-col gap-6"
+        >
           <h3 className="text-t-primary font-semibold">{heading}</h3>
           <h1 className="text-4xl max-tablet:text-3xl max-mobile:text-2xl font-semibold">
             {title}
           </h1>
-        </div>
+        </motion.div>
         <div className="h-full w-full">
           <TestSlider />
         </div>

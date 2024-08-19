@@ -83,26 +83,44 @@ const Header = () => {
               >
                 <Link
                   to={navigate.url}
-                  className={`text-t-primary mr-7 font-medium hover:border-b-2 hover:text-t-secondary border-t-secondary desktop:text-2xl laptop:text-sm ${
-                    isOpen ? "ml-7" : ""
-                  }`}
+                  className={`text-t-primary mr-7 font-medium p-3 max-tablet:p-0 
+              hover:text-t-secondary 
+              border-t-secondary desktop:text-2xl laptop:text-sm 
+              ${isOpen ? "ml-7" : ""}
+              relative before:absolute before:w-full before:h-full before:top-0 before:left-0 
+              before:border-2 before:border-transparent before:content-[''] 
+              before:hover:border-t-secondary before:transition before:duration-200 before:rounded-lg`}
                 >
                   {navigate.title}
                 </Link>
                 {hoveredNavId === navigate.id && (
-                  <motion.div className="absolute transition delay-75 w-48 border rounded shadow-lg" 
-                    initial={{opacity : 0, x: -10}}
-                    animate={{opacity : 1, x: 2}}
-                    exit={{opacity: 0, x: -10}}
-                    transition={{duration: 0.2}}  
+                  <motion.div
+                    className="absolute transition delay-75 w-48 border rounded shadow-lg"
+                    initial={{ opacity: 0, x: -20, y: 6 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                    transition={{ duration: 0.2 }}
                   >
                     {navigate.sub.map((subItem) => (
                       <Link
                         key={subItem.id}
                         to={subItem.url}
-                        className="block px-4 py-2 font-medium text-sm text-b-primary bg-t-primary hover:text-t-primary hover:bg-b-primary transition "
+                        className="block px-4 py-2 font-medium text-sm text-b-primary bg-t-primary hover:text-t-primary hover:bg-b-primary transition"
                       >
-                        {subItem.title}
+                        <motion.div
+                          initial={{ opacity: 0, x: -90, zIndex: -2 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -100 }}
+                          transition={{
+                            ease: "linear",
+                            type: "spring",
+                            damping: 6,
+                            stiffness: 40,
+                            duration: 0.2,
+                          }}
+                        >
+                          {subItem.title}
+                        </motion.div>
                       </Link>
                     ))}
                   </motion.div>
@@ -115,9 +133,14 @@ const Header = () => {
                 to={navigate.url}
                 key={navigate.id}
                 onClick={closeMenu}
-                className={`text-t-primary mr-7 font-medium hover:scale-90 border-t-secondary desktop:text-2xl laptop:text-sm ${
-                  isOpen ? "ml-7" : ""
-                }`}
+                className={`text-t-primary mr-7 font-medium p-3 max-tablet:p-0 
+                  hover:text-t-secondary 
+                  border-t-secondary desktop:text-2xl laptop:text-sm 
+                  ${isOpen ? "ml-7" : ""}
+                  relative before:absolute before:w-full before:h-full before:top-0 before:left-0 
+                  before:border-2 before:border-transparent before:content-[''] 
+                  before:hover:border-t-secondary before:transition before:duration-200
+                  before:rounded-lg`}
               >
                 {navigate.title}
               </Link>

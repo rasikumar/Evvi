@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Blogs } from "../../constant";
+import { Blogs } from "../../../constant";
 
 const Blog = () => {
         const blog = Blogs[0]
@@ -23,10 +23,11 @@ const Blog = () => {
                         <img src={item.icon_1} alt="" width={item.width} className=""/>
                         <li className="text-sm text-t-primary font-medium">{item.date}</li>
                       </div>
-                      <div className="font-bold line-clamp-2">
+                      <Link to={item.url} className="font-bold line-clamp-2">
                         {item.title}
-                      </div>
+                      </Link>
                     </div>
+                      
                   </div>
                 ))}
               </div>
@@ -41,7 +42,7 @@ const Blog = () => {
                       </div>
                       <h3 className="line-clamp-2 font-bold">{item.title}</h3>
                       <p className="line-clamp-5 w-full font-medium border-t-[1px] mt-4 mb-4">{item.description}</p>
-                      <Link to={item.link} className="text-t-secondary font-semibold w-[50%] flex">{item.link} <img src={item.icon_2} alt="" width={item.width}/></Link>
+                      <Link to={item.url} className="text-t-secondary font-semibold w-[50%] flex">{item.link} <img src={item.icon_2} alt="" width={item.width}/></Link>
                     </div>
                   </div>
                 ))}
