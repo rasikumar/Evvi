@@ -109,3 +109,7 @@
     transition: all 0.3s ease;
     border-radius: 10px;    
 }
+
+.serviceCardIT:hover .serviceCards{
+    background: #F67629;
+}

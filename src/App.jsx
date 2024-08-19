@@ -14,7 +14,7 @@ import About_Full from "./components/about/About_Full";
 
 import { createTheme, ThemeProvider } from "@mui/material";
 import ScrollToTop from "./components/ScrollToTop";
-
+import { AnimatePresence } from "framer-motion";
 const theme = createTheme({
   palette: {
     primary: {
@@ -37,8 +37,9 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <Header />
         <ScrollToTop/>
-
-        <Routes location={location}>
+        <AnimatePresence mode="wait">
+        
+        <Routes location={location} key={location.key}>
           <Route index path="/" element={<Heart />} />
 
           {/* AboutFullpage */}
@@ -52,6 +53,7 @@ const App = () => {
           {/* BlogPages */}
           
         </Routes>
+        </AnimatePresence>
         <Footer />
       </ThemeProvider>
     </>

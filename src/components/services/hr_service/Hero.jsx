@@ -13,7 +13,7 @@ const Hero = () => {
           <h1 className="text-5xl max-tablet:text-3xl  font-semibold text-white">{header.slice(0,28)} </h1>
           <h1 className="text-5xl max-tablet:text-3xl font-semibold text-white">{header.slice(28,56)}</h1>
         </div>
-        <p className="text-white font-semibold">{subheader }</p>
+        <p className="text-white font-semibold">{subheader}</p>
       </div>
     </div>
   )
