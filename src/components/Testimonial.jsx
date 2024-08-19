@@ -1,3 +1,4 @@
+"use-client";
 import { codingImage, digitalImage } from "../assets";
 import { Testimonials } from "../constant";
 import TestSlider from "./TestSlider";

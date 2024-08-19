@@ -1,3 +1,5 @@
+"use-client";
+
 import { useEffect, useState } from "react";
 import { Evvi_icon } from "../assets";
 import { Navigation } from "../constant";
