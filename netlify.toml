@@ -2,5 +2,3 @@
 from = "/*"
 to = "/index.html"
 status = 200
-
-this is using for refresh a netlify hosted app in render in website that time it says 404 error....so it's add then that error won't come
