@@ -591,6 +591,32 @@ export const answers = {
     }
 };
 
-export const About_Full = {
-    
-}
+export const About_Full = [
+    {
+        id:0,
+        header:"Empowering Innovators, Connecting Communities",
+        paragraph:"Your hub for cutting-edge tutorials, vibrant forums, networking events project showcase, and career opportunities in the world of technology."
+    },
+    {
+        id:1,
+        header:"About",
+        subtitle:"Make Your Choice for Greatness!",
+        paragraph1:"Welcome to Evvi Solutions, the origin of our journey lies in the realm of HR Consulting services, where we discovered the undeniable power of talents as the cornerstone of any success story. Recognizing that talents could be cultivated, our vision expanded, embracing the profound notion of individual empowerment as the gateway to organizational triumph. This realization led us to delve into the intricacies of individuals—their abilities, personalities, interests, and values—an understanding achieved through comprehensive psychometric assessments. To further nurture these talents, we incorporated transformative behavioral skills training into our offerings.",
+        paragraph2:"In a world where support is paramount, especially in times of confusion and the quest for clarity, we identified the critical need for counseling services. In the digital age, we recognized the imperative for digital excellence, seamlessly integrating it with our array of services. At Evvi Solutions, our journey is a testament to the belief that every individual holds the power to shape their success story, and we are here to guide, support, and empower every step of the way."
+    },
+    {
+        id:2,
+        header:"Our Mission",
+        title:"Evvi: A Legacy of Aspiration",
+        paragraph1:"n the heart of our identity lies a tale as ancient as time, a legacy that echoes the aspirations of an ancient king. Evvi, a name of Tamil origin, signifies the profound journey of making flowing water reach higher landscapes. This echoes the spirit of an ancient ruler who sought not just to rule but to uplift. Like the gentle stream that navigates the terrain, we are dedicated to helping individuals and organizations reach greater heights.",
+        paragraph2:"The name Evvi is more than a label; it's a commitment to a legacy of service, inspiration, and the relentless pursuit of excellence. As we carry this heritage forward, we strive to be the guiding force in every success story, just as the ancient king envisioned."
+    },
+    {
+        id:3,
+        header: "Join us",
+        paragraph : "Join Evvi Solutions to expand your tech skills and knowledge! Learn programming languages, technical tools, soft skills and industry insights. Gain project management expertise, explore entrepreneurship, and embrace continuous learning. Elevate your tech career with our supportive community!",
+        btn : "Contact Us",
+        url: '/Contact_Us'
+        
+    }
+]

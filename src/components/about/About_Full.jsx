@@ -1,28 +1,35 @@
-import { motion } from "framer-motion";
+import Hero from './Hero'
+import About from './About'
+import Mission from './Mission'
+import Join from './Join'
+import { motion } from "framer-motion"
+
+const pageVariants = {
+  initial: { opacity: 0, y: 0 },
+  in: { opacity: 1, y: 0 },
+  out: { opacity: 0, y:"-100vw" },
+}
+const pageTransition={
+  type: "linear",
+  ease: [0.25,0.1,0.25,1],
+  duration: 0.4,
+}
+
 const About_Full = () => {
-  const pageVariants = {
-    initial: { opacity: 0, y: 0 },
-    in: { opacity: 1, y: 0 },
-    out: { opacity: 0, y: "-100vw" },
-  };
-  const pageTransition = {
-    type: "linear",
-    ease: [0.25, 0.1, 0.25, 1],
-    duration: 0.4,
-  };
-
   return (
-      <motion.div
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
-        transition={pageTransition}
-      >
-        
+    <motion.div
+    initial="initial"
+    animate= "in"
+    exit="out"
+    variants={pageVariants}
+    transition={pageTransition}
+    >
+      <Hero />  
+      <About/>
+      <Mission/>
+      <Join/>
+    </motion.div>
+  )
+}
 
-      </motion.div>
-  );
-};
-
-export default About_Full;
+export default About_Full

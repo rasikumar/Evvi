@@ -25,6 +25,11 @@ import bgvid from '../assets/bg.mp4'
 import HR_video from '../assets/HR_video.mp4'
 import service_image from '../assets/service_image.png'
 import domains from '../assets/domains.jpg'
+import vision from '../assets/vision.jpeg'
+import value from '../assets/value.jpg'
+import mission from '../assets/mission.jpeg'
+import aboutus from '../assets/aboutus.png'
+
 export {
     date_icon,
     email_icon,
@@ -53,4 +58,8 @@ export {
     HR_video,
     service_image,
     domains,
+    vision,
+    value,
+    mission,
+    aboutus,
 }

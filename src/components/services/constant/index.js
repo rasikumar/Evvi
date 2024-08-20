@@ -1,6 +1,7 @@
 import { domains, service_image } from "../../../assets"
 
 // HR_Service_Page
+
 export const HR_Content = [
     {
         id : 0,
@@ -114,39 +115,39 @@ export const Marketing_content = [
         items : [
             {
                 id : 0,
-                img : service_image,
+                url : service_image,
                 title : "Recruitment Excellence",
-                content : "Discover top talents effortlessly. We handle the hiring process, ensuring the perfect fit for your team."   
+                description : "Discover top talents effortlessly. We handle the hiring process, ensuring the perfect fit for your team."   
             },
             {
                 id : 1,
-                img : service_image,
+                url : service_image,
                 title : "Payroll Simplified",
-                content : "Streamline your payroll. Our experts manage everything from structuring to compliance, giving you peace of mind."
+                description : "Streamline your payroll. Our experts manage everything from structuring to compliance, giving you peace of mind."
             },
             {
                 id : 2,
-                img : service_image,
+                url : service_image,
                 title : "Policy Craftsmanship",
-                content : "Tailor-made policies for your unique needs. Our experts ensure your workplace policies are clear, fair, and compliant."
+                description : "Tailor-made policies for your unique needs. Our experts ensure your workplace policies are clear, fair, and compliant."
             },
             {
                 id : 3,
-                img : service_image,
+                url : service_image,
                 title : "Employee Lifecycle Support",
-                content : "Nurture your team from onboarding to offboarding. We provide comprehensive support at every stage."
+                description : "Nurture your team from onboarding to offboarding. We provide comprehensive support at every stage."
             },
             {
                 id : 4,
-                img : service_image,
+                url : service_image,
                 title : "Performance Mastery",
-                content : "Empower your team to excel. Our programs enhance performance and encourage professional growth."
+                description : "Empower your team to excel. Our programs enhance performance and encourage professional growth."
             },
             {
                 id : 5,
-                img : service_image,
+                url : service_image,
                 title : "Compliance Assurance",
-                content : "Stay legally sound. Our team ensures your HR practices adhere to all regulations, minimizing risks."
+                description : "Stay legally sound. Our team ensures your HR practices adhere to all regulations, minimizing risks."
             }
         ]
     },

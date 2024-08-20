@@ -1,5 +1,6 @@
 import Hero from "./Hero"
-import Services from "./Services"
+import Card from './card/Card'
+// import Services from "./Services"
 import Domains from "./Domains"
 import Choose from "./Choose"
 import { motion } from "framer-motion"
@@ -26,7 +27,8 @@ const Digital_Marketing = () => {
     transition={pageTransition}
     >
       <Hero/>
-      <Services/>
+      {/* <Services/> */}
+      <Card/>
       <Domains/>
       <Choose/>
     </motion.div>

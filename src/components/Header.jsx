@@ -85,7 +85,9 @@ const Header = () => {
               >
                 <Link
                   to={navigate.url}
-                  className={`text-t-primary mr-7 font-medium p-3 max-tablet:p-0 
+                  onClick={closeMenu}
+
+                  className={`text-t-primary mr-7 font-medium p-3 max-tablet:p-2 
               hover:text-t-secondary 
               border-t-secondary desktop:text-2xl laptop:text-sm 
               ${isOpen ? "ml-7" : ""}
@@ -97,7 +99,7 @@ const Header = () => {
                 </Link>
                 {hoveredNavId === navigate.id && (
                   <motion.div
-                    className="absolute transition delay-75 w-48 border rounded shadow-lg"
+                    className="absolute transition delay-75 w-48 border rounded shadow-lg z-50"
                     initial={{ opacity: 0, x: -20, y: 6 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
@@ -107,6 +109,7 @@ const Header = () => {
                       <Link
                         key={subItem.id}
                         to={subItem.url}
+                        onClick={closeMenu}
                         className="block px-4 py-2 font-medium text-sm text-b-primary bg-t-primary hover:text-t-primary hover:bg-b-primary transition"
                       >
                         <motion.div
@@ -119,6 +122,10 @@ const Header = () => {
                             damping: 6,
                             stiffness: 40,
                             duration: 0.2,
+                          }}
+                          onClick={()=>{
+                            closeMenu();
+                            handleMouseLeave();
                           }}
                         >
                           {subItem.title}
@@ -135,7 +142,7 @@ const Header = () => {
                 to={navigate.url}
                 key={navigate.id}
                 onClick={closeMenu}
-                className={`text-t-primary mr-7 font-medium p-3 max-tablet:p-0 
+                className={`text-t-primary mr-7 font-medium p-3 max-tablet:p-2 
                   hover:text-t-secondary 
                   border-t-secondary desktop:text-2xl laptop:text-sm 
                   ${isOpen ? "ml-7" : ""}
