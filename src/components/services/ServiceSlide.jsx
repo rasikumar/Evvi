@@ -25,9 +25,9 @@ const ServiceSlide = () => {
   return (
       <div className="box">
         <div className="tabs">
-            <div className={`tab font-medium ${state === 1 ? 'active-tab' : 'text-white'}`} onClick={() => action(1)}>{itemOneRender}</div>
-            <div className={`tab font-medium ${state === 2 ? 'active-tab' : 'text-white'}`} onClick={() => action(2)}>{itemTwoRender}</div>
-            <div className={`tab font-medium ${state === 3 ? 'active-tab' : 'text-white'}`} onClick={() => action(3)}>{itemThreeRender}</div>
+            <div className={`transition-all delay-100 tab font-medium ${state === 1 ? 'active-tab' : 'text-white'}`} onClick={() => action(1) }>{itemOneRender}</div>
+            <div className={`transition-all delay-100 tab font-medium ${state === 2 ? 'active-tab' : 'text-white'}`} onClick={() => action(2)}>{itemTwoRender}</div>
+            <div className={`transition-all delay-100 tab font-medium ${state === 3 ? 'active-tab' : 'text-white'}`} onClick={() => action(3)}>{itemThreeRender}</div>
         </div>
 
         <div className={`content rounded-b-2xl rounded-tr-xl ${ state === 1 ? 'active-content': '' }`}>
@@ -88,7 +88,7 @@ const ServiceSlide = () => {
                      {item2.slice(0, 4).map(i => (
                   <div key={i.content} className='flex items-center gap-2'>
                     <img src={i.icon} alt="" width={15} />
-                    <p className='text-t-primary font-medium max-mobile:text-xs'>{i.content}</p>
+                    <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
                   </div>
                 ))}
               </div>
@@ -96,7 +96,7 @@ const ServiceSlide = () => {
                 {item2.slice(4, 8).map(i => (
                   <div key={i.content} className='flex items-center gap-2'>
                     <img src={i.icon} alt="" width={15} className='max-mobile:mt-1'/>
-                    <p className='text-t-primary font-medium max-mobile:text-xs max-mobile:mt-1'>{i.content}</p>
+                    <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
                   </div>
                 ))}
               </div>
@@ -131,7 +131,7 @@ const ServiceSlide = () => {
                   {item3.slice(0, 4).map(i => (
                     <div key={i.content} className='flex items-center gap-2'>
                       <img src={i.icon} alt="" width={15} />
-                      <p className='text-t-primary font-medium max-mobile:text-xs'>{i.content}</p>
+                      <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
                     </div>
                   ))}
                 </div>
@@ -139,7 +139,7 @@ const ServiceSlide = () => {
                   {item3.slice(4, 8).map(i => (
                     <div key={i.content} className='flex items-center gap-2'>
                       <img src={i.icon} alt="" width={15} className='max-mobile:mt-1'/>
-                      <p className='text-t-primary font-medium max-mobile:text-xs max-mobile:mt-1'>{i.content}</p>
+                      <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
                     </div>
                   ))}
                 </div>

@@ -5,12 +5,16 @@ import Footer from "./components/footer/Footer";
 
 // Pages
 // Service pages
+import ServiceList from "./components/services/ServiceList"
 import HR_Service from "./components/services/hr_service/HR_Service";
 import IT_Development from "./components/services/it_development/IT_Development";
 import Digital_Marketing from "./components/services/digital_marketing/Digital_Marketing";
 
 // About Page
 import About_Full from "./components/about/About_Full";
+
+// ContactFullPage
+import ContactFull from "./components/contact & faq/ContactFull";
 
 import { createTheme, ThemeProvider } from "@mui/material";
 import ScrollToTop from "./components/ScrollToTop";
@@ -46,11 +50,15 @@ const App = () => {
           <Route path="/About" element={<About_Full />} />
 
           {/* Service Pages */}
+          <Route path="/Service" element={<ServiceList/>} />
           <Route path="/HR_Service" element={<HR_Service />} />
           <Route path="/Digital_Marketing" element={<Digital_Marketing />} />
           <Route path="/IT_Development" element={<IT_Development />} />
 
           {/* BlogPages */}
+
+          {/* ContactFullPage */}
+          <Route path="/Contact_Us" element={<ContactFull/>}/>
           
         </Routes>
         </AnimatePresence>

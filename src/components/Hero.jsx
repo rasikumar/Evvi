@@ -1,6 +1,6 @@
 import { bgvid } from "../assets";
 import { HeroText } from "../constant";
-import { FaArrowUpRightFromSquare, FaRegFaceGrinBeam, FaStar } from "react-icons/fa6";
+import { FaArrowUpRightFromSquare, FaStar } from "react-icons/fa6";
 // import { FaArrowUpRightFromSquare, FaSquarePhone, FaRegFaceGrinBeam, FaStar } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 
@@ -41,7 +41,7 @@ const Hero = () => {
                     <video src={bgvid} className="absolute top-0 left-0 w-full h-full object-cover" autoPlay muted loop></video>
                 </div>
 
-                <div className="px-4 py-4 desktop:px-6 desktop:py-6 rounded-xl shadow-xl bg-white flex flex-col gap-1 absolute top-0 right-0 z-50 desktop:w-[30%] w-[35%] max-mobile:w-[40%]">
+                {/* <div className="px-4 py-4 desktop:px-6 desktop:py-6 rounded-xl shadow-xl bg-white flex flex-col gap-1 absolute top-0 right-0 z-50 desktop:w-[30%] w-[35%] max-mobile:w-[40%]">
                     <div className="flex items-end justify-end">
                         <FaRegFaceGrinBeam className="text-xl desktop:text-4xl" />
                     </div>
@@ -49,9 +49,9 @@ const Hero = () => {
                         <h1 className="text-3xl desktop:text-4xl font-bold">1k+</h1>
                         <p className="text-sm desktop:text-lg font-medium">Happy Clients</p>
                     </div>
-                </div>
+                </div> */}
 
-                <div className="px-4 desktop:px-6 absolute bottom-0 shadow-xl left-0 border-8 border-transparent py-4 desktop:py-6 rounded-xl bg-white flex flex-col desktop:w-[30%] w-[35%] max-mobile:w-[60%] gap-4">
+                <div className="px-4 desktop:px-6 absolute bottom-0 shadow-xl right-0 border-8 border-transparent py-4 desktop:py-6 rounded-xl bg-white flex flex-col desktop:w-[30%] w-[35%] max-mobile:w-[60%] gap-4">
                     <div className="text-sm desktop:text-xl font-bold">
                         Clients Feedback
                     </div>

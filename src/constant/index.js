@@ -25,7 +25,7 @@ import {
 } from '../assets/index';
 
 
-export const scrollItems =[ "Webservice" , "Digital Marketing" , "Counseling" , "Corparate Training"]
+export const scrollItems =[ "HR Consulting" , "IT Consulting" , "Digital Excellence" , "Corporate Training"]
 
 export const HeroText = [
     {
@@ -61,7 +61,7 @@ export const Navigation = [
     {
         id : 2,
         title : 'Service',
-        url : '/Services',
+        url : '/Service',
         sub : [
             {
                 id : 0,
@@ -199,19 +199,18 @@ export const OurServices = [
         lists :[
             {
                 id : 0,
+                content : 'Digital Excellence',
+                url : '/Digital_Marketing',
+                
+            },
+            {
+                id : 1,
                 content : 'HR Consulting',
                 url : '/HR_Service',
             },
             {
-                id : 1,
-                // content : 'Corparate Training',
-                content : 'Digital Marketing',
-                url : '/Digital_Marketing',
-            },
-            {
                 id : 2,
-                // content : 'Counseling Service',
-                content : 'IT Development',
+                content : 'IT Consulting',
                 url : '/IT_Development',
             },
             // {
@@ -223,56 +222,6 @@ export const OurServices = [
             {
                 id : 0,
                 heading : 'Explore Our Comprenensive Services',
-                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counselings',
-                img : hr_service,
-                listo : [
-                    {
-                        id : 0,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 1,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 2,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 3,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 4,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 5,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 6,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 7,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                ],
-                btn : 'Read More',
-                url : '/HR_Service',
-            },
-            {
-                id : 1,
-                heading : 'Explowre Our Comprenensive Services',
                 description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counselings',
                 img : digital_excellence,
                 listo : [
@@ -319,6 +268,56 @@ export const OurServices = [
                 ],
                 btn : 'Read More',
                 url : '/Digital_Marketing',
+            },
+            {
+                id : 1,
+                heading : 'Explowre Our Comprenensive Services',
+                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counselings',
+                img : hr_service,
+                listo : [
+                    {
+                        id : 0,
+                        icon : list_style_icon,
+                        content : 'Labouratory and Diagnostic Service',
+                    },
+                    {
+                        id : 1,
+                        icon : list_style_icon,
+                        content : 'Labouratory and Diagnostic Service',
+                    },
+                    {
+                        id : 2,
+                        icon : list_style_icon,
+                        content : 'Labouratory and Diagnostic Service',
+                    },
+                    {
+                        id : 3,
+                        icon : list_style_icon,
+                        content : 'Labouratory and Diagnostic Service',
+                    },
+                    {
+                        id : 4,
+                        icon : list_style_icon,
+                        content : 'Labouratory and Diagnostic Service',
+                    },
+                    {
+                        id : 5,
+                        icon : list_style_icon,
+                        content : 'Labouratory and Diagnostic Service',
+                    },
+                    {
+                        id : 6,
+                        icon : list_style_icon,
+                        content : 'Labouratory and Diagnostic Service',
+                    },
+                    {
+                        id : 7,
+                        icon : list_style_icon,
+                        content : 'Labouratory and Diagnostic Service',
+                    },
+                ],
+                btn : 'Read More',
+                url : '/HR_Service',
             },
             {
                 id : 2,
@@ -421,6 +420,33 @@ export const OurServices = [
 
         ]
     },
+]
+
+export const ServicePage =[
+    {
+        id :0,
+        header : 'Digital Excellence',
+        content : 'We are a renowned digital agency, dedicated to providing high-quality, innovative, and user-centric digital solutions. Our team of experts is committed to creating stunning and engaging user experiences through our digital marketing and development services.',
+        img: digital_excellence,
+        btn:"Read More",
+        url : '/Digital_Marketing'
+    },
+    {
+        id:1,
+        header: "HR Consulting",
+        content : 'We provide comprehensive HR solutions, including employee onboarding, training, and development, employee benefits, and performance management. Our team of experts is committed to providing exceptional service and customer satisfaction.',
+        img: hr_service,
+        btn:"Read More",
+        url : '/HR_Service'
+    },
+    {
+        id:2,
+        header : "IT Consulting",
+        content : 'We provide IT solutions, including software development, infrastructure management, and cybersecurity. Our team of experts is committed to providing exceptional service and customer satisfaction.',
+        img: corparate_training,
+        btn:"Read More",
+        url : '/IT_Development'
+    }
 ]
 
 export const Blogs = [
