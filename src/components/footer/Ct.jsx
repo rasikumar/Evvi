@@ -8,7 +8,7 @@ const Ct = () => {
             <li className="text-white font-semibold text-sm ">{item1}</li>
             <li className="flex gap-8 text-white font-semibold text-sm">
                 {item2.map((item, index) => (
-                    <li key={index}>{item}</li>
+                    <li key={index} className="hover:text-t-secondary cursor-pointer">{item}</li>
                 ))}
             </li>
         </ul>

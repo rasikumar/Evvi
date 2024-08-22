@@ -13,7 +13,7 @@ const Cs = () => {
               <div className='flex flex-col gap-2 max-tablet:gap-1 font-medium'>
                 {service.lists.map(i => (
                   <ul key={i.id}>
-                    <Link to={i.url} className='text-sm'>{i.content}</Link>
+                    <Link to={i.url} className='text-sm hover:text-white hover:font-medium transition-all delay-[0.1s] cursor-pointer'>{i.content}</Link>
                   </ul>
                 ))}
               </div>
@@ -25,7 +25,7 @@ const Cs = () => {
               <div className='flex flex-col max-tablet:gap-1 gap-2 font-medium'>
                 {support.lists.map(i => (
                   <ul key={i.id}>
-                    <li className='text-sm'>{i.content}</li>
+                    <li className='text-sm hover:text-white hover:font-medium transition-all delay-[0.1s] cursor-pointer'>{i.content}</li>
                   </ul>
                 ))}
               </div>

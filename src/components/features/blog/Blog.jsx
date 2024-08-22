@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Blogs } from "../../../constant";
+import { motion } from "framer-motion";
 
 const Blog = () => {
         const blog = Blogs[0]
@@ -16,19 +17,26 @@ const Blog = () => {
             <div className="flex items-center max-tablet:flex-col justify-center gap-4 ">
               <div className=" w-[30%] max-tablet:w-full flex flex-col gap-4">
                 {itemThreeRender.map(item => (
-                  <div key={item.id} className="border-b-[1px] py-3 flex items-center gap-4">
+                  <motion.div
+                  whileHover={{
+                    scale:1.02,
+                  }}
+                  whileTap = {{
+                    scale:1,
+                  }}
+                  key={item.id} className="border-b-[1px] py-3 flex items-center gap-4">
                     <div><img src={item.img} alt="" width={200} className="rounded-lg"/></div>
                     <div className="flex flex-col gap-2">
                       <div className="flex items-center gap-2 ">
                         <img src={item.icon_1} alt="" width={item.width} className=""/>
                         <li className="text-sm text-t-primary font-medium">{item.date}</li>
                       </div>
-                      <Link to={item.url} className="font-bold line-clamp-2">
+                      <Link to={item.url} className="font-bold line-clamp-2 hover:text-t-secondary transition-all delay-75">
                         {item.title}
                       </Link>
                     </div>
                       
-                  </div>
+                  </motion.div>
                 ))}
               </div>
               <div className="bg-b-primary h-[120%] max-tablet:w-full w-[60%] rounded-lg">

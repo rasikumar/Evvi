@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
 import { Faqs } from "../../constant"
+import { motion } from "framer-motion";
 
 // eslint-disable-next-line react/prop-types
 const ArrowIcon = ({ isOpen }) => (
@@ -32,7 +33,14 @@ const Service = ({ question, answer, index, currentIndex, setCurrentIndex }) => 
     };
 
     return (
-        <div ref={itemRef} className={`border-2 rounded-xl p-4 flex flex-col transition-all delay-75 ${isOpen ? 'border-t-primary' : ''} cursor-pointer`} onClick={handleToggle}>
+        <motion.div
+        whileHover={{
+          scale: 1.025,
+        }}
+        whileTap={{
+          scale: 0.95,
+        }}
+        ref={itemRef} className={`border-2 rounded-xl p-4 flex flex-col transition-all delay-75 ${isOpen ? 'border-t-primary' : ''} cursor-pointer`} onClick={handleToggle}>
             <div className={`flex items-center justify-between w-full `}>
                 <h1 className="text-t-primary font-semibold max-mobile:text-sm line-clamp-1">{question}</h1>
                 <ArrowIcon isOpen={isOpen}/>
@@ -42,7 +50,7 @@ const Service = ({ question, answer, index, currentIndex, setCurrentIndex }) => 
                         <p className="mt-5 select-none cursor-text line-clamp-3">{answer}</p>
                     )}
                 </div>
-        </div>
+        </motion.div>
     );
 };
 
