@@ -156,13 +156,6 @@ const Header = () => {
             );
           }
         })}
-        {isOpen ? (
-          <button className="btn-primary w-full" onClick={closeMenu}>
-            Contact Us
-          </button>
-        ) : (
-          ""
-        )}
       </div>
     </div>
   );
