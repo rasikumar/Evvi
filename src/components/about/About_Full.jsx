@@ -2,6 +2,8 @@ import Hero from './Hero'
 import About from './About'
 import Mission from './Mission'
 import Join from './Join'
+import Team from './Team'
+
 import { motion } from "framer-motion"
 
 const pageVariants = {
@@ -26,6 +28,7 @@ const About_Full = () => {
     >
       <Hero />  
       <About/>
+      <Team />
       <Mission/>
       <Join/>
     </motion.div>

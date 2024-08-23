@@ -39,12 +39,9 @@ export const HeroText = [
     },
     {
         id : 2,
-        content : "Explore more"
+        content : "Explore more",
+        url:'/About'
     },
-    {
-        id : 3,
-        content : "+91 9876543210"
-    }
 ]
 
 export const Navigation = [
@@ -646,3 +643,14 @@ export const About_Full = [
         
     }
 ]
+
+export const Teams = [
+    { id: 1, src: test1, contentId: "content1", title:"Gopinath Pandian", subTitle : "CEO", urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 2, src: test1, contentId: "content2", title:"Shanthi Subramanian", subTitle : "Founder",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 3, src: test1, contentId: "content3", title:"Nandha Kumar", subTitle : "Creative Designer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 4, src: test1, contentId: "content4", title:"Sathya Priya", subTitle : "Digital Marketer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 5, src: test1, contentId: "content5", title:"Rasi Kumar", subTitle : "React Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en",},
+    { id: 6, src: test1, contentId: "content6", title:"Sankar", subTitle : "Flutter Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 7, src: test1, contentId: "content7", title:"Mohamed Fazil", subTitle : "MERN Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 8, src: test1, contentId: "content8", title:"Visutha", subTitle : "React Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+  ];

@@ -12,12 +12,18 @@ export default {
     extend: {
       animation:{
         scroll: 'scroll 10s linear infinite' ,
-        shake : 'shake 1s ease-in-out'
+        shake : 'shake 1s ease-in-out',
+        spinslow: 'spin 5s linear infinite',
+        spinreverse : 'reversespin 2.5s linear infinite',
       },
       keyframes:{
         scroll:{
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(-100%)' },
+        },
+        reversespin: {
+          '0%': { transform: 'rotate(360deg)' },
+          '100%': { transform: 'rotate(0deg)' },
         },
         shake:{
           '0% 100' : { transform : 'translateX(0)' },
