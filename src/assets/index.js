@@ -29,6 +29,7 @@ import vision from '../assets/vision.jpeg'
 import value from '../assets/value.jpg'
 import mission from '../assets/mission.jpeg'
 import aboutus from '../assets/aboutus.png'
+import legacy from '../assets/legecy.png'
 
 export {
     date_icon,
@@ -62,4 +63,5 @@ export {
     value,
     mission,
     aboutus,
+    legacy,
 }

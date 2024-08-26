@@ -36,8 +36,22 @@ const Testimonial = () => {
           <h1 className="text-4xl max-tablet:text-3xl max-mobile:text-2xl font-semibold">
             {title}
           </h1>
+          <div>
+            {Testimonials.map(i => (
+              <ul key={i.id}>
+                {i.items.map(j => (
+                  <motion.li
+                  whileHover={{x:10, scale:1.02}}
+                  key={j.id} className="cursor-pointer flex max-mobile:flex-col gap-1">
+                    <h2 className="font-bold text-t-primary max-mobile:text-sm">{j.heading}</h2>
+                    <p className="max-mobile:mb-4 max-mobile:text-sm">{j.content}</p>
+                  </motion.li>
+                ))}
+              </ul>
+            ))}
+          </div>
         </motion.div>
-        <div className="h-full w-full">
+        <div className="h-full  w-full">
           <TestSlider />
         </div>
       </div>
@@ -46,7 +60,7 @@ const Testimonial = () => {
         <div className="col-span-2 max-mobile:hidden row-span-4 rounded-3xl overflow-hidden">
           <img
             src={codingImage}
-            alt=""
+            alt="#"
             className="w-full h-full object-cover"
           />
         </div>
@@ -70,7 +84,7 @@ const Testimonial = () => {
         <div className="col-span-2 max-mobile:col-span-4 row-span-4 rounded-3xl overflow-hidden shadow-xl">
           <img
             src={digitalImage}
-            alt=""
+            alt="#"
             className="w-full h-full object-cover"
           />
         </div>

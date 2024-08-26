@@ -19,8 +19,7 @@ const ContactFull = () => {
           animate={{ opacity: 1, x: "0px" }}
           transition={{ duration: 1 }}
         >
-          We are here to help you with any questions or concerns you may have.
-          Please
+          Ready to transform your business?
         </motion.p>
         <motion.p
           className="text-center max-mobile:text-sm"
@@ -28,8 +27,7 @@ const ContactFull = () => {
           animate={{ opacity: 1, x: "0px" }}
           transition={{ duration: 1 }}
         >
-          reach out using the form below. We will respond to your inquiry
-          promptly.
+           Reach out to us today, and let&apos;s explore how we can help you achieve your goals together
         </motion.p>
       </div>
       <div className="flex max-tablet:flex-col-reverse max-mobile:items-start items-center max-tablet:px-0 gap-10  px-10 bg-slate-200 py-10">

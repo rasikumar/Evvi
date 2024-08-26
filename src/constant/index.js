@@ -25,22 +25,21 @@ import {
 } from '../assets/index';
 
 
-export const scrollItems =[ "HR Consulting" , "IT Consulting" , "Digital Excellence" , "Corporate Training"]
+export const scrollItems =[ "Business Consulting" , "Digital Transformation" , "HR Consulting" , "IT Consulting"]
 
 export const HeroText = [
+    // {
+    //     id :0,
+    //     content: "Get Healthy, Be Happy"
+    // },
     {
-        id :0,
-        content: "Get Healthy, Be Happy"
-
+        id : 0,
+        content : "From People to Digital Excellence Your Partner in Business Success"
     },
     {
         id : 1,
-        content : "We are ready to Help your health Problems"
-    },
-    {
-        id : 2,
         content : "Explore more",
-        url:'/About'
+        url:'/Service'
     },
 ]
 
@@ -61,17 +60,22 @@ export const Navigation = [
         url : '/Service',
         sub : [
             {
-                id : 0,
-                title : 'HR Service',
-                url : '/HR_Service',
+                id :0,
+                title : 'Business Consulting',
+                url : '/Business_Consulting',
             },
             {
                 id : 1,
-                title : 'Digital Marketing',
+                title : 'Digital Transformation',
                 url : '/Digital_Marketing',
             },
             {
                 id : 2,
+                title : 'HR Service',
+                url : '/HR_Service',
+            },
+            {
+                id : 3,
                 title : 'IT Development',
                 url : '/IT_Development',
             }
@@ -106,31 +110,31 @@ export const AboutUs = [
         id : 0,
         heading : 'About Us',
         title : 'Make Your Choice for Greatness!',
-        description : "Welcome to Evvi Solutions, Your Gateway to Success and Innovation. We integrate Comprehensive HR Consulting, groundbreaking Psychometric Assessments, transformative Behavioral Skills Training, and personalized Counseling. Seize the advantage of Digital Excellence. Trust our expertise, embrace bespoke solutions, and embark on a journey to unparalleled success. Evvi Solutions isn't just a choice; we're your Strategic Partner on the Path to Excellence. Make Evvi Your Choice for Greatness!",
+        description : "At Evvi Solutions, we are your trusted partner in driving business success through our expertise in Business Consulting, with a focus on People Excellence and Digital Transformation. Our holistic approach integrates IT consulting, HR consulting, digital marketing, and cutting-edge web and mobile app development. We tailor our solutions to meet the unique needs of startups and SMEs, guiding you through today’s dynamic business landscape to achieve your strategic goals.",
         btn : "Read More",
         url : '/About',
         lists : [
             {
                 id : 0,
-                content : 'Labouratory and Diagnostic Service',
+                content : 'Business Consulting: Holistic solutions designed to enhance your organization’s growth, efficiency, and impact.',
                 icon : tick_circle,
                 width : 20,
             },
             {
                 id : 1,
-                content : 'Labouratory and Diagnostic Service',
+                content : 'Digital Excellence: Innovative strategies to boost your brand’s online presence and engagement.',
                 icon : tick_circle,
                 width : 20,
             },
             {
                 id : 2,
-                content : 'Labouratory and Diagnostic Service',
+                content : 'HR Consulting: End-to-end HR services, from virtual HR support to talent acquisition and compliance management.',
                 icon : tick_circle,
                 width : 20,
             },
             {
                 id : 3,
-                content : 'Labouratory and Diagnostic Service',
+                content : 'IT Consulting: Comprehensive IT solutions including cloud services, technical support, and advanced web & mobile app development.',
                 icon : tick_circle,
                 width : 20,
             }
@@ -141,8 +145,28 @@ export const AboutUs = [
 export const Testimonials =[
     {
         id : 0,
-        heading : 'Why Choose Our Clinic',
-        title : "we're the Right Fit for Your Healthcare Needs",
+        heading : 'Why Choose Evvi?',
+        title : "Your Vision, Our Mission: Achieve Excellence Together",
+        items: [{
+            id:0,
+            heading:"Tailored Strategies:",
+            content:"We design customized solutions for your unique business needs.",
+        },
+        {
+            id:1,
+            heading:"Diverse Expertise:",
+            content: "From HR consulting to digital innovation, we cover all bases.",
+        },
+        {
+            id:2,
+            heading:"Results-Driven:",
+            content: "Our focus is on delivering measurable success and ROI.",
+        },
+        {
+            id:3,
+            heading:"Client-Focused:",
+            content: "Your goals guide our every move and decision.",
+        },],
         lists : [
             {
                 id : 0,
@@ -196,224 +220,227 @@ export const OurServices = [
         lists :[
             {
                 id : 0,
-                content : 'Digital Excellence',
+                content : 'Business Consulting',
+                url: '/Business_Consulting'
+            },
+            {
+                id : 1,
+                content : 'Digital Transformation',
                 url : '/Digital_Marketing',
                 
             },
             {
-                id : 1,
+                id : 2,
                 content : 'HR Consulting',
                 url : '/HR_Service',
             },
             {
-                id : 2,
+                id : 3,
                 content : 'IT Consulting',
                 url : '/IT_Development',
             },
-            // {
-            //     id : 3,
-            //     content : 'Digital Excellence',
-            // },
-        ],
+            ],
         lists_items : [
             {
                 id : 0,
-                heading : 'Explore Our Comprenensive Services',
-                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counselings',
+                heading : 'Tailored strategies for sustainable growth',
+                description : "Unlock your business's full potential with our comprehensive consulting services. From strategic planning to process optimization, we provide actionable insights that drive growth and efficiency.",
                 img : digital_excellence,
                 listo : [
                     {
                         id : 0,
                         icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
+                        content : 'Strategic Planning',
                     },
                     {
                         id : 1,
                         icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
+                        content : 'Operational Optimization',
                     },
                     {
                         id : 2,
                         icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
+                        content : 'Change Management',
                     },
                     {
                         id : 3,
                         icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
+                        content : 'Performance Improvement',
                     },
-                    {
-                        id : 4,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 5,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 6,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 7,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
+                    // {
+                    //     id : 4,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
+                    // {
+                    //     id : 5,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
+                    // {
+                    //     id : 6,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
+                    // {
+                    //     id : 7,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
                 ],
                 btn : 'Read More',
-                url : '/Digital_Marketing',
+                url : '/Business_Consulting',
             },
             {
                 id : 1,
-                heading : 'Explowre Our Comprenensive Services',
-                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counselings',
+                heading : 'Boost your brand with innovative digital strategies.',
+                description : 'Boost your online presence with our cutting-edge digital marketing solutions. We tailor strategies to amplify your brand and connect with your target audience effectively.',
                 img : hr_service,
                 listo : [
                     {
                         id : 0,
                         icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
+                        content : 'Digital Marketing Strategy',
                     },
                     {
                         id : 1,
                         icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
+                        content : 'Telemarketing & WhatsApp Marketing',
                     },
                     {
                         id : 2,
                         icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
+                        content : 'Google Ads & Analytics',
                     },
                     {
                         id : 3,
                         icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
+                        content : 'Google My Business Optimization',
                     },
-                    {
-                        id : 4,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 5,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 6,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 7,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
+                    // {
+                    //     id : 4,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
+                    // {
+                    //     id : 5,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
+                    // {
+                    //     id : 6,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
+                    // {
+                    //     id : 7,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
                 ],
                 btn : 'Read More',
-                url : '/HR_Service',
+                url : '/Digital_Marketing',
             },
             {
                 id : 2,
-                heading : 'Explore Our Comprenensive Services',
-                description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counselings',
+                heading : 'Your trusted partner for comprehensive HR solutions.',
+                description : 'People are the cornerstone of your success. Our HR Consulting services offer end-to-end support, from talent acquisition and onboarding to compliance management and employee development.',
                 img : corparate_training,
                 listo : [
                     {
                         id : 0,
                         icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
+                        content : 'Talent Acquisition & Management',
                     },
                     {
                         id : 1,
                         icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
+                        content : 'Compliance and Legal Advisory',
                     },
                     {
                         id : 2,
                         icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
+                        content : 'Employee Onboarding & Engagement',
                     },
                     {
                         id : 3,
                         icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
+                        content : 'Virtual HR Support',
                     },
-                    {
-                        id : 4,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 5,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 6,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
-                    {
-                        id : 7,
-                        icon : list_style_icon,
-                        content : 'Labouratory and Diagnostic Service',
-                    },
+                    // {
+                    //     id : 4,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
+                    // {
+                    //     id : 5,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
+                    // {
+                    //     id : 6,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
+                    // {
+                    //     id : 7,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
                 ],
                 btn : 'Read More',
-                url : '/IT_Development',
+                url : '/HR_Service',
             },
-            // {
-            //     id : 3,
-            //     heading : 'Explore Our Comprenensive Services',
-            //     description : 'We provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized CounselingWe provide a unique blend of HR Consulting, Psychometric Assessments, Behavioral Skills Training, and Personalized Counselings',
-            //     img : counseling_service,
-            //     listo : [
-            //         {
-            //             id : 0,
-            //             icon : list_style_icon,
-            //             content : 'Labouratory and Diagnostic Service',
-            //         },
-            //         {
-            //             id : 1,
-            //             icon : list_style_icon,
-            //             content : 'Labouratory and Diagnostic Service',
-            //         },
-            //         {
-            //             id : 2,
-            //             icon : list_style_icon,
-            //             content : 'Labouratory and Diagnostic Service',
-            //         },
-            //         {
-            //             id : 3,
-            //             icon : list_style_icon,
-            //             content : 'Labouratory and Diagnostic Service',
-            //         },
-            //         {
-            //             id : 4,
-            //             icon : list_style_icon,
-            //             content : 'Labouratory and Diagnostic Service',
-            //         },
-            //         {
-            //             id : 5,
-            //             icon : list_style_icon,
-            //             content : 'Labouratory and Diagnostic Service',
-            //         },
-            //         {
-            //             id : 6,
-            //             icon : list_style_icon,
-            //             content : 'Labouratory and Diagnostic Service',
-            //         },
-            //         {
-            //             id : 7,
-            //             icon : list_style_icon,
-            //             content : 'Labouratory and Diagnostic Service',
-            //         },
-            //     ]
-            // },
+            {
+                id : 3,
+                heading : 'Empower your business with cutting-edge IT solutions',
+                description : 'Stay ahead in the digital era with our IT Consulting services. We provide robust and scalable solutions, from cloud services to web and app development, ensuring your IT infrastructure meets your business needs.',
+                img : corparate_training,
+                listo : [
+                    {
+                        id : 0,
+                        icon : list_style_icon,
+                        content : 'Cloud Services (Infrastructure Creation & Maintenance)',
+                    },
+                    {
+                        id : 1,
+                        icon : list_style_icon,
+                        content : 'End-to-End Technical Support',
+                    },
+                    {
+                        id : 2,
+                        icon : list_style_icon,
+                        content : 'Website Design & Development',
+                    },
+                    {
+                        id : 3,
+                        icon : list_style_icon,
+                        content : 'Mobile App & Web App Development',
+                    },
+                    // {
+                    //     id : 4,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
+                    // {
+                    //     id : 5,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
+                    // {
+                    //     id : 6,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
+                    // {
+                    //     id : 7,
+                    //     icon : list_style_icon,
+                    //     content : 'Labouratory and Diagnostic Service',
+                    // },
+                ],
+                btn : 'Read More',
+                url : '/IT_Development'
+            },
 
         ]
     },
@@ -587,10 +614,10 @@ export const Footerend = [
         id : 0,
         content : "@2023 All rights reserved."
     },
-    {
-        id :1,
-        content : ["About Us", "News", "Career", "Privacy"]
-    }
+    // {
+    //     id :1,
+    //     content : ["About Us", "News", "Career", "Privacy"]
+    // }
 ]
 
 export const questions = [
@@ -617,21 +644,21 @@ export const answers = {
 export const About_Full = [
     {
         id:0,
-        header:"Empowering Innovators, Connecting Communities",
-        paragraph:"Your hub for cutting-edge tutorials, vibrant forums, networking events project showcase, and career opportunities in the world of technology."
+        header:"Your Partner in Transforming Business Ambitions",
+        paragraph:"Leveraging our core values of Excellence and Innovation to guide you towards unparalleled growth and success."
     },
     {
         id:1,
         header:"About",
         subtitle:"Make Your Choice for Greatness!",
-        paragraph1:"Welcome to Evvi Solutions, the origin of our journey lies in the realm of HR Consulting services, where we discovered the undeniable power of talents as the cornerstone of any success story. Recognizing that talents could be cultivated, our vision expanded, embracing the profound notion of individual empowerment as the gateway to organizational triumph. This realization led us to delve into the intricacies of individuals—their abilities, personalities, interests, and values—an understanding achieved through comprehensive psychometric assessments. To further nurture these talents, we incorporated transformative behavioral skills training into our offerings.",
-        paragraph2:"In a world where support is paramount, especially in times of confusion and the quest for clarity, we identified the critical need for counseling services. In the digital age, we recognized the imperative for digital excellence, seamlessly integrating it with our array of services. At Evvi Solutions, our journey is a testament to the belief that every individual holds the power to shape their success story, and we are here to guide, support, and empower every step of the way."
+        paragraph1:"At Evvi Solutions, we are dedicated to being more than just a service provider; we are your strategic partner in achieving business excellence. With a focus on empowering startups, entrepreneurs, solopreneurs, and SMEs, we bring a wealth of expertise across multiple domains. Our integrated approach combines Business Consulting, Digital Excellence, and HR Solutions to offer tailored strategies and solutions that drive growth and success. By leveraging our core values of Excellence, Value-driven, Versatility, and Innovation, we ensure that every engagement is marked by integrity, adaptability, and a commitment to delivering impactful results. Discover how our holistic support can transform your business aspirations into reality.",
+        
     },
     {
         id:2,
-        header:"Our Mission",
-        title:"Evvi: A Legacy of Aspiration",
-        paragraph1:"n the heart of our identity lies a tale as ancient as time, a legacy that echoes the aspirations of an ancient king. Evvi, a name of Tamil origin, signifies the profound journey of making flowing water reach higher landscapes. This echoes the spirit of an ancient ruler who sought not just to rule but to uplift. Like the gentle stream that navigates the terrain, we are dedicated to helping individuals and organizations reach greater heights.",
+        // header:"Our Mission",
+        header:"Evvi: A Legacy of Aspiration",
+        paragraph1:"In the heart of our identity lies a tale as ancient as time, a legacy that echoes the aspirations of an ancient king. Evvi, a name of Tamil origin, signifies the profound journey of making flowing water reach higher landscapes. This echoes the spirit of an ancient ruler who sought not just to rule but to uplift. Like the gentle stream that navigates the terrain, we are dedicated to helping individuals and organizations reach greater heights.",
         paragraph2:"The name Evvi is more than a label; it's a commitment to a legacy of service, inspiration, and the relentless pursuit of excellence. As we carry this heritage forward, we strive to be the guiding force in every success story, just as the ancient king envisioned."
     },
     {

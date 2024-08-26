@@ -7,29 +7,29 @@ import { FcGoogle } from "react-icons/fc";
 
 const Hero = () => {
   return (
-    <div className="flex w-[90%] gap-5 m-auto h-full max-tablet:flex-col max-tablet:gap-0">
+    <div className="flex items-center w-[90%] gap-5 m-auto h-full max-tablet:flex-col max-tablet:gap-0">
       <div className="absolute w-[80%] -z-20">
         <div className="absolute right-0 top-0 w-60 h-72 blur-[200px] -z-10 bg-t-secondary"></div>
       </div>
       <div className="w-[50%] p-2 flex flex-col gap-10 max-mobile:gap-5 mt-24 max-mobile:mt-20 max-tablet:w-full">
-        <div>
+        {/* <div>
           <h3 className="bg-btn w-fit rounded-full desktop:px:5 desktop:py-3 px-3 py-1 max-mobile:text-xs max-mobile:px-5 max-mobile:py-3 max-mobile:w-48">
             {HeroText[0].content}
           </h3>
-        </div>
+        </div> */}
 
         <div>
-          <h1 className="text-6xl desktop:text-8xl max-mobile:text-4xl max-mobile:w-[22rem] font-semibold">
-            {HeroText[1].content}
+          <h1 className="text-5xl desktop:text-8xl max-mobile:text-4xl max-mobile:w-[22rem] font-semibold">
+            {HeroText[0].content}
           </h1>
         </div>
 
         <div className="flex gap-10 max-mobile:gap-2">
           <Link
-            to={HeroText[2].url}
+            to={HeroText[1].url}
             className="btn-primary desktop:text-2xl max-mobile:text-sm flex items-center max-mobile:w-[10rem] gap-3"
           >
-            {HeroText[2].content}
+            {HeroText[1].content}
             <FaArrowUpRightFromSquare />
           </Link>
           {/* <p className="btn-secondary desktop:text-2xl max-mobile:text-sm flex items-center max-mobile:w-[10.4rem] gap-1">

@@ -110,7 +110,7 @@ const Header = () => {
                         key={subItem.id}
                         to={subItem.url}
                         onClick={closeMenu}
-                        className="block px-4 py-2 font-medium text-sm text-b-primary bg-t-primary hover:text-t-primary hover:bg-b-primary transition"
+                        className="block p-4 font-medium text-sm text-b-primary bg-t-primary hover:text-t-primary hover:bg-b-primary transition"
                       >
                         <motion.div
                           initial={{ opacity: 0, x: -90, zIndex: -2 }}

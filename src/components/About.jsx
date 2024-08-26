@@ -37,8 +37,8 @@ const About = () => {
             <p className="line-clamp-5 font-medium">{about.description}</p>
             <ul>
               {about.lists.map((list) => (
-                <li key={list.id} className="flex items-center mb-2">
-                  <img src={list.icon} width={list.width} alt={list.icon} className="mr-2" />
+                <li key={list.id} className="flex items-center max-mobile:items-start max-mobile:text-sm mb-2">
+                  <img src={list.icon} width={list.width} alt={list.icon} className="max-mobile:mt-1 mr-2" />
                   {list.content}
                 </li>
               ))}

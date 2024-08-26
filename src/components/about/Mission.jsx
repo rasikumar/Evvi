@@ -1,25 +1,50 @@
-import { aboutus } from "../../assets"
+import { motion, useInView } from "framer-motion"
+import { legacy } from "../../assets"
 import { About_Full } from "../../constant"
+import { useRef } from "react"
 
 const content = About_Full[2]
 
 const Mission = () => {
+    const itemRef = useRef(false);
+    const inview =  useInView(itemRef, {once:true});
+
   return (
-    <div className="flex max-tablet:flex-col max-mobile:px-10 w-full py-24 px-24 items-start gap-20 bg-t-primary"> 
-        <div className="w-[50%] max-tablet:w-full flex flex-col gap-4">
+    <div className="flex items-center max-tablet:flex-col max-mobile:px-4 max-mobile:py-10 max-tablet:gap-10 w-full p-24 gap-20 bg-t-primary"> 
+        <motion.div
+            initial="hidden"
+            animate={inview ? "visible" : "hidden"}
+            ref={itemRef}
+            variants={{
+                hidden: {opacity: 0, x : -45},
+                visible : { opacity : 1, x : 0},
+            }}  
+            transition={{
+                duration:1,
+                type : "spring",
+                ease : 'linear',
+            }}
+        className="w-[50%] max-tablet:w-full flex flex-col gap-4">
             <h1 className="text-xl max-tablet:text-lg font-medium text-white">{content.title}</h1>
-            <h1 className="text-white text-5xl max-tablet:text-3xl font-medium">{content.header}</h1>
+            <h1 className="text-white text-4xl max-tablet:text-2xl font-medium">{content.header}</h1>
             <p className="text-white leading-snug max-tablet:text-sm">{content.paragraph1}</p>
             <p className="text-white leading-snug max-tablet:text-sm">{content.paragraph2}</p>
-        </div>
-        <div className="w-[20%] max-tablet:w-[40%] max-tablet:pb-40 max-mobile:pb-24 flex flex-col gap-10 -mt-10">
-            <div className="flex gap-10">
-                <img src={aboutus} width={200} className="rounded-[5rem] rounded-br-none bg-slate-200"  alt="missionImage" />
-                <img src={aboutus} width={200}  className="rounded-[5rem] rounded-bl-none bg-slate-200"  alt="missionImage" />
-            </div>
-            <div className="relative">
-                <img src={aboutus} width={200} className="rounded-[5rem] rounded-tr-none -rotate-45 absolute left-[7.5rem] max-mobile:left-[5rem] top-4 bg-slate-200" alt="missionImage" />
-            </div>
+        </motion.div>
+        <div className="w-[50%] max-tablet:w-full">
+            <motion.img
+            initial="hidden"
+            animate={inview ? "visible" : "hidden"}
+            ref={itemRef}
+            variants={{
+                hidden: {opacity: 0, x : 45},
+                visible : { opacity : 1, x : 0},
+            }}  
+            transition={{
+                duration:1,
+                type : "spring",
+                ease : 'linear',
+            }}
+            src={legacy} alt="legacy_image" />
         </div>
     </div>
   )

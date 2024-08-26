@@ -23,7 +23,7 @@ const Team = () => {
     <div className="flex flex-col gap-16 justify-center items-center h-[800px] bg-gray-900">
       <div className="flex w-[80%] max-mobile:w-[85%] max-mobile:leading-snug flex-col items-center gap-4">
         <h1 className="text-white text-3xl font-semibold">Our Teams</h1>
-        <p className="text-white">Our team is made up of passionate individuals who strive to create high-quality products and services. We believe in the power of collaboration and communication to achieve our goals.</p>
+        <p className="text-white">Meet our team — the driving force behind our commitment to excellence. With gratitude to everyone who&apos;s ever been part of our journey, we celebrate their contributions that have shaped who we are today.</p>
       </div>
       <div className="relative w-[500px] max-mobile:w-[300px] max-mobile:h-[300px] h-[500px] border-2 border-t-secondary rounded-full">
         <div className="relative left-[-50%] w-full h-full flex justify-center items-center cursor-pointer">

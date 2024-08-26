@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ServiceSlide = () => {
   const [state, setState] = useState(1);
-  const [showSecond, setShowSecond] = useState(false)
+  // const [showSecond, setShowSecond] = useState(false)
 
     const action = (index) => {
         setState(index)
@@ -14,13 +14,14 @@ const ServiceSlide = () => {
       const itemOneRender = lists[0].content;
       const itemTwoRender = lists[1].content;
       const itemThreeRender = lists[2].content;
-      // const itemFourthRender = lists[3].content;
+      const itemFourthRender = lists[3].content;
 
       const { lists_items } = OurServices[0];
       const item1 = lists_items[0].listo;
       const item2 = lists_items[1].listo;
       const item3 = lists_items[2].listo;
-      // const item4 = lists_items[3].listo;
+      const item4 = lists_items[3].listo;
+      
 
   return (
       <div className="box">
@@ -28,6 +29,7 @@ const ServiceSlide = () => {
             <div className={`transition-all delay-100 tab font-medium ${state === 1 ? 'active-tab' : 'text-white'}`} onClick={() => action(1) }>{itemOneRender}</div>
             <div className={`transition-all delay-100 tab font-medium ${state === 2 ? 'active-tab' : 'text-white'}`} onClick={() => action(2)}>{itemTwoRender}</div>
             <div className={`transition-all delay-100 tab font-medium ${state === 3 ? 'active-tab' : 'text-white'}`} onClick={() => action(3)}>{itemThreeRender}</div>
+            <div className={`transition-all delay-100 tab font-medium ${state === 4 ? 'active-tab' : 'text-white'}`} onClick={() => action(4)}>{itemFourthRender}</div>
         </div>
 
         <div className={`content rounded-b-2xl rounded-tr-xl ${ state === 1 ? 'active-content': '' }`}>
@@ -42,14 +44,14 @@ const ServiceSlide = () => {
               <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[0].description}</p>
               <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
                 <div className='flex flex-col gap-4 max-mobile:gap-1'>
-                  {item1.slice(0, 4).map(i => (
+                  {item1.map(i => (
                     <div key={i.content} className='flex items-center gap-2'  >
                       <img src={i.icon} alt="" width={15} />
                       <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
                     </div>
                   ))}
                 </div>
-                <div className={`flex flex-col gap-4 max-mobile:${showSecond ? 'block' : 'hidden'}`}>
+                {/* <div className={`flex flex-col gap-4 max-mobile:${showSecond ? 'block' : 'hidden'}`}>
                   {item1.slice(4, 8).map(i => (
                     <div key={i.content} className='flex items-center gap-2'>
                       <img src={i.icon} alt="" width={15} className='max-mobile:mt-1'/>
@@ -66,7 +68,7 @@ const ServiceSlide = () => {
                   <button className='max-mobile:block hidden mt-5' onClick={() => setShowSecond(false)}>
                     Less
                   </button>
-                )}
+                )} */}
               </div>
                 <Link to={lists_items[0].url} className="btn-secondary">{lists_items[0].btn}</Link>
             </div>
@@ -85,14 +87,14 @@ const ServiceSlide = () => {
                   <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[1].description}</p>
                   <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
                    <div className='flex flex-col gap-4 max-mobile:gap-1'>
-                     {item2.slice(0, 4).map(i => (
+                     {item2.map(i => (
                   <div key={i.content} className='flex items-center gap-2'>
                     <img src={i.icon} alt="" width={15} />
                     <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
                   </div>
                 ))}
               </div>
-              <div className={`flex flex-col gap-4 max-mobile:${showSecond ? 'block' : 'hidden'}`}>
+              {/* <div className={`flex flex-col gap-4 max-mobile:${showSecond ? 'block' : 'hidden'}`}>
                 {item2.slice(4, 8).map(i => (
                   <div key={i.content} className='flex items-center gap-2'>
                     <img src={i.icon} alt="" width={15} className='max-mobile:mt-1'/>
@@ -109,14 +111,14 @@ const ServiceSlide = () => {
                 <button className='max-mobile:block hidden mt-5' onClick={() => setShowSecond(false)}>
                   Less
                 </button>
-              )}
+              )} */}
             </div>
             <Link to={lists_items[1].url} className="btn-secondary">{lists_items[1].btn}</Link>
           </div>
           </div>
         </div>
 
-        <div className={`content rounded-b-2xl rounded-tl-xl ${ state === 3 ? 'active-content': '' }`}>
+        <div className={`content rounded-xl ${ state === 3 ? 'active-content': '' }`}>
           <div className='flex max-laptop:flex-col flex-row w-full max-mobile:gap-3 gap-10 items-center'>
             <div className='w-full min-w-[40%]'>
               <img src={lists_items[2].img} alt="" className='w-full rounded-3xl'/>
@@ -128,14 +130,14 @@ const ServiceSlide = () => {
               <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[2].description}</p>
               <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
                 <div className='flex flex-col gap-4 max-mobile:gap-1'>
-                  {item3.slice(0, 4).map(i => (
+                  {item3.map(i => (
                     <div key={i.content} className='flex items-center gap-2'>
                       <img src={i.icon} alt="" width={15} />
                       <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
                     </div>
                   ))}
                 </div>
-                <div className={`flex flex-col gap-4 max-mobile:${showSecond ? 'block' : 'hidden'}`}>
+                {/* <div className={`flex flex-col gap-4 max-mobile:${showSecond ? 'block' : 'hidden'}`}>
                   {item3.slice(4, 8).map(i => (
                     <div key={i.content} className='flex items-center gap-2'>
                       <img src={i.icon} alt="" width={15} className='max-mobile:mt-1'/>
@@ -152,9 +154,52 @@ const ServiceSlide = () => {
                   <button className='max-mobile:block hidden mt-5' onClick={() => setShowSecond(false)}>
                     Less
                   </button>
-                )}
+                )} */}
               </div>
             <Link to={lists_items[2].url} className="btn-secondary">{lists_items[2].btn}</Link>
+            </div>
+          </div>
+        </div>
+
+        <div className={`content  rounded-b-2xl rounded-tl-xl ${ state === 4 ? 'active-content': '' }`}>
+          <div className='flex max-laptop:flex-col flex-row w-full max-mobile:gap-3 gap-10 items-center'>
+            <div className='w-full min-w-[40%]'>
+              <img src={lists_items[3].img} alt="" className='w-full rounded-3xl'/>
+            </div>
+            <div className='flex flex-col gap-4 max-mobile:gap-3'>
+              <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
+                {lists_items[3].heading}
+              </h1>
+              <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[3].description}</p>
+              <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
+                <div className='flex flex-col gap-4 max-mobile:gap-1'>
+                  {item4.map(i => (
+                    <div key={i.content} className='flex items-center gap-3'>
+                      <img src={i.icon} alt="" width={15} />
+                      <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
+                    </div>
+                  ))}
+                </div>
+                {/* <div className={`flex flex-col gap-4 max-mobile:${showSecond ? 'block' : 'hidden'}`}>
+                  {item4.slice(4, 8).map(i => (
+                    <div key={i.content} className='flex items-center gap-2'>
+                      <img src={i.icon} alt="" width={15} className='max-mobile:mt-1'/>
+                      <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
+                    </div>
+                  ))}
+                </div>
+                {!showSecond && (
+                  <button className='max-mobile:block hidden mt-5' onClick={() => setShowSecond(true)}>
+                    Read More
+                  </button>
+                )}
+                {showSecond && (
+                  <button className='max-mobile:block hidden mt-5' onClick={() => setShowSecond(false)}>
+                    Less
+                  </button>
+                )} */}
+              </div>
+            <Link to={lists_items[3].url} className="btn-secondary">{lists_items[3].btn}</Link>
             </div>
           </div>
         </div>
