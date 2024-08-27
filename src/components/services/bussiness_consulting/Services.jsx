@@ -1,8 +1,9 @@
 import { Business_Consulting } from "../constant";
 
 const Services = () => {
-    const { header,subheader,items } = Business_Consulting[1]
-  return (
+    const { header,subheader,items } = Business_Consulting[1];
+
+    return (
     <div className="flex flex-col -mt-24 items-center max-tablet:flex-col gap-4 w-full p-14 max-tablet:p-5 max-tablet:gap-8 max-mobile:gap-2">
         <h1 className="text-2xl font-semibold ">{header}</h1>
         <p className="font-medium">{subheader}</p>

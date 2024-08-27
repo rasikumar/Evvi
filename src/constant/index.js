@@ -265,7 +265,7 @@ export const OurServices = [
                     {
                         id : 3,
                         icon : list_style_icon,
-                        content : 'Performance Improvement',
+                        content : 'Workforce Management',
                     },
                     // {
                     //     id : 4,
@@ -672,7 +672,7 @@ export const About_Full = [
     {
         id:3,
         header: "Join us",
-        paragraph : "Join Evvi Solutions to expand your tech skills and knowledge! Learn programming languages, technical tools, soft skills and industry insights. Gain project management expertise, explore entrepreneurship, and embrace continuous learning. Elevate your tech career with our supportive community!",
+        paragraph : "We're here to help you achieve your business goals! Whether you have a question, need more information, or want to explore how we can work together, feel free to reach out. Let’s start a conversation and discover the path to success together.",
         btn : "Contact Us",
         url: '/Contact_Us'
         

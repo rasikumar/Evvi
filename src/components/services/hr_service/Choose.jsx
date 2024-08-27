@@ -11,7 +11,7 @@ const Choose = () => {
                     <h1 className="text-xl font-semibold text-white">{title}</h1> 
                     <p className="text-sm font-medium">{heading}</p>
                 </div>
-                <p className="leading-tight font-medium"><span className="font-bold">{description.slice(0,14)}</span>{description.slice(14, 276)}</p>
+                <p className="leading-tight font-medium">{description}</p>
             </div>
         </div>
     </div>

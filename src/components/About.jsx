@@ -1,4 +1,3 @@
-"use-client";
 import { Link } from "react-router-dom";
 import { codingImage, digitalImage } from "../assets";
 import { AboutUs } from "../constant";
