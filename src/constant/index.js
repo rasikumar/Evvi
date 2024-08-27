@@ -449,23 +449,31 @@ export const OurServices = [
 export const ServicePage =[
     {
         id :0,
-        header : 'Digital Excellence',
+        header : 'Business Consulting',
+        content : 'We are a renowned digital agency, dedicated to providing high-quality, innovative, and user-centric digital solutions. Our team of experts is committed to creating stunning and engaging user experiences through our digital marketing and development services.',
+        img: digital_excellence,
+        btn:"Read More",
+        url : '/Business_Consulting'
+    },
+    {
+        id :1,
+        header : 'Digital Transformation',
         content : 'We are a renowned digital agency, dedicated to providing high-quality, innovative, and user-centric digital solutions. Our team of experts is committed to creating stunning and engaging user experiences through our digital marketing and development services.',
         img: digital_excellence,
         btn:"Read More",
         url : '/Digital_Marketing'
     },
     {
-        id:1,
-        header: "HR Consulting",
-        content : 'We provide comprehensive HR solutions, including employee onboarding, training, and development, employee benefits, and performance management. Our team of experts is committed to providing exceptional service and customer satisfaction.',
-        img: hr_service,
+        id:2,
+        header : "HR Service",
+        content : 'We provide IT solutions, including software development, infrastructure management, and cybersecurity. Our team of experts is committed to providing exceptional service and customer satisfaction.',
+        img: corparate_training,
         btn:"Read More",
         url : '/HR_Service'
     },
     {
-        id:2,
-        header : "IT Consulting",
+        id:3,
+        header : "IT Development",
         content : 'We provide IT solutions, including software development, infrastructure management, and cybersecurity. Our team of experts is committed to providing exceptional service and customer satisfaction.',
         img: corparate_training,
         btn:"Read More",
@@ -574,7 +582,7 @@ export const Address = [
     {
         id : 0,
         icon : location_icon,
-        content : "Galaxy tower, textile circle, Sun city - 2530, Canada"
+        content : "Evvi Solutions Private Limited,TCE - TBI,Thiagarajar Advanced Research Centre,Thiruparankundram, Madurai -625015"
     },
     {
         id : 1,
@@ -584,7 +592,7 @@ export const Address = [
     {
         id : 2,
         icon : email_icon,
-        content : "dummmy@gmail.com"
+        content : "info@evvisolutions.com"
     }
 ]
 
@@ -612,7 +620,7 @@ export const Supports = [
 export const Footerend = [
     {
         id : 0,
-        content : "@2023 All rights reserved."
+        content : "@2024 All rights reserved."
     },
     // {
     //     id :1,
@@ -672,12 +680,12 @@ export const About_Full = [
 ]
 
 export const Teams = [
-    { id: 1, src: test1, contentId: "content1", title:"Gopinath Pandian", subTitle : "CEO", urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
-    { id: 2, src: test1, contentId: "content2", title:"Shanthi Subramanian", subTitle : "Founder",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
-    { id: 3, src: test1, contentId: "content3", title:"Nandha Kumar", subTitle : "Creative Designer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
-    { id: 4, src: test1, contentId: "content4", title:"Sathya Priya", subTitle : "Digital Marketer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 1, src: test1, contentId: "content1", title:"Visutha", subTitle : "React Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 2, src: test1, contentId: "content2", title:"Gopinath Pandian", subTitle : "CEO", urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 3, src: test1, contentId: "content3", title:"Shanthi Subramanian", subTitle : "Founder",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 4, src: test1, contentId: "content4", title:"Nandha Kumar", subTitle : "Creative Designer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
     { id: 5, src: test1, contentId: "content5", title:"Rasi Kumar", subTitle : "React Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en",},
-    { id: 6, src: test1, contentId: "content6", title:"Sankar", subTitle : "Flutter Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
-    { id: 7, src: test1, contentId: "content7", title:"Mohamed Fazil", subTitle : "MERN Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
-    { id: 8, src: test1, contentId: "content8", title:"Visutha", subTitle : "React Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 6, src: test1, contentId: "content6", title:"Sathya Priya", subTitle : "Digital Marketer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 7, src: test1, contentId: "content7", title:"Sankar", subTitle : "Flutter Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 8, src: test1, contentId: "content8", title:"Mohamed Fazil", subTitle : "MERN Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
   ];

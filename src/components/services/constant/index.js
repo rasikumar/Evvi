@@ -126,7 +126,7 @@ export const HR_Content = [
       "Evvi Solutions is a leading Recruitment Consultancy having corporate office & branch office in Madurai. Evvi Solutions has a rich customer base in all over india. We provide superior value added services within strict time constraints to offer maximum benefits to our clients.",
   },
 ];
-export const Marketing_content = [
+export const Business_Consulting = [
   {
     id: 0,
     header: "Staffing Solution for You & New Approach to Recruting",

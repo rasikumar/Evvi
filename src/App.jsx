@@ -9,6 +9,7 @@ import ServiceList from "./components/services/ServiceList"
 import HR_Service from "./components/services/hr_service/HR_Service";
 import IT_Development from "./components/services/it_development/IT_Development";
 import Digital_Marketing from "./components/services/digital_marketing/Digital_Marketing";
+import Business_Consulting from "./components/services/bussiness_consulting/Business_Consulting"
 
 // About Page
 import About_Full from "./components/about/About_Full";
@@ -54,6 +55,7 @@ const App = () => {
           <Route path="/HR_Service" element={<HR_Service />} />
           <Route path="/Digital_Marketing" element={<Digital_Marketing />} />
           <Route path="/IT_Development" element={<IT_Development />} />
+          <Route path="/Business_Consulting" element={<Business_Consulting />} />
 
           {/* BlogPages */}
 

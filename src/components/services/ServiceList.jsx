@@ -1,17 +1,12 @@
 import { Link } from "react-router-dom";
 import { ServicePage } from "../../constant";
-import { motion, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const ServiceList = () => {
-  const itemRef = useRef(false);
-  const { scrollYProgress } = useScroll({
-    target: itemRef,
-    offset: ["1 0.00000001", "1 1"],
-  });
 
+  
   return (
-    <div className="grid grid-cols-1  w-[90%] max-tablet:py-8 max-mobile:gap-10 m-auto py-10 gap-32">
+    <div className="grid grid-cols-1  w-[90%] max-tablet:py-8 max-mobile:gap-10 m-auto py-12 gap-2">
       <div className="flex flex-col gap-2 p-10">
         <motion.h2
           className="text-3xl text-center font-bold"
@@ -27,8 +22,7 @@ const ServiceList = () => {
           animate={{ opacity: 1, x: "0px" }}
           transition={{ duration: 1 }}
         >
-          We offer a wide range of services tailored to your specific needs.
-          From web development to digital marketing, we have got you covered.
+          Transform your business with our tailored solutions
         </motion.p>
         <motion.p
           className="text-center max-mobile:text-sm"
@@ -43,25 +37,17 @@ const ServiceList = () => {
       </div>
       <div className="flex flex-col gap-10">
         {ServicePage.map((i) => (
-          <motion.div
+          <div
             key={i.id}
-            ref={itemRef}
-            style={{
-              scale: scrollYProgress,
-              opacity: scrollYProgress,
-              transition: { duration: 0.5 },
-              boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",
-              transform: `translateY(${scrollYProgress * -10}px)`,
-            }}
             className="flex max-mobile:flex-col p-5 items-center bg-slate-200 rounded-xl"
           >
-            <div className="flex flex-col gap-5 p-3">
+            <motion.div className="flex flex-col gap-5 p-3">
               <h1 className="font-semibold text-xl">{i.header}</h1>
               <p className="text-sm font-medium">{i.content}</p>
               <Link to={i.url} className="btn-primary w-32">
                 {i.btn}
               </Link>
-            </div>
+            </motion.div>
             <motion.img
               whileHover={{
                 scale: 1.021,
@@ -75,7 +61,7 @@ const ServiceList = () => {
               alt={i.header}
               className="rounded-2xl w-96"
             />
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>

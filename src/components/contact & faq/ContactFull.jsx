@@ -3,7 +3,7 @@ import Contact from "./Contact";
 
 const ContactFull = () => {
   return (
-    <div>
+    <div className="w-[90%] max-tablet:py-8 max-mobile:gap-10 m-auto py-12 gap-20">
       <div className="flex flex-col gap-2 p-10">
         <motion.h2
           className="text-3xl text-center font-bold"
