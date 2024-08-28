@@ -2,7 +2,7 @@ import Main from "./Main"
 import Card from './card/Card'
 // import Services from "./Services"
 import Domains from "./Domains"
-import Choose from "./Choose"
+// import Choose from "./Choose"
 import { motion } from "framer-motion"
 
 
@@ -30,7 +30,7 @@ const Digital_Marketing = () => {
       {/* <Services/> */}
       <Card/>
       <Domains/>
-      <Choose/>
+      {/* <Choose/> */}
     </motion.div>
   )
 }

@@ -3,8 +3,8 @@ import {
   bigShoe1,
   bigShoe2,
   bigShoe3,
-  customer1,
-  customer2,
+  // customer1,
+  // customer2,
   shoe4,
   shoe5,
   shoe6,
@@ -32,58 +32,58 @@ export const shoes = [
 export const products = [
   {
     imgURL: shoe4,
-    name: "Nike Air Jordan-01",
-    price: "$200.20",
+    name: "Digital Marketing Strategy",
+    price: "Crafting tailored plans to enhance your online presence and drive growth.",
   },
   {
     imgURL: shoe5,
-    name: "Nike Air Jordan-10",
-    price: "$210.20",
+    name: "Telemarketing & WhatsApp Marketing",
+    price: "Leveraging direct communication channels to boost engagement and conversions.",
   },
   {
     imgURL: shoe6,
-    name: "Nike Air Jordan-100",
-    price: "$220.20",
+    name: "Google Ads & Analytics",
+    price: "Optimizing ad spend and tracking performance for maximum ROI.",
   },
   {
     imgURL: shoe7,
-    name: "Nike Air Jordan-001",
-    price: "$230.20",
+    name: "Google My Business Optimization",
+    price: "Improving your local search visibility and attracting more customers.",
   },
 ];
 
 export const services = [
   {
     imgURL: truckFast,
-    label: "Free shipping",
-    subtext: "Enjoy seamless shopping with our complimentary shipping service.",
+    label: "Startups",
+    subtext: "Tailored strategies to get your business off the ground and attract your first customers.",
   },
   {
     imgURL: shieldTick,
-    label: "Secure Payment",
+    label: "SMEs",
     subtext:
-      "Experience worry-free transactions with our secure payment options.",
+      "Scalable solutions to enhance your digital footprint and drive growth.",
   },
   {
     imgURL: support,
-    label: "Love to help you",
-    subtext: "Our dedicated team is here to assist you every step of the way.",
+    label: "Solopreneurs",
+    subtext: "Personalized services to maximize your reach and streamline your digital efforts.",
   },
 ];
 
-export const reviews = [
-  {
-    imgURL: customer1,
-    customerName: "Morich Brown",
-    rating: 4.5,
-    feedback:
-      "The attention to detail and the quality of the product exceeded my expectations. Highly recommended!",
-  },
-  {
-    imgURL: customer2,
-    customerName: "Lota Mongeskar",
-    rating: 4.5,
-    feedback:
-      "The product not only met but exceeded my expectations. I'll definitely be a returning customer!",
-  },
-];
+// export const reviews = [
+//   {
+//     imgURL: customer1,
+//     customerName: "Morich Brown",
+//     rating: 4.5,
+//     feedback:
+//       "The attention to detail and the quality of the product exceeded my expectations. Highly recommended!",
+//   },
+//   {
+//     imgURL: customer2,
+//     customerName: "Lota Mongeskar",
+//     rating: 4.5,
+//     feedback:
+//       "The product not only met but exceeded my expectations. I'll definitely be a returning customer!",
+//   },
+// ];

@@ -30,6 +30,7 @@ import value from '../assets/value.jpg'
 import mission from '../assets/mission.jpeg'
 import aboutus from '../assets/aboutus.png'
 import legacy from '../assets/legecy.png'
+import product from "../assets/product.jpg"
 
 export {
     date_icon,
@@ -64,4 +65,5 @@ export {
     mission,
     aboutus,
     legacy,
+    product,
 }

@@ -1,11 +1,11 @@
-import { star } from "../assets/icons";
+// import { star } from "../assets/icons";
 
 // eslint-disable-next-line react/prop-types
 function ProductCard({ imgURL, name, price }) {
   return (
     <div className="flex flex-col w-fit  justify-center">
       <img src={imgURL} className="w-[18rem] max-tablet:w-[15rem] flex items-center justify-center mr-4" />
-      <div className="flex">
+      {/* <div className="flex">
         <img
           src={star}
           className="mt-3"
@@ -14,7 +14,7 @@ function ProductCard({ imgURL, name, price }) {
           height={24}
         />
         <p className="mt-5 p-1 w-fit"> 4.5</p>
-      </div>
+      </div> */}
       <h3 className="w-fit">{name}</h3>
       <p className="w-fit">{price}</p>
     </div>

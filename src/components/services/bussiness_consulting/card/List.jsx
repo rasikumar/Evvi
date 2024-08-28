@@ -27,10 +27,13 @@ const Card = ({ setSelected, item }) => {
 };
 
 export default function List({ setSelected }) {
+  const { header,subheader } = Business_Consulting[1];
   return (
-    <div className="p-4 -mt-24">
-      <h1 className="text-center font-bold text-4xl mb-8">Services</h1>
-      <div className="columns-2 md:columns-3 p-5 gap-12">
+    <div className="px-16 max-mobile:px-8 py-10 flex flex-col gap-4 w-full -mt-24">
+      <h1 className="text-center font-bold text-4xl mb-8">{header}</h1>
+      <p className="font-medium">{subheader}</p>
+      <p></p>
+      <div className="flex max-tablet:flex-wrap p-5 gap-12">
         {Business_Consulting[1].items.map((item) => (
           <Card key={item.id} setSelected={setSelected} item={item} />
         ))}

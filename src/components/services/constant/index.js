@@ -140,89 +140,89 @@ export const Business_Consulting = [
       {
         id: 0,
         url: service_image,
-        title: "Recruitment Excellence",
+        title: "Strategic Planning",
         description:
-          "Discover top talents effortlessly. We handle the hiring process, ensuring the perfect fit for your team.",
+          "Develop and implement strategic plans that align with your business goals, driving growth and achieving long-term success.",
       },
       {
         id: 1,
         url: service_image,
-        title: "Payroll Simplified",
+        title: "Operations Optimization",
         description:
-          "Streamline your payroll. Our experts manage everything from structuring to compliance, giving you peace of mind.",
+          "Enhance your business operations by identifying inefficiencies and streamlining processes to boost productivity and reduce costs.",
       },
       {
         id: 2,
         url: service_image,
-        title: "Policy Craftsmanship",
+        title: "Change Management",
         description:
-          "Tailor-made policies for your unique needs. Our experts ensure your workplace policies are clear, fair, and compliant.",
+          "Navigate organizational transitions smoothly with expert guidance, ensuring minimal disruption and effective adaptation.",
       },
       {
         id: 3,
         url: service_image,
-        title: "Employee Lifecycle Support",
+        title: "Workforce Management",
         description:
-          "Nurture your team from onboarding to offboarding. We provide comprehensive support at every stage.",
+          "Optimize your workforce strategies to align with business objectives, enhance employee engagement, and improve overall effectiveness.",
       },
-      {
-        id: 4,
-        url: service_image,
-        title: "Performance Mastery",
-        description:
-          "Empower your team to excel. Our programs enhance performance and encourage professional growth.",
-      },
-      {
-        id: 5,
-        url: service_image,
-        title: "Compliance Assurance",
-        description:
-          "Stay legally sound. Our team ensures your HR practices adhere to all regulations, minimizing risks.",
-      },
+      // {
+      //   id: 4,
+      //   url: service_image,
+      //   title: "Performance Mastery",
+      //   description:
+      //     "Empower your team to excel. Our programs enhance performance and encourage professional growth.",
+      // },
+      // {
+      //   id: 5,
+      //   url: service_image,
+      //   title: "Compliance Assurance",
+      //   description:
+      //     "Stay legally sound. Our team ensures your HR practices adhere to all regulations, minimizing risks.",
+      // },
     ],
   },
   {
     id: 2,
-    title: "We are specialized",
+    title: "Why Choose Our Business Consulting Services?",
     description:
-      "We are a leading Manpower Consultancy Organization which offers Manpower Services to all industries, MNCs, Limited / Private Limited Companies, Firms etc. for their IT & Non-IT Functions.",
+      "At Evvi Solutions, our Business Consulting services are tailored to meet the diverse needs of startups, SMEs, and growing businesses. Our deep industry knowledge and commitment to excellence enable us to deliver innovative solutions that drive real results.",
     description1:
-      "We concentrate in providing Recruitment for Technical (Vanilla to Niche Technologies) and Non-Technical industry.",
+      "Here’s why our clients choose us:",
     list: [
       {
         id: 0,
-        title: "Expertise Domain of Recruitment",
+        title: "Unlock Your Business Potential with Our Expert Consulting",
         items: [
           {
             id: 0,
             img: domains,
-            content: "Automative technologies Services",
+            content: "Tailored Solutions",
           },
           {
             id: 1,
             img: domains,
-            content: "Telematics and embedded Elctronics",
+            content: "Broad Expertise",
           },
           {
             id: 2,
             img: domains,
-            content: "Manufacturing and process industries",
+            content: "Proven Success",
           },
           {
             id: 3,
             img: domains,
-            content: "Electrical and electronucs services",
+            content: "Comprehensive Approach",
           },
-          {
-            id: 4,
-            img: domains,
-            content: "Telematics and embedded Electronics",
-          },
-          {
-            id: 5,
-            img: domains,
-            content: "Solar and power industry",
-          },
+          // {
+          //   id: 4,
+          //   img: domains,
+          //   content: "Telematics and embedded Electronics",
+          // },
+          // {
+          //   id: 5,
+          //   img: domains,
+          //   content: "Solar and power industry",
+          // },
         ],
       },
     ],

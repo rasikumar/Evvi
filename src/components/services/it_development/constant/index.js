@@ -3,8 +3,8 @@ import {
   bigShoe1,
   bigShoe2,
   bigShoe3,
-  customer1,
-  customer2,
+  // customer1,
+  // customer2,
   shoe4,
   shoe5,
   shoe6,
@@ -32,58 +32,58 @@ export const shoes = [
 export const products = [
   {
     imgURL: shoe4,
-    name: "Nike Air Jordan-01",
-    price: "$200.20",
+    name: "Cloud Services (Infrastructure Creation & Maintenance)",
+    price: "Build and maintain a scalable and secure cloud infrastructure tailored to your business needs.",
   },
   {
     imgURL: shoe5,
-    name: "Nike Air Jordan-10",
-    price: "$210.20",
+    name: "End-to-End Technical Support",
+    price: "Comprehensive support to resolve technical issues swiftly and keep your operations running smoothly.",
   },
   {
     imgURL: shoe6,
-    name: "Nike Air Jordan-100",
-    price: "$220.20",
+    name: "Website Design & Development",
+    price: "Create visually appealing and functional websites that drive engagement and support your business objectives.",
   },
   {
     imgURL: shoe7,
-    name: "Nike Air Jordan-001",
-    price: "$230.20",
+    name: "Mobile App & Web App Development",
+    price: "Develop custom apps that enhance user experiences and streamline business processes.",
   },
 ];
 
 export const services = [
   {
     imgURL: truckFast,
-    label: "Free shipping",
-    subtext: "Enjoy seamless shopping with our complimentary shipping service.",
+    label: "Seamless Integration",
+    subtext: "Streamline your operations with technology that integrates effortlessly, boosting efficiency and productivity.",
   },
   {
     imgURL: shieldTick,
-    label: "Secure Payment",
+    label: "Future-Ready Technology",
     subtext:
-      "Experience worry-free transactions with our secure payment options.",
+      "Equip your business with scalable, innovative solutions designed to adapt to evolving digital trends.",
   },
   {
     imgURL: support,
-    label: "Love to help you",
-    subtext: "Our dedicated team is here to assist you every step of the way.",
+    label: "User-Centric Design",
+    subtext: "Enhance user experiences with intuitive, engaging designs tailored to your audience’s needs.",
   },
 ];
 
-export const reviews = [
-  {
-    imgURL: customer1,
-    customerName: "Morich Brown",
-    rating: 4.5,
-    feedback:
-      "The attention to detail and the quality of the product exceeded my expectations. Highly recommended!",
-  },
-  {
-    imgURL: customer2,
-    customerName: "Lota Mongeskar",
-    rating: 4.5,
-    feedback:
-      "The product not only met but exceeded my expectations. I'll definitely be a returning customer!",
-  },
-];
+// export const reviews = [
+//   {
+//     imgURL: customer1,
+//     customerName: "Morich Brown",
+//     rating: 4.5,
+//     feedback:
+//       "The attention to detail and the quality of the product exceeded my expectations. Highly recommended!",
+//   },
+//   {
+//     imgURL: customer2,
+//     customerName: "Lota Mongeskar",
+//     rating: 4.5,
+//     feedback:
+//       "The product not only met but exceeded my expectations. I'll definitely be a returning customer!",
+//   },
+// ];

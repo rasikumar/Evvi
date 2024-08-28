@@ -1,8 +1,11 @@
+import Iyyan from "./iyyan/Iyyan"
 
-const Allprod = () => {
+const Allproduct = () => {
   return (
-    <div>Allprod</div>
+    <>
+      <Iyyan/>
+    </>
   )
 }
 
-export default Allprod
+export default Allproduct

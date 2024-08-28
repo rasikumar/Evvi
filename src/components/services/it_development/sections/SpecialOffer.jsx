@@ -14,20 +14,15 @@ function SpecialOffer() {
       </div>
       <div className="flex flex-col w-[50%] max-tablet:w-full">
         <h2 className="text-4xl font-sans max-tablet:text-2xl max-mobile:text-lg font-bold">
-          <span className="">Special </span>
-          Offer
+        Looking to Outsource Your IT Needs ?
         </h2>
         <p className="mt-4 max-mobile:text-sm">
-          Embark on a shopping journey that redefines your experience with
-          unbeatable deals. From premier selections to incredible savings, we
-          offer unparalleled value that sets us apart.
+        Partner with us to handle your web design, app development, and cloud support needs efficiently. Outsource your IT requirements to our expert team and focus on what you do best while we take care of the technology.
         </p>
         <p className="mt-6 max-mobile:text-sm">
-          Navigate a realm of possibilities designed to fulfill your unique
-          desires, surpassing the loftiest expectations. Your journey with us is
-          nothing short of exceptional.
+        Get in touch today to explore how we can support your next project and drive your business forward.
         </p>
-        <button className="btn-primary w-[25%] max-mobile:w-[40%] mt-4">Shop Now</button>
+        <button className="btn-primary w-[25%] max-mobile:w-[40%] mt-4">Contact Us</button>
       </div>
     </section>
   );

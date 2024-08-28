@@ -36,18 +36,17 @@ function Hero() {
 
         <div className="w-[50%] max-tablet:w-[80%] flex flex-col gap-4">
           <h1 className="font-semibold text-6xl max-tablet:text-4xl max-mobile:text-2xl font-montserrat">
-            The New Arrival{" "}
+          Your Trusted Partner for {" "}
             <span className="text-blue-400 font-semibold text-6xl max-tablet:text-4xl max-mobile:text-2xl font-montserrat">
-              Columbia{" "}
+            Comprehensive IT{" "}
             </span>
-            Shoes
+            Solutions
           </h1>
           <div className="text-blue-400">
-            Discover Stylish Arrivals, Quality,Comfort and Innovation for your
-            and active Life
+          Elevate Your Business with Expert IT Consulting and Outsourcing.
           </div>
           <button className="btn-primary w-[25%] max-mobile:w-[40%]">
-            Shop Now
+          Get Started
           </button>
         </div>
       </section>
