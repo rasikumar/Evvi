@@ -7,7 +7,6 @@ import {
     right_arrow,
     // right_up_arrow,
     // search_icon,
-    tick_circle,
     list_style_icon,
     quote_icon,
     test0,
@@ -23,10 +22,14 @@ import {
     blog_3,
     blog_4,
 } from '../assets/index';
+import { FaBusinessTime, FaDigitalTachograph, FaPeopleCarry, FaLaptopCode, FaTicketAlt } from "react-icons/fa";
 
-
-export const scrollItems =[ "Business Consulting" , "Digital Transformation" , "HR Consulting" , "IT Consulting"]
-
+export const scrollItems = [
+  { text: "Business Consulting", Icon: FaBusinessTime, bgColor :"#fff", tcolor : "#000"  },
+  { text: "Digital Transformation", Icon: FaDigitalTachograph, bgColor :"#0b1a5f", tcolor : "#E7DEAB"  },
+  { text: "HR Consulting", Icon: FaPeopleCarry, bgColor :"#fff" , tcolor : "#000" },
+  { text: "IT Consulting", Icon: FaLaptopCode, bgColor :"#F67629", tcolor : "#0b1a5f"  }
+];
 export const HeroText = [
     // {
     //     id :0,
@@ -34,7 +37,8 @@ export const HeroText = [
     // },
     {
         id : 0,
-        content : "From People to Digital Excellence Your Partner in Business Success"
+        content : "From People to Digital Excellence",
+        subheading : "Your Partner in Business Success"
     },
     {
         id : 1,
@@ -56,7 +60,7 @@ export const Navigation = [
     },
     {
         id : 2,
-        title : 'Service',
+        title : 'Services',
         url : '/Service',
         sub : [
             {
@@ -71,12 +75,12 @@ export const Navigation = [
             },
             {
                 id : 2,
-                title : 'HR Service',
+                title : 'HR Consulting',
                 url : '/HR_Service',
             },
             {
                 id : 3,
-                title : 'IT Development',
+                title : 'IT Consulting',
                 url : '/IT_Development',
             }
         ]
@@ -84,19 +88,19 @@ export const Navigation = [
     {
         id : 3,
         title : 'Features',
-        url : '/Features',
-        sub : [
-            {
-                id : 0,
-                title : 'Blogs',
-                url : '/Blogs',
-            },
-            {
-                id : 1,
-                title : 'Products',
-                url : '/Products',
-            }
-        ]
+        url : '/Products',
+        // sub : [
+        //     {
+        //         id : 0,
+        //         title : 'Blogs',
+        //         url : '/Blogs',
+        //     },
+        //     {
+        //         id : 1,
+        //         title : 'Products',
+        //         url : '/Products',
+        //     }
+        // ]
     },
     {
         id : 4,
@@ -116,26 +120,30 @@ export const AboutUs = [
         lists : [
             {
                 id : 0,
-                content : 'Business Consulting: Holistic solutions designed to enhance your organization’s growth, efficiency, and impact.',
-                icon : tick_circle,
+                heading : "Business Consulting:",
+                content : 'Holistic solutions designed to enhance your organization’s growth, efficiency, and impact.',
+                icon : FaTicketAlt,
                 width : 20,
             },
             {
                 id : 1,
-                content : 'Digital Excellence: Innovative strategies to boost your brand’s online presence and engagement.',
-                icon : tick_circle,
+                heading : "Digital Excellence:",
+                content : 'Innovative strategies to boost your brand’s online presence and engagement.',
+                icon : FaTicketAlt,
                 width : 20,
             },
             {
                 id : 2,
-                content : 'HR Consulting: End-to-end HR services, from virtual HR support to talent acquisition and compliance management.',
-                icon : tick_circle,
+                heading : "HR Consulting:",
+                content : 'End-to-end HR services, from virtual HR support to talent acquisition and compliance management.',
+                icon : FaTicketAlt,
                 width : 20,
             },
             {
                 id : 3,
-                content : 'IT Consulting: Comprehensive IT solutions including cloud services, technical support, and advanced web & mobile app development.',
-                icon : tick_circle,
+                heading : "IT Consulting:",
+                content : 'Comprehensive IT solutions including cloud services, technical support, and advanced web & mobile app development.',
+                icon : FaTicketAlt,
                 width : 20,
             }
         ]
@@ -146,25 +154,26 @@ export const Testimonials =[
     {
         id : 0,
         heading : 'Why Choose Evvi?',
-        title : "Your Vision, Our Mission: Achieve Excellence Together",
+        title : "Your Vision, Our Mission",
+        subtitle : "Achieve Excellence Together",
         items: [{
             id:0,
-            heading:"Tailored Strategies:",
+            heading:"Tailored Strategies",
             content:"We design customized solutions for your unique business needs.",
         },
         {
             id:1,
-            heading:"Diverse Expertise:",
+            heading:"Diverse Expertise",
             content: "From HR consulting to digital innovation, we cover all bases.",
         },
         {
             id:2,
-            heading:"Results-Driven:",
+            heading:"Results-Driven",
             content: "Our focus is on delivering measurable success and ROI.",
         },
         {
             id:3,
-            heading:"Client-Focused:",
+            heading:"Client-Focused",
             content: "Your goals guide our every move and decision.",
         },],
         lists : [
@@ -450,7 +459,7 @@ export const ServicePage =[
     {
         id :0,
         header : 'Business Consulting',
-        content : 'We are a renowned digital agency, dedicated to providing high-quality, innovative, and user-centric digital solutions. Our team of experts is committed to creating stunning and engaging user experiences through our digital marketing and development services.',
+        content : "Unlock your business's full potential with our comprehensive consulting services. From strategic planning to process optimization, we provide actionable insights that drive growth and efficiency.",
         img: digital_excellence,
         btn:"Read More",
         url : '/Business_Consulting'
@@ -458,7 +467,7 @@ export const ServicePage =[
     {
         id :1,
         header : 'Digital Transformation',
-        content : 'We are a renowned digital agency, dedicated to providing high-quality, innovative, and user-centric digital solutions. Our team of experts is committed to creating stunning and engaging user experiences through our digital marketing and development services.',
+        content : "Boost your online presence with our cutting-edge digital marketing solutions. We tailor strategies to amplify your brand and connect with your target audience effectively.",
         img: digital_excellence,
         btn:"Read More",
         url : '/Digital_Marketing'
@@ -466,7 +475,7 @@ export const ServicePage =[
     {
         id:2,
         header : "HR Service",
-        content : 'We provide IT solutions, including software development, infrastructure management, and cybersecurity. Our team of experts is committed to providing exceptional service and customer satisfaction.',
+        content : "People are the cornerstone of your success. Our HR Consulting services offer end-to-end support, from talent acquisition and onboarding to compliance management and employee development.",
         img: corparate_training,
         btn:"Read More",
         url : '/HR_Service'
@@ -474,7 +483,7 @@ export const ServicePage =[
     {
         id:3,
         header : "IT Development",
-        content : 'We provide IT solutions, including software development, infrastructure management, and cybersecurity. Our team of experts is committed to providing exceptional service and customer satisfaction.',
+        content : "Stay ahead in the digital era with our IT Consulting services. We provide robust and scalable solutions, from cloud services to web and app development, ensuring your IT infrastructure meets your business needs.",
         img: corparate_training,
         btn:"Read More",
         url : '/IT_Development'
@@ -582,12 +591,15 @@ export const Address = [
     {
         id : 0,
         icon : location_icon,
-        content : "Evvi Solutions Private Limited,TCE - TBI,Thiagarajar Advanced Research Centre,Thiruparankundram, Madurai -625015"
+        content : "Evvi Solutions PVT Limited,",
+        content2 : "TCE - TBI,Thiagarajar Advanced Research Centre,",
+        content3 : "Thiruparankundram,",
+        content4 : "Madurai -625015"
     },
     {
         id : 1,
         icon : phone_call_icon,
-        content : "+1 234 567 8901"
+        content : "+99 99009 65657"
     },
     {
         id : 2,
@@ -596,26 +608,26 @@ export const Address = [
     }
 ]
 
-export const Supports = [
-    {
-        id : 0,
-        content : "Support",
-        lists : [
-            {
-                id : 0,
-                content : "Emergency Care"
-            },
-            {
-                id : 1,
-                content : "Donate"
-            },
-            {
-                id : 2,
-                content : "Online Service"
-            }
-        ]
-    }
-]
+// export const Supports = [
+//     {
+//         id : 0,
+//         content : "Support",
+//         lists : [
+//             {
+//                 id : 0,
+//                 content : "Emergency Care"
+//             },
+//             {
+//                 id : 1,
+//                 content : "Donate"
+//             },
+//             {
+//                 id : 2,
+//                 content : "Online Service"
+//             }
+//         ]
+//     }
+// ]
 
 export const Footerend = [
     {
@@ -650,7 +662,7 @@ export const answers = {
 };
 
 export const About_Full = [
-    {
+    { 
         id:0,
         header:"Your Partner in Transforming Business Ambitions",
         paragraph:"Leveraging our core values of Excellence and Innovation to guide you towards unparalleled growth and success."
@@ -659,7 +671,8 @@ export const About_Full = [
         id:1,
         header:"About",
         subtitle:"Make Your Choice for Greatness!",
-        paragraph1:"At Evvi Solutions, we are dedicated to being more than just a service provider; we are your strategic partner in achieving business excellence. With a focus on empowering startups, entrepreneurs, solopreneurs, and SMEs, we bring a wealth of expertise across multiple domains. Our integrated approach combines Business Consulting, Digital Excellence, and HR Solutions to offer tailored strategies and solutions that drive growth and success. By leveraging our core values of Excellence, Value-driven, Versatility, and Innovation, we ensure that every engagement is marked by integrity, adaptability, and a commitment to delivering impactful results. Discover how our holistic support can transform your business aspirations into reality.",
+        paragraph1:"At Evvi Solutions, we are dedicated to being more than just a service provider; we are your strategic partner in achieving business excellence. With a focus on empowering startups, entrepreneurs, solopreneurs, and SMEs, we bring a wealth of expertise across multiple domains.",
+        paragraph2:"Our integrated approach combines Business Consulting, Digital Excellence, and HR Solutions to offer tailored strategies and solutions that drive growth and success. By leveraging our core values of Excellence, Value-driven, Versatility, and Innovation, we ensure that every engagement is marked by integrity, adaptability, and a commitment to delivering impactful results. Discover how our holistic support can transform your business aspirations into reality."
         
     },
     {

@@ -35,20 +35,15 @@ const ServiceList = () => {
           will help you achieve your goals.
         </motion.p>
       </div>
-      <div className="flex flex-col gap-10">
+      <div className="flex max-tablet:flex-col rows-2 gap-10">
         {ServicePage.map((i) => (
           <div
             key={i.id}
-            className="flex max-mobile:flex-col p-5 items-center bg-slate-200 rounded-xl"
+            className="flex flex-col items-center shadow-[rgba(0, 0, 0, 0.15)_0px_3px_3px_0px] bg-slate-200 rounded-xl"
           >
-            <motion.div className="flex flex-col gap-5 p-3">
+            <motion.div className="flex flex-col min-w-64 gap-5 p-3 ">
               <h1 className="font-semibold text-xl">{i.header}</h1>
-              <p className="text-sm font-medium">{i.content}</p>
-              <Link to={i.url} className="btn-primary w-32">
-                {i.btn}
-              </Link>
-            </motion.div>
-            <motion.img
+              <motion.img
               whileHover={{
                 scale: 1.021,
                 transition: { duration: 0.3 },
@@ -59,8 +54,14 @@ const ServiceList = () => {
               }}
               src={i.img}
               alt={i.header}
-              className="rounded-2xl w-96"
+              className="rounded-2xl w-40  m-auto"
             />
+              <p className="text-sm font-medium line-clamp-6">{i.content}</p>
+              <Link to={i.url} className="btn-primary w-32">
+                {i.btn}
+              </Link>
+            </motion.div>
+            
           </div>
         ))}
       </div>

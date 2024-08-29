@@ -11,7 +11,8 @@ export const HR_Content = [
   {
     id: 1,
     header: "Our Areas of Expertise",
-    subheader: "People are the heart of any organization, and our HR Consulting services are crafted to maximize your workforce's potential. Whether you're a startup or an established enterprise, our end-to-end HR solutions provide the support you need.",
+    subheader:
+      "People are the heart of any organization, and our HR Consulting services are crafted to maximize your workforce's potential. Whether you're a startup or an established enterprise, our end-to-end HR solutions provide the support you need.",
     items: [
       {
         id: 0,
@@ -77,13 +78,13 @@ export const HR_Content = [
           {
             id: 1,
             img: domains,
-            content: "IT-Enabled Services",
+            content: "IT-ES",
           },
-          {
-            id: 2,
-            img: domains,
-            content: "Automotives",
-          },
+          // {
+          //   id: 2,
+          //   img: domains,
+          //   content: "Automotives",
+          // },
           {
             id: 3,
             img: domains,
@@ -94,16 +95,16 @@ export const HR_Content = [
             img: domains,
             content: "Manufacturing",
           },
-          {
-            id: 5,
-            img: domains,
-            content: "Electronics",
-          },
-          {
-            id: 6,
-            img: domains,
-            content: "Retail",
-          },
+          // {
+          //   id: 5,
+          //   img: domains,
+          //   content: "Electronics",
+          // },
+          // {
+          //   id: 6,
+          //   img: domains,
+          //   content: "Retail",
+          // },
           {
             id: 7,
             img: domains,
@@ -121,9 +122,29 @@ export const HR_Content = [
   {
     id: 3,
     title: "Why Choose Evvi HR Services?",
-    heading: "Domain Expertise: Benefit from our industry insights and proven success Tailored Approach: Your business is unique, and so are our solutions. Sustainable Results: Tangible outcomes drive your success and ours. Continuous Learning: Stay ahead with us in the dynamic HR landscape",
-    description:
-      "Ready to transform your HR journey? Connect with us for personalized solutions.",
+    description:"Ready to transform your HR journey? Connect with us for personalized solutions.",
+    list: [
+      {
+        id: 0,
+        title: "Domain Expertise",
+        description: "Benefit from our industry insights and proven success.",
+      },
+      {
+        id: 1,
+        title: "Tailored Approach",
+        description: "Your business is unique, and so are our solutions.",
+      },
+      {
+        id: 2,
+        title: "Sustainable Results",
+        description: "Tangible outcomes drive your success and ours.",
+      },
+      {
+        id: 3,
+        title: "Continuous Learning",
+        description: "Stay ahead with us in the dynamic HR landscape",
+      },
+    ],
   },
 ];
 export const Business_Consulting = [
@@ -135,7 +156,8 @@ export const Business_Consulting = [
   {
     id: 1,
     header: "Charting Your Success Path",
-    subheader: "At Evvi Solutions, our Business Consulting services are dedicated to driving your business forward through strategic insights and tailored solutions. We excel in fostering innovation and efficiency, helping your enterprise not only navigate today’s challenges but excel amidst them. Whether it’s change management, workforce optimization, or enhancing your digital and IT capabilities, we offer a holistic approach designed for startups, SMEs, and growing businesses. Our expert team partners with you to transform your vision into reality, focusing on operational excellence and sustainable growth. Discover how our strategic guidance can unlock your organization's full potential.",
+    subheader:
+      "At Evvi Solutions, our Business Consulting services are dedicated to driving your business forward through strategic insights and tailored solutions. We excel in fostering innovation and efficiency, helping your enterprise not only navigate today’s challenges but excel amidst them. Whether it’s change management, workforce optimization, or enhancing your digital and IT capabilities, we offer a holistic approach designed for startups, SMEs, and growing businesses. Our expert team partners with you to transform your vision into reality, focusing on operational excellence and sustainable growth. Discover how our strategic guidance can unlock your organization's full potential.",
     items: [
       {
         id: 0,
@@ -186,8 +208,7 @@ export const Business_Consulting = [
     title: "Why Choose Our Business Consulting Services?",
     description:
       "At Evvi Solutions, our Business Consulting services are tailored to meet the diverse needs of startups, SMEs, and growing businesses. Our deep industry knowledge and commitment to excellence enable us to deliver innovative solutions that drive real results.",
-    description1:
-      "Here’s why our clients choose us:",
+    description1: "Here’s why our clients choose us:",
     list: [
       {
         id: 0,

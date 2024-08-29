@@ -5,15 +5,24 @@ import TestSlider from "./TestSlider";
 import { FcGoogle } from "react-icons/fc";
 import { FaRegFaceGrinBeam } from "react-icons/fa6";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const Testimonial = () => {
   const textRef = useRef(false);
   const inview = useInView(textRef, { triggeronce: true });
-  const { title, heading } = Testimonials[0];
+  const { title, heading, subtitle } = Testimonials[0];
+  const [ hover , sethover ] = useState(null)
+
+  const handleMouseEnter = (id) => {
+    sethover(id);
+  };
+
+  const handleMouseLeave = () => {
+    sethover(null);
+  };
   
   return (
-    <div className="flex items-end max-tablet:flex-col gap-4 w-full p-14 max-tablet:p-5 max-tablet:gap-10 max-mobile:gap-5">
+    <div className="flex overflow-x-hidden items-end max-tablet:flex-col gap-4 w-full p-14 max-tablet:p-5 max-tablet:gap-10 max-mobile:gap-5">
       <div className="flex flex-col w-[55%] max-tablet:w-full gap-12">
         <motion.div
           initial="hidden"
@@ -30,21 +39,25 @@ const Testimonial = () => {
             stiffness: 100,
             ease: 'linear',
           }}
-          className="flex flex-col gap-6"
+          className="flex flex-col gap-3"
         >
           <h3 className="text-t-primary font-semibold">{heading}</h3>
           <h1 className="text-4xl max-tablet:text-3xl max-mobile:text-2xl font-semibold">
             {title}
           </h1>
+          <p >{subtitle}</p>
           <div>
             {Testimonials.map(i => (
-              <ul key={i.id}>
+              <ul key={i.id} className="flex flex-col gap-2">
                 {i.items.map(j => (
                   <motion.li
                   whileHover={{x:10, scale:1.02}}
-                  key={j.id} className="cursor-pointer flex max-mobile:flex-col gap-1">
-                    <h2 className="font-bold text-t-primary max-mobile:text-sm">{j.heading}</h2>
-                    <p className="max-mobile:mb-4 max-mobile:text-sm">{j.content}</p>
+                  key={j.id} className="cursor-pointer rounded-lg bg-gray-300 p-3 flex max-mobile:flex-col gap-1"
+                  onMouseEnter={() => handleMouseEnter(j.id)}
+                  onMouseLeave={handleMouseLeave}
+                  >
+                    <h2 className={`font-bold text-t-primary text-justify text-sm  ${hover === j.id ? "transition duration-700" : "text-center ml-52"}`} onMouseEnter={() =>handleMouseEnter(j.id)}>{j.heading}</h2>
+                    <p className={`transition-opacity duration-100 font-medium text-sm ${ hover === j.id ? "block" : "hidden" }`} >- {j.content}</p>
                   </motion.li>
                 ))}
               </ul>
@@ -73,10 +86,10 @@ const Testimonial = () => {
           </div>
         </div>
 
-        <div className="bg-amber-200 col-span-2 row-span-2 rounded-3xl px-8 py-5 shadow-md">
-          <div className="flex flex-col gap-2">
+        <div className="bg-amber-200 col-span-2 row-span-2 rounded-3xl px-8 py-8 shadow-md">
+          <div className="flex flex-col gap-5">
             <FaRegFaceGrinBeam className="text-5xl max-mobile:text-3xl" />
-            <h1 className="text-2xl font-bold">4.5K +</h1>
+            {/* <h1 className="text-2xl font-bold">4.5K +</h1> */}
             <p className="font-medium">Happy Clients</p>
           </div>
         </div>

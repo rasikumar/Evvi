@@ -41,7 +41,7 @@ const ServiceSlide = () => {
               <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-bold text-t-primary'>
                 {lists_items[0].heading}
               </h1>
-              <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[0].description}</p>
+              <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm text-justify'>{lists_items[0].description}</p>
               <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
                 <div className='flex flex-col gap-4 max-mobile:gap-1'>
                   {item1.map(i => (
@@ -84,7 +84,7 @@ const ServiceSlide = () => {
                   <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
                     {lists_items[1].heading}
                   </h1>
-                  <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[1].description}</p>
+                  <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm text-justify'>{lists_items[1].description}</p>
                   <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
                    <div className='flex flex-col gap-4 max-mobile:gap-1'>
                      {item2.map(i => (
@@ -127,7 +127,7 @@ const ServiceSlide = () => {
               <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
                 {lists_items[2].heading}
               </h1>
-              <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[2].description}</p>
+              <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm text-justify'>{lists_items[2].description}</p>
               <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
                 <div className='flex flex-col gap-4 max-mobile:gap-1'>
                   {item3.map(i => (
@@ -170,7 +170,7 @@ const ServiceSlide = () => {
               <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
                 {lists_items[3].heading}
               </h1>
-              <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[3].description}</p>
+              <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm text-justify'>{lists_items[3].description}</p>
               <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
                 <div className='flex flex-col gap-4 max-mobile:gap-1'>
                   {item4.map(i => (

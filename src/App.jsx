@@ -2,6 +2,9 @@ import Heart from "./components/Heart";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/footer/Footer";
+import SideIcons from "./components/SideIcons"
+import FloatingIcon from "./components/FloatingIcon"
+
 
 // Pages
 // Service pages
@@ -43,6 +46,8 @@ const App = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
+      <SideIcons/>
+      <FloatingIcon/>
         <Header />
         <ScrollToTop/>
         <AnimatePresence mode="wait">

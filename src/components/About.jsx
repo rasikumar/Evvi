@@ -29,16 +29,17 @@ const About = () => {
               scale: scrollYProgress,
               opacity: scrollYProgress,
             }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-3"
           >
             <p className="text-t-primary font-semibold">{about.heading}</p>
             <h1 className="text-4xl max-tablet:text-3xl max-mobile:text-2xl font-semibold">{about.title}</h1>
-            <p className="line-clamp-5 font-medium">{about.description}</p>
+            <p className="font-medium text-justify">{about.description}</p>
             <ul>
               {about.lists.map((list) => (
-                <li key={list.id} className="flex items-center max-mobile:items-start max-mobile:text-sm mb-2">
-                  <img src={list.icon} width={list.width} alt={list.icon} className="max-mobile:mt-1 mr-2" />
-                  {list.content}
+                <li key={list.id} className="flex items-start max-mobile:text-sm mb-2 text-justify">
+                  <list.icon  className="mt-1 w-10"/>
+                  {list.heading}
+                  {/* {list.content} */}
                 </li>
               ))}
             </ul>

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { bgvid } from "../assets";
 import { HeroText } from "../constant";
-import { FaArrowUpRightFromSquare, FaStar } from "react-icons/fa6";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 // import { FaArrowUpRightFromSquare, FaSquarePhone, FaRegFaceGrinBeam, FaStar } from "react-icons/fa6";
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
 
 const Hero = () => {
   return (
@@ -22,6 +22,9 @@ const Hero = () => {
           <h1 className="text-5xl desktop:text-8xl max-mobile:text-4xl max-mobile:w-[22rem] font-semibold">
             {HeroText[0].content}
           </h1>
+          <p>
+            {HeroText[0].subheading}
+          </p>
         </div>
 
         <div className="flex gap-10 max-mobile:gap-2">
@@ -60,7 +63,7 @@ const Hero = () => {
                     </div>
                 </div> */}
 
-        <div className="px-4 desktop:px-6 absolute bottom-0 shadow-xl right-0 border-8 border-transparent py-4 desktop:py-6 rounded-xl bg-white flex flex-col desktop:w-[30%] w-[35%] max-mobile:w-[60%] gap-4">
+        {/* <div className="px-4 desktop:px-6 absolute bottom-0 shadow-xl right-0 border-8 border-transparent py-4 desktop:py-6 rounded-xl bg-white flex flex-col desktop:w-[30%] w-[35%] max-mobile:w-[60%] gap-4">
           <div className="text-sm desktop:text-xl font-bold">
             Clients Feedback
           </div>
@@ -75,7 +78,7 @@ const Hero = () => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
