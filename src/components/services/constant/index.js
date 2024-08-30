@@ -1,7 +1,7 @@
 import { domains, service_image } from "../../../assets";
 
-// HR_Service_Page
 
+// HR_Service_Page
 export const HR_Content = [
   {
     id: 0,
@@ -68,7 +68,7 @@ export const HR_Content = [
     list: [
       {
         id: 0,
-        title: "Expertise Domain of Recruitment",
+        title: "Tailored Services Across Industries",
         items: [
           {
             id: 0,
@@ -147,6 +147,8 @@ export const HR_Content = [
     ],
   },
 ];
+
+// Business_Consulting
 export const Business_Consulting = [
   {
     id: 0,

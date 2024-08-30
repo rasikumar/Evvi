@@ -22,7 +22,7 @@ import {
     blog_3,
     blog_4,
 } from '../assets/index';
-import { FaBusinessTime, FaDigitalTachograph, FaPeopleCarry, FaLaptopCode, FaTicketAlt } from "react-icons/fa";
+import { FaBusinessTime, FaDigitalTachograph, FaPeopleCarry, FaLaptopCode } from "react-icons/fa";
 
 export const scrollItems = [
   { text: "Business Consulting", Icon: FaBusinessTime, bgColor :"#fff", tcolor : "#000"  },
@@ -114,39 +114,41 @@ export const AboutUs = [
         id : 0,
         heading : 'About Us',
         title : 'Make Your Choice for Greatness!',
-        description : "At Evvi Solutions, we are your trusted partner in driving business success through our expertise in Business Consulting, with a focus on People Excellence and Digital Transformation. Our holistic approach integrates IT consulting, HR consulting, digital marketing, and cutting-edge web and mobile app development. We tailor our solutions to meet the unique needs of startups and SMEs, guiding you through today’s dynamic business landscape to achieve your strategic goals.",
+        description : "Welcome to Evvi Solutions—Your Gateway to Success and Innovation. We are your strategic partner in driving business excellence through comprehensive Business Consulting, focusing on People Excellence and Digital Transformation. Our holistic approach integrates IT consulting, HR consulting, digital marketing, and innovative web and mobile app development. We tailor our solutions to the unique needs of startups and SMEs, guiding you through today’s dynamic business landscape to achieve your strategic goals.",
+        description2 : "Trust in our expertise, embrace tailored solutions, and set your course for unparalleled success. At Evvi Solutions, we are more than just a choice; we are your partner on the path to excellence. Choose Evvi for your journey to greatness!",
+        description3 : "Ready to take the next step?",
         btn : "Read More",
         url : '/About',
-        lists : [
-            {
-                id : 0,
-                heading : "Business Consulting:",
-                content : 'Holistic solutions designed to enhance your organization’s growth, efficiency, and impact.',
-                icon : FaTicketAlt,
-                width : 20,
-            },
-            {
-                id : 1,
-                heading : "Digital Excellence:",
-                content : 'Innovative strategies to boost your brand’s online presence and engagement.',
-                icon : FaTicketAlt,
-                width : 20,
-            },
-            {
-                id : 2,
-                heading : "HR Consulting:",
-                content : 'End-to-end HR services, from virtual HR support to talent acquisition and compliance management.',
-                icon : FaTicketAlt,
-                width : 20,
-            },
-            {
-                id : 3,
-                heading : "IT Consulting:",
-                content : 'Comprehensive IT solutions including cloud services, technical support, and advanced web & mobile app development.',
-                icon : FaTicketAlt,
-                width : 20,
-            }
-        ]
+        // lists : [
+        //     {
+        //         id : 0,
+        //         heading : "Business Consulting:",
+        //         content : 'Holistic solutions designed to enhance your organization’s growth, efficiency, and impact.',
+        //         icon : FaTicketAlt,
+        //         width : 20,
+        //     },
+        //     {
+        //         id : 1,
+        //         heading : "Digital Excellence:",
+        //         content : 'Innovative strategies to boost your brand’s online presence and engagement.',
+        //         icon : FaTicketAlt,
+        //         width : 20,
+        //     },
+        //     {
+        //         id : 2,
+        //         heading : "HR Consulting:",
+        //         content : 'End-to-end HR services, from virtual HR support to talent acquisition and compliance management.',
+        //         icon : FaTicketAlt,
+        //         width : 20,
+        //     },
+        //     {
+        //         id : 3,
+        //         heading : "IT Consulting:",
+        //         content : 'Comprehensive IT solutions including cloud services, technical support, and advanced web & mobile app development.',
+        //         icon : FaTicketAlt,
+        //         width : 20,
+        //     }
+        // ]
     }
 ]
 
@@ -591,7 +593,7 @@ export const Address = [
     {
         id : 0,
         icon : location_icon,
-        content : "Evvi Solutions PVT Limited,",
+        // content : "",
         content2 : "TCE - TBI,Thiagarajar Advanced Research Centre,",
         content3 : "Thiruparankundram,",
         content4 : "Madurai -625015"
@@ -677,7 +679,6 @@ export const About_Full = [
     },
     {
         id:2,
-        // header:"Our Mission",
         header:"Evvi: A Legacy of Aspiration",
         paragraph1:"In the heart of our identity lies a tale as ancient as time, a legacy that echoes the aspirations of an ancient king. Evvi, a name of Tamil origin, signifies the profound journey of making flowing water reach higher landscapes. This echoes the spirit of an ancient ruler who sought not just to rule but to uplift. Like the gentle stream that navigates the terrain, we are dedicated to helping individuals and organizations reach greater heights.",
         paragraph2:"The name Evvi is more than a label; it's a commitment to a legacy of service, inspiration, and the relentless pursuit of excellence. As we carry this heritage forward, we strive to be the guiding force in every success story, just as the ancient king envisioned."
@@ -688,7 +689,23 @@ export const About_Full = [
         paragraph : "We're here to help you achieve your business goals! Whether you have a question, need more information, or want to explore how we can work together, feel free to reach out. Let’s start a conversation and discover the path to success together.",
         btn : "Contact Us",
         url: '/Contact_Us'
-        
+    },
+    {
+        id:4,
+        vision_mission : [
+            {
+                id : 0,
+                header : "Vision",
+                content : "Transforming ambitions into achievements by providing comprehensive support and strategic guidance to startups and SMEs.",
+                img : ''
+            },
+            {
+                id : 1,
+                header : "Mission",
+                content : "Our mission is to deliver personalized consulting, cutting-edge digital strategies, and robust HR solutions to startups and SMEs, providing the clear direction and support needed to transform their goals into accomplishments.",
+                img : ''
+            }
+        ]
     }
 ]
 

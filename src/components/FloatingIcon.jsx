@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react"
-import { FaWhatsapp } from "react-icons/fa"
-import { questions, answers, Testimonials } from "../constant"
+import { FaWhatsapp, FaChevronRight } from "react-icons/fa"
+// import { questions, answers, Testimonials } from "../constant"
 import { Evvi_icon } from "../assets"
+
 
 const FloatingIcon = () => { 
     const [shake, setShake] = useState(false)
     const [open, setOpen] = useState(false)
-    const [step, setStep] = useState(0)
-    const [ selectedQuestion,setSelectedQuestion ] = useState(false)
-    const icon = Testimonials[0].lists[0]
+    // const [step, setStep] = useState(0)
+    // const [ selectedQuestion,setSelectedQuestion ] = useState(false)
+    // const icon = Testimonials[0].lists[0]
     
 
     const popOver = () => {
@@ -23,15 +24,15 @@ const FloatingIcon = () => {
         return () => clearInterval(interval);
     }, []);
     
-    const handleQuestionSelect = (question) => {
-      setSelectedQuestion(question);
-      setStep(1);
-  };
+//     const handleQuestionSelect = (question) => {
+//       setSelectedQuestion(question);
+//       setStep(1);
+//   };
 
-  const handleFollowUpSelect = (question) => {
-      setSelectedQuestion(question);
-      setStep(2);
-  };
+//   const handleFollowUpSelect = (question) => {
+//       setSelectedQuestion(question);
+//       setStep(2);
+//   };
 
   return (
     <div className="sticky top-[80%] px-14 flex flex-col items-end z-[100] ">
@@ -41,11 +42,19 @@ const FloatingIcon = () => {
                   <FaWhatsapp className={`text-green-600 text-5xl ${shake ? 'animate-shake' : ''} ${open ? 'transition animate-none': ''}`}/>
               </span>
               {open && (
-                <div className="absolute bottom-16 right-14 max-tablet:-right-5 h-[50vh] w-[70vh] max-tablet:w-[30vh] max-tablet:h-[30vh] bg-white/40 backdrop-blur-sm border-[1px] shadow-xl transition delay-100 rounded-xl p-1">
+                <div className="absolute bottom-16 right-14 max-tablet:-right-5 h-[50vh] w-[55vh] max-tablet:w-[30vh] max-tablet:h-[30vh] bg-white/40 backdrop-blur-sm border-[1px] shadow-xl transition delay-100 rounded-xl p-1">
                    <img src={Evvi_icon} className="w-20 absolute top-1 rounded-sm p-1 right-4 max-tablet:w-16 max-tablet:hidden " alt="icon" />
-                    <h3 className=" mb-3 p-3 bg-t-primary text-white text-base font-bold rounded-lg shadow-lg">Choose One of Our Service!</h3>
+                    <h3 className=" mb-3 p-3 bg-t-primary text-white text-base font-bold rounded-lg shadow-lg">Welcome To Evvi Solutions</h3>
                   <div className="p-4 flex flex-col">
-                      {step === 0 && (
+                    <div className="flex flex-col items-center justify-center gap-10 mt-10">
+                        <h1 className="text-lg text-center font-semibold">Want Know More About Our Company ?</h1>
+                        <a href="#" target="_blank" className="inline-flex items-center gap-10 text-white bg-t-primary px-5 py-3 rounded-2xl shadow-what">
+                        <FaWhatsapp className="text-3xl"/> 
+                        Chat With Us
+                        <FaChevronRight/>
+                        </a>
+                    </div>
+                      {/* {step === 0 && (
                           <div>
                               {questions.map((question, index) => (
                                 <div key={index} className="flex items-center gap-2" >
@@ -56,9 +65,9 @@ const FloatingIcon = () => {
                                 </div>
                               ))}
                           </div>
-                      )}
+                      )} */}
 
-                      {step === 1 && (
+                      {/* {step === 1 && (
                           <div>
                               <div>
                                   <div className="flex flex-row-reverse items-center gap-2">
@@ -75,16 +84,15 @@ const FloatingIcon = () => {
                                   </div>
                               ))}
                           </div>
-                      )}
+                      )} */}
 
-                      {step === 2 && (
+                      {/* {step === 2 && (
                           <div>
                               <p>{`You asked: ${selectedQuestion}`}</p>
                               <p>{`The chatbot answered: ${answers[selectedQuestion].answer}`}</p>
-                              {/* You can add further steps or conclude the chat here */}
                               <h1>hello</h1>
                           </div>
-                      )}
+                      )} */}
                   </div>
                 </div>
               )}

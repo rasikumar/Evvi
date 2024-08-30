@@ -111,3 +111,6 @@
 .serviceCardIT:hover .serviceCards{
     background: #F67629;
 }
+.serviceCardIT:hover .texts{
+    color: white;
+}

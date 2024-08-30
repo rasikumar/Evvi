@@ -18,11 +18,11 @@ const Hero = () => {
           </h3>
         </div> */}
 
-        <div>
+        <div className="flex flex-col gap-4">
           <h1 className="text-5xl desktop:text-8xl max-mobile:text-4xl max-mobile:w-[22rem] font-semibold">
             {HeroText[0].content}
           </h1>
-          <p>
+          <p className="text-lg font-medium">
             {HeroText[0].subheading}
           </p>
         </div>

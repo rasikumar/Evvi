@@ -33,17 +33,10 @@ const About = () => {
           >
             <p className="text-t-primary font-semibold">{about.heading}</p>
             <h1 className="text-4xl max-tablet:text-3xl max-mobile:text-2xl font-semibold">{about.title}</h1>
-            <p className="font-medium text-justify">{about.description}</p>
-            <ul>
-              {about.lists.map((list) => (
-                <li key={list.id} className="flex items-start max-mobile:text-sm mb-2 text-justify">
-                  <list.icon  className="mt-1 w-10"/>
-                  {list.heading}
-                  {/* {list.content} */}
-                </li>
-              ))}
-            </ul>
-            <Link to={about.url} className="btn-primary w-[25%] max-tablet:w-full">
+            <p className="font-normal text-justify"><span className="font-semibold text-t-primary">{about.description.slice(0, 65)}</span>{about.description.slice(65, 510)}</p> 
+            <p className="font-normal text-justify"><span className="font-semibold text-t-primary">{about.description2.slice(0, 97)}</span>{about.description2.slice(97, 196)}<span className="font-semibold text-t-primary">{about.description2.slice(196, 238)}</span></p> 
+            <p className="font-normal text-justify">{about.description3}</p>
+            <Link to={about.url} className="btn-primary mt-5 w-[25%] max-tablet:w-full">
               {about.btn}
             </Link>
           </motion.div>
@@ -54,3 +47,12 @@ const About = () => {
 };
 
 export default About;
+            // <ul>
+            //   {about.lists.map((list) => (
+            //     <li key={list.id} className="flex items-start max-mobile:text-sm mb-2 text-justify">
+            //       <list.icon  className="mt-1 w-10"/>
+            //       {list.heading}
+            //       {/* {list.content} */}
+            //     </li>
+            //   ))}
+            // </ul>

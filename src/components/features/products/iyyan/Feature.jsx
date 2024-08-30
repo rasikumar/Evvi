@@ -1,18 +1,30 @@
 import { IyyanContent } from "../constant/constant"
 
-
 const Feature = () => {
-
-  const { heading, subheading } = IyyanContent [1];
-  const { list } = IyyanContent [1];
+  const { heading, subheading, list } = IyyanContent[2];
+  
 
   return (
-    <div>
-      <h1>{heading}</h1>
+    <div className="m-auto p-10 backdrop-blur-md bg-white/30">
+      <h1 className="text-2xl text-center">{heading}</h1>
       <h1>{subheading}</h1>
-      <h1>{list}</h1>
+      <div className="flex flex-col gap-4 m-auto">
+        <h1 className="text-center text-t-primary font-medium">Features</h1>
+        <p className="text-center text-4xl max-tablet:text-2xl max-mobile:text-lg mb-4">Explore the Unparalled <br /> Features of Iyyan</p>
+        {list.map((item) => (
+          <div key={item.id} className={`flex gap-2 items-center m-auto ${item.id % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
+            <div className={`${item.id % 2 === 0 ? "text-left" : "text-right"}`}>
+              <h2 className="text-t-primary text-3xl max-tablet:text-xl font-medium">{item.content}</h2>
+              <p className="w-[30rem] m-auto">{item.paragraph}</p>
+            </div>
+            <div>
+              <img src="https://dummyimage.com/300x360//fff" alt="" className="m-auto shadow-custom" />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default Feature
+export default Feature;

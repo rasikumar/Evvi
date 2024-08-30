@@ -2,11 +2,12 @@ import { useState } from "react";
 import { bigShoe1 } from "../assets/images";
 import { shoes } from "../constant";
 import { ShoeCard } from "../components";
+import { Link } from "react-router-dom";
 
 function Hero() {
   const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
 
-  return (
+  return ( 
     <>
       <section
         id="about-us"
@@ -35,19 +36,19 @@ function Hero() {
         </div>
 
         <div className="w-[50%] max-tablet:w-[80%] flex flex-col gap-4">
-          <h1 className="font-semibold text-6xl max-tablet:text-4xl max-mobile:text-2xl font-montserrat">
+          <h1 className="font-semibold text-5xl max-tablet:text-3xl max-mobile:text-xl font-montserrat">
           Your Trusted Partner for {" "}
-            <span className="text-blue-400 font-semibold text-6xl max-tablet:text-4xl max-mobile:text-2xl font-montserrat">
+            <span className="text-t-primary font-semibold text-5xl max-tablet:text-3xl max-mobile:text-xl font-montserrat">
             Comprehensive IT{" "}
-            </span>
             Solutions
+            </span>
           </h1>
-          <div className="text-blue-400">
+          <div className="text-t-primary text-lg">
           Elevate Your Business with Expert IT Consulting and Outsourcing.
           </div>
-          <button className="btn-primary w-[25%] max-mobile:w-[40%]">
+          <Link to={"/Contact_Us"} className="btn-primary w-[25%] max-mobile:w-[40%]">
           Get Started
-          </button>
+          </Link>
         </div>
       </section>
     </>

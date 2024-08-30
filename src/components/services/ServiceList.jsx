@@ -3,8 +3,9 @@ import { ServicePage } from "../../constant";
 import { motion } from "framer-motion";
 
 const ServiceList = () => {
+  const threerow = ServicePage.slice(0, 3);
+  const onerow = ServicePage.slice(3, 4);
 
-  
   return (
     <div className="grid grid-cols-1  w-[90%] max-tablet:py-8 max-mobile:gap-10 m-auto py-12 gap-2">
       <div className="flex flex-col gap-2 p-10">
@@ -35,33 +36,65 @@ const ServiceList = () => {
           will help you achieve your goals.
         </motion.p>
       </div>
-      <div className="flex max-tablet:flex-col rows-2 gap-10">
-        {ServicePage.map((i) => (
+      <div className="flex pb-10 max-tablet:flex-col rows-2 gap-10">
+        {threerow.map((i) => (
           <div
             key={i.id}
             className="flex flex-col items-center shadow-[rgba(0, 0, 0, 0.15)_0px_3px_3px_0px] bg-slate-200 rounded-xl"
           >
             <motion.div className="flex flex-col min-w-64 gap-5 p-3 ">
-              <h1 className="font-semibold text-xl">{i.header}</h1>
+              <h1 className="font-semibold text-xl text-center">{i.header}</h1>
               <motion.img
-              whileHover={{
-                scale: 1.021,
-                transition: { duration: 0.3 },
-              }}
-              whileTap={{
-                scale: 0.95,
-                transition: { duration: 0.3 },
-              }}
-              src={i.img}
-              alt={i.header}
-              className="rounded-2xl w-40  m-auto"
-            />
-              <p className="text-sm font-medium line-clamp-6">{i.content}</p>
-              <Link to={i.url} className="btn-primary w-32">
+                whileHover={{
+                  scale: 1.021,
+                  transition: { duration: 0.3 },
+                }}
+                whileTap={{
+                  scale: 0.95,
+                  transition: { duration: 0.3 },
+                }}
+                src={i.img}
+                alt={i.header}
+                className="rounded-2xl w-40  m-auto"
+              />
+              <p className="text-sm font-medium line-clamp-4">{i.content}</p>
+              <Link to={i.url} className="btn-primary ">
                 {i.btn}
               </Link>
             </motion.div>
-            
+          </div>
+        ))}
+      </div>
+      <div className="pb-16">
+        {onerow.map((i) => (
+          <div
+            key={i.id}
+            className="flex p-5 flex-col items-center shadow-[rgba(0, 0, 0, 0.15)_0px_3px_3px_0px] bg-slate-200 rounded-xl"
+          >
+            <h1 className="font-semibold text-xl text-center">{i.header}</h1>
+            <motion.div className="flex items-center justify-between min-w-64 gap-5 p-3 ">
+              <div>
+                <motion.img
+                  whileHover={{
+                    scale: 1.021,
+                    transition: { duration: 0.3 },
+                  }}
+                  whileTap={{
+                    scale: 0.95,
+                    transition: { duration: 0.3 },
+                  }}
+                  src={i.img}
+                  alt={i.header}
+                  className="rounded-2xl w-[50rem]  m-auto"
+                />
+              </div>
+              <div className="flex flex-col gap-10">
+                <p className="text-sm font-medium line-clamp-4">{i.content}</p>
+                <Link to={i.url} className="btn-primary ">
+                  {i.btn}
+                </Link>
+              </div>
+            </motion.div>
           </div>
         ))}
       </div>

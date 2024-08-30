@@ -1,6 +1,7 @@
 import Hero from './Hero'
 import About from './About'
 import Mission from './Mission'
+import Vision_Mission from './Vision_Mission'
 import Join from './Join'
 import Team from './Team'
 
@@ -29,6 +30,7 @@ const About_Full = () => {
       <Hero />  
       <About/>
       <Team />
+      <Vision_Mission/>
       <Mission/>
       <Join/>
     </motion.div>

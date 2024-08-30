@@ -6,7 +6,7 @@ const Domains = () => {
   const sthree = list[0].items.slice(3, 6);
 
   return (
-    <div className="flex max-tablet:flex-col w-full max-tablet:h-full h-[35rem]">
+    <div className="flex max-tablet:flex-col w-full max-tablet:h-full h-[35rem] overflow-x-hidden">
       <div className="bg-t-primary w-[50%] max-tablet:w-full flex flex-col items-start max-tablet:px-12 max-mobile:py-10 max-mobile:px-4 px-20 justify-center relative">
         <h1 className="text-2xl font-semibold mb-5 text-white">{title}</h1>
         <p className="font-medium text-white max-tablet:text-sm">{description}</p>

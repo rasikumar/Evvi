@@ -4,7 +4,7 @@ import { Teams } from "../../constant";
 
 
 const Team = () => {
-  const [activeImage, setActiveImage] = useState(1);
+  const [activeImage, setActiveImage] = useState(2);
   const isMobile = window.innerWidth <= 768;
   
 

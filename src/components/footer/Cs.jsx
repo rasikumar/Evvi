@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import { OurServices } from '../../constant/index'
-import { employee } from '../../assets'
+// import { employee } from '../../assets'
 
 const Cs = () => {
 
   return (
     <div>
-      <div className="w-full p-10 justify-end gap-20 max-tablet:gap-5 flex max-tablet:flex-col bg-t-secondary/60 ">
+      <div className="w-full p-14 justify-center pl-40 gap-20 max-tablet:gap-5 flex max-tablet:flex-col bg-t-secondary/60 ">
           {OurServices.map(service => (
             <div key={service.id} className='flex flex-col gap-5 max-tablet:gap-2'>
               <h1 className='font-bold text-center'>Helpful Links</h1>
@@ -19,12 +19,12 @@ const Cs = () => {
               </div>
             </div>
           ))}
-          <div className='flex flex-col items-center'>
+          {/* <div className='flex flex-col items-center'>
             <img src={employee} alt="" className='w-10 h-10 rounded-full' />
             <h1 className='font-bold'>
               Careers
             </h1>
-          </div>
+          </div> */}
           {/* {Supports.map(support => (
             <div key={support.id} className='flex flex-col gap-5 max-tablet:gap-2'>
               <h1 className='font-bold'>{support.content}</h1>

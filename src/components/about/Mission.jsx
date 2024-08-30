@@ -44,6 +44,14 @@ const Mission = () => {
                 type : "spring",
                 ease : 'linear',
             }}
+            whileHover={{
+                scale: 1.1,
+                Shadow: "0px 0px 20px rgba(0, 0, 0, 0.2)"
+            }}
+            whileTap={{
+                scale: 1,
+                shadow: "none"
+            }}
             src={legacy} alt="legacy_image" />
         </div>
     </div>

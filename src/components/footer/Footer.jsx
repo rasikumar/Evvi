@@ -5,7 +5,7 @@ import Ct from './Ct'
 const Footer = () => {
   return (
     <div className='relative bg-footerImage bg-no-repeat bg-start bg-cover w-full'>
-      <div className='absolute -top-[6rem] left-24 max-tablet:relative max-tablet:left-0 max-tablet:top-0'>
+      <div className='absolute -top-[4.5rem] left-24 max-tablet:relative max-tablet:left-0 max-tablet:top-0'>
         <Cf/>
       </div>
       <div>

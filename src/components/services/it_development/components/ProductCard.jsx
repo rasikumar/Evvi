@@ -15,8 +15,8 @@ function ProductCard({ imgURL, name, price }) {
         />
         <p className="mt-5 p-1 w-fit"> 4.5</p>
       </div> */}
-      <h3 className="w-fit">{name}</h3>
-      <p className="w-fit">{price}</p>
+      <h3 className="w-fit text-base px-2 text-center m-auto font-medium text-t-primary mt-2">{name}</h3>
+      <p className="text-sm text-center p-2 font-medium leading-snug">{price}</p>
     </div>
   );
 }

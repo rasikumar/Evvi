@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import { offer } from "../assets/images";
 
 function SpecialOffer() {
   return (
-    <section className="flex justify-between items-center max-tablet:flex-col gap-10 w-full max-mobile:px-7 px-16 py-5 mb-10">
+    <section className="flex pb-10 justify-between items-center max-tablet:flex-col gap-10 w-full max-mobile:px-7 px-16 py-5 mb-10">
       <div className="w-[50%] max-tablet:w-full">
         <img
           src={offer}
@@ -22,7 +23,7 @@ function SpecialOffer() {
         <p className="mt-6 max-mobile:text-sm">
         Get in touch today to explore how we can support your next project and drive your business forward.
         </p>
-        <button className="btn-primary w-[25%] max-mobile:w-[40%] mt-4">Contact Us</button>
+        <Link to={"/Contact_Us"} className="btn-primary w-[25%] max-mobile:w-[40%] mt-4">Contact Us</Link>
       </div>
     </section>
   );

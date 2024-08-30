@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/footer/Footer";
 import SideIcons from "./components/SideIcons"
 import FloatingIcon from "./components/FloatingIcon"
+import FloatingIcon2 from "./components/FloatingIcon2";
 
 
 // Pages
@@ -48,6 +49,7 @@ const App = () => {
       <ThemeProvider theme={theme}>
       <SideIcons/>
       <FloatingIcon/>
+      <FloatingIcon2/>
         <Header />
         <ScrollToTop/>
         <AnimatePresence mode="wait">

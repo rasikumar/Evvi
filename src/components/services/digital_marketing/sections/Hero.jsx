@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { bigShoe1 } from "../assets/images";
-import { shoes } from "../constant";
-import { ShoeCard } from "../components";
+// import { shoes } from "../constant";
+// import { ShoeCard } from "../components";
 
 function Hero() {
-  const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
+  const [bigShoeImg] = useState(bigShoe1);
+  // const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
+
 
   return (
     <>
@@ -20,7 +22,7 @@ function Hero() {
             height={502}
             className="object-contain relative z-10"
           />
-          <div className="flex max-mobile:gap-6 gap-4 absolute -bottom-[5%] max-mobile:left-[2%] max-mobile:px-6">
+          {/* <div className="flex max-mobile:gap-6 gap-4 absolute -bottom-[5%] max-mobile:left-[2%] max-mobile:px-6">
             {shoes.map((image, index) => (
               <div key={index} className="bg-gray-50 rounded-xl">
                 <ShoeCard
@@ -31,17 +33,17 @@ function Hero() {
                 />
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
         <div className="w-[50%] max-tablet:w-[80%] flex flex-col gap-4">
-          <h1 className="font-semibold text-6xl max-tablet:text-4xl max-mobile:text-2xl font-montserrat">
+          <h1 className="font-semibold text-5xl max-tablet:text-3xl max-mobile:text-xl font-montserrat">
           Drive Your Business Forward with 
-            <span className="text-blue-400 font-semibold text-6xl max-tablet:text-4xl max-mobile:text-2xl font-montserrat">
+            <span className="text-t-primary font-semibold text-5xl max-tablet:text-3xl max-mobile:text-xl font-montserrat">
             Digital Transformation
             </span>
           </h1>
-          <div className="text-blue-400">
+          <div className="text-t-primary text-lg">
           Revolutionize Your Strategy with Expert Solutions
           </div>
           <button className="btn-primary w-[25%] max-mobile:w-[40%]">

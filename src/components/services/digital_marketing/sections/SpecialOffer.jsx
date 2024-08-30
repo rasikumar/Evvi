@@ -2,7 +2,7 @@ import { offer } from "../assets/images";
 
 function SpecialOffer() {
   return (
-    <section className="flex justify-between items-center max-tablet:flex-col gap-10 w-full max-mobile:px-7 px-16 py-5 mb-10">
+    <section className="flex pb-10 justify-between items-center max-tablet:flex-col gap-10 w-full max-mobile:px-7 px-16 py-5 mb-10">
       <div className="w-[50%] max-tablet:w-full">
         <img
           src={offer}
