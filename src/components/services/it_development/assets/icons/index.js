@@ -1,27 +1,10 @@
-import arrowRight from './arrow-right.svg'
-import chevronLeft from './chevron-left.svg'
-import cheveronRight from './chevron-right.svg'
-import copyrightSign from './copyright-sign.svg'
-import facebook from './facebook.svg'
-import hamburger from './hamburger.svg'
-import instagram from './instagram.svg'
-import support from './support.svg'
-import shieldTick from './shield-tick.svg'
-import star from './star.svg'
-import truckFast from './truck-fast.svg'
-import twitter from './twitter.svg'
+
+import support from '../../../../../assets/IT_development/Future_Ready_Technology.png'
+import shieldTick from '../../../../../assets/IT_development/Seamless_integration.png'
+import truckFast from '../../../../../assets/IT_development/User_centric.png'
 
 export {
-    arrowRight,
-    cheveronRight,
-    chevronLeft,
-    copyrightSign,
-    facebook,
-    hamburger,
-    instagram,
     support,
     shieldTick,
-    star,
     truckFast,
-    twitter
 }

@@ -1,29 +1,42 @@
-import { useState } from "react";
-import { RiInstagramFill, RiLinkedinFill, RiFacebookFill, RiXingFill } from "react-icons/ri";
+import { useState, useEffect } from "react";
+import { RiInstagramFill, RiLinkedinFill } from "react-icons/ri";
 import { Teams } from "../../constant";
-
 
 const Team = () => {
   const [activeImage, setActiveImage] = useState(2);
-  const isMobile = window.innerWidth <= 768;
-  
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  // Update isMobile state on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const contents = Teams.map((image) => ({
     id: image.contentId,
     imgSrc: image.src,
     title: image.title,
     subtitle: image.subTitle,
-    urlf:image.urlf,
-    urli:image.urli,
-    urll:image.urll,
-    urlx:image.urlx,
+    urlf: image.urlf,
+    urli: image.urli,
+    urll: image.urll,
+    urlx: image.urlx,
   }));
 
   return (
     <div className="flex flex-col gap-16 justify-center items-center h-[800px] bg-gray-900">
       <div className="flex w-[80%] max-mobile:w-[85%] max-mobile:leading-snug flex-col items-center gap-4">
         <h1 className="text-white text-3xl font-semibold">Our Teams</h1>
-        <p className="text-white">Meet our team — the driving force behind our commitment to excellence. With gratitude to everyone who&apos;s ever been part of our journey, we celebrate their contributions that have shaped who we are today.</p>
+        <p className="text-white">
+          Meet our team — the driving force behind our commitment to excellence. With gratitude to everyone who&apos;s
+          ever been part of our journey, we celebrate their contributions that have shaped who we are today.
+        </p>
       </div>
       <div className="relative w-[500px] max-mobile:w-[300px] max-mobile:h-[300px] h-[500px] border-2 border-t-secondary rounded-full">
         <div className="relative left-[-50%] w-full h-full flex justify-center items-center cursor-pointer">
@@ -36,7 +49,7 @@ const Team = () => {
               style={{
                 transform: `rotate(${(360 / 8) * img.id}deg)`,
                 zIndex: 100,
-                transformOrigin :isMobile ? '170px' : '290px'
+                transformOrigin: isMobile ? "170px" : "290px",
               }}
               onMouseOver={() => setActiveImage(img.id)}
               onClick={() => setActiveImage(img.id)}
@@ -77,25 +90,41 @@ const Team = () => {
                   <span className="text-xs font-medium tracking-widest">{content.subtitle}</span>
                   <ul className="flex gap-2 mt-2">
                     <li>
-                      <a href={content.urli} target="_blank" className="w-8 h-8 max-mobile:w-6 max-mobile:h-6 flex justify-center items-center bg-gray-700 text-white rounded-lg hover:bg-blue-500 transition duration-500">
-                      <RiInstagramFill/>
+                      <a
+                        href={content.urli}
+                        target="_blank"
+                        className="w-8 h-8 flex justify-center items-center bg-gray-700 text-white rounded-lg hover:bg-blue-500 transition duration-500"
+                      >
+                        <RiInstagramFill />
                       </a>
                     </li>
                     <li>
-                      <a href={content.urll} target="_blank" className="w-8 h-8 max-mobile:w-6 max-mobile:h-6 flex justify-center items-center bg-gray-700 text-white rounded-lg hover:bg-blue-500 transition duration-500">
-                        <RiLinkedinFill/>
+                      <a
+                        href={content.urll}
+                        target="_blank"
+                        className="w-8 h-8 flex justify-center items-center bg-gray-700 text-white rounded-lg hover:bg-blue-500 transition duration-500"
+                      >
+                        <RiLinkedinFill />
+                      </a>
+                    </li>
+                    {/* <li>
+                      <a
+                        href={content.urlf}
+                        target="_blank"
+                        className="w-8 h-8 flex justify-center items-center bg-gray-700 text-white rounded-lg hover:bg-blue-500 transition duration-500"
+                      >
+                        <RiFacebookFill />
                       </a>
                     </li>
                     <li>
-                      <a href={content.urlf} target="_blank" className="w-8 h-8 max-mobile:w-6 max-mobile:h-6 flex justify-center items-center bg-gray-700 text-white rounded-lg hover:bg-blue-500 transition duration-500">
-                        <RiFacebookFill/>
+                      <a
+                        href={content.urlx}
+                        target="_blank"
+                        className="w-8 h-8 flex justify-center items-center bg-gray-700 text-white rounded-lg hover:bg-blue-500 transition duration-500"
+                      >
+                        <RiXingFill />
                       </a>
-                    </li>
-                    <li>
-                      <a href={content.urlx} target="_blank" className="w-8 h-8 max-mobile:w-6 max-mobile:h-6 flex justify-center items-center bg-gray-700 text-white rounded-lg hover:bg-blue-500 transition duration-500">
-                        <RiXingFill/>
-                      </a>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>
@@ -105,6 +134,6 @@ const Team = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Team;

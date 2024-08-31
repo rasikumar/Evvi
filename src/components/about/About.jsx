@@ -35,26 +35,9 @@ const About = () => {
               ease: 'linear',
             }}
             className="flex gap-10">
-                <img src={aboutus} width={200} className="max-mobile:w-[145px] max-mobile:h-[145px] rounded-[5rem] rounded-br-none bg-slate-200"  alt="missionImage" />
-                <img src={aboutus} width={200}  className="max-mobile:w-[145px] max-mobile:h-[145px] rounded-[5rem] rounded-bl-none bg-slate-200"  alt="missionImage" />
+                <img src={aboutus} width={500}   alt="missionImage" />
             </motion.div>
-            <motion.div
-            initial="hidden"
-            animate={inview ? "visible" : "hidden"}
-            ref={itemRef}
-            variants={{
-              hidden : { opacity:0, x:55},
-              visible : { opacity:1, x:0},
-            }}    
-            transition={{
-              duration : 1,
-              type: "spring",
-              ease: 'linear',
-            }}
-            className="flex gap-10">
-                <img src={aboutus} width={200} className="max-mobile:w-[145px] max-mobile:h-[145px] rounded-[5rem] rounded-tr-none top-4 bg-slate-200" alt="missionImage" />
-                <img src={aboutus} width={200}  className="rounded-[5rem] rounded-tl-none bg-slate-200 max-mobile:w-[145px] max-mobile:h-[145px]"  alt="missionImage" />
-            </motion.div>
+           
       </div>
     </div>
   );

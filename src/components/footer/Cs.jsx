@@ -6,14 +6,14 @@ const Cs = () => {
 
   return (
     <div>
-      <div className="w-full p-14 justify-center pl-40 gap-20 max-tablet:gap-5 flex max-tablet:flex-col bg-t-secondary/60 ">
+      <div className="w-full p-14 max-mobile:p-4 max-mobile:items-center justify-center pl-40 gap-20 max-tablet:gap-5 flex max-tablet:flex-col bg-t-secondary/60 ">
           {OurServices.map(service => (
-            <div key={service.id} className='flex flex-col gap-5 max-tablet:gap-2'>
+            <div key={service.id} className='flex flex-col max-tablet:items-center max-tablet:justify-center gap-5 max-tablet:gap-2'>
               <h1 className='font-bold text-center'>Helpful Links</h1>
-              <div className='flex gap-2 max-tablet:gap-1 font-medium'>
+              <div className='flex max-mobile:p-3 max-tablet:flex-col gap-2 max-tablet:gap-1 font-medium'>
                 {service.lists.map(i => (
                   <ul key={i.id} >
-                    <Link to={i.url} className='text-sm hover:text-white hover:font-medium transition-all delay-[0.1s] cursor-pointer'> {i.content}  </Link>
+                    <Link to={i.url} className='text-sm font-semibold hover:text-white hover:font-medium transition-all delay-[0.1s] cursor-pointer'> {i.content}  </Link>
                   </ul>
                 ))}
               </div>

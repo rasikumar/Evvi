@@ -8,9 +8,9 @@ function SpecialOffer() {
         <img
           src={offer}
           alt="Shoe Promotion"
-          width={773}
-          height={687}
-          className="object-contain w-full "
+          width={573}
+          height={587}
+          className="object-contain w-full"
         />
       </div>
       <div className="flex flex-col w-[50%] max-tablet:w-full">
@@ -23,7 +23,7 @@ function SpecialOffer() {
         <p className="mt-6 max-mobile:text-sm">
         Get in touch today to explore how we can support your next project and drive your business forward.
         </p>
-        <Link to={"/Contact_Us"} className="btn-primary w-[25%] max-mobile:w-[40%] mt-4">Contact Us</Link>
+        <Link to={"/Contact_Us"} className="btn-primary w-[25%] max-mobile:w-[60%] mt-4">Contact Us</Link>
       </div>
     </section>
   );

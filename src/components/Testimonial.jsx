@@ -56,7 +56,7 @@ const Testimonial = () => {
                   onMouseEnter={() => handleMouseEnter(j.id)}
                   onMouseLeave={handleMouseLeave}
                   >
-                    <h2 className={`font-bold text-t-primary text-justify text-sm  ${hover === j.id ? "transition duration-700" : "text-center ml-52"}`} onMouseEnter={() =>handleMouseEnter(j.id)}>{j.heading}</h2>
+                    <h2 className={`font-bold text-t-primary text-justify text-sm  ${hover === j.id ? "transition duration-700" : "text-center ml-52 max-tablet:ml-0"}`} onMouseEnter={() =>handleMouseEnter(j.id)}>{j.heading}</h2>
                     <p className={`transition-opacity duration-100 font-medium text-sm ${ hover === j.id ? "block" : "hidden" }`} >- {j.content}</p>
                   </motion.li>
                 ))}

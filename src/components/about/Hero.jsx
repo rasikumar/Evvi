@@ -1,4 +1,4 @@
-import { HR_video } from "../../assets";
+import { about_hero } from "../../assets";
 import { About_Full } from "../../constant";
 
 const hero = About_Full[0];
@@ -6,14 +6,8 @@ const hero = About_Full[0];
 const Hero = () => {
   return (
     <div className="relative w-full h-screen">
-      <div className="absolute inset-0 h-screen -top-32 -z-10 bg-t-secondary/60">
-        <video
-          src={HR_video}
-          autoPlay
-          muted
-          loop
-          className="object-cover w-full h-full opacity-75"
-        ></video>
+      <div className="absolute inset-0 h-screen -top-32 -z-10 bg-t-secondary/30">
+        <img src={about_hero} alt=""className="object-cover w-full h-full opacity-75" />
       </div>
       <div className="flex flex-col items-center justify-center py-40 gap-4 px-3">
         <h1 className="text-5xl max-tablet:text-3xl  font-semibold text-center text-white">{hero.header.slice(0,28)} <br /> {hero.header.slice(28,48)}</h1>

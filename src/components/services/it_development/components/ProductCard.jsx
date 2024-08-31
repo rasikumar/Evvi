@@ -3,8 +3,8 @@
 // eslint-disable-next-line react/prop-types
 function ProductCard({ imgURL, name, price }) {
   return (
-    <div className="flex flex-col w-fit  justify-center">
-      <img src={imgURL} className="w-[18rem] max-tablet:w-[15rem] flex items-center justify-center mr-4" />
+    <div className="flex flex-col w-fit justify-center">
+      <img src={imgURL} className="w-[18rem] max-tablet:w-[15rem] flex items-center justify-center rounded-lg" />
       {/* <div className="flex">
         <img
           src={star}
@@ -17,7 +17,7 @@ function ProductCard({ imgURL, name, price }) {
       </div> */}
       <h3 className="w-fit text-base px-2 text-center m-auto font-medium text-t-primary mt-2">{name}</h3>
       <p className="text-sm text-center p-2 font-medium leading-snug">{price}</p>
-    </div>
+    </div> 
   );
 }
 

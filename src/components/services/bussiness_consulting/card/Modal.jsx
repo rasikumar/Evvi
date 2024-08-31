@@ -3,17 +3,17 @@ import { motion } from "framer-motion";
 
 export default function Modal({ selected, setSelected }) {
   if (!selected) {
-    return <></>;
+    return null;
   }
 
   return (
     <div
       onClick={() => setSelected(null)}
-      className="fixed inset-0  bg-black/50 z-50 cursor-pointer overflow-y-scroll"
+      className="fixed inset-0 bg-black/50 z-50 cursor-pointer overflow-y-scroll"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-[90%] mx-auto my-8 px-8 cursor-default flex mt-32"
+        className="w-[90%] mx-auto my-8 px-8 cursor-default flex max-mobile:flex-col mt-32"
       >
         <motion.div layoutId={`card-${selected.id}`}>
           <img src={selected.url} className="w-full h-full rounded-s-lg" />
@@ -29,6 +29,7 @@ export default function Modal({ selected, setSelected }) {
           }}
           transition={{
             duration: 0.5,
+            delay: 0.2, // Adding a slight delay
           }}
           className="bg-white p-4"
         >

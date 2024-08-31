@@ -25,7 +25,7 @@ const ServiceSlide = () => {
 
   return (
       <div className="box">
-        <div className="tabs">
+        <div className="tabs max-mobile:overflow-x-scroll">
             <div className={`transition-all delay-100 tab font-medium ${state === 1 ? 'active-tab' : 'text-white'}`} onClick={() => action(1) }>{itemOneRender}</div>
             <div className={`transition-all delay-100 tab font-medium ${state === 2 ? 'active-tab' : 'text-white'}`} onClick={() => action(2)}>{itemTwoRender}</div>
             <div className={`transition-all delay-100 tab font-medium ${state === 3 ? 'active-tab' : 'text-white'}`} onClick={() => action(3)}>{itemThreeRender}</div>

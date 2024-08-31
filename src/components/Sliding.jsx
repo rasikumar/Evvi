@@ -60,7 +60,7 @@ const scrollX = keyframes`
 `;
 
 const MarqueeGroup = styled.div`
-  animation: ${scrollX} 50s linear infinite;
+  animation: ${scrollX} 15s linear infinite;
 `;
 
 const Text = styled.div`

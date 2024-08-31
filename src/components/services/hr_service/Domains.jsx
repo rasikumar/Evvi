@@ -38,13 +38,13 @@ const Domains = () => {
                     onMouseLeave={() => setTip(null)}
                     className="relative flex flex-col items-center justify-center"
                   >
-                    <img src={j.img} alt="" className="w-32 max-tablet:w-28" />
+                    <img src={j.img} alt="#" className="w-32 max-tablet:w-28" />
                     {tooltip === j.id && (
                       <motion.p
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        className="absolute bottom-14 w-40 p-2 bg-white shadow-lg rounded text-sm text-gray-800 text-center"
+                        className="absolute bottom-14 max-mobile:bottom-10 w-40 p-2 max-mobile:py-4 max-mobile:h-10 bg-white shadow-lg rounded text-sm text-gray-800 text-center"
                       >
                         {j.content}
                       </motion.p>
@@ -61,13 +61,13 @@ const Domains = () => {
                     onMouseLeave={() => setTip(null)}
                     className="relative flex flex-col items-center"
                   >
-                    <img src={j.img} alt="" className="w-32 max-tablet:w-28" />
+                    <img src={j.img} alt="#" className="w-32 max-tablet:w-28" />
                     {tooltip === j.id && (
                       <motion.p
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        className="absolute bottom-14 w-40 p-2 bg-white shadow-lg rounded text-sm text-gray-800 text-center"
+                        className="absolute bottom-14 max-mobile:bottom-10 w-40 p-2 max-mobile:py-4 max-mobile:h-10 bg-white shadow-lg rounded text-sm text-gray-800 text-center"
                       >
                         {j.content}
                       </motion.p>

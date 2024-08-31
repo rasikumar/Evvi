@@ -55,7 +55,7 @@ const ServiceList = () => {
                 }}
                 src={i.img}
                 alt={i.header}
-                className="rounded-2xl w-40  m-auto"
+                className="rounded-2xl w-40 max-mobile:w-full  m-auto"
               />
               <p className="text-sm font-medium line-clamp-4">{i.content}</p>
               <Link to={i.url} className="btn-primary ">
@@ -72,7 +72,7 @@ const ServiceList = () => {
             className="flex p-5 flex-col items-center shadow-[rgba(0, 0, 0, 0.15)_0px_3px_3px_0px] bg-slate-200 rounded-xl"
           >
             <h1 className="font-semibold text-xl text-center">{i.header}</h1>
-            <motion.div className="flex items-center justify-between min-w-64 gap-5 p-3 ">
+            <motion.div className="flex max-mobile:flex-col items-center justify-between min-w-64 gap-5 p-3 ">
               <div>
                 <motion.img
                   whileHover={{

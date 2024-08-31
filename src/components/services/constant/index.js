@@ -1,4 +1,4 @@
-import { domains, service_image } from "../../../assets";
+import { Recruit, Payroll, Policy, Employee_lifecycle, Performance, Compliance, IT, ITES, heathcare96, manufacturing, realhouse, teaching, Startegic, Operation, Change, Workforce, Tailoredsolutions, broad, success, strategy } from "../../../assets";
 
 
 // HR_Service_Page
@@ -16,42 +16,42 @@ export const HR_Content = [
     items: [
       {
         id: 0,
-        img: service_image,
+        img: Recruit,
         title: "Recruitment Excellence",
         content:
           "Discover top talents effortlessly. We handle the hiring process, ensuring the perfect fit for your team.",
       },
       {
         id: 1,
-        img: service_image,
+        img: Payroll,
         title: "Payroll Simplified",
         content:
           "Streamline your payroll. Our experts manage everything from structuring to compliance, giving you peace of mind.",
       },
       {
         id: 2,
-        img: service_image,
+        img: Policy,
         title: "Policy Craftsmanship",
         content:
           "Tailor-made policies for your unique needs. Our experts ensure your workplace policies are clear, fair, and compliant.",
       },
       {
         id: 3,
-        img: service_image,
+        img: Employee_lifecycle,
         title: "Employee Lifecycle Support",
         content:
           "Nurture your team from onboarding to offboarding. We provide comprehensive support at every stage.",
       },
       {
         id: 4,
-        img: service_image,
+        img: Performance,
         title: "Performance Mastery",
         content:
           "Empower your team to excel. Our programs enhance performance and encourage professional growth.",
       },
       {
         id: 5,
-        img: service_image,
+        img: Compliance,
         title: "Compliance Assurance",
         content:
           "Stay legally sound. Our team ensures your HR practices adhere to all regulations, minimizing risks.",
@@ -72,12 +72,12 @@ export const HR_Content = [
         items: [
           {
             id: 0,
-            img: domains,
+            img: IT,
             content: "IT",
           },
           {
             id: 1,
-            img: domains,
+            img: ITES,
             content: "IT-ES",
           },
           // {
@@ -87,12 +87,12 @@ export const HR_Content = [
           // },
           {
             id: 3,
-            img: domains,
+            img: heathcare96,
             content: "Healthcare",
           },
           {
             id: 4,
-            img: domains,
+            img: manufacturing,
             content: "Manufacturing",
           },
           // {
@@ -107,12 +107,12 @@ export const HR_Content = [
           // },
           {
             id: 7,
-            img: domains,
+            img: realhouse,
             content: "Real Estate",
           },
           {
             id: 8,
-            img: domains,
+            img: teaching,
             content: "Education",
           },
         ],
@@ -163,28 +163,28 @@ export const Business_Consulting = [
     items: [
       {
         id: 0,
-        url: service_image,
+        url: Startegic,
         title: "Strategic Planning",
         description:
           "Develop and implement strategic plans that align with your business goals, driving growth and achieving long-term success.",
       },
       {
         id: 1,
-        url: service_image,
+        url: Operation,
         title: "Operations Optimization",
         description:
           "Enhance your business operations by identifying inefficiencies and streamlining processes to boost productivity and reduce costs.",
       },
       {
         id: 2,
-        url: service_image,
+        url: Change,
         title: "Change Management",
         description:
           "Navigate organizational transitions smoothly with expert guidance, ensuring minimal disruption and effective adaptation.",
       },
       {
         id: 3,
-        url: service_image,
+        url: Workforce,
         title: "Workforce Management",
         description:
           "Optimize your workforce strategies to align with business objectives, enhance employee engagement, and improve overall effectiveness.",
@@ -218,22 +218,22 @@ export const Business_Consulting = [
         items: [
           {
             id: 0,
-            img: domains,
+            img: Tailoredsolutions,
             content: "Tailored Solutions",
           },
           {
             id: 1,
-            img: domains,
+            img: broad,
             content: "Broad Expertise",
           },
           {
             id: 2,
-            img: domains,
+            img: success,
             content: "Proven Success",
           },
           {
             id: 3,
-            img: domains,
+            img: strategy,
             content: "Comprehensive Approach",
           },
           // {

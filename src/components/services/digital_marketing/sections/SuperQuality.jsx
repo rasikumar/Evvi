@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { shoe8 } from '../assets/images'
 
 function SuperQuality() {
@@ -11,7 +12,7 @@ function SuperQuality() {
         <p className='mt-6 lg:max-w-lg info-text'>
         We offer end-to-end support to help you excel in the digital age.
         </p>
-        <button className='btn-primary w-[25%] max-mobile:w-[40%] mt-4'>Learn More</button>
+        <Link to={"/Contact_Us"} className='btn-primary w-[25%] max-mobile:w-[40%] mt-4'>Learn More</Link>
       </div> 
       <div>
       <img
@@ -19,7 +20,7 @@ function SuperQuality() {
           alt='product detail'
           width={570}
           height={522}
-          className='object-contain'
+          className='object-contain rounded-xl'
         />
       </div>
     </section>

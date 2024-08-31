@@ -1,35 +1,32 @@
-import bigShoe1 from './big-shoe1.png'
-import bigShoe2 from './big-shoe2.png'
-import bigShoe3 from './big-shoe3.png'
+import bigShoe1 from '../../../../../assets/IT_development/Website.mp4'
+import bigShoe2 from '../../../../../assets/IT_development/Mobile.mp4'
+import bigShoe3 from '../../../../../assets/IT_development/cloud.mp4'
 import favicon from './favicon.png'
 
-import customer1 from './customer1.jpeg'
-import customer2 from './customer2.svg'
 
 import footerLogo from './footer-logo.svg'
 import headerLogo from './header-logo.svg'
 
-import offer from './offer.svg'
+import offer from '../../../../../assets/IT_development/Exellance_bottm.png'
 
-import shoe4 from './shoe4.svg'
-import shoe5 from './shoe5.svg'
-import shoe6 from './shoe6.svg'
-import shoe7 from './shoe7.svg'
-import shoe8 from './shoe8.svg'
+
+import shoe6 from '../../../../../assets/IT_development/Web_Dev.jpg' 
+import shoe7 from '../../../../../assets/IT_development/Mobile_dev.jpg'
+import shoe5 from '../../../../../assets/IT_development/End_Support.jpg'
+import shoe4 from '../../../../../assets/IT_development/Cloudservice.jpg' 
+
+import shoe8 from '../../../../../assets/IT_development/Excellence.jpg' 
 
 import thumbnailBackground from './thumbnail-background.svg'
-import thumbnailShoe1 from './thumbnail-shoe1.svg'
-import thumbnailShoe2 from './thumbnail-shoe2.svg'
-import thumbnailShoe3 from './thumbnail-shoe3.svg'
+import thumbnailShoe1 from '../../../../../assets/IT_development/Website.mp4'
+import thumbnailShoe2 from '../../../../../assets/IT_development/Mobile.mp4'
+import thumbnailShoe3 from '../../../../../assets/IT_development/cloud.mp4'
 
 export {
     bigShoe1,
     bigShoe2,
     bigShoe3,
     favicon,
-
-    customer1,
-    customer2,
 
     footerLogo,
     headerLogo,

@@ -96,20 +96,23 @@
     transition: all 3s ease-in-out;
 }
 .card-container:hover .card-content{
-    bottom: 0;
+    top: 8rem;
     display: block;
     transition: all 3s ease-in-out;
 
 }
 .card-container:hover img{
-    opacity: 0.6;
-    scale: 1.2;
+    opacity: 0.2;
+    scale: 1.03;
     transition: all 0.3s ease;
     border-radius: 10px;    
 }
 
 .serviceCardIT:hover .serviceCards{
     background: #F67629;
+}
+.serviceCardIT:hover .texts{
+    color: white;
 }
 .serviceCardIT:hover .texts{
     color: white;

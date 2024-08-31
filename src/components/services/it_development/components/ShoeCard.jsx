@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 
 
-// eslint-disable-next-line react/prop-types
 const ShoeCard = ({ imgURL, changeBigShoeImage, bigShoeImg }) => {
     const handleClick = () => {
       // eslint-disable-next-line react/prop-types
@@ -13,22 +13,15 @@ const ShoeCard = ({ imgURL, changeBigShoeImage, bigShoeImg }) => {
     return (
       <div
         className={`border-2 rounded-xl ${
-          // eslint-disable-next-line react/prop-types
+          // eslint-disable-next-line react/prop-types  
           bigShoeImg === imgURL.bigShoe
-            ? "border-coral-red"
-            : "border-transparent"
+            ? "border-none rounded-xl p-1 bg-t-secondary "
+            : "border-none"
         } cursor-pointer max-sm:flex-1`}
         onClick={handleClick}
       >
-        <div className='flex justify-center items-center bg-card bg-center bg-cover sm:w-20 sm:h-20 rounded-xl max-sm:p-4'>
-          <img
-            // eslint-disable-next-line react/prop-types
-            src={imgURL.thumbnail}
-            alt='shoe colletion'
-            width={127}
-            height={103.34}
-            className='object-contain'
-          />
+        <div className='flex justify-center items-center bg-card bg-center bg-cover rounded-xl '>
+          <video src={imgURL.thumbnail} autoPlay muted loop className="object-cover rounded-xl transition delay-100"></video>
         </div>
       </div>
     );

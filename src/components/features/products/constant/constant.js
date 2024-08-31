@@ -1,3 +1,4 @@
+import { Diy, Expert, Rapid } from "../../../../assets";
 
 export const IyyanContent = [
     {
@@ -17,19 +18,19 @@ export const IyyanContent = [
                 id : 0,
                 content : "DIY Solutions",
                 paragraph : "Simple, step-by-step instructions to resolve common issues independently.",
-                img :''
+                img :Diy
             },
             {
                 id : 1,
                 content : "Expert Assistance",
                 paragraph : "Instant connection to friendly tech experts via video or voice calls.",
-                img : ''
+                img : Expert
             },
             {
                 id : 2,
                 content : "Rapid Local Support",
                 paragraph : "Quick access to the nearest reliable technician for on-site repairs.",
-                img :''
+                img : Rapid
             }
         ]
     }

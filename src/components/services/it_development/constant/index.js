@@ -32,12 +32,12 @@ export const shoes = [
 export const products = [
   {
     imgURL: shoe6,
-    name: "Website Design & Development",
+    name: "Website Development",
     price: "Create visually appealing and functional websites that drive engagement and support your business objectives.",
   },
   {
     imgURL: shoe7,
-    name: "Mobile App & Web App Development",
+    name: "Mobile and Web Applications",
     price: "Develop custom apps that enhance user experiences and streamline business processes.",
   },
   {
@@ -47,7 +47,7 @@ export const products = [
   },
   {
     imgURL: shoe4,
-    name: "Cloud Services (Infrastructure Creation & Maintenance)",
+    name: "Cloud Services",
     price: "Build and maintain a scalable and secure cloud infrastructure tailored to your business needs.",
   },
   

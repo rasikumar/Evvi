@@ -16,11 +16,22 @@ import {
     hr_service,
     digital_excellence,
     corparate_training,
-    // counseling_service,
+    counseling_service,
     blog_1,
     blog_2,
     blog_3,
     blog_4,
+    vision,
+    mission,
+    value,
+    Fazil,
+    Gopi,
+    Rasi,
+    Sankar,
+    Nanda,
+    Shanthi,
+    Sathya,
+    Visutha
 } from '../assets/index';
 import { FaBusinessTime, FaDigitalTachograph, FaPeopleCarry, FaLaptopCode } from "react-icons/fa";
 
@@ -256,7 +267,7 @@ export const OurServices = [
                 id : 0,
                 heading : 'Tailored strategies for sustainable growth',
                 description : "Unlock your business's full potential with our comprehensive consulting services. From strategic planning to process optimization, we provide actionable insights that drive growth and efficiency.",
-                img : digital_excellence,
+                img : counseling_service,
                 listo : [
                     {
                         id : 0,
@@ -306,7 +317,7 @@ export const OurServices = [
                 id : 1,
                 heading : 'Boost your brand with innovative digital strategies.',
                 description : 'Boost your online presence with our cutting-edge digital marketing solutions. We tailor strategies to amplify your brand and connect with your target audience effectively.',
-                img : hr_service,
+                img : digital_excellence,
                 listo : [
                     {
                         id : 0,
@@ -356,7 +367,7 @@ export const OurServices = [
                 id : 2,
                 heading : 'Your trusted partner for comprehensive HR solutions.',
                 description : 'People are the cornerstone of your success. Our HR Consulting services offer end-to-end support, from talent acquisition and onboarding to compliance management and employee development.',
-                img : corparate_training,
+                img : hr_service,
                 listo : [
                     {
                         id : 0,
@@ -462,7 +473,7 @@ export const ServicePage =[
         id :0,
         header : 'Business Consulting',
         content : "Unlock your business's full potential with our comprehensive consulting services. From strategic planning to process optimization, we provide actionable insights that drive growth and efficiency.",
-        img: digital_excellence,
+        img: counseling_service,
         btn:"Read More",
         url : '/Business_Consulting'
     },
@@ -478,7 +489,7 @@ export const ServicePage =[
         id:2,
         header : "HR Service",
         content : "People are the cornerstone of your success. Our HR Consulting services offer end-to-end support, from talent acquisition and onboarding to compliance management and employee development.",
-        img: corparate_training,
+        img: hr_service,
         btn:"Read More",
         url : '/HR_Service'
     },
@@ -503,10 +514,10 @@ export const Blogs = [
                 img : blog_1,
                 icon_1 : date_icon,
                 date : '03 June 2024',
-                title : "Here is Update of web Devlopments and Amazing",
-                description : "ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur ,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu" ,
+                title : "Retreat",
+                description : "As we continue to adapt to the constantly changing landscape of the modern workplace, it has become increasingly clear that prioritizing employee wellbeing and mental health is crucial for creating a healthy, productive, and sustainable work environment. Providing support for employee well-being encompasses addressing physical, mental, and emotional health, which are all interconnected and vital for overall satisfaction and performance. Mental health deserves special attention, as it can have a significant impact on employee engagement, productivity, and organizational success." ,
                 link : "Learn More",
-                width : 18,
+                width : 14,
                 icon_2 : right_arrow,
                 url:'/blog_1'
             },
@@ -515,10 +526,10 @@ export const Blogs = [
                 img : blog_2,
                 icon_1 : date_icon,
                 date : '03 June 2024',
-                title : "Here is Update of web Devlopments and Amazing",
-                description : "ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur ,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu" ,
+                title : "Valuable",
+                description : "In today's fast-paced professional world, it's essential to create a culture that values continuous learning, steadfast achievement, and the cultivation of a lasting legacy. That's where & 'VALUABLE' comes in - it's an acronym that embodies the essence of nurturing employee talent for unparalleled success." ,
                 link : "Learn More",
-                width : 18,
+                width : 14,
                 icon_2 : right_arrow,
                 url:'/blog_2'
             },
@@ -527,10 +538,10 @@ export const Blogs = [
                 img : blog_3,
                 icon_1 : date_icon,
                 date : '03 June 2024',
-                title : "Here is Update of web Devlopments and Amazing",
-                description : "ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur ,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu" ,
+                title : "GROWTH",
+                description : "The 'GROWTH' framework—Guiding, Recognizing, Opportunity, Wealthing, Training, and Holisticing—revolutionizes the employee-employer dynamic by fostering a supportive and dynamic work environment. This model emphasizes guiding employees through impactful mentorship, recognizing achievements to elevate morale, and creating abundant opportunities for advancement. Wealthing focuses on bolstering financial growth and benefits, while training ensures continuous skill development. Holisticing promotes overall well-being, integrating work-life balance and personal growth. Together, these elements cultivate a mutually beneficial relationship, enhancing employee satisfaction and productivity, while propelling organizational success and sustainability. The GROWTH approach encapsulates a comprehensive strategy for thriving workplace dynamics." ,
                 link : "Learn More",
-                width : 18,
+                width : 14,
                 icon_2 : right_arrow,
                 url:'/blog_3'
             },
@@ -539,10 +550,10 @@ export const Blogs = [
                 img : blog_4,
                 icon_1 : date_icon,
                 date : '03 June 2024',
-                title : "Here is Update of web Devlopments and Amazing",
-                description : "ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetur ,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu,ldddorem ipsum dolor sit amet, consectetur,lorem ipsum dolor sit amet, consectetu" ,
+                title : "”Feel Good Friday”- abstract.",
+                description : " In the Indian corporate culture, 'Feel Good Friday' or 'Fun Friday' has become quite popular. As the week comes to a close, many companies use Fridays for activities that break the routine. These activities can range from wearing casual clothes and playing games to having office parties and wellness sessions. The goal is to create a relaxed and enjoyable atmosphere, allowing employees to unwind and socialize with their colleagues. This not only makes work more enjoyable, but also fosters creativity and teamwork. In this series, we will explore whether Fun Friday is beneficial for our team or if it's unnecessary." ,
                 link : "Learn More",
-                width : 18,
+                width : 14,
                 icon_2 : right_arrow,
                 url:'/blog_4'
             },
@@ -642,26 +653,26 @@ export const Footerend = [
     // }
 ]
 
-export const questions = [
-    "What is your name?",
-    "What is your favorite color?",
-    "What do you do?"
-];
+// export const questions = [
+//     "What is your name?",
+//     "What is your favorite color?",
+//     "What do you do?"
+// ];
 
-export const answers = {
-    "What is your name?": {
-        answer: "My name is ChatGPT.",
-        followUp: ["How old are you?", "Where are you from?"]
-    },
-    "What is your favorite color?": {
-        answer: "My favorite color is blue.",
-        followUp: ["Why do you like blue?", "What other colors do you like?"]
-    },
-    "What do you do?": {
-        answer: "I help people with information.",
-        followUp: ["How do you help?", "What else can you do?"]
-    }
-};
+// export const answers = {
+//     "What is your name?": {
+//         answer: "My name is ChatGPT.",
+//         followUp: ["How old are you?", "Where are you from?"]
+//     },
+//     "What is your favorite color?": {
+//         answer: "My favorite color is blue.",
+//         followUp: ["Why do you like blue?", "What other colors do you like?"]
+//     },
+//     "What do you do?": {
+//         answer: "I help people with information.",
+//         followUp: ["How do you help?", "What else can you do?"]
+//     }
+// };
 
 export const About_Full = [
     { 
@@ -697,25 +708,38 @@ export const About_Full = [
                 id : 0,
                 header : "Vision",
                 content : "Transforming ambitions into achievements by providing comprehensive support and strategic guidance to startups and SMEs.",
-                img : ''
+                img : vision
             },
             {
                 id : 1,
                 header : "Mission",
                 content : "Our mission is to deliver personalized consulting, cutting-edge digital strategies, and robust HR solutions to startups and SMEs, providing the clear direction and support needed to transform their goals into accomplishments.",
-                img : ''
+                img : mission
+            },
+            {
+                id : 2,
+                header : "value",
+                content : "Our mission is to deliver personalized consulting, cutting-edge digital strategies, and robust HR solutions to startups and SMEs, providing the clear direction and support needed to transform their goals into accomplishments.",
+                img : value
             }
         ]
     }
 ]
 
 export const Teams = [
-    { id: 1, src: test1, contentId: "content1", title:"Visutha", subTitle : "React Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
-    { id: 2, src: test1, contentId: "content2", title:"Gopinath Pandian", subTitle : "CEO", urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
-    { id: 3, src: test1, contentId: "content3", title:"Shanthi Subramanian", subTitle : "Founder",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
-    { id: 4, src: test1, contentId: "content4", title:"Nandha Kumar", subTitle : "Creative Designer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
-    { id: 5, src: test1, contentId: "content5", title:"Rasi Kumar", subTitle : "React Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en",},
-    { id: 6, src: test1, contentId: "content6", title:"Sathya Priya", subTitle : "Digital Marketer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
-    { id: 7, src: test1, contentId: "content7", title:"Sankar", subTitle : "Flutter Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
-    { id: 8, src: test1, contentId: "content8", title:"Mohamed Fazil", subTitle : "MERN Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
-  ];
+    { id: 1, src: Visutha, contentId: "content1", title:"Visutha", subTitle : "React Developer",urli:"https://www.instagram.com/visutharamalingam",urll:"https://www.linkedin.com/in/visutha-r/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+
+    { id: 2, src: Gopi, contentId: "content2", title:"Gopinath Pandian", subTitle : "Founder / Techincal - Director", urli:"https://www.instagram.com/technlite_gopinath/",urll:"https://www.linkedin.com/in/gopinathap4/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+
+    { id: 3, src: Shanthi, contentId: "content3", title:"Shanthi Subramani", subTitle : "Co - Founder / Operations Director",urli:"https://www.instagram.com/shanthi2point0/",urll:"https://www.linkedin.com/in/shanthisubramani/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+
+    { id: 4, src: Nanda, contentId: "content4", title:"Nandha Kumar", subTitle : "Creative Designer",urli:"https://www.instagram.com/mr.black__sqard?utm_source=qr&igsh=MTd2Y2JpbmRhYXJhZw==",urll:"https://www.linkedin.com/in/nandha-kumar-112559280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+
+    { id: 5, src: Rasi, contentId: "content5", title:"Rasi Kumar", subTitle : "React Developer",urli:"https://www.instagram.com/rasi_max/",urll:"https://www.linkedin.com/in/rasikumar/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en",},
+
+    { id: 6, src: Sathya, contentId: "content6", title:"Sathya Priya", subTitle : "Digital Marketer",urli:"https://www.instagram.com/social_spark_buzz/",urll:"https://www.linkedin.com/in/sathya-priya-j-636bb8305/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+
+    { id: 7, src: Sankar, contentId: "content7", title:"Sankar", subTitle : "Flutter Developer",urli:"https://www.instagram.com/mr_naughty_boy_13_/",urll:"https://www.linkedin.com/in/sankar-k-09032a2a7/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+
+    { id: 8, src: Fazil, contentId: "content8", title:"Mohamed Fazil", subTitle : "MERN Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+  ]; 

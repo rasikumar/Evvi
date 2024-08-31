@@ -6,7 +6,7 @@ export default function Home() {
   const [selected, setSelected] = useState(null);
   return (
     <div>
-      <List setSelected={setSelected} />
+      <List setSelected={setSelected}/>
       <Modal selected={selected} setSelected={setSelected} />
     </div>
   );

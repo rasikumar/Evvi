@@ -10,7 +10,7 @@ import CF from './contact & faq/CF'
 
 const Heart = () => {
   return (
-    <>
+    <div className="overflow-hidden">
         
         <Hero/>
         <Sliding/>
@@ -20,7 +20,7 @@ const Heart = () => {
         <Blog/>
         <CF/>
         {/* <Testing/> */}
-    </>
+    </div>
   )
 }
 

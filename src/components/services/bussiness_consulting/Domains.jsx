@@ -16,7 +16,7 @@ const Domains = () => {
       <div className="w-[50%] max-tablet:w-full max-mobile:py-10 flex flex-col items-center justify-center">
         {list.map((i) => (
           <div key={i.id} className="flex flex-col items-center justify-center">
-            <h2 className="font-semibold text-xl">{i.title}</h2>
+            <h2 className="font-semibold text-xl max-mobile:w-[80%]">{i.title}</h2>
 
             <div className="flex flex-col items-center justify-center gap-12 p-12 max-tablet:gap-10 max-mobile:gap-4 max-tablet:p-8 max-mobile:py-10">
 

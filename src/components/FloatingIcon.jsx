@@ -1,60 +1,80 @@
-import { useEffect, useState } from "react"
-import { FaWhatsapp, FaChevronRight } from "react-icons/fa"
+import { useEffect, useState } from "react";
+import { FaWhatsapp, FaChevronRight, FaMinus } from "react-icons/fa";
 // import { questions, answers, Testimonials } from "../constant"
-import { Evvi_icon } from "../assets"
+import FloatingIcon2 from "./FloatingIcon2"
 
+const FloatingIcon = () => {
+  const [shake, setShake] = useState(false);
+  const [open, setOpen] = useState(false);
+  // const [step, setStep] = useState(0)
+  // const [ selectedQuestion,setSelectedQuestion ] = useState(false)
+  // const icon = Testimonials[0].lists[0]
 
-const FloatingIcon = () => { 
-    const [shake, setShake] = useState(false)
-    const [open, setOpen] = useState(false)
-    // const [step, setStep] = useState(0)
-    // const [ selectedQuestion,setSelectedQuestion ] = useState(false)
-    // const icon = Testimonials[0].lists[0]
-    
+  const popOver = () => {
+    setOpen(!open);
+  };
 
-    const popOver = () => {
-      setOpen(!open)
-    }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShake(true);
+      setTimeout(() => setShake(false), 1000);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setShake(true)
-            setTimeout(() => setShake(false), 1000)
-        }, 3000);
-        return () => clearInterval(interval);
-    }, []);
-    
-//     const handleQuestionSelect = (question) => {
-//       setSelectedQuestion(question);
-//       setStep(1);
-//   };
+  //     const handleQuestionSelect = (question) => {
+  //       setSelectedQuestion(question);
+  //       setStep(1);
+  //   };
 
-//   const handleFollowUpSelect = (question) => {
-//       setSelectedQuestion(question);
-//       setStep(2);
-//   };
+  //   const handleFollowUpSelect = (question) => {
+  //       setSelectedQuestion(question);
+  //       setStep(2);
+  //   };
 
   return (
     <div className="sticky top-[80%] px-14 flex flex-col items-end z-[100] ">
-        <div className="absolute max-tablet:top-8 max-tablet:right-8 p-4 bg-white rounded-full shadow-2xl">
-              <span className="relative" onClick={popOver}>
-                  <span className={`w-5 right-0 z-50 border-2 h-5 text-xs flex items-center text-white justify-center text-center bg-t-primary rounded-full absolute ${shake ? 'animate-shake' : ''} ${open ? 'hidden transition delay-300 animate-none': shake}`}>1</span>
-                  <FaWhatsapp className={`text-green-600 text-5xl ${shake ? 'animate-shake' : ''} ${open ? 'transition animate-none': ''}`}/>
-              </span>
-              {open && (
-                <div className="absolute bottom-16 right-14 max-tablet:-right-5 h-[50vh] w-[55vh] max-tablet:w-[30vh] max-tablet:h-[30vh] bg-white/40 backdrop-blur-sm border-[1px] shadow-xl transition delay-100 rounded-xl p-1">
-                   <img src={Evvi_icon} className="w-20 absolute top-1 rounded-sm p-1 right-4 max-tablet:w-16 max-tablet:hidden " alt="icon" />
-                    <h3 className=" mb-3 p-3 bg-t-primary text-white text-base font-bold rounded-lg shadow-lg">Welcome To Evvi Solutions</h3>
-                  <div className="p-4 flex flex-col">
-                    <div className="flex flex-col items-center justify-center gap-10 mt-10">
-                        <h1 className="text-lg text-center font-semibold">Want Know More About Our Company ?</h1>
-                        <a href="#" target="_blank" className="inline-flex items-center gap-10 text-white bg-t-primary px-5 py-3 rounded-2xl shadow-what">
-                        <FaWhatsapp className="text-3xl"/> 
-                        Chat With Us
-                        <FaChevronRight/>
-                        </a>
-                    </div>
-                      {/* {step === 0 && (
+      <div className="absolute max-tablet:top-8 max-tablet:right-8 p-4 bg-white rounded-full shadow-2xl">
+        <span className="relative" onClick={popOver}>
+          <span
+            className={`w-5 right-0 z-50 border-2 h-5 text-xs flex items-center text-white justify-center text-center bg-t-primary rounded-full absolute ${
+              shake ? "animate-shake" : ""
+            } ${open ? "hidden transition delay-300 animate-none" : shake}`}
+          >
+            1
+          </span>
+          <FaWhatsapp
+            className={`text-green-600 text-5xl ${
+              shake ? "animate-shake" : ""
+            } ${open ? "transition animate-none" : ""}`}
+          />
+        </span>
+        {open && (
+          <div className="absolute z-50 bottom-16 right-14 max-tablet:-right-5 h-[50vh] w-[55vh] max-tablet:w-[30vh] max-tablet:h-[30vh] max-mobile:w-[35vh] max-mobile:h-[40vh] bg-white/40 backdrop-blur-sm border-[1px] shadow-xl transition delay-100 rounded-xl p-1">
+            <h3 className=" mb-3 p-3 bg-t-primary text-white text-base font-bold rounded-lg shadow-lg inline-flex w-full items-center justify-between">
+              Welcome To Evvi Solutions <span onClick={() => {setOpen(false)}}><FaMinus/></span>
+            </h3>
+            <div className="p-4 flex flex-col">
+              <div className="flex flex-col items-center justify-center gap-5 max-mobile:gap-10">
+                <h1 className="text-lg max-mobile:text-sm text-center font-semibold">
+                  Want to Know More About Our Company?
+                </h1>
+                <a
+                  href="https://wa.me/+919500964300?text=Hello!%20I%20am%20interested%20in%20learning%20more%20about%20your%20company."
+                  target="_blank"
+                  onClick={() => {
+                    setOpen(false);
+                  }}
+                  className="inline-flex items-center gap-10 max-mobile:gap-5 text-white bg-t-primary hover:bg-green-300 hover:text-black transition delay-100 px-5 py-3 max-mobile:px-3 max-mobile:py-2 rounded-2xl shadow-what"
+                >
+                  <FaWhatsapp className="text-3xl" />
+                  Chat With Us
+                  <FaChevronRight />
+                </a>
+                <FloatingIcon2/>
+              </div>
+
+              {/* {step === 0 && (
                           <div>
                               {questions.map((question, index) => (
                                 <div key={index} className="flex items-center gap-2" >
@@ -67,7 +87,7 @@ const FloatingIcon = () => {
                           </div>
                       )} */}
 
-                      {/* {step === 1 && (
+              {/* {step === 1 && (
                           <div>
                               <div>
                                   <div className="flex flex-row-reverse items-center gap-2">
@@ -86,23 +106,19 @@ const FloatingIcon = () => {
                           </div>
                       )} */}
 
-                      {/* {step === 2 && (
+              {/* {step === 2 && (
                           <div>
                               <p>{`You asked: ${selectedQuestion}`}</p>
                               <p>{`The chatbot answered: ${answers[selectedQuestion].answer}`}</p>
                               <h1>hello</h1>
                           </div>
                       )} */}
-                  </div>
-                </div>
-              )}
-        </div>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default FloatingIcon;
-
-
-
-

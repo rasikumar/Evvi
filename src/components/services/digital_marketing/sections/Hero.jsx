@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { bigShoe1 } from "../assets/images";
+import { Link } from "react-router-dom";
 // import { shoes } from "../constant";
 // import { ShoeCard } from "../components";
 
@@ -14,7 +15,7 @@ function Hero() {
         id="about-us"
         className="flex items-center justify-center max-tablet:flex-col gap-10 w-full m-auto px-16 py-5 max-tablet:px-8 max-tablet:py-3 max-mobile:px-0 max-mobile:py-3"
       >
-      <div className="relative flex-1 basis-1/2 w-1/2 max-tablet:w-[80%] flex justify-center items-center min-h-[30rem] max-xl:py-20 px-20 bg-slate-400 max-tablet:min-h-1 rounded-2xl ">
+      <div className="relative flex-1 basis-1/2 w-1/2 max-tablet:w-[80%] flex justify-center items-center max-tablet:min-h-1 rounded-2xl  ">
           <img
             src={bigShoeImg}
             alt="shoe colletion"
@@ -43,12 +44,12 @@ function Hero() {
             Digital Transformation
             </span>
           </h1>
-          <div className="text-t-primary text-lg">
+          <div className="text-t-primary text-lg max-mobile:text-sm">
           Revolutionize Your Strategy with Expert Solutions
           </div>
-          <button className="btn-primary w-[25%] max-mobile:w-[40%]">
+          <Link to={"/Contact_Us"} className="btn-primary w-[25%] max-mobile:w-[40%]">
           Get Started
-          </button>
+          </Link>
         </div>
       </section>
     </>
