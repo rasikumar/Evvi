@@ -1,19 +1,22 @@
-import { useState } from 'react';
-import axios from 'axios';
+import { useState } from "react";
+import axios from "axios";
 import { ContactUs } from "../../constant";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Hourglass } from "react-loader-spinner";
 
 const Contact = () => {
   const { title, heading, button } = ContactUs[0];
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    subject: '',
-    details: ''
+    name: "",
+    phone: "",
+    email: "",
+    subject: "",
+    details: "",
   });
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  // const [error, setError] = useState('');
+  // const [success, setSuccess] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -25,25 +28,31 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError('');
-    setSuccess('');
+    // setError('');
+    // setSuccess('');
 
     try {
-      const response = await axios.post('/contact', formData);
+      const response = await axios.post(
+        "http://localhost:5000/contact",
+        formData
+      );
       if (response.status === 200) {
-        setSuccess('Your message has been sent successfully!');
+        // setSuccess('Your message has been sent successfully!');
         setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          subject: '',
-          details: ''
+          name: "",
+          phone: "",
+          email: "",
+          subject: "",
+          details: "",
         });
+        toast.success("Your message has been sent successfully!");
       } else {
-        setError('There was an issue sending your message. Please try again.');
+        // setError('There was an issue sending your message. Please try again.');
+        toast.error("problem. Please try again later.");
       }
     } catch (err) {
-      setError('There was an error sending your message. Please try again later.');
+      // setError('There was an error sending your message. Please try again later.');
+      toast.error("Message is not sending. Please try again later.");
     } finally {
       setLoading(false);
     }
@@ -53,7 +62,9 @@ const Contact = () => {
     <div className="flex flex-col bg-t-primary p-8 gap-6 w-full rounded-xl">
       <div className="flex flex-col gap-4">
         <h1 className="font-semibold text-white">{heading}</h1>
-        <p className="text-4xl max-tablet:text-3xl max-mobile:text-2xl font-semibold text-white">{title}</p>
+        <p className="text-4xl max-tablet:text-3xl max-mobile:text-2xl font-semibold text-white">
+          {title}
+        </p>
       </div>
       <div>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -106,13 +117,31 @@ const Contact = () => {
             className="bg-none bg-white/30 border-2 rounded-md border-white/30 py-6 px-6 placeholder:text-white placeholder:font-medium focus:border-t-secondary transition-all delay-75"
             required
           />
-          <button type="submit" className="btn-secondary text-white w-60 max-mobile:w-full">
-            {loading ? 'Sending...' : button}
+          <button
+            type="submit"
+            className="btn-secondary text-white w-60 max-mobile:w-full"
+          >
+            <div className="flex items-center justify-center">
+              {loading ? (
+                <Hourglass
+                  visible={true}
+                  height="20"
+                  width="20"
+                  ariaLabel="hourglass-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  colors={["#306cce", "#72a1ed"]}
+                />
+              ) : (
+                button
+              )}
+            </div>
           </button>
         </form>
-        {error && <p className="text-red-500 mt-4">{error}</p>}
-        {success && <p className="text-green-500 mt-4">{success}</p>}
+        {/* {error && <p className="text-red-500 mt-4">{error}</p>}
+        {success && <p className="text-green-500 mt-4">{success}</p>} */}
       </div>
+      <ToastContainer />
     </div>
   );
 };

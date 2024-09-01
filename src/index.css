@@ -13,7 +13,7 @@
     .btn-secondary{
         @apply border-[1px] border-btn text-t-primary py-2 px-4 font-medium text-center rounded transition outline-none delay-75;
         &:hover{
-            @apply border-t-secondary scale-105 cursor-pointer bg-btn;
+            @apply border-t-secondary scale-105 cursor-pointer text-slate-700 bg-btn;
         }
    }
 }

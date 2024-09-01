@@ -594,9 +594,9 @@ export const Faqs = [
 export const ContactUs = [
     {
         id : 0,
-        heading : 'Get Appointment',
-        title : 'Get the appointment with Doctor for your solution',
-        button : 'Make an Appointment'
+        heading : 'Contact Us',
+        title : 'Get in Touch With us',
+        button : 'Sumbit'
     }
 ]
 
