@@ -17,7 +17,7 @@ function Hero() {
           <video src={bigShoeImg} autoPlay muted loop className="object-cover w-full h-full opacity-75"></video>
           <div className="flex max-mobile:gap-6 gap-4 absolute -bottom-[5%] max-mobile:left-[2%] max-mobile:px-6"> 
             {shoes.map((image, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl">
+              <div key={index} className="bg-gray-50 rounded-xl w-20">
                 <ShoeCard
                   index={index}
                   imgURL={image}

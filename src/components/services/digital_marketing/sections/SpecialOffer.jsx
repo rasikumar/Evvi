@@ -13,7 +13,7 @@ function SpecialOffer() {
           className="object-contain w-full "
         />
       </div>
-      <div className="flex flex-col w-[50%] max-tablet:w-full">
+      <div className="flex flex-col w-[50%] max-tablet:w-full gap-4 text-justify">
         <h2 className="text-4xl font-sans max-tablet:text-2xl max-mobile:text-lg font-bold">
           <span className="">Exclusive </span>
           Offer

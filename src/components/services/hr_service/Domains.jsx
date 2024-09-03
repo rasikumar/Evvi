@@ -16,10 +16,10 @@ const Domains = () => {
     <div className="flex max-tablet:flex-col w-full max-tablet:h-full h-[30rem] overflow-hidden">
       <div className="bg-t-primary w-[50%] max-tablet:w-full flex flex-col items-start max-tablet:px-24 max-tablet:py-20 max-mobile:py-10 max-mobile:px-4 px-20 justify-center relative">
         <h1 className="text-2xl font-semibold mb-5 text-white">{title}</h1>
-        <p className="font-medium text-white max-tablet:text-sm">
+        <p className="font-medium text-white max-tablet:text-sm text-justify">
           {description}
         </p>
-        <p className="font-medium text-white max-tablet:text-sm">
+        <p className="font-medium text-white max-tablet:text-sm text-justify">
           {description1}
         </p>
         <div className="w-10 h-10 max-tablet:-bottom-5 max-tablet:right-[45%] bg-t-primary absolute -right-5 rotate-45"></div>
@@ -38,13 +38,13 @@ const Domains = () => {
                     onMouseLeave={() => setTip(null)}
                     className="relative flex flex-col items-center justify-center"
                   >
-                    <img src={j.img} alt="#" className="w-32 max-tablet:w-28" />
+                    <img src={j.img} alt="#" className="w-20 max-tablet:w-28" />
                     {tooltip === j.id && (
                       <motion.p
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        className="absolute bottom-14 max-mobile:bottom-10 w-40 p-2 max-mobile:py-4 max-mobile:h-10 bg-white shadow-lg rounded text-sm text-gray-800 text-center"
+                        className="absolute bottom-10 px-12 py-4 max-mobile:bottom-10 w-40 max-mobile:py-4 max-mobile:h-10 bg-white shadow-lg rounded text-sm text-gray-800 text-center"
                       >
                         {j.content}
                       </motion.p>
@@ -61,13 +61,13 @@ const Domains = () => {
                     onMouseLeave={() => setTip(null)}
                     className="relative flex flex-col items-center"
                   >
-                    <img src={j.img} alt="#" className="w-32 max-tablet:w-28" />
+                    <img src={j.img} alt="#" className="w-20 max-tablet:w-28" />
                     {tooltip === j.id && (
                       <motion.p
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        className="absolute bottom-14 max-mobile:bottom-10 w-40 p-2 max-mobile:py-4 max-mobile:h-10 bg-white shadow-lg rounded text-sm text-gray-800 text-center"
+                        className="absolute bottom-10 w-40 px-12 py-4 max-mobile:py-4 max-mobile:h-10 bg-white shadow-lg rounded text-sm text-gray-800 text-center"
                       >
                         {j.content}
                       </motion.p>

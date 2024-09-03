@@ -17,7 +17,7 @@ const Vision_Mission = () => {
           }}
           className="flex flex-col gap-4 rounded-3xl bg-slate-200 p-10 shadow-custom">
             <h1 className="font-semibold text-3xl text-t-primary w-fit">{vision.header}</h1>
-            <p className="w-[40rem] max-tablet:w-[20rem] max-mobile:w-[18rem] m-auto">{vision.content}</p>
+            <p className="w-[40rem] max-tablet:w-[20rem] max-mobile:w-[18rem] m-auto text-justify">{vision.content}</p>
           </motion.div>
           <div>
             <img src={vision.img} className="rounded-3xl"/>

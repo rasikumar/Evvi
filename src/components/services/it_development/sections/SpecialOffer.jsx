@@ -17,10 +17,10 @@ function SpecialOffer() {
         <h2 className="text-4xl font-sans max-tablet:text-2xl max-mobile:text-lg font-bold">
         Looking to Outsource Your IT Needs ?
         </h2>
-        <p className="mt-4 max-mobile:text-sm">
+        <p className="mt-4 max-mobile:text-sm text-justify">
         Partner with us to handle your web design, app development, and cloud support needs efficiently. Outsource your IT requirements to our expert team and focus on what you do best while we take care of the technology.
         </p>
-        <p className="mt-6 max-mobile:text-sm">
+        <p className="mt-6 max-mobile:text-sm text-justify">
         Get in touch today to explore how we can support your next project and drive your business forward.
         </p>
         <Link to={"/Contact_Us"} className="btn-primary w-[25%] max-mobile:w-[60%] mt-4">Contact Us</Link>

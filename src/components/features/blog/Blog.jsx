@@ -47,7 +47,7 @@ const Blog = () => {
                       className="font-bold w-52 text-lg line-clamp-4 transition-all delay-75"
                     >
                       {item.title}
-                      <div className="font-normal leading-tight text-xs">
+                      <div className="font-normal leading-tight text-xs text-justify">
                         {item.description}
                       </div>
                     </Link>
@@ -75,7 +75,7 @@ const Blog = () => {
                       <li className="text-sm font-medium">{item.date}</li>
                     </div>
                     <h3 className="line-clamp-2 font-bold">{item.title}</h3>
-                    <p className="line-clamp-5 w-full font-medium border-t-[1px] mt-4 mb-4">
+                    <p className="line-clamp-5 w-full font-medium border-t-[1px] mt-4 mb-4 text-justify">
                       {item.description}
                     </p>
                     <Link

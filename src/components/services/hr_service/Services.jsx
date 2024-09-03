@@ -19,7 +19,7 @@ const Services = () => {
               className="rounded-xl"
             />
             <div className="card-content">
-              <p className="text-sm font-medium text-black max-mobile:leading-tight">
+              <p className="text-sm font-medium text-black max-mobile:leading-tight text-justify">
                 {item.content}
               </p>
             </div>
