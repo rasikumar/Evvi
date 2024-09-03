@@ -24,6 +24,9 @@ import ContactFull from "./components/contact & faq/ContactFull";
 // productPage
 import Allproduct from "./components/features/products/Allprod";
 
+// BlogPages
+import BlogPage from "./components/features/blog/BlogPage";
+
 import { createTheme, ThemeProvider } from "@mui/material";
 import ScrollToTop from "./components/ScrollToTop";
 import { AnimatePresence } from "framer-motion";
@@ -68,6 +71,7 @@ const App = () => {
           <Route path="/Business_Consulting" element={<Business_Consulting />} />
 
           {/* BlogPages */}
+          <Route path="/Blog" element={<BlogPage />} />
 
           {/* ContactFullPage */}
           <Route path="/Contact_Us" element={<ContactFull/>}/>

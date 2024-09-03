@@ -33,7 +33,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/contact",
+        "https://newcheck.evvisolutions.com/contact",
         formData
       );
       if (response.status === 200) {

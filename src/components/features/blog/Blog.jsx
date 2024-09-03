@@ -7,11 +7,11 @@ const Blog = () => {
   const itemOneRender = blog.lists.slice(3, 4);
   const itemThreeRender = blog.lists.slice(0, 3);
   return (
-    <div className="bg-blue-50 max-tablet:px-6 max-tablet:py-10 py-24">
+    <div className="bg-blue-50 max-tablet:px-6 max-tablet:py-10 py-20">
       {Blogs.map((blog, index) => (
         <div
           key={index}
-          className="list-none m-auto flex flex-col items-center justify-center gap-2 mb-4"
+          className="list-none m-auto flex flex-col items-center justify-center gap-4 mb-4"
         >
           <h2 className="text-t-primary font-medium text-sm">{blog.heading}</h2>
           <p className="font-semibold text-2xl mb-6">{blog.title}</p>
@@ -31,13 +31,13 @@ const Blog = () => {
                   <div>
                     <img
                       src={item.img}
-                      alt=""
+                      alt={item.title}
                       className="rounded-lg w-20"
                     />
                   </div>
                   <div className="flex flex-col">
                     <div className="flex items-center gap-1 ">
-                      <img src={item.icon_1} alt="" width={item.width} />
+                      <img src={item.icon_1} alt={item.title} width={item.width} />
                       <li className="text-xs text-t-primary font-medium">
                         {item.date}
                       </li>
@@ -64,14 +64,14 @@ const Blog = () => {
                   <div>
                     <img
                       src={item.img}
-                      alt=""
+                      alt={item.title}
                       width={800}
                       className="h-[380px] max-mobile:h-[200px] rounded-lg"
                     />
                   </div>
                   <div className="flex flex-col w-full px-4 py-10 gap-4 max-mobile:gap-0">
                     <div className="flex items-center gap-2 w-[50%] text-t-primary">
-                      <img src={item.icon_1} alt="" width={item.width} />
+                      <img src={item.icon_1} alt={item.title} width={item.width} />
                       <li className="text-sm font-medium">{item.date}</li>
                     </div>
                     <h3 className="line-clamp-2 font-bold">{item.title}</h3>
@@ -90,6 +90,7 @@ const Blog = () => {
               ))}
             </div>
           </div>
+          <Link className="btn-secondary" to={blog.link}>{blog.btn}</Link>
         </div>
       ))}
     </div>
