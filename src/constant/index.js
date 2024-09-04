@@ -312,7 +312,7 @@ export const OurServices = [
             },
             {
                 id : 1,
-                heading : 'Boost your brand with innovative digital strategies.',
+                heading : 'Boost your brand with innovative digital strategies',
                 description : 'Boost your online presence with our cutting-edge digital marketing solutions. We tailor strategies to amplify your brand and connect with your target audience effectively.',
                 img : digital_excellence,
                 listo : [
@@ -362,7 +362,7 @@ export const OurServices = [
             },
             {
                 id : 2,
-                heading : 'Your trusted partner for comprehensive HR solutions.',
+                heading : 'Your trusted partner for comprehensive HR solutions',
                 description : 'People are the cornerstone of your success. Our HR Consulting services offer end-to-end support, from talent acquisition and onboarding to compliance management and employee development.',
                 img : hr_service,
                 listo : [
