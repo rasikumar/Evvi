@@ -60,7 +60,7 @@ const FloatingIcon = () => {
                   Want to Know More About Our Company?
                 </h1>
                 <a
-                  href="https://wa.me/+919500964300?text=Hello!%20I%20am%20interested%20in%20learning%20more%20about%20your%20company."
+                  href="https://wa.me/+919900965657?text=Hello!%20I%20am%20interested%20in%20learning%20more%20about%20your%20company."
                   target="_blank"
                   onClick={() => {
                     setOpen(false);
