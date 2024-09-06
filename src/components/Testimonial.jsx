@@ -10,7 +10,7 @@ const Testimonial = () => {
   const textRef = useRef(false);
   const inview = useInView(textRef, { triggeronce: true });
   const { title, heading, subtitle } = Testimonials[0];
-  const [ hover , sethover ] = useState(null)
+  const [ hover , sethover ] = useState(0)
 
   const handleMouseEnter = (id) => {
     sethover(id);
@@ -50,13 +50,13 @@ const Testimonial = () => {
               <ul key={i.id} className="flex flex-col gap-2">
                 {i.items.map(j => (
                   <motion.li
-                  whileHover={{x:10, scale:1.02}}
-                  key={j.id} className="cursor-pointer rounded-lg bg-gray-300 p-3 flex max-mobile:flex-col gap-1"
+                  whileHover={{x:0, scale:1.02}}
+                  key={j.id} className="cursor-pointer rounded-lg bg-gray-300 p-3 flex max-mobile:flex-col gap-1 m-auto w-[38rem] max-mobile:w-[20rem]"
                   onMouseEnter={() => handleMouseEnter(j.id)}
                   onMouseLeave={handleMouseLeave}
                   >
-                    <h2 className={`font-bold text-t-primary text-justify text-sm  ${hover === j.id ? "transition duration-700" : "text-center ml-52 max-tablet:ml-0"}`} onMouseEnter={() =>handleMouseEnter(j.id)}>{j.heading}</h2>
-                    <p className={`transition-opacity duration-100 font-medium text-sm ${ hover === j.id ? "block" : "hidden" }`} >- {j.content}</p>
+                    <h2 className={`font-bold text-t-primary text-justify text-sm m-auto  ${hover === j.id ? "transition duration-700" : "text-center max-tablet:ml-0  flex items-center justify-center"}`} onMouseEnter={() =>handleMouseEnter(j.id)}>{j.heading}</h2>
+                    <p className={`transition-opacity duration-100 font-medium text-sm m-auto ${ hover === j.id ? "block" : "hidden" }`} > - {j.content}</p>
                   </motion.li>
                 ))}
               </ul>

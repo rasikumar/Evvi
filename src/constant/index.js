@@ -604,7 +604,7 @@ export const Address = [
         id : 0,
         icon : location_icon,
         // content : "",
-        content2 : "TCE - TBI,Thiyagarajar Advanced Research Centre,",
+        content2 : "TCE - TBI, Thiyagarajar Advanced Research Centre,",
         content3 : "Thiruparankundram,",
         content4 : "Madurai -625015"
     },

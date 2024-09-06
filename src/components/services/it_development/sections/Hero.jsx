@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { bigShoe1 } from "../assets/images";
+import { bigShoe2 } from "../assets/images";
 import { shoes } from "../constant";
 import { ShoeCard } from "../components";
 import { Link } from "react-router-dom";
 
 function Hero() {
-  const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
+  const [bigShoeImg, setBigShoeImg] = useState(bigShoe2);
 
   return ( 
     <>
