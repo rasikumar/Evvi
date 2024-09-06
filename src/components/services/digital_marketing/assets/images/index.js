@@ -5,9 +5,9 @@ import bigShoe3 from './big-shoe3.png'
 
 import offer from '../../../../../assets/Digital_marketing/offer.png'
 
-import shoe7 from '../../../../../assets/Digital_marketing/GMB.jpg'
+import shoe7 from '../../../../../assets/Digital_marketing/GMB.png'
 import shoe5 from '../../../../../assets/Digital_marketing/whatsapp.jpg'
-import shoe6 from '../../../../../assets/Digital_marketing/Analytics.jpg'
+import shoe6 from '../../../../../assets/Digital_marketing/Analytics.png'
 import shoe4 from '../../../../../assets/Digital_marketing/Digital_marketing.jpg'
 
 import shoe8 from '../../../../../assets/Digital_marketing/digital_presence.jpg'

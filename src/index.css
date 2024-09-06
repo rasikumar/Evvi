@@ -3,6 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer components {
     .btn-primary{
          @apply bg-btn text-t-primary py-2 px-4 font-medium text-center rounded transition outline-none delay-75;

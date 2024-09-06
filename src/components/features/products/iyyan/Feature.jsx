@@ -15,7 +15,7 @@ const Feature = () => {
           <div key={item.id} className={`flex max-tablet:flex-col gap-2 items-center m-auto ${item.id % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
             <div className={`${item.id % 2 === 0 ? "text-left" : "text-right"} flex flex-col gap-2`}>
               <h2 className="text-t-primary text-3xl max-tablet:text-xl font-medium">{item.content}</h2>
-              <p className="w-[30rem] max-mobile:w-[20rem] m-auto">{item.paragraph}</p>
+              <p className="w-[32rem] max-mobile:w-[20rem] m-auto">{item.paragraph}</p>
             </div>
             <div>
               <img src={item.img} alt={item.content} className="h-72 m-auto " />

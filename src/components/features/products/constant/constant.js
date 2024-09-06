@@ -4,7 +4,7 @@ export const IyyanContent = [
     {
         id : 0,
         heading : "Struggling with technical issues on your laptop or desktop?",
-        subheading : "Meet Iyyan, our innovative on-call tech support platform designed to streamline your tech troubleshooting."
+        subheading : "Meet Iyyan, our innovative On-Call Tech support platform designed to streamline your tech troubleshooting."
     },
     {
         id : 1,

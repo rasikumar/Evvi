@@ -4,6 +4,7 @@ import { ContactUs } from "../../constant";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Hourglass } from "react-loader-spinner";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Contact = () => {
   const { title, heading, button } = ContactUs[0];
@@ -15,8 +16,9 @@ const Contact = () => {
     details: "",
   });
   const [loading, setLoading] = useState(false);
-  // const [error, setError] = useState('');
-  // const [success, setSuccess] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("Select a Service");
+  const [otherService, setOtherService] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -28,8 +30,6 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    // setError('');
-    // setSuccess('');
 
     try {
       const response = await axios.post(
@@ -37,7 +37,6 @@ const Contact = () => {
         formData
       );
       if (response.status === 200) {
-        // setSuccess('Your message has been sent successfully!');
         setFormData({
           name: "",
           phone: "",
@@ -47,15 +46,23 @@ const Contact = () => {
         });
         toast.success("Your message has been sent successfully!");
       } else {
-        // setError('There was an issue sending your message. Please try again.');
-        toast.error("problem. Please try again later.");
+        toast.error("Problem. Please try again later.");
       }
     } catch (err) {
-      // setError('There was an error sending your message. Please try again later.');
       toast.error("Message is not sending. Please try again later.");
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleSelect = (value) => {
+    setSelectedOption(value);
+    setFormData({ ...formData, subject: value });
+    setIsOpen(false);
   };
 
   return (
@@ -95,18 +102,67 @@ const Contact = () => {
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
-              className="bg-none bg-white/30 border-2 rounded-md border-white/30 py-2 px-5 placeholder:text-white placeholder:font-medium focus:border-t-secondary transition-all delay-75 w-full"
+              className="bg-none bg-white/30 border-2 rounded-md border-white/30 py-2 px-6 placeholder:text-white placeholder:font-medium focus:border-t-secondary transition-all delay-75 w-full"
               required
             />
-            <input
-              type="text"
-              name="subject"
-              placeholder="Subject"
-              value={formData.subject}
-              onChange={handleChange}
-              className="bg-none bg-white/30 border-2 rounded-md border-white/30 py-2 px-5 placeholder:text-white placeholder:font-medium focus:border-t-secondary transition-all delay-75 w-full"
-              required
-            />
+            {/* Custom dropdown */}
+            <div className="relative w-full px-6 bg-white/30 border-2 rounded-md border-white/30 py-2 text-white font-medium cursor-pointer">
+              <div className="bg-none w-full" onClick={handleToggle}>
+                {selectedOption === "Other Service" ? (
+                  <input
+                    type="text"
+                    className=" text-white rounded-md p-0 bg-transparent border-none outline-none placeholder:text-white px-3 py-1"
+                    placeholder="Please specify..."
+                    value={otherService}
+                    onChange={(e) => setOtherService(e.target.value)}
+                  />
+                ) : (
+                  selectedOption || "Select a Service"
+                )}
+              </div>
+              <AnimatePresence>
+                {isOpen && (
+                  <motion.ul
+                    className="absolute top-full left-0 w-full mt-2 bg-slate-600 rounded-md"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <li
+                      className="py-2 px-5 hover:bg-slate-700 cursor-pointer"
+                      onClick={() => handleSelect("Business Consulting")}
+                    >
+                      Business Consulting
+                    </li>
+                    <li
+                      className="py-2 px-5 hover:bg-slate-700 cursor-pointer"
+                      onClick={() => handleSelect("Digital Transformation")}
+                    >
+                      Digital Transformation
+                    </li>
+                    <li
+                      className="py-2 px-5 hover:bg-slate-700 cursor-pointer"
+                      onClick={() => handleSelect("HR Consulting")}
+                    >
+                      HR Consulting
+                    </li>
+                    <li
+                      className="py-2 px-5 hover:bg-slate-700 cursor-pointer"
+                      onClick={() => handleSelect("IT Consulting")}
+                    >
+                      IT Consulting
+                    </li>
+                    <li
+                      className="py-2 px-5 hover:bg-slate-700 cursor-pointer"
+                      onClick={() => handleSelect("Other Service")}
+                    >
+                      Other Service
+                    </li>
+                  </motion.ul>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
           <input
             type="text"
@@ -138,8 +194,6 @@ const Contact = () => {
             </div>
           </button>
         </form>
-        {/* {error && <p className="text-red-500 mt-4">{error}</p>}
-        {success && <p className="text-green-500 mt-4">{success}</p>} */}
       </div>
       <ToastContainer />
     </div>

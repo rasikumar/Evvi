@@ -484,7 +484,7 @@ export const ServicePage =[
     },
     {
         id:2,
-        header : "HR Service",
+        header : "HR Consulting",
         content : "People are the cornerstone of your success. Our HR Consulting services offer end-to-end support, from talent acquisition and onboarding to compliance management and employee development.",
         img: hr_service,
         btn:"Read More",
@@ -492,7 +492,7 @@ export const ServicePage =[
     },
     {
         id:3,
-        header : "IT Development",
+        header : "IT Consulting",
         content : "Stay ahead in the digital era with our IT Consulting services. We provide robust and scalable solutions, from cloud services to web and app development, ensuring your IT infrastructure meets your business needs.",
         img: corparate_training,
         btn:"Read More",

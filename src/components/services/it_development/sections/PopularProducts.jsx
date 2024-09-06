@@ -5,7 +5,7 @@ function PopularProducts() {
   return (
     
     <section className='px-16 max-mobile:px-8 py-14 flex flex-col gap-4 w-full'>
-      <div className='flex flex-col gap-2'>
+      <div className='flex flex-col gap-6'>
         <h2 className='capitalize text-4xl max-tablet:text-2xl max-mobile:text-lg lg:max-w-lg font-bold'>Our <span className='text-t-primary max-tablet:text-2xl max-mobile:text-lg'>Popular </span>Services</h2>
         <p className='text-base'>Empower your business with our all-encompassing IT consulting services. From robust cloud solutions to innovative web and app development, we offer the expertise and support you need to drive technology-forward success.</p>
       </div>

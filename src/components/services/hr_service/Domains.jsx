@@ -19,7 +19,7 @@ const Domains = () => {
         <p className="font-medium text-white max-tablet:text-sm text-justify">
           {description}
         </p>
-        <p className="font-medium text-white max-tablet:text-sm text-justify">
+        <p className="font-medium text-white max-tablet:text-sm text-justify indent-10">
           {description1}
         </p>
         <div className="w-10 h-10 max-tablet:-bottom-5 max-tablet:right-[45%] bg-t-primary absolute -right-5 rotate-45"></div>
@@ -44,7 +44,7 @@ const Domains = () => {
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        className="absolute bottom-10 px-12 py-4 max-mobile:bottom-10 w-40 max-mobile:py-4 max-mobile:h-10 bg-white shadow-lg rounded text-sm text-gray-800 text-center"
+                        className="absolute bottom-10 px-12 py-4 max-mobile:bottom-10 w-40 max-mobile:py-4 max-mobile:h-10 bg-white shadow-lg rounded text-sm text-gray-800 text-center max-mobile:text-xs"
                       >
                         {j.content}
                       </motion.p>
@@ -67,7 +67,7 @@ const Domains = () => {
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        className="absolute bottom-10 w-40 px-12 py-4 max-mobile:py-4 max-mobile:h-10 bg-white shadow-lg rounded text-sm text-gray-800 text-center"
+                        className="absolute bottom-10 w-40 px-12 py-4 max-mobile:py-4 max-mobile:h-10 bg-white shadow-lg rounded text-sm text-gray-800 text-center max-mobile:text-xs"
                       >
                         {j.content}
                       </motion.p>

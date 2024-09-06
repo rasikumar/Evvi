@@ -86,8 +86,8 @@ import Excellence from '../assets/IT_development/Excellence.jpg'
 
 // Digital_excellence_Service_page 
 import Digital_marketing from '../assets/Digital_marketing/Digital_marketing.jpg'
-import Analytics from '../assets/Digital_marketing/Analytics.jpg'
-import GMB from '../assets/Digital_marketing/GMB.jpg'
+import Analytics from '../assets/Digital_marketing/Analytics.png'
+import GMB from '../assets/Digital_marketing/GMB.png'
 import whatsapp from '../assets/Digital_marketing/whatsapp.jpg'
 import digital_presence from '../assets/Digital_marketing/digital_presence.jpg'
 import DMsite from '../assets/Digital_marketing/DMsite.png'

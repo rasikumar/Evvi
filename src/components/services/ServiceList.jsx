@@ -31,7 +31,7 @@ const ServiceList = () => {
           animate={{ opacity: 1, x: "0px" }}
           transition={{ duration: 1 }}
         >
-          At Urban Art, we strive to provide the best possible solutions for
+          At Evvi Solutions, we strive to provide the best possible solutions for
           your business needs. We have a team of experienced professionals who
           will help you achieve your goals.
         </motion.p>
