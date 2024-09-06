@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { offer } from "../assets/images";
 
 function SpecialOffer() {
@@ -26,7 +26,7 @@ function SpecialOffer() {
           desires, surpassing the loftiest expectations. Your journey with us is
           nothing short of exceptional.
         </p> */}
-        <Link to={"/Contact_Us"} className="btn-primary w-[35%] max-mobile:w-[50%] mt-4">Claim Your Offer</Link>
+        <a href="https://survey.evvisolutions.com/discovery/index.php" target="_blank" className="btn-primary w-[35%] max-mobile:w-[50%] mt-4">Claim Your Offer</a> 
       </div>
     </section>
   );

@@ -35,7 +35,8 @@ const About = () => {
               ease: 'linear',
             }}
             className="flex gap-10">
-                <img src={aboutus} width={500}   alt="missionImage" />
+                {/* <img src={aboutus} width={500}   alt="missionImage" /> */}
+                <video src={aboutus} autoPlay loop muted className="rounded-xl shadow-f2"></video>
             </motion.div>
            
       </div>

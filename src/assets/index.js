@@ -22,7 +22,6 @@ import codingImage from '../assets/coding.jpg'
 import bgvid from '../assets/bg.mp4'
 import HR_video from '../assets/HR_video.mp4'
 import service_image from '../assets/service_image.png'
-import domains from '../assets/domains.jpg'
 import product from "../assets/product.jpg"
 import employee from "../assets/employee.png"
 
@@ -31,15 +30,15 @@ import Ratings from "../assets/Ratings.jpg"
 import Happy_Clients from "../assets/Happy_Clients.jpg"
 
 // testimonials_image
-import test0 from '../assets/test0.jpg';
-import test1 from '../assets/test1.jpg';
-import test2 from '../assets/test2.jpeg';
-import test3 from '../assets/test3.jpeg';
+// import test0 from '../assets/test0.jpg';
+// import test1 from '../assets/test1.jpg';
+// import test2 from '../assets/test2.jpeg';
+// import test3 from '../assets/test3.jpeg';
 
 
 // about_full_section
 import about_hero from "../assets/About_us/About_us.jpeg"
-import aboutus from '../assets/About_us/aboutus.png'
+import aboutus from '../assets/About_us/Evvi_Values.mp4'
 import legacy from '../assets/About_us/legacy.png'
 import vision from '../assets/About_us/Vision.png'
 import value from '../assets/About_us/Value.png'
@@ -119,10 +118,10 @@ export {
     tick_circle,
     quote_icon,
     right_arrow,
-    test0,
-    test1,
-    test2,
-    test3,
+    // test0,
+    // test1,
+    // test2,
+    // test3,
     hr_service,
     digital_excellence,
     counseling_service,
@@ -137,7 +136,6 @@ export {
     bgvid,
     HR_video,
     service_image,
-    domains,
     vision,
     value,
     mission,
