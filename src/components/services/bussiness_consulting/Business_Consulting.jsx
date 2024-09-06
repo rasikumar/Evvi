@@ -22,7 +22,7 @@ const Digital_Marketing = () => {
   return (
     <>
     <Helmet>
-      <title>Digital Marketing</title>
+      <title>Business Consulting</title>
     <meta name="description" content="Business Consulting in Madurai,
 Business Advisors Thiruparankundram,
 Madurai Business Solutions,
