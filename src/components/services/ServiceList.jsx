@@ -31,9 +31,9 @@ const ServiceList = () => {
           animate={{ opacity: 1, x: "0px" }}
           transition={{ duration: 1 }}
         >
-          At Evvi Solutions, we strive to provide the best possible solutions for
-          your business needs. We have a team of experienced professionals who
-          will help you achieve your goals.
+          At Evvi Solutions, we strive to provide the best possible solutions
+          for your business needs. We have a team of experienced professionals
+          who will help you achieve your goals.
         </motion.p>
       </div>
       <div className="flex pb-10 max-tablet:flex-col rows-2 gap-10">
@@ -71,7 +71,6 @@ const ServiceList = () => {
             key={i.id}
             className="flex p-5 flex-col items-center shadow-[rgba(0, 0, 0, 0.15)_0px_3px_3px_0px] bg-slate-200 rounded-xl"
           >
-            <h1 className="font-semibold text-xl text-center">{i.header}</h1>
             <motion.div className="flex max-mobile:flex-col items-center justify-between min-w-64 gap-5 p-3 ">
               <div>
                 <motion.img
@@ -88,7 +87,10 @@ const ServiceList = () => {
                   className="rounded-2xl w-[50rem]  m-auto"
                 />
               </div>
-              <div className="flex flex-col gap-10">
+              <div className="flex flex-col gap-5">
+                <h1 className="font-semibold text-xl">
+                  {i.header}
+                </h1>
                 <p className="text-sm font-medium line-clamp-4">{i.content}</p>
                 <Link to={i.url} className="btn-primary ">
                   {i.btn}
