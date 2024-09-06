@@ -13,9 +13,9 @@ const Cs = () => {
               <div className='flex max-mobile:p-3 max-tablet:flex-col gap-2 max-tablet:gap-1 font-medium'>
                 {service.lists.map(i => (
                   <ul key={i.id} >
-                    <Link to={i.url} className='text-sm font-semibold hover:text-white hover:font-medium transition-all delay-[0.1s] cursor-pointer'> {i.content}  </Link>
+                    <Link to={i.url} className='text-sm font-semibold hover:text-white hover:font-medium transition-all delay-[0.1s] cursor-pointer relative border-r-2 pr-2 border-t-primary'> {i.content}  </Link>
                   </ul>
-                ))}
+                ))} 
               </div>
             </div>
           ))}

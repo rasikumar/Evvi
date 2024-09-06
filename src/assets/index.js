@@ -26,6 +26,10 @@ import domains from '../assets/domains.jpg'
 import product from "../assets/product.jpg"
 import employee from "../assets/employee.png"
 
+// testimonailas_section
+import Ratings from "../assets/Ratings.jpg"
+import Happy_Clients from "../assets/Happy_Clients.jpg"
+
 // testimonials_image
 import test0 from '../assets/test0.jpg';
 import test1 from '../assets/test1.jpg';
@@ -196,4 +200,6 @@ export {
     Diy,
     Expert,
     Rapid,
+    Ratings,
+    Happy_Clients,
 }

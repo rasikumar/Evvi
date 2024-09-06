@@ -9,7 +9,7 @@ import {
     // search_icon,
     list_style_icon,
     quote_icon,
-    test3,
+    // test3,
     hr_service,
     digital_excellence,
     corparate_training,
@@ -217,16 +217,16 @@ export const Testimonials =[
                 width : 40,
                 height : 40
             },
-            {
-                id : 3,
-                content : 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
-                icon : quote_icon,
-                cust_icon : test3,
-                cust_name : 'Kemy',
-                position : 'Professor',
-                width : 40,
-                height : 40
-            },
+            // {
+            //     id : 3,
+            //     content : 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.',
+            //     icon : quote_icon,
+            //     cust_icon : test3,
+            //     cust_name : 'Kemy',
+            //     position : 'Professor',
+            //     width : 40,
+            //     height : 40
+            // },
         ]
     }
 ]
@@ -263,7 +263,7 @@ export const OurServices = [
             {
                 id : 0,
                 heading : 'Tailored strategies for sustainable growth',
-                description : "Unlock your business's full potential with our comprehensive consulting services. From strategic planning to process optimization, we provide actionable insights that drive growth and efficiency.",
+                description : "Unlock your business full potential with our comprehensive consulting services. From strategic planning to process optimization, we provide actionable insights that drive growth and efficiency.",
                 img : counseling_service,
                 listo : [
                     {
@@ -505,7 +505,7 @@ export const Blogs = [
         id : 0,
         heading : 'Latest Updates',
         title : "See Our Latest's Updates & Articles",
-        btn : "Read More About Our Blogs",
+        btn : "Read More Our Blogs",
         link : '/Blog',
         lists : [
             {
@@ -604,7 +604,7 @@ export const Address = [
         id : 0,
         icon : location_icon,
         // content : "",
-        content2 : "TCE - TBI,Thiagarajar Advanced Research Centre,",
+        content2 : "TCE - TBI,Thiyagarajar Advanced Research Centre,",
         content3 : "Thiruparankundram,",
         content4 : "Madurai -625015"
     },

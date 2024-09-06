@@ -1,5 +1,4 @@
-"use-client";
-import { codingImage, digitalImage } from "../assets";
+import { Ratings, Happy_Clients } from "../assets";
 import { Testimonials } from "../constant";
 import TestSlider from "./TestSlider";
 import { FcGoogle } from "react-icons/fc";
@@ -72,7 +71,7 @@ const Testimonial = () => {
       <div className="grid max-mobile:grid-flow-row grid-cols-4 gap-4 grid-rows-6 grid-flow-col w-[100%] h-[32rem]">
         <div className="col-span-2 max-mobile:hidden row-span-4 rounded-3xl overflow-hidden">
           <img
-            src={codingImage}
+            src={Ratings}
             alt="#"
             className="w-full h-full object-cover"
           />
@@ -96,7 +95,7 @@ const Testimonial = () => {
 
         <div className="col-span-2 max-mobile:col-span-4 row-span-4 rounded-3xl overflow-hidden shadow-xl">
           <img
-            src={digitalImage}
+            src={Happy_Clients}
             alt="#"
             className="w-full h-full object-cover"
           />
