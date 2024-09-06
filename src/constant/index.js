@@ -518,7 +518,8 @@ export const Blogs = [
                 link : "Learn More",
                 width : 14,
                 icon_2 : right_arrow,
-                url:'/blog_1'
+                url:'/blog_1',
+                author : "Sathya"
             },
             {
                 id : 1,
@@ -530,7 +531,8 @@ export const Blogs = [
                 link : "Learn More",
                 width : 14,
                 icon_2 : right_arrow,
-                url:'/blog_2'
+                url:'/blog_2',
+                author : "Sathya"
             },
             {
                 id : 2,
@@ -542,7 +544,8 @@ export const Blogs = [
                 link : "Learn More",
                 width : 14,
                 icon_2 : right_arrow,
-                url:'/blog_3'
+                url:'/blog_3',
+                author : "Sathya"
             },
             {
                 id : 3,
@@ -554,7 +557,8 @@ export const Blogs = [
                 link : "Learn More",
                 width : 14,
                 icon_2 : right_arrow,
-                url:'/blog_4'
+                url:'/blog_4',
+                author : "Sathya"
             },
         ]
     }
