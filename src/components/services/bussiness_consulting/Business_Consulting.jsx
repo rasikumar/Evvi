@@ -4,6 +4,7 @@ import Card from './card/Card'
 import Domains from "./Domains"
 // import Choose from "./Choose"
 import { motion } from "framer-motion"
+import { Helmet } from "react-helmet-async"
 
 
 const pageVariants = {
@@ -19,6 +20,27 @@ const pageTransition={
 
 const Digital_Marketing = () => {
   return (
+    <>
+    <Helmet>
+      <title>Digital Marketing</title>
+    <meta name="description" content="Business Consulting in Madurai,
+Business Advisors Thiruparankundram,
+Madurai Business Solutions,
+Expert Business Consulting Thiruparankundram,
+Business Strategy Consultants Madurai,
+Business Growth Consulting Madurai,
+Thiruparankundram Business Advisors,
+Corporate Consulting Services Madurai,
+Madurai Business Development Experts,
+Local Business Consulting Madurai,
+" />
+<meta name="keywords" content="
+Top business consulting in madurai,
+Best business consulting in madurai
+
+" />
+
+    </Helmet>
     <motion.div
     initial="initial"
     animate= "in"
@@ -32,6 +54,7 @@ const Digital_Marketing = () => {
       <Domains/>
       {/* <Choose/> */}
     </motion.div>
+    </>
   )
 }
 
