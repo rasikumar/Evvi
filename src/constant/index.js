@@ -722,7 +722,7 @@ export const About_Full = [
             {
                 id : 2,
                 header : "value",
-                content : "Our mission is to deliver personalized consulting, cutting-edge digital strategies, and robust HR solutions to startups and SMEs, providing the clear direction and support needed to transform their goals into accomplishments.",
+                content : "At Evvi Solutions, our core values form the foundation of who we are—Excellence, Value-driven, Versatility, and Innovation, collectively known as EVVI. These values steer us towards exceptional standards, ethical practices, adaptability, and a relentless pursuit of improvement in all that we do..",
                 img : value
             }
         ]
