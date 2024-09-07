@@ -1,4 +1,5 @@
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const SideIcons = () => {
   return (
@@ -8,7 +9,7 @@ const SideIcons = () => {
           <FaFacebook className="hover:text-blue-800 transition-all delay-75 hover:scale-150 cursor-pointer" />
         </a>
         <a href="https://x.com/Evvisolutions" target="_blank">
-          <FaTwitter className="hover:text-blue-300 transition-all delay-75 hover:scale-150 cursor-pointer" />
+          <FaXTwitter className="hover:text-black/50 transition-all delay-75 hover:scale-150 cursor-pointer" />
         </a>
         <a
           href="https://www.instagram.com/evvisolutions/"

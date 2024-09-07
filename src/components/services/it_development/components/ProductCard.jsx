@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 function ProductCard({ imgURL, name, price }) {
   return (
     <motion.div
-      className="flex flex-col w-72 justify-center p-4 bg-white rounded-lg shadow-lg"
-      whileHover={{ scale: 1.05 }}
+      className="flex flex-col w-[17.5rem] justify-center p-4 bg-white rounded-lg shadow-lg"
+      whileHover={{ scale: 1.01 }}
       whileTap={{ scale: 0.95 }}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
@@ -15,7 +15,7 @@ function ProductCard({ imgURL, name, price }) {
         src={imgURL}
         className="w-[18rem] max-tablet:w-[15rem] flex items-center justify-center rounded-lg"
         alt="Product Image"
-        whileHover={{ scale: 1.1 }}
+        whileHover={{ scale: 1.01 }}
         transition={{ duration: 0.3 }}
       />
       <motion.h3

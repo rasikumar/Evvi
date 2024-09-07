@@ -599,7 +599,7 @@ export const ContactUs = [
         id : 0,
         heading : 'Contact Us',
         title : 'Get in Touch With us',
-        button : 'Sumbit'
+        button : 'Submit'
     }
 ]
 
@@ -732,17 +732,17 @@ export const About_Full = [
 export const Teams = [
     { id: 1, src: Visutha, contentId: "content1", title:"Visutha", subTitle : "React Developer",urli:"https://www.instagram.com/visutharamalingam",urll:"https://www.linkedin.com/in/visutha-r/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
 
-    { id: 2, src: Gopi, contentId: "content2", title:"Gopinath Pandian", subTitle : "Founder / Techincal - Director", urli:"https://www.instagram.com/technlite_gopinath/",urll:"https://www.linkedin.com/in/gopinathap4/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 2, src: Gopi, contentId: "content2", title:"Gopinath Pandian", subTitle : "Founder / Technical - Director", urli:"https://www.instagram.com/technlite_gopinath/",urll:"https://www.linkedin.com/in/gopinathap4/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
 
     { id: 3, src: Shanthi, contentId: "content3", title:"Shanthi Subramani", subTitle : "Co - Founder / Operations Director",urli:"https://www.instagram.com/shanthi2point0/",urll:"https://www.linkedin.com/in/shanthisubramani/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
 
     { id: 4, src: Nanda, contentId: "content4", title:"Nandha Kumar", subTitle : "Creative Designer",urli:"https://www.instagram.com/mr.black__sqard?utm_source=qr&igsh=MTd2Y2JpbmRhYXJhZw==",urll:"https://www.linkedin.com/in/nandha-kumar-112559280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
 
-    { id: 5, src: Rasi, contentId: "content5", title:"Rasi Kumar", subTitle : "React Developer",urli:"https://www.instagram.com/rasi_max/",urll:"https://www.linkedin.com/in/rasikumar/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en",},
+    { id: 5, src: Rasi, contentId: "content5", title:"Rasi Kumar", subTitle : "Frontend Developer",urli:"https://www.instagram.com/rasi_max/",urll:"https://www.linkedin.com/in/rasikumar/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en",},
 
     { id: 6, src: Sathya, contentId: "content6", title:"Sathya Priya", subTitle : "Digital Marketer",urli:"https://www.instagram.com/social_spark_buzz/",urll:"https://www.linkedin.com/in/sathya-priya-j-636bb8305/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
 
     { id: 7, src: Sankar, contentId: "content7", title:"Sankar", subTitle : "Flutter Developer",urli:"https://www.instagram.com/mr_naughty_boy_13_/",urll:"https://www.linkedin.com/in/sankar-k-09032a2a7/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
 
-    { id: 8, src: Fazil, contentId: "content8", title:"Mohamed Fazil", subTitle : "MERN Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
+    { id: 8, src: Fazil, contentId: "content8", title:"Mohamed Fazil", subTitle : "Backend Developer",urli:"https://www.instagram.com/",urll:"https://www.linkedin.com/",urlf:"https://www.facebook.com/",urlx: "https://x.com/?lang=en", },
   ]; 
