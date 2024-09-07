@@ -615,7 +615,7 @@ export const Address = [
     {
         id : 1,
         icon : phone_call_icon,
-        content : "+99 99009 65657"
+        content : "+91 99009 65657"
     },
     {
         id : 2,
