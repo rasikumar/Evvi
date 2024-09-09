@@ -34,8 +34,19 @@ export const products = [
     imgURL: shoe4,
     name: "Digital Marketing Strategy",
     price: "Crafting tailored plans to enhance your online presence and drive growth.",
+    list :[
+      {id: 0,
+       content : "Social Media Marketing"
+      },
+      {id: 1,
+        content : "SEO & SEM"
+       },
+       {id: 2,
+        content : "PPC"
+       }
+    ]
   },
-  {
+  { 
     imgURL: shoe5,
     name: "Telemarketing & WhatsApp Marketing",
     price: "Leveraging direct communication channels to boost engagement and conversions.",

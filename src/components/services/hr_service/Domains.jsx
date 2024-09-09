@@ -19,7 +19,7 @@ const Domains = () => {
         <p className="font-medium text-white max-tablet:text-sm text-justify">
           {description}
         </p>
-        <p className="font-medium text-white max-tablet:text-sm text-justify indent-10">
+        <p className="font-medium text-white max-tablet:text-sm text-justify indent-16">
           {description1}
         </p>
         <div className="w-10 h-10 max-tablet:-bottom-5 max-tablet:right-[45%] bg-t-primary absolute -right-5 rotate-45"></div>

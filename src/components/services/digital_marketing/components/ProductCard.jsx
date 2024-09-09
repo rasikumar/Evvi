@@ -1,5 +1,15 @@
+/* eslint-disable react/prop-types */
+
+import { products } from "../constant";
+
 // eslint-disable-next-line react/prop-types
-function ProductCard({ imgURL, name, price }) {
+
+const item = products[0].list
+console.log(item);
+
+function ProductCard({ imgURL, name, price, }) {
+  
+
   return (
     <div className="relative flex flex-col w-fit justify-center group">
       <img
@@ -12,6 +22,9 @@ function ProductCard({ imgURL, name, price }) {
       {/* Overlay Content */}
       <div className="absolute inset-0 bottom-20 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
         <p className="text-t-primary text-sm text-center p-2 font-medium leading-snug">{price}</p>
+        <p>{item.map((i => {
+          <li key={i.id}>{i.content}</li>
+        }))}</p>
       </div>
     </div>
   );

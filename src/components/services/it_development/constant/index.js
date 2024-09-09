@@ -38,7 +38,7 @@ export const products = [
   {
     imgURL: shoe7,
     name: "Mobile and Web Applications",
-    price: "Develop custom apps that enhance user experiences and streamline business processes.",
+    price: "Develop custom apps that enhance user experiences, boost engagement, and streamline critical business processes.",
   },
   {
     imgURL: shoe5,
@@ -48,7 +48,7 @@ export const products = [
   {
     imgURL: shoe4,
     name: "Cloud Services",
-    price: "Build and maintain a scalable and secure cloud infrastructure tailored to your business needs.",
+    price: "Build and maintain a scalable, secure, and flexible cloud infrastructure tailored to your unique business needs.",
   },
   
 ];
