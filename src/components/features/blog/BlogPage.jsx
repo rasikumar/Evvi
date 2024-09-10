@@ -4,11 +4,11 @@ import { Blogs } from "../../../constant";
 const BlogPage = () => {
   return (
     <div className="w-[90%] m-auto">
-      <div className="flex flex-col tablet:flex-row items-start tablet:items-center justify-between w-full mt-10 px-4 tablet:px-10">
+      <div className="flex flex-col gap-3 w-full mt-10 px-4 tablet:px-10">
         <h1 className="text-3xl tablet:text-5xl font-medium mb-4 tablet:mb-0">
           Blogs
         </h1>
-        <p className="w-full tablet:w-72 text-base tablet:text-lg">
+        <p className="w-full">
           New product features, the latest in technology, solutions and updates
         </p>
       </div>

@@ -26,7 +26,7 @@ const Choose = () => {
                   transition: { duration: 0.3 },
                 }}
                 key={item.id}
-                className="mb-4 w-full bg-white/40 shadow-xl hover:shadow-2xl transition-shadow duration-300 rounded-lg p-4 max-mobile:p-3"
+                className="mb-4 w-full bg-white/40 shadow-xl cursor-pointer hover:shadow-2xl transition-shadow duration-300 rounded-lg p-4 max-mobile:p-3"
                 onClick={() => toggleOpen(item.id)}
               >
                 <h2 className="text-xl max-mobile:text-base inline-flex items-center justify-between gap-[2rem] font-semibold text-t-primary">

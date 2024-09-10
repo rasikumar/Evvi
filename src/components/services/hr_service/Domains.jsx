@@ -41,8 +41,8 @@ const Domains = () => {
                     <img src={j.img} alt="#" className="w-20 max-tablet:w-28" />
                     {tooltip === j.id && (
                       <motion.p
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 3 }}
                         exit={{ opacity: 0, y: -10 }}
                         className="absolute bottom-10 px-12 py-4 max-mobile:bottom-10 w-40 max-mobile:py-4 max-mobile:h-10 bg-white shadow-lg rounded text-sm text-gray-800 text-center max-mobile:text-xs"
                       >
@@ -65,9 +65,9 @@ const Domains = () => {
                     {tooltip === j.id && (
                       <motion.p
                         initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        animate={{ opacity: 1, y: 10 }}
                         exit={{ opacity: 0, y: -10 }}
-                        className="absolute bottom-10 w-40 px-12 py-4 max-mobile:py-4 max-mobile:h-10 bg-white shadow-lg rounded text-sm text-gray-800 text-center max-mobile:text-xs"
+                        className="absolute bottom-10 w-40 px-11 py-4 max-mobile:py-4 max-mobile:h-10 bg-white shadow-lg rounded text-sm text-gray-800 text-center max-mobile:text-xs"
                       >
                         {j.content}
                       </motion.p>

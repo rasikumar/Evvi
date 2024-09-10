@@ -78,7 +78,7 @@ export const HR_Content = [
           {
             id: 1,
             img: ITES,
-            content: "IT-ES",
+            content: "ITES",
           },
           // {
           //   id: 2,

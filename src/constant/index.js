@@ -515,11 +515,11 @@ export const Blogs = [
                 date : '03 June 2024',
                 title : "Retreat",
                 description : "As we continue to adapt to the constantly changing landscape of the modern workplace, it has become increasingly clear that prioritizing employee wellbeing and mental health is crucial for creating a healthy, productive, and sustainable work environment. Providing support for employee well-being encompasses addressing physical, mental, and emotional health, which are all interconnected and vital for overall satisfaction and performance. Mental health deserves special attention, as it can have a significant impact on employee engagement, productivity, and organizational success." ,
-                link : "Learn More",
+                link : "Read More",
                 width : 14,
                 icon_2 : right_arrow,
                 url:'/blog_1',
-                author : "Sathya"
+                author : "Evvi"
             },
             {
                 id : 1,
@@ -528,24 +528,24 @@ export const Blogs = [
                 date : '03 June 2024',
                 title : "Valuable",
                 description : "In today's fast-paced professional world, it's essential to create a culture that values continuous learning, steadfast achievement, and the cultivation of a lasting legacy. That's where & 'VALUABLE' comes in - it's an acronym that embodies the essence of nurturing employee talent for unparalleled success." ,
-                link : "Learn More",
+                link : "Read More",
                 width : 14,
                 icon_2 : right_arrow,
                 url:'/blog_2',
-                author : "Sathya"
+                author : "Evvi"
             },
             {
                 id : 2,
                 img : blog_3,
                 icon_1 : date_icon,
                 date : '03 June 2024',
-                title : "GROWTH",
+                title : "Growth",
                 description : "The 'GROWTH' framework—Guiding, Recognizing, Opportunity, Wealthing, Training, and Holisticing—revolutionizes the employee-employer dynamic by fostering a supportive and dynamic work environment. This model emphasizes guiding employees through impactful mentorship, recognizing achievements to elevate morale, and creating abundant opportunities for advancement. Wealthing focuses on bolstering financial growth and benefits, while training ensures continuous skill development. Holisticing promotes overall well-being, integrating work-life balance and personal growth. Together, these elements cultivate a mutually beneficial relationship, enhancing employee satisfaction and productivity, while propelling organizational success and sustainability. The GROWTH approach encapsulates a comprehensive strategy for thriving workplace dynamics." ,
-                link : "Learn More",
+                link : "Read More",
                 width : 14,
                 icon_2 : right_arrow,
                 url:'/blog_3',
-                author : "Sathya"
+                author : "Evvi"
             },
             {
                 id : 3,
@@ -554,11 +554,11 @@ export const Blogs = [
                 date : '03 June 2024',
                 title : "”Feel Good Friday”- abstract.",
                 description : " In the Indian corporate culture, 'Feel Good Friday' or 'Fun Friday' has become quite popular. As the week comes to a close, many companies use Fridays for activities that break the routine. These activities can range from wearing casual clothes and playing games to having office parties and wellness sessions. The goal is to create a relaxed and enjoyable atmosphere, allowing employees to unwind and socialize with their colleagues. This not only makes work more enjoyable, but also fosters creativity and teamwork. In this series, we will explore whether Fun Friday is beneficial for our team or if it's unnecessary." ,
-                link : "Learn More",
+                link : "Read More",
                 width : 14,
                 icon_2 : right_arrow,
                 url:'/blog_4',
-                author : "Sathya"
+                author : "Evvi"
             },
         ]
     }

@@ -1,6 +1,8 @@
 import ProductCard from '../components/ProductCard'
 import { products } from '../constant'
 
+
+
 function PopularProducts() {
   return (
     

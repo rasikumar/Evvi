@@ -26,6 +26,10 @@ import Allproduct from "./components/features/products/Allprod";
 
 // BlogPages
 import BlogPage from "./components/features/blog/BlogPage";
+import Blog_1 from "./components/features/blog/blogs/Blog_1";
+import Blog_2 from "./components/features/blog/blogs/Blog_2";
+import Blog_3 from "./components/features/blog/blogs/Blog_3";
+import Blog_4 from "./components/features/blog/blogs/Blog_4";
 
 import { createTheme, ThemeProvider } from "@mui/material";
 import ScrollToTop from "./components/ScrollToTop";
@@ -72,6 +76,11 @@ const App = () => {
 
           {/* BlogPages */}
           <Route path="/Blog" element={<BlogPage />} />
+          <Route path="/Blog_1" element={<Blog_1 />} />
+          <Route path="/Blog_2" element={<Blog_2 />} />
+          <Route path="/Blog_3" element={<Blog_3 />} />
+          <Route path="/Blog_4" element={<Blog_4 />} />
+
 
           {/* ContactFullPage */}
           <Route path="/Contact_Us" element={<ContactFull/>}/>
