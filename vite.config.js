@@ -8,4 +8,8 @@ export default defineConfig({
       '/api': 'http://localhost:5001', // Adjust the backend URL/port if necessary
     },
   },
+  build :{
+    chunkSizeWarningLimit:1000
+  }
 });
+

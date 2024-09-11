@@ -74,22 +74,22 @@ export const Navigation = [
             {
                 id :0,
                 title : 'Business Consulting',
-                url : '/Business_Consulting',
+                url : '/BusinessConsulting',
             },
             {
                 id : 1,
                 title : 'Digital Transformation',
-                url : '/Digital_Marketing',
+                url : '/DigitalMarketing',
             },
             {
                 id : 2,
                 title : 'HR Consulting',
-                url : '/HR_Service',
+                url : '/HRService',
             },
             {
                 id : 3,
                 title : 'IT Consulting',
-                url : '/IT_Development',
+                url : '/ITDevelopment',
             }
         ]
     },
@@ -113,7 +113,7 @@ export const Navigation = [
     {
         id : 4,
         title : 'Contact Us',
-        url : '/Contact_Us'
+        url : '/ContactUs'
     },
 ]
 
@@ -518,7 +518,7 @@ export const Blogs = [
                 link : "Read More",
                 width : 14,
                 icon_2 : right_arrow,
-                url:'/blog_1',
+                url:'/blog1',
                 author : "Evvi"
             },
             {
@@ -531,7 +531,7 @@ export const Blogs = [
                 link : "Read More",
                 width : 14,
                 icon_2 : right_arrow,
-                url:'/blog_2',
+                url:'/blog2',
                 author : "Evvi"
             },
             {
@@ -544,7 +544,7 @@ export const Blogs = [
                 link : "Read More",
                 width : 14,
                 icon_2 : right_arrow,
-                url:'/blog_3',
+                url:'/blog3',
                 author : "Evvi"
             },
             {
@@ -557,7 +557,7 @@ export const Blogs = [
                 link : "Read More",
                 width : 14,
                 icon_2 : right_arrow,
-                url:'/blog_4',
+                url:'/blog4',
                 author : "Evvi"
             },
         ]

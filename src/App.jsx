@@ -70,21 +70,20 @@ const App = () => {
 
           {/* Service Pages */}
           <Route path="/Service" element={<ServiceList/>} />
-          <Route path="/HR_Service" element={<HR_Service />} />
-          <Route path="/Digital_Marketing" element={<Digital_Marketing />} />
-          <Route path="/IT_Development" element={<IT_Development />} />
-          <Route path="/Business_Consulting" element={<Business_Consulting />} />
+          <Route path="/HRService" element={<HR_Service />} />
+          <Route path="/DigitalMarketing" element={<Digital_Marketing />} />
+          <Route path="/ITDevelopment" element={<IT_Development />} />
+          <Route path="/BusinessConsulting" element={<Business_Consulting />} />
 
           {/* BlogPages */}
           <Route path="/Blog" element={<BlogPage />} />
-          <Route path="/Blog_1" element={<Blog_1 />} />
-          <Route path="/Blog_2" element={<Blog_2 />} />
-          <Route path="/Blog_3" element={<Blog_3 />} />
-          <Route path="/Blog_4" element={<Blog_4 />} />
-
+          <Route path="/Blog1" element={<Blog_1 />} />
+          <Route path="/Blog2" element={<Blog_2 />} />
+          <Route path="/Blog3" element={<Blog_3 />} />
+          <Route path="/Blog4" element={<Blog_4 />} />
 
           {/* ContactFullPage */}
-          <Route path="/Contact_Us" element={<ContactFull/>}/>
+          <Route path="/ContactUs" element={<ContactFull/>}/>
 
           {/* Products page */}
           <Route path="/Products" element={<Allproduct/>}/>

@@ -16,10 +16,10 @@ const Domains = () => {
     <div className="flex max-tablet:flex-col w-full max-tablet:h-full h-[30rem] overflow-hidden">
       <div className="bg-t-primary w-[50%] max-tablet:w-full flex flex-col items-start max-tablet:px-24 max-tablet:py-20 max-mobile:py-10 max-mobile:px-4 px-20 justify-center relative">
         <h2 className="text-2xl font-semibold mb-5 text-white">{title}</h2>
-        <p className="font-medium text-white max-tablet:text-sm text-justify">
+        <p className="font-medium text-white max-tablet:text-sm text-justify mb-4">
           {description}
         </p>
-        <p className="font-medium text-white max-tablet:text-sm text-justify indent-16">
+        <p className="font-medium text-white max-tablet:text-sm text-justify">
           {description1}
         </p>
         <div className="w-10 h-10 max-tablet:-bottom-5 max-tablet:right-[45%] bg-t-primary absolute -right-5 rotate-45"></div>

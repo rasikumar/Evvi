@@ -2,10 +2,26 @@ import { Link } from "react-router-dom";
 import { bgvid } from "../assets";
 import { HeroText } from "../constant";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { useEffect, useRef, useState } from "react";
 // import { FaArrowUpRightFromSquare, FaSquarePhone, FaRegFaceGrinBeam, FaStar } from "react-icons/fa6";
 // import { FcGoogle } from "react-icons/fc";
 
 const Hero = () => {
+  const videoRef = useRef(null);
+  const [isIntersecting, setIntersecting] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIntersecting(true);
+        observer.disconnect();
+      }
+    });
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
   return (
     <div className="flex items-center w-[90%] gap-5 m-auto h-full max-tablet:flex-col max-tablet:gap-0">
       <div className="absolute w-[80%] -z-20">
@@ -18,13 +34,13 @@ const Hero = () => {
           </h3>
         </div> */}
 
-        <div className="flex flex-col gap-4">
-          <h2 className="text-5xl desktop:text-8xl max-mobile:text-4xl max-mobile:w-[22rem] font-semibold">
-            {HeroText[0].content}
-          </h2>
-          <p className="text-lg font-medium">
-            {HeroText[0].subheading}
-          </p>
+        <div itemRef={videoRef} className="flex flex-col gap-4">
+          {isIntersecting && (
+            <h2 className="text-5xl desktop:text-8xl max-mobile:text-4xl max-mobile:w-[22rem] font-semibold">
+              {HeroText[0].content}
+            </h2>
+          )}
+          <p className="text-lg font-medium">{HeroText[0].subheading}</p>
         </div>
 
         <div className="flex gap-10 max-mobile:gap-2">
@@ -43,14 +59,21 @@ const Hero = () => {
       </div>
 
       <div className="w-[50%] max-tablet:w-full h-fit relative mt-24 max-mobile:mt-10">
-        <div className="relative w-full h-96 desktop:h-[35rem] rounded-xl overflow-hidden">
-          <video
-            src={bgvid}
-            className="absolute top-0 left-0 w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-          ></video>
+        <div
+          ref={videoRef}
+          className="relative w-full h-96 desktop:h-[35rem] rounded-xl overflow-hidden"
+        >
+          {isIntersecting && (
+            <video
+              src={bgvid}
+              className="absolute top-0 left-0 w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            ></video>
+          )}
         </div>
 
         {/* <div className="px-4 py-4 desktop:px-6 desktop:py-6 rounded-xl shadow-xl bg-white flex flex-col gap-1 absolute top-0 right-0 z-50 desktop:w-[30%] w-[35%] max-mobile:w-[40%]">
