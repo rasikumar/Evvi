@@ -38,7 +38,7 @@ const Domains = () => {
                     onMouseLeave={() => setTip(null)}
                     className="relative flex flex-col items-center justify-center"
                   >
-                    <img src={j.img} alt="#" className="w-20 max-tablet:w-28" />
+                    <img src={j.img} alt="domain_image" className="w-20 max-tablet:w-28" />
                     {tooltip === j.id && (
                       <motion.p
                         initial={{ opacity: 0, y: 15 }}
@@ -61,7 +61,7 @@ const Domains = () => {
                     onMouseLeave={() => setTip(null)}
                     className="relative flex flex-col items-center"
                   >
-                    <img src={j.img} alt="#" className="w-20 max-tablet:w-28" />
+                    <img src={j.img} alt="domain_image" className="w-20 max-tablet:w-28" />
                     {tooltip === j.id && (
                       <motion.p
                         initial={{ opacity: 0, y: -10 }}

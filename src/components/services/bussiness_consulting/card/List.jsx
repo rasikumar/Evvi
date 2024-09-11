@@ -21,6 +21,7 @@ const Card = ({ setSelected, item }) => {
         }}
         layoutId={`card-${item.id}`}
         src={item.url}
+        alt="Flash_card"
         className="w-full bg-base-100 shadow-xl image-full cursor-pointer rounded-xl"
       />
     </div>

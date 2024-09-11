@@ -16,8 +16,8 @@ const About = () => {
       <div className="relative w-[50%] max-tablet:w-full">
         <div className="w-36 h-36 bg-t-secondary blur-[100px] absolute top-0 -z-10"></div>
         <div className="relative">
-          <img src={codingImage} alt="" className="w-[70%] rounded-3xl max-tablet:w-full" />
-          <img src={digitalImage} alt="" className="absolute top-12 left-44 w-[70%] rounded-3xl max-tablet:hidden" />
+          <img src={codingImage} alt="codingImage" className="w-[70%] rounded-3xl max-tablet:w-full" />
+          <img src={digitalImage} alt="digitalImage" className="absolute top-12 left-44 w-[70%] rounded-3xl max-tablet:hidden" />
         </div>
       </div>
       <div className="relative w-[50%] max-tablet:w-full">

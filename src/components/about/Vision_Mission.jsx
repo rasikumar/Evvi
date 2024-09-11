@@ -20,7 +20,7 @@ const Vision_Mission = () => {
             <p className="w-[40rem] max-tablet:w-[20rem] max-mobile:w-[18rem] m-auto text-justify">{vision.content}</p>
           </motion.div>
           <div>
-            <img src={vision.img} className="rounded-3xl"/>
+            <img src={vision.img} alt={vision.header} className="rounded-3xl"/>
           </div>
         </div>
       ))}

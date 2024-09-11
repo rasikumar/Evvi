@@ -72,7 +72,7 @@ const Testimonial = () => {
         <div className="col-span-2 max-mobile:hidden row-span-4 rounded-3xl overflow-hidden">
           <img
             src={Ratings}
-            alt="#"
+            alt="Ratings image"
             className="w-full h-full object-cover"
           />
         </div>
@@ -96,7 +96,7 @@ const Testimonial = () => {
         <div className="col-span-2 max-mobile:col-span-4 row-span-4 rounded-3xl overflow-hidden shadow-xl">
           <img
             src={Happy_Clients}
-            alt="#"
+            alt="Happy clients Image"
             className="w-full h-full object-cover"
           />
         </div>

@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="absolute inset-0 h-screen -top-32 -z-10 bg-t-secondary/60">
         <img
           src={HR_hero}
-          alt="#"
+          alt="HR_hero_image"
           className="object-cover w-full h-full opacity-75"
         />
       </div>

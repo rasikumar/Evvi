@@ -83,7 +83,7 @@ const Blog = () => {
                       className="text-t-secondary font-semibold w-[50%] flex"
                     >
                       {item.link}{" "}
-                      <img src={item.icon_2} alt="" width={item.width} />
+                      <img src={item.icon_2} alt="icon_image" width={item.width} />
                     </Link>
                   </div>
                 </div>

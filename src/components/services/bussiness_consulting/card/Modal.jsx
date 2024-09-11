@@ -16,7 +16,7 @@ export default function Modal({ selected, setSelected }) {
         className="w-[90%] mx-auto px-10 cursor-default flex max-mobile:flex-col mt-32"
       >
         <motion.div layoutId={`card-${selected.id}`}>
-          <img src={selected.url} className="w-full h-full rounded-s-lg" />
+          <img src={selected.url} id="selceted_card" className="w-full h-full rounded-s-lg" />
         </motion.div>
         <motion.div
           initial={{

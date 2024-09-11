@@ -11,7 +11,7 @@ const Hero = () => {
         {heading}
       </h1>
       <p className="w-[50%] max-mobile:w-[80%] text-center m-auto font-semibold max-mobile:font-medium">{subheading.slice(0,5)}<span className="text-t-primary text-xl">{subheading.slice(5,6)}</span><span className="text-t-secondary text-xl">{subheading.slice(6,7)}</span><span className="text-t-primary text-xl">{subheading.slice(7,8)}</span><span className="text-t-secondary text-xl">{subheading.slice(8,10)}</span>{subheading.slice(10,108)} </p>
-      <img src={product} alt="#" className="bg-cover w-[60%] max-mobile:w-[100%] m-auto -mt-1 opacity-85 -z-10" />
+      <img src={product} alt="Product_image" className="bg-cover w-[60%] max-mobile:w-[100%] m-auto -mt-1 opacity-85 -z-10" />
     </div>
   );
 };

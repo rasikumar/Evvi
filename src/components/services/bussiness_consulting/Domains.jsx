@@ -26,7 +26,7 @@ const Domains = () => {
                   <div key={j.id} className="flex flex-col items-center justify-center">
                     <img
                       src={j.img}
-                      alt=""
+                      alt="domain_image"
                       className="w-20 max-tablet:w-28"
                     />
                     <p className="font-medium max-mobile:text-xs max-mobile:w-28 text-sm w-40 text-center text-t-primary">{j.content}</p>
@@ -39,7 +39,7 @@ const Domains = () => {
                   <div key={j.id} className="flex flex-col items-center ">
                     <img
                       src={j.img}
-                      alt=""
+                      alt="domain_image"
                       className="w-20 max-tablet:w-28"
                     />
                     <p className="font-medium max-mobile:text-xs max-mobile:w-28 text-sm w-40 text-center text-t-primary">{j.content}</p>

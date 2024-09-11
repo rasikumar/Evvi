@@ -35,7 +35,7 @@ const ServiceSlide = () => {
         <div className={`content rounded-b-2xl rounded-tr-xl ${ state === 1 ? 'active-content': '' }`}>
           <div className='flex max-laptop:flex-col flex-row w-full max-mobile:gap-3 gap-10 items-center'>
             <div className='w-full min-w-[40%]'>
-              <img src={lists_items[0].img} alt="" className='w-full rounded-3xl'/>
+              <img src={lists_items[0].img} alt="list_images" className='w-full rounded-3xl'/>
             </div>
             <div className='flex flex-col gap-4 max-mobile:gap-2'>
               <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-bold text-t-primary'>
@@ -46,7 +46,7 @@ const ServiceSlide = () => {
                 <div className='flex flex-col gap-4 max-mobile:gap-1'>
                   {item1.map(i => (
                     <div key={i.content} className='flex items-center gap-2'  >
-                      <img src={i.icon} alt="" width={15} />
+                      <img src={i.icon} alt="icon_image" width={15} />
                       <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
                     </div>
                   ))}
@@ -78,7 +78,7 @@ const ServiceSlide = () => {
         <div className={`content rounded-xl ${ state === 2 ? 'active-content': '' }`}>
           <div className='flex max-laptop:flex-col flex-row w-full max-mobile:gap-3 gap-10 items-center'>
                <div className='w-full min-w-[40%]'>
-                 <img src={lists_items[1].img} alt="" className='w-full rounded-3xl'/>
+                 <img src={lists_items[1].img} alt="List_items" className='w-full rounded-3xl'/>
                </div>
                 <div className='flex flex-col gap-4 max-mobile:gap-2'>
                   <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
@@ -89,7 +89,7 @@ const ServiceSlide = () => {
                    <div className='flex flex-col gap-4 max-mobile:gap-1'>
                      {item2.map(i => (
                   <div key={i.content} className='flex items-center gap-2'>
-                    <img src={i.icon} alt="" width={15} />
+                    <img src={i.icon} alt="icon_image" width={15} />
                     <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
                   </div>
                 ))}
@@ -121,7 +121,7 @@ const ServiceSlide = () => {
         <div className={`content rounded-xl ${ state === 3 ? 'active-content': '' }`}>
           <div className='flex max-laptop:flex-col flex-row w-full max-mobile:gap-3 gap-10 items-center'>
             <div className='w-full min-w-[40%]'>
-              <img src={lists_items[2].img} alt="" className='w-full rounded-3xl'/>
+              <img src={lists_items[2].img} alt="list_image" className='w-full rounded-3xl'/>
             </div>
             <div className='flex flex-col gap-4 max-mobile:gap-2'>
               <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
@@ -132,7 +132,7 @@ const ServiceSlide = () => {
                 <div className='flex flex-col gap-4 max-mobile:gap-1'>
                   {item3.map(i => (
                     <div key={i.content} className='flex items-center gap-2'>
-                      <img src={i.icon} alt="" width={15} />
+                      <img src={i.icon} alt="icon_image" width={15} />
                       <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
                     </div>
                   ))}
@@ -164,7 +164,7 @@ const ServiceSlide = () => {
         <div className={`content  rounded-b-2xl rounded-tl-xl ${ state === 4 ? 'active-content': '' }`}>
           <div className='flex max-laptop:flex-col flex-row w-full max-mobile:gap-3 gap-10 items-center'>
             <div className='w-full min-w-[40%]'>
-              <img src={lists_items[3].img} alt="" className='w-full rounded-3xl'/>
+              <img src={lists_items[3].img} alt="list_item" className='w-full rounded-3xl'/>
             </div>
             <div className='flex flex-col gap-4 max-mobile:gap-3'>
               <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
@@ -175,7 +175,7 @@ const ServiceSlide = () => {
                 <div className='flex flex-col gap-4 max-mobile:gap-1'>
                   {item4.map(i => (
                     <div key={i.content} className='flex items-center gap-3'>
-                      <img src={i.icon} alt="" width={15} />
+                      <img src={i.icon} alt="icon_image" width={15} />
                       <p className='text-t-primary font-medium max-mobile:text-xs text-sm'>{i.content}</p>
                     </div>
                   ))}
