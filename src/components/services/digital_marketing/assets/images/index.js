@@ -12,7 +12,7 @@ import shoe4 from '../../../../../assets/Digital_marketing/Digital_marketing.jpg
 
 import shoe8 from '../../../../../assets/Digital_marketing/digital_presence.jpg'
 
-import thumbnailBackground from './thumbnail-background.svg'
+import thumbnailBackground from './thumbnail-background.svg'    
 import thumbnailShoe1 from './thumbnail-shoe1.svg'
 import thumbnailShoe2 from './thumbnail-shoe2.svg'
 import thumbnailShoe3 from './thumbnail-shoe3.svg'
@@ -31,7 +31,7 @@ export {
 
     shoe8,
 
-    thumbnailBackground,
+    thumbnailBackground,    
     thumbnailShoe1,
     thumbnailShoe2,
     thumbnailShoe3

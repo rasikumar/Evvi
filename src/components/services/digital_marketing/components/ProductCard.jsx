@@ -5,7 +5,6 @@ import { products } from "../constant";
 // eslint-disable-next-line react/prop-types
 
 const item = products[0].list
-console.log(item);
 
 function ProductCard({ imgURL, name, price, }) {
   
