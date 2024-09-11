@@ -30,13 +30,13 @@ function Hero() {
         </div>
 
         <div className="w-[50%] max-tablet:w-[80%] flex flex-col gap-4">
-          <h1 className="font-semibold text-5xl max-tablet:text-3xl  font-montserrat">
+          <h2 className="font-semibold text-5xl max-tablet:text-3xl  font-montserrat">
           Your Trusted Partner for {" "}
             <span className="text-t-primary font-semibold text-5xl max-tablet:text-3xl  font-montserrat">
             Comprehensive IT{" "}
             Solutions
             </span>
-          </h1>
+          </h2>
           <div className="text-t-primary text-lg">
           Elevate Your Business with Expert IT Consulting and Outsourcing.
           </div>

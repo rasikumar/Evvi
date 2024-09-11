@@ -38,9 +38,9 @@ const ServiceSlide = () => {
               <img src={lists_items[0].img} alt="list_images" className='w-full rounded-3xl'/>
             </div>
             <div className='flex flex-col gap-4 max-mobile:gap-2'>
-              <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-bold text-t-primary'>
+              <h2 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-bold text-t-primary'>
                 {lists_items[0].heading}
-              </h1>
+              </h2>
               <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm text-justify'>{lists_items[0].description}</p>
               <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
                 <div className='flex flex-col gap-4 max-mobile:gap-1'>
@@ -81,9 +81,9 @@ const ServiceSlide = () => {
                  <img src={lists_items[1].img} alt="List_items" className='w-full rounded-3xl'/>
                </div>
                 <div className='flex flex-col gap-4 max-mobile:gap-2'>
-                  <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
+                  <h2 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
                     {lists_items[1].heading}
-                  </h1>
+                  </h2>
                   <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm text-justify'>{lists_items[1].description}</p>
                   <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
                    <div className='flex flex-col gap-4 max-mobile:gap-1'>
@@ -124,9 +124,9 @@ const ServiceSlide = () => {
               <img src={lists_items[2].img} alt="list_image" className='w-full rounded-3xl'/>
             </div>
             <div className='flex flex-col gap-4 max-mobile:gap-2'>
-              <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
+              <h2 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
                 {lists_items[2].heading}
-              </h1>
+              </h2>
               <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm text-justify'>{lists_items[2].description}</p>
               <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
                 <div className='flex flex-col gap-4 max-mobile:gap-1'>
@@ -167,9 +167,9 @@ const ServiceSlide = () => {
               <img src={lists_items[3].img} alt="list_item" className='w-full rounded-3xl'/>
             </div>
             <div className='flex flex-col gap-4 max-mobile:gap-3'>
-              <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
+              <h2 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
                 {lists_items[3].heading}
-              </h1>
+              </h2>
               <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm text-justify'>{lists_items[3].description}</p>
               <div className='flex max-laptop:flex-wrap gap-6 max-mobile:gap-0'>
                 <div className='flex flex-col gap-4 max-mobile:gap-1'>
@@ -292,7 +292,7 @@ export default ServiceSlide
 //             <img src={lists_items[0].img} alt="" className='w-full rounded-3xl'/>
 //           </div>
 //           <div className='flex flex-col gap-4 max-mobile:gap-2'>
-//             <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-bold text-t-primary'>
+//             <h2 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-bold text-t-primary'>
 //               {lists_items[0].heading}
 //             </h1>
 //             <p className='line-clamp-3 max-mobile:line-clamp-5 font-semibold max-mobile:text-sm'>{lists_items[0].description}</p>
@@ -334,7 +334,7 @@ export default ServiceSlide
 //             <img src={lists_items[1].img} alt="" className='w-full rounded-3xl'/>
 //           </div>
 //           <div className='flex flex-col gap-4 max-mobile:gap-2'>
-//             <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
+//             <h2 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
 //               {lists_items[1].heading}
 //             </h1>
 //             <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[1].description}</p>
@@ -376,7 +376,7 @@ export default ServiceSlide
 //             <img src={lists_items[2].img} alt="" className='w-full rounded-3xl'/>
 //           </div>
 //           <div className='flex flex-col gap-4 max-mobile:gap-2'>
-//             <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
+//             <h2 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
 //               {lists_items[2].heading}
 //             </h1>
 //             <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[2].description}</p>
@@ -418,7 +418,7 @@ export default ServiceSlide
 //             <img src={lists_items[3].img} alt="" className='w-full rounded-3xl'/>
 //           </div>
 //           <div className='flex flex-col gap-4 max-mobile:gap-2'>
-//             <h1 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
+//             <h2 className='text-3xl max-tablet:text-2xl max-mobile:text-lg font-semibold text-t-primary'>
 //               {lists_items[3].heading}
 //             </h1>
 //             <p className='line-clamp-3 max-mobile:line-clamp-5 font-medium max-mobile:text-sm'>{lists_items[3].description}</p>

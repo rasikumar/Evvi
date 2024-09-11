@@ -1,9 +1,17 @@
 import { motion } from "framer-motion";
 import Contact from "./Contact";
+import { Helmet } from "react-helmet-async";
 
 const ContactFull = () => {
   return (
     <div className="w-[90%] mb-10 max-tablet:py-8 max-mobile:gap-10 m-auto py-12 gap-20">
+      <Helmet>
+        <title>Contact Evvi Solutions</title>
+        <meta
+          name="description"
+          content="Transform your business with our tailored solutions"
+        />
+      </Helmet>
       <div className="flex flex-col gap-2 p-10">
         <motion.h2
           className="text-3xl text-center font-bold"

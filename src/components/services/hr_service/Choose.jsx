@@ -16,7 +16,7 @@ const Choose = () => {
       <div className="w-[60%] max-mobile:w-full flex flex-col justify-center bg-gradient-to-r from-teal-50 h-full p-10 max-mobile:p-5 rounded-lg shadow-lg">
         <div className="px-10 max-tablet:px-6 max-mobile:px-0 gap-6 flex flex-col mb-10">
           <div>
-            <h1 className="text-3xl max-mobile:text-xl font-bold text-t-primary">{title}</h1>
+            <h2 className="text-3xl max-mobile:text-xl font-bold text-t-primary">{title}</h2>
           </div>
           <div>
             {list.map((item) => (

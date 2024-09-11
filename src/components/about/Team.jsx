@@ -32,7 +32,7 @@ const Team = () => {
   return (
     <div className="flex flex-col gap-16 justify-center items-center h-[800px] bg-gray-900">
       <div className="flex w-[80%] max-mobile:w-[85%] max-mobile:leading-snug flex-col items-center gap-4">
-        <h1 className="text-white text-3xl font-semibold">Our Teams</h1>
+        <h2 className="text-white text-3xl font-semibold">Our Teams</h2>
         <p className="text-white">
           Meet our team — the driving force behind our commitment to excellence. With gratitude to everyone who&apos;s
           ever been part of our journey, we celebrate their contributions that have shaped who we are today.

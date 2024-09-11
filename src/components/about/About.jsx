@@ -14,8 +14,8 @@ const About = () => {
   return (
     <div className="flex max-tablet:flex-col w-full max-mobile:px-4 py-16 px-24 items-center -mt-32 gap-32 max-tablet:gap-16 ">
       <div className="w-[50%] max-tablet:w-full flex flex-col gap-5">
-        <h1 className="text-5xl max-tablet:text-3xl font-bold">{content.header}</h1>
-        <h1 className="text-lg max-tablet:text-base font-medium">{content.subtitle}</h1>
+        <h2 className="text-5xl max-tablet:text-3xl font-bold">{content.header}</h2>
+        <h2 className="text-lg max-tablet:text-base font-medium">{content.subtitle}</h2>
         <p className="leading-snug max-tablet:text-sm text-justify">{content.paragraph1} </p>
         <p className="leading-snug max-tablet:text-sm text-justify">{content.paragraph2.slice(0,197)} <span className="font-bold text-t-primary">{content.paragraph2.slice(197,252)}</span> {content.paragraph2.slice(252,460)} </p>
         {/* <p className="leading-snug max-tablet:text-sm">{content.paragraph2}</p> */}

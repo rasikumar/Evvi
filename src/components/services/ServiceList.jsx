@@ -1,13 +1,21 @@
 import { Link } from "react-router-dom";
 import { ServicePage } from "../../constant";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 const ServiceList = () => {
   const threerow = ServicePage.slice(0, 3);
   const onerow = ServicePage.slice(3, 4);
-
   return (
     <div className="grid grid-cols-1  w-[90%] max-tablet:py-8 max-mobile:gap-10 m-auto py-12 gap-2">
+      <Helmet>
+        <title>Services Evvi Solutions</title>
+        <meta
+          name="description"
+          content="Transform your business with our tailored solutions"
+        />
+      </Helmet>
+
       <div className="flex flex-col gap-2 p-10">
         <motion.h2
           className="text-3xl text-center font-bold"
@@ -43,7 +51,7 @@ const ServiceList = () => {
             className="flex flex-col items-center shadow-[rgba(0, 0, 0, 0.15)_0px_3px_3px_0px] bg-slate-200 rounded-xl"
           >
             <motion.div className="flex flex-col min-w-64 gap-5 p-3 ">
-              <h1 className="font-semibold text-xl text-center">{i.header}</h1>
+              <h2 className="font-semibold text-xl text-center">{i.header}</h2>
               <motion.img
                 whileHover={{
                   scale: 1.021,
@@ -88,9 +96,7 @@ const ServiceList = () => {
                 />
               </div>
               <div className="flex flex-col gap-5">
-                <h1 className="font-semibold text-xl">
-                  {i.header}
-                </h1>
+                <h2 className="font-semibold text-xl">{i.header}</h2>
                 <p className="text-sm font-medium line-clamp-4">{i.content}</p>
                 <Link to={i.url} className="btn-primary ">
                   {i.btn}

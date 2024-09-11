@@ -21,7 +21,7 @@ const IT_Development = () => {
   return (
     <>
     <Helmet>
-      <title>IT Development</title>
+      <title>IT Consulting</title>
       <meta name="description" content="
 Top Web and Mobile App Development Service,
 Best Web Development Company,

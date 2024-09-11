@@ -2,7 +2,7 @@
 const Blog_2 = () => {
     return (
       <div style={styles.container}>
-        <h1 style={styles.header}>Page Under Construction</h1>
+        <h2 style={styles.header}>Page Under Construction</h2>
         <p style={styles.message}>We&apos;re working hard to get this page ready. Please check back later!</p>
       </div>
     );

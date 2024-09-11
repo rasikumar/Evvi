@@ -32,7 +32,7 @@ const About = () => {
             className="flex flex-col gap-3"
           >
             <p className="text-t-primary font-semibold">{about.heading}</p>
-            <h1 className="text-4xl max-tablet:text-3xl max-mobile:text-2xl font-semibold">{about.title}</h1>
+            <h2 className="text-4xl max-tablet:text-3xl max-mobile:text-2xl font-semibold">{about.title}</h2>
             <p className="font-normal text-justify"><span className="font-semibold text-t-primary">{about.description.slice(0, 65)}</span>{about.description.slice(65, 510)}</p> 
             <p className="font-normal text-justify"><span className="font-semibold text-t-primary">{about.description2.slice(0, 97)}</span>{about.description2.slice(97, 196)}<span className="font-semibold text-t-primary">{about.description2.slice(196, 238)}</span></p> 
             <p className="font-normal text-justify">{about.description3}</p>

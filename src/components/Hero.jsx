@@ -19,9 +19,9 @@ const Hero = () => {
         </div> */}
 
         <div className="flex flex-col gap-4">
-          <h1 className="text-5xl desktop:text-8xl max-mobile:text-4xl max-mobile:w-[22rem] font-semibold">
+          <h2 className="text-5xl desktop:text-8xl max-mobile:text-4xl max-mobile:w-[22rem] font-semibold">
             {HeroText[0].content}
-          </h1>
+          </h2>
           <p className="text-lg font-medium">
             {HeroText[0].subheading}
           </p>
@@ -58,7 +58,7 @@ const Hero = () => {
                         <FaRegFaceGrinBeam className="text-xl desktop:text-4xl" />
                     </div>
                     <div className="flex items-center flex-col">
-                        <h1 className="text-3xl desktop:text-4xl font-bold">1k+</h1>
+                        <h2 className="text-3xl desktop:text-4xl font-bold">1k+</h1>
                         <p className="text-sm desktop:text-lg font-medium">Happy Clients</p>
                     </div>
                 </div> */}

@@ -14,9 +14,9 @@ const Hero = () => {
       </div>
       <div className="flex flex-col items-center justify-center py-40 gap-4 px-3">
         <div className="flex flex-col items-center max-tablet:text-center">
-          <h1 className="text-5xl max-tablet:text-3xl  font-semibold text-white">
+          <h2 className="text-5xl max-tablet:text-3xl  font-semibold text-white">
             {header}{" "}
-          </h1>
+          </h2>
         </div>
         <p className="text-white font-semibold max-tablet:text-center">{subheader}</p>
       </div>

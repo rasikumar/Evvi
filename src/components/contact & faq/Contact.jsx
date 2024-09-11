@@ -68,7 +68,7 @@ const Contact = () => {
   return (
     <div className="flex flex-col bg-t-primary p-8 gap-6 w-full rounded-xl">
       <div className="flex flex-col gap-4">
-        <h1 className="font-semibold text-white">{heading}</h1>
+        <h2 className="font-semibold text-white">{heading}</h2>
         <p className="text-4xl max-tablet:text-3xl max-mobile:text-2xl font-semibold text-white">
           {title}
         </p>

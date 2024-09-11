@@ -20,7 +20,7 @@ const HR_Service = () => {
   return (
     <>
     <Helmet>
-      <title>HR Service</title>
+      <title>HR Consulting</title>
       <meta name="description" content="Best HR Consulting in Madurai,
 Human Resource Services Thiruparankundram,
 Madurai HR Solutions,

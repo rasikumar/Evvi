@@ -41,9 +41,9 @@ const Testimonial = () => {
           className="flex flex-col gap-3"
         >
           <h3 className="text-t-primary font-semibold">{heading}</h3>
-          <h1 className="text-4xl max-tablet:text-3xl max-mobile:text-2xl font-semibold">
+          <h2 className="text-4xl max-tablet:text-3xl max-mobile:text-2xl font-semibold">
             {title}
-          </h1>
+          </h2>
           <p >{subtitle}</p>
           <div>
             {Testimonials.map(i => (
@@ -80,7 +80,7 @@ const Testimonial = () => {
         <div className="bg-blue-50 col-span-2  row-span-2 rounded-3xl px-8 py-5 shadow-md">
           <div className="flex flex-col gap-2">
             <FcGoogle className="text-5xl max-mobile:text-3xl" />
-            <h1 className="text-2xl font-bold">4.9</h1>
+            <h2 className="text-2xl font-bold">4.9</h2>
             <p className="font-medium">Google Ratings</p>
           </div>
         </div>
@@ -88,7 +88,7 @@ const Testimonial = () => {
         <div className="bg-amber-200 col-span-2 row-span-2 rounded-3xl px-8 py-8 shadow-md">
           <div className="flex flex-col gap-5">
             <FaRegFaceGrinBeam className="text-5xl max-mobile:text-3xl" />
-            {/* <h1 className="text-2xl font-bold">4.5K +</h1> */}
+            {/* <h2 className="text-2xl font-bold">4.5K +</h1> */}
             <p className="font-medium">Happy Clients</p>
           </div>
         </div>

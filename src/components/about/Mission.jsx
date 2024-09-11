@@ -25,8 +25,8 @@ const Mission = () => {
                 ease : 'linear',
             }}
         className="w-[50%] max-tablet:w-full flex flex-col gap-4">
-            <h1 className="text-xl max-tablet:text-lg font-medium text-white">{content.title}</h1>
-            <h1 className="text-white text-4xl max-tablet:text-2xl font-medium">{content.header}</h1>
+            <h2 className="text-xl max-tablet:text-lg font-medium text-white">{content.title}</h2>
+            <h2 className="text-white text-4xl max-tablet:text-2xl font-medium">{content.header}</h2>
             <p className="text-white leading-snug max-tablet:text-sm text-justify">{content.paragraph1}</p>
             <p className="text-white leading-snug max-tablet:text-sm text-justify">{content.paragraph2}</p>
         </motion.div>

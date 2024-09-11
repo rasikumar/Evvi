@@ -56,9 +56,9 @@ const FloatingIcon = () => {
             </h3>
             <div className="p-4 flex flex-col">
               <div className="flex flex-col items-center justify-center gap-5 max-mobile:gap-10">
-                <h1 className="text-lg max-mobile:text-sm text-center font-semibold">
+                <h2 className="text-lg max-mobile:text-sm text-center font-semibold">
                   Want to Know More About Our Company?
-                </h1>
+                </h2>
                 <a
                   href="https://wa.me/+919900965657?text=Hello!%20I%20am%20interested%20in%20learning%20more%20about%20your%20company."
                   target="_blank"
@@ -110,7 +110,7 @@ const FloatingIcon = () => {
                           <div>
                               <p>{`You asked: ${selectedQuestion}`}</p>
                               <p>{`The chatbot answered: ${answers[selectedQuestion].answer}`}</p>
-                              <h1>hello</h1>
+                              <p>hello</p>
                           </div>
                       )} */}
             </div>
