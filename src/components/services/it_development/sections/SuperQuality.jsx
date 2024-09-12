@@ -10,7 +10,7 @@ function SuperQuality() {
         <p className='mt-4 lg:max-w-lg info-text text-justify'>
           Transform your digital landscape with our comprehensive IT solutions. Whether you need bespoke web and mobile applications, scalable ERP systems, or dynamic e-commerce platforms, we provide end-to-end services to turn your vision into reality. 
         </p>
-        {/* <Link to={"/Contact_Us"} className='btn-primary w-[25%] max-mobile:w-[45%] mt-4'>View Details</Link> */}
+        {/* <Link to={"/ContactUs"} className='btn-primary w-[25%] max-mobile:w-[45%] mt-4'>View Details</Link> */}
       </div>
       <div>
       <img

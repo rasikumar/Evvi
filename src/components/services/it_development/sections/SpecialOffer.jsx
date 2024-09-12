@@ -23,7 +23,7 @@ function SpecialOffer() {
         <p className="mt-6 max-mobile:text-sm text-justify">
         Get in touch today to explore how we can support your next project and drive your business forward.
         </p>
-        <Link to={"https://survey.evvisolutions.com/discovery/index.php"} target="_blank" className="btn-primary w-[40%] max-mobile:w-[60%] mt-4">Let&apos;s Connect With Us</Link>
+        <Link to={"/ContactUs"} className="btn-primary w-[40%] max-mobile:w-[60%] mt-4">Let&apos;s Connect With Us</Link>
       </div>
     </section>
   );

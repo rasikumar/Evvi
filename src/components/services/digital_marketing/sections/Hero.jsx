@@ -47,7 +47,7 @@ function Hero() {
           <div className="text-t-primary text-lg max-mobile:text-sm">
           Revolutionize Your Strategy with Expert Solutions
           </div>
-          <Link to={"/Contact_Us"} className="btn-primary w-[25%] max-mobile:w-[40%]">
+          <Link to={"/ContactUs"} className="btn-primary w-[25%] max-mobile:w-[45%]">
           Get Started
           </Link>
         </div>

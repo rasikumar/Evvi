@@ -26,7 +26,7 @@ function SpecialOffer() {
           desires, surpassing the loftiest expectations. Your journey with us is
           nothing short of exceptional.
         </p> */}
-        <a href="https://survey.evvisolutions.com/discovery/index.php" target="_blank" className="btn-primary w-[35%] max-mobile:w-[50%] mt-4">Claim Your Offer</a> 
+        <a href="https://survey.evvisolutions.com/discovery/index.php" target="_blank" className="btn-primary w-[35%] max-mobile:w-[55%] mt-4">Claim Your Offer</a> 
       </div>
     </section>
   );

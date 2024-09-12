@@ -67,10 +67,11 @@ const ServiceList = () => {
               />
               <p className="text-sm font-medium line-clamp-4">{i.content}</p>
               <Link to={i.url} className="btn-primary ">
-                {i.btn}
+                {i.btn} 
               </Link>
             </motion.div>
           </div>
+          
         ))}
       </div>
       <div className="pb-16">

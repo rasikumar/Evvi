@@ -12,7 +12,7 @@ const Domains = () => {
         <p className="font-medium text-white max-tablet:text-sm text-justify">{description}</p>
         <p className="font-medium text-white max-tablet:text-sm text-justify">{description1}</p>
         <div className="w-10 h-10 max-tablet:-bottom-5 max-tablet:right-[45%] bg-t-primary absolute -right-5 rotate-45" ></div>
-        <a className="btn-primary" href="">Consult with us</a>
+        <a className="btn-primary" href="">Consult with us</a> 
       </div>
       <div className="w-[50%] max-tablet:w-full max-mobile:py-10 flex flex-col items-center justify-center">
         {list.map((i) => (

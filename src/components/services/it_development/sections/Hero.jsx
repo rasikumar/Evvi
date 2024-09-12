@@ -73,7 +73,7 @@ function Hero() {
             Elevate Your Business with Expert IT Consulting and Outsourcing.
           </div>
           <Link
-            to={"/Contact_Us"}
+            to={"/ContactUs"}
             className="btn-primary w-[25%] max-mobile:w-[40%]"
           >
             Get Started

@@ -472,7 +472,7 @@ export const ServicePage =[
         content : "Unlock your business's full potential with our comprehensive consulting services. From strategic planning to process optimization, we provide actionable insights that drive growth and efficiency.",
         img: counseling_service,
         btn:"Read More",
-        url : '/Business_Consulting'
+        url : '/BusinessConsulting'
     },
     {
         id :1,
@@ -480,7 +480,7 @@ export const ServicePage =[
         content : "Boost your online presence with our cutting-edge digital marketing solutions. We tailor strategies to amplify your brand and connect with your target audience effectively.",
         img: digital_excellence,
         btn:"Read More",
-        url : '/Digital_Marketing'
+        url : '/DigitalMarketing'
     },
     {
         id:2,
@@ -488,7 +488,7 @@ export const ServicePage =[
         content : "People are the cornerstone of your success. Our HR Consulting services offer end-to-end support, from talent acquisition and onboarding to compliance management and employee development.",
         img: hr_service,
         btn:"Read More",
-        url : '/HR_Service'
+        url : '/HRService'
     },
     {
         id:3,
@@ -496,7 +496,7 @@ export const ServicePage =[
         content : "Stay ahead in the digital era with our IT Consulting services. We provide robust and scalable solutions, from cloud services to web and app development, ensuring your IT infrastructure meets your business needs.",
         img: corparate_training,
         btn:"Read More",
-        url : '/IT_Development'
+        url : '/ITDevelopment'
     }
 ]
 
@@ -702,7 +702,7 @@ export const About_Full = [
         header: "Join us",
         paragraph : "We're here to help you achieve your business goals! Whether you have a question, need more information, or want to explore how we can work together, feel free to reach out. Let’s start a conversation and discover the path to success together.",
         btn : "Contact Us",
-        url: '/Contact_Us'
+        url: '/ContactUs'
     },
     {
         id:4,
