@@ -11,6 +11,7 @@ const ContactFull = () => {
           name="description"
           content="Transform your business with our tailored solutions"
         />
+        <link rel="canonical" href="https://evvisolutions.com/ContactUs" />
       </Helmet>
       <div className="flex flex-col gap-2 p-10">
         <motion.h2

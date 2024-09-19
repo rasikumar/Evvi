@@ -33,6 +33,7 @@ const About_Full = () => {
           name="description"
           content="We offer tailored Business Consulting, HR Services, Digital Marketing, and Web & Mobile App solutions."
         />
+        <link rel="canonical" href="https://evvisolutions.com/About" />
       </Helmet>
       <Hero />
       <About />

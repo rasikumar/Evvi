@@ -14,6 +14,7 @@ const ServiceList = () => {
           name="description"
           content="Transform your business with our tailored solutions"
         />
+        <link rel="canonical" href="https://evvisolutions.com/Service" />
       </Helmet>
 
       <div className="flex flex-col gap-2 p-10">
