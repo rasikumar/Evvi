@@ -1,11 +1,13 @@
 import { useState, useRef } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css"; // Import Quill styles
+import axios from "axios";
 
 const CreateBlog = () => {
   const [content, setContent] = useState("");
   const [head, setHead] = useState("");
   const [author, setAuthor] = useState("");
+  const [image, setImage] = useState(null); // State to handle image upload
   const quillRef = useRef(null); // Ref to access Quill editor instance
 
   // Handle content change
@@ -13,18 +15,42 @@ const CreateBlog = () => {
     setContent(value);
   };
 
+  // Handle image upload
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setImage(file); // Set image to state
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("title", head);
+    formData.append("author", author);
+    formData.append("content", content);
+    if (image) {
+      formData.append("image", image); // Append image to formData
+    }
+
+    try {
+      const response = await axios.post("/api/blogs", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log("Blog submitted successfully:", response.data);
+    } catch (error) {
+      console.error("Error submitting blog:", error);
+    }
+  };
+
   const modules = {
     toolbar: {
       container: [
         [{ header: "1" }, { header: "2" }, { font: [] }],
-        [{ list: "ordered" }, { list: "bullet" }],
         ["bold", "italic", "underline", "strike"],
         ["link", "image"], // Add image button to toolbar
         ["clean"],
       ],
-      handlers: {
-        // image: imageHandler,
-      },
     },
   };
 
@@ -32,7 +58,7 @@ const CreateBlog = () => {
     <div className="flex max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-md">
       <div className="w-1/2 pr-4">
         <h2 className="text-2xl font-bold mb-6">Create a New Blog</h2>
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label
               htmlFor="title"
@@ -73,6 +99,23 @@ const CreateBlog = () => {
 
           <div>
             <label
+              htmlFor="image"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Blog Image
+            </label>
+            <input
+              id="image"
+              name="image"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded file:border file:border-gray-300 file:text-sm file:font-semibold file:bg-gray-50 hover:file:bg-gray-100"
+            />
+          </div>
+
+          <div>
+            <label
               htmlFor="content"
               className="block text-sm font-medium text-gray-700"
             >
@@ -99,14 +142,15 @@ const CreateBlog = () => {
         </form>
       </div>
 
-      <div className="w-1/2  border p-4">
+      <div className="w-1/2 border p-4 quill-preview">
         <h2 className="text-2xl font-bold mb-2">Preview</h2>
         <hr />
         <div className="flex flex-col gap-4 mb-4 mt-2">
-            <h3 className="text-2xl">{head}</h3>
-            <p className="text-t-primary text-sm">By - {author}</p>
+          <h3 className="text-2xl">{head}</h3>
+          <p className="text-t-primary text-sm">By - {author}</p>
         </div>
         <div
+          className="quill-content"
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
