@@ -1,27 +1,40 @@
+/* eslint-disable react/prop-types */
+// components/Admin/Login.js
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Instance from "./Instance";
+import logo from "../../../public/logo.png";
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Dummy login logic for demonstration purposes
-    if (email === "admin@mail" && password === "123") {
-      // Redirect to the admin dashboard on successful login
-      navigate("/admindashboard");
-    } else {
-      // Show error message if login fails
+    try {
+      const response = await Instance.post("/admin/login", {
+        email,
+        password,
+      });
+
+      if (response.status === 200 && response.data.token) {
+        localStorage.setItem("jwtToken", response.data.token);
+        onLogin(); // Call the onLogin function to set authenticated state
+        navigate("/admindashboard");
+      } else {
+        setError("Invalid email or password");
+      }
+    } catch (err) {
       setError("Invalid email or password");
     }
   };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
+      <div className="w-full max-w-md p-8 space-y-4 bg-white rounded-lg shadow-md ">
+        <img src={logo} alt="#" width={30} className="m-auto" />
         <p className="text-center text-gray-500">
           Please login to your account
         </p>
@@ -70,6 +83,9 @@ const Login = () => {
               Sign in
             </button>
           </div>
+          <p className="text-center text-gray-500 text-sm">
+            @{new Date().getFullYear()} Powered By EvviSolutions
+          </p>
         </form>
       </div>
     </div>

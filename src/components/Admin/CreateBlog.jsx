@@ -1,7 +1,9 @@
 import { useState, useRef } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css"; // Import Quill styles
-import axios from "axios";
+import ReactQuill, { Quill } from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import Instance from "./Instance";
+import imageCompressor from "quill-image-compress";
+Quill.register("modules/imageCompressor", imageCompressor);
 
 const CreateBlog = () => {
   const [content, setContent] = useState("");
@@ -26,31 +28,76 @@ const CreateBlog = () => {
     const formData = new FormData();
     formData.append("title", head);
     formData.append("author", author);
+    formData.append("image", image);
     formData.append("content", content);
-    if (image) {
-      formData.append("image", image); // Append image to formData
-    }
 
     try {
-      const response = await axios.post("/api/blogs", formData, {
+      const response = await Instance.post("/admin/createBlog", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
+      if (response.data.status === true) {
+        alert(response.data.message);
+        window.location.reload();
+      } else {
+        alert(response.data.message);
+      }
       console.log("Blog submitted successfully:", response.data);
     } catch (error) {
       console.error("Error submitting blog:", error);
     }
   };
+  // const quill = new Quill(editor, {
+  //   modules: {
+  //     imageCompress: {
+  //       quality: 0.7, // default
+  //       maxWidth: 1000, // default
+  //       maxHeight: 1000, // default
+  //       imageType: "image/jpeg", // default
+  //       debug: true, // default
+  //       suppressErrorLogging: false, // default
+  //       handleOnPaste: true, //default
+  //       insertIntoEditor: undefined, // default
+  //     },
+  //   },
+  // });
+
+  const Formats = [
+    "header",
+    "font",
+    "size",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "list",
+    "bullet",
+    "align",
+    "link",
+    "image",
+  ];
 
   const modules = {
     toolbar: {
       container: [
         [{ header: "1" }, { header: "2" }, { font: [] }],
-        ["bold", "italic", "underline", "strike"],
+        ["bold", "italic", "underline", "strike", "blockquote"],
         ["link", "image"], // Add image button to toolbar
+        [{ align: [] }],
         ["clean"],
       ],
+      imageCompress: {
+        quality: 0.7, // default
+        maxWidth: 1000, // default
+        maxHeight: 1000, // default
+        imageType: "image/jpeg", // default
+        debug: true, // default
+        suppressErrorLogging: false, // default
+        handleOnPaste: true, //default
+        insertIntoEditor: undefined, // default
+      },
     },
   };
 
@@ -117,9 +164,9 @@ const CreateBlog = () => {
           <div>
             <label
               htmlFor="content"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 w-full"
             >
-              Blog Content
+              Blog Content <span className="text-slate-500 ml-24">Maximum Image Value is 50Kb</span>
             </label>
             <ReactQuill
               ref={quillRef}
@@ -127,6 +174,7 @@ const CreateBlog = () => {
               onChange={handleContentChange}
               placeholder="Write your blog content here..."
               modules={modules}
+              formats={Formats}
               className="mt-1 block w-full h-96 overflow-y-scroll border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
@@ -147,7 +195,7 @@ const CreateBlog = () => {
         <hr />
         <div className="flex flex-col gap-4 mb-4 mt-2">
           <h3 className="text-2xl">{head}</h3>
-          <p className="text-t-primary text-sm">By - {author}</p>
+          <p className="text-slate-600 text-sm">{author}</p>
         </div>
         <div
           className="quill-content"

@@ -19,11 +19,13 @@
     "axios": "^1.7.6",
     "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
+    "dompurify": "^3.1.6",
     "dotenv": "^16.4.5",
     "flowbite-react": "^0.10.1",
     "framer-motion": "^11.3.24",
     "gsap": "^3.12.5",
     "quill": "^2.0.2",
+    "quill-image-compress": "^2.0.2",
     "react": "^18.3.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-bootstrap": "^2.10.4",
@@ -35,7 +37,8 @@
     "react-router-dom": "^6.26.0",
     "react-toastify": "^10.0.5",
     "styled-components": "^6.1.12",
-    "swiper": "^11.1.9"
+    "swiper": "^11.1.9",
+    "tailwind-scrollbar": "^3.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
