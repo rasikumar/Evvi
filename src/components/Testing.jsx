@@ -1,35 +1,32 @@
-// import { useState } from "react"
+// import { useState, useEffect } from "react";
+// import Instance from "../../Admin/Instance";
 
-// const Testing = () => {
-//     const [state, setState] = useState(1);
+// const Blog = () => {
+//   const [blogs, setBlogs] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
 
+//   useEffect(() => {
+//     const fetchBlogs = async () => {
+//       try {
+//         const response = await Instance.post("/getAllBlogs");
+//         setBlogs(response.data.blogs);
+//         setLoading(false);
+//       } catch (err) {
+//         setError("Failed to load blogs");
+//         setLoading(false);
+//       }
+//     };
 
-//     const action = (index) => {
-//         setState(index)
-//     }
-//   return (
-//     <div>
-//       <div className="box">
-//         <div className="tabs">
-//             <div className={`tab ${state === 1 ? 'active-tab' : ''}`} onClick={() => action(1)}>tab1</div>
-//             <div className={`tab ${state === 2 ? 'active-tab' : ''}`} onClick={() => action(2)}>tab2</div>
-//             <div className={`tab ${state === 3 ? 'active-tab' : ''}`} onClick={() => action(3)}>tab3</div>
-//         </div>
-//         <div className={`content ${ state === 1 ? 'active-content': '' }`}>
-//             <p>content 1</h1>
-//             <p>this is content 1</p>
-//         </div>
-//         <div className={`content ${ state === 2 ? 'active-content': '' }`}>
-//             <p>content 2</h1>
-//             <p>this is content 2</p>
-//         </div>
-//         <div className={`content ${ state === 3 ? 'active-content': '' }`}>
-//             <p>content 3</h1>
-//             <p>this is content 3</p>
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
+//     fetchBlogs();
+//   }, []);
 
-// export default Testing
+//   if (loading) {
+//     return <div>Loading...</div>;
+//   }
+
+//   if (error) {
+//     return <div className="text-red-500">{error}</div>;
+//   }
+
+// font-normal leading-tight text-xs text-justify

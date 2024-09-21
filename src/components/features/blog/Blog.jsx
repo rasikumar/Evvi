@@ -1,11 +1,51 @@
 import { Link } from "react-router-dom";
 import { Blogs } from "../../../constant";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import Instance from "../../Admin/Instance";
+import { BiNavigation } from "react-icons/bi";
 
 const Blog = () => {
-  const blog = Blogs[0];
-  const itemOneRender = blog.lists.slice(3, 4);
-  const itemThreeRender = blog.lists.slice(0, 3);
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await Instance.get("/latestBlogs");
+        setBlogs(response.data.blogs);
+        setLoading(false);
+      } catch (err) {
+        setError("Failed to load blogs");
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="text-red-500">{error}</div>;
+  }
+  const itemThreeRender = blogs.slice(0, 3);
+  const itemOneRender = blogs.slice(3, 4);
+
+  const dateString = itemOneRender[0].blog_date;
+  const date = new Date(dateString);
+
+  // Options for formatting the date in Indian style
+  const options = { year: "numeric", month: "short", day: "numeric" };
+
+  // Format the date as "21 Sep 2024"
+  const formattedDate = date.toLocaleDateString("en-IN", options);
+  console.log(itemOneRender[0].blog_date);
+
+  console.log(formattedDate); // Output: 21 Sep 2024
   return (
     <div className="bg-blue-50 max-tablet:px-6 max-tablet:py-10 py-20">
       {Blogs.map((blog, index) => (
@@ -30,26 +70,35 @@ const Blog = () => {
                 >
                   <div>
                     <img
-                      src={item.img}
+                      src={`http://192.168.20.7:3000/blog_images/${item.blog_image}`}
                       alt={item.title}
-                      className="rounded-lg w-20"
+                      className="rounded-lg w-16"
                     />
                   </div>
                   <div className="flex flex-col">
                     <div className="flex items-center gap-1 ">
-                      <img src={item.icon_1} alt={item.title} width={item.width} />
+                      <img
+                        src={item.icon_1}
+                        alt={item.title}
+                        width={item.width}
+                      />
                       <li className="text-xs text-t-primary font-medium">
-                        {item.date}
+                        {new Date(item.blog_date).toLocaleDateString("en-IN", {
+                          year: "numeric",
+                          month: "short",
+                          day: "2-digit",
+                        })}
                       </li>
                     </div>
                     <Link
-                      to={item.url}
+                      to={`/blog/${item.id}${item.blog_title}`}
                       className="font-bold w-52 text-lg line-clamp-4 transition-all delay-75"
                     >
-                      {item.title}
-                      <div className="font-normal leading-tight text-xs text-justify">
-                        {item.description}
-                      </div>
+                      <h1 className="line-clamp-1">{item.blog_title}</h1>
+                      <div
+                        className="font-normal leading-tight text-xs text-justify line-clamp-3"
+                        dangerouslySetInnerHTML={{ __html: item.blog_body }} // Correct usage here
+                      />
                     </Link>
                   </div>
                 </motion.div>
@@ -63,7 +112,7 @@ const Blog = () => {
                 >
                   <div>
                     <img
-                      src={item.img}
+                      src={`http://192.168.20.7:3000/blog_images/${item.blog_image}`}
                       alt={item.title}
                       width={800}
                       className="h-[380px] max-mobile:h-[200px] rounded-lg"
@@ -71,26 +120,41 @@ const Blog = () => {
                   </div>
                   <div className="flex flex-col w-full px-4 py-10 gap-4 max-mobile:gap-0">
                     <div className="flex items-center gap-2 w-[50%] text-t-primary">
-                      <img src={item.icon_1} alt={item.title} width={item.width} />
-                      <li className="text-sm font-medium">{item.date}</li>
+                      <img
+                        src={item.icon_1}
+                        alt={item.title}
+                        width={item.width}
+                      />
+                      <li className="text-sm font-medium">
+                        {new Date(item.blog_date).toLocaleDateString("en-IN", {
+                          year: "numeric",
+                          month: "short",
+                          day: "2-digit",
+                        })}
+                      </li>
                     </div>
-                    <h3 className="line-clamp-2 font-bold">{item.title}</h3>
-                    <p className="line-clamp-5 w-full font-medium border-t-[1px] mt-4 mb-4 text-justify">
-                      {item.description}
-                    </p>
+                    <h3 className="line-clamp-2 font-bold">
+                      {item.blog_title}
+                    </h3>
+                    <div
+                      className="line-clamp-5 w-full font-medium border-t-[1px] mt-4 mb-4 text-justify"
+                      dangerouslySetInnerHTML={{ __html: item.blog_body }} // Correct usage here
+                    />
                     <Link
-                      to={item.url}
-                      className="text-t-secondary font-semibold w-[50%] flex"
+                      to={`/blog/${item.id}${item.blog_title}`}
+                      className="text-t-secondary font-semibold w-[50%] inline-flex items-center gap-2 "
                     >
-                      {item.link}{" "}
-                      <img src={item.icon_2} alt="icon_image" width={item.width} />
+                      ReadMore
+                      <BiNavigation />
                     </Link>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <Link className="btn-secondary" to={blog.link}>{blog.btn}</Link>
+          <Link className="btn-secondary" to={blog.link}>
+            {blog.btn}
+          </Link>
         </div>
       ))}
     </div>

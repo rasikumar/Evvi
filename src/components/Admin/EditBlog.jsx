@@ -66,7 +66,7 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
       data.append("title", formData.title);
       data.append("author", formData.author);
       data.append("body", formData.body);
-      data.append("image", formData.image); // Append the file to FormData
+      data.append("image", formData.image); 
 
       const response = await Instance.post(`/admin/updateBlog`, data, {
         headers: {

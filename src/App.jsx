@@ -30,10 +30,11 @@ import Allproduct from "./components/features/products/Allprod";
 
 // Blog Pages (your imports)
 import BlogPage from "./components/features/blog/BlogPage";
-import Blog_1 from "./components/features/blog/blogs/Blog_1";
-import Blog_2 from "./components/features/blog/blogs/Blog_2";
-import Blog_3 from "./components/features/blog/blogs/Blog_3";
-import Blog_4 from "./components/features/blog/blogs/Blog_4";
+import BlogDetail from "./components/features/blog/BlogDetails";
+// import Blog_1 from "./components/features/blog/blogs/Blog_1";
+// import Blog_2 from "./components/features/blog/blogs/Blog_2";
+// import Blog_3 from "./components/features/blog/blogs/Blog_3";
+// import Blog_4 from "./components/features/blog/blogs/Blog_4";
 
 // Admin Pages
 import Admindashboard from "./components/Admin/Admindashboard";
@@ -97,10 +98,11 @@ const App = () => {
 
           {/* Blog Pages */}
           <Route path="/Blog" element={<BlogPage />} />
-          <Route path="/Blog1" element={<Blog_1 />} />
+          <Route path="/blog/:id" element={<BlogDetail />}/>
+          {/* <Route path="/Blog1" element={<Blog_1 />} />
           <Route path="/Blog2" element={<Blog_2 />} />
           <Route path="/Blog3" element={<Blog_3 />} />
-          <Route path="/Blog4" element={<Blog_4 />} />
+          <Route path="/Blog4" element={<Blog_4 />} /> */}
 
           {/* Contact Page */}
           <Route path="/ContactUs" element={<ContactFull />} />
