@@ -610,7 +610,7 @@ export const Address = [
         // content : "",
         content2 : "TCE - TBI, Thiyagarajar Advanced Research Centre,",
         content3 : "Thiruparankundram,",
-        content4 : "Madurai -625015"
+        content4 : "Madurai-625015"
     },
     {
         id : 1,

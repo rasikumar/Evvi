@@ -42,6 +42,8 @@ import Login from "./components/Admin/Login";
 
 // 404Error (your imports)
 import NotFound from "./components/NotFound";
+import ForgotPassword from "./components/Admin/ForgotPassword";
+import ResetPassword from "./components/Admin/resetPassword";
 
 // Theme
 const theme = createTheme({
@@ -59,22 +61,16 @@ const ProtectedRoute = ({ isAuthenticated, children }) => {
 
 const App = () => {
   const location = useLocation();
-  const hideHeaderAndFooter = location.pathname.startsWith("/admin");
+  const hideHeaderAndFooter =
+    location.pathname.startsWith("/admin") ||
+    location.pathname.startsWith("/forgotpassword") ||
+    location.pathname.startsWith("/resetPassword");
 
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     return localStorage.getItem("jwtToken") ? true : false;
   });
 
-  const handleLogin = () => {
-    setIsAuthenticated(true);
-    localStorage.setItem("jwtToken");
-  };
-
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    localStorage.removeItem("jwtToken");
-    window.location.reload();
-  };
+  const handleLogin = () => setIsAuthenticated(true);
 
   return (
     <ThemeProvider theme={theme}>
@@ -98,7 +94,7 @@ const App = () => {
 
           {/* Blog Pages */}
           <Route path="/Blog" element={<BlogPage />} />
-          <Route path="/blog/:id" element={<BlogDetail />}/>
+          <Route path="/blog/:id" element={<BlogDetail />} />
           {/* <Route path="/Blog1" element={<Blog_1 />} />
           <Route path="/Blog2" element={<Blog_2 />} />
           <Route path="/Blog3" element={<Blog_3 />} />
@@ -114,17 +110,23 @@ const App = () => {
           <Route
             path="/admin"
             element={
-              isAuthenticated ? <Navigate to="/admindashboard" /> : <Login onLogin={handleLogin} />
+              isAuthenticated ? (
+                <Navigate to="/admindashboard" />
+              ) : (
+                <Login onLogin={handleLogin} />
+              )
             }
           />
           <Route
             path="/admindashboard"
             element={
               <ProtectedRoute isAuthenticated={isAuthenticated}>
-                <Admindashboard onLogout={handleLogout} />
+                <Admindashboard />
               </ProtectedRoute>
             }
           />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route path="/resetPassword" element={<ResetPassword />} />
 
           {/* Catch-all route for 404 */}
           <Route path="*" element={<NotFound />} />

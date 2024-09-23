@@ -1,3 +1,4 @@
+// components/Admin/Logout.js
 import { BiLogOut } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
@@ -6,7 +7,8 @@ const Logout = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("jwtToken");
-    navigate("/admin");
+    navigate("/admin"); // Redirect to admin login
+    window.location.reload(); // Refresh the page to clear local storage and force login again
   };
 
   return (

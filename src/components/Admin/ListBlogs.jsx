@@ -1,16 +1,37 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import Instance from "./Instance";
 import DOMPurify from "dompurify";
 import EditBlog from "./EditBlog";
 import DeleteBlog from "./DeleteBlog";
-import { Button } from "flowbite-react";
+import { FaPencilAlt } from "react-icons/fa";
+import { MdDateRange } from "react-icons/md";
+
+// Custom Modal Component
+const Modal = ({ isOpen, onClose, children }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 ">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-[50rem] relative max-h-[30rem] overflow-y-scroll">
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-2 text-gray-700"
+        >
+          &times;
+        </button>
+        {children}
+      </div>
+    </div>
+  );
+};
 
 const ListBlog = () => {
   const [blogs, setBlogs] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedBlog, setSelectedBlog] = useState(null);
-  const [editing, setEditing] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -29,7 +50,11 @@ const ListBlog = () => {
 
   const handleEditClick = (blog) => {
     setSelectedBlog(blog);
-    setEditing(true);
+    setIsModalOpen(true); // Open modal
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // Close modal
   };
 
   if (loading) {
@@ -44,20 +69,23 @@ const ListBlog = () => {
     <div className="flex max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-md">
       <div>
         <h1 className="text-center text-3xl mb-5">Blog List</h1>
-        <ul className="flex flex-wrap gap-3 ">
+        <ul className="flex flex-wrap gap-3">
           {blogs.map((blog) => (
             <li
               key={blog.id}
-              className="even:bg-white odd:bg-zinc-300 border-2 border-teal-800 rounded-lg p-4 mb-6 flex gap-6 max-h-32 overflow-y-scroll"
+              className="even:bg-white odd:bg-zinc-300 border-2 border-teal-800 rounded-lg p-4 mb-1 flex gap-6 max-h-32 sm:max-h-36"
             >
               <div className="w-full ">
-                <div className="flex gap-8 mb-2 text-sm" >
-                  <h2 className="text-md  font-semibold">{blog.blog_title}</h2>
-                  <p className="text-gray-600">
-                    <strong>Author:</strong> {blog.blog_author}
+                <div className="flex text-sm">
+                  <h2 className="text-md font-semibold">{blog.blog_title}</h2>
+                </div>
+                <div className="flex gap-4">
+                  <p className="text-gray-600 inline-flex items-center text-xs gap-2">
+                    <FaPencilAlt />
+                    {blog.blog_author}
                   </p>
-                  <p className="text-gray-500">
-                    <strong>Date:</strong>{" "}
+                  <p className="text-gray-500 inline-flex items-center text-xs gap-2">
+                    <MdDateRange />
                     {new Date(blog.blog_date).toLocaleDateString()}
                   </p>
                 </div>
@@ -69,12 +97,12 @@ const ListBlog = () => {
                   }}
                 />
                 <div className="inline-flex gap-4">
-                  <Button
+                  <button
                     onClick={() => handleEditClick(blog)}
-                    className="mt-2 h-6 text-center flex justify-center items-center"
+                    className="mt-2 h-6 text-center flex justify-center items-center text-blue-500"
                   >
                     Edit
-                  </Button>
+                  </button>
                   <DeleteBlog blogId={blog.id} setBlogs={setBlogs} />
                 </div>
               </div>
@@ -89,13 +117,18 @@ const ListBlog = () => {
             </li>
           ))}
         </ul>
-        {editing && (
-          <EditBlog
-            blog={selectedBlog}
-            setEditing={setEditing}
-            setBlogs={setBlogs}
-          />
-        )}
+
+        {/* Custom Modal for Edit Blog */}
+        <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+          {selectedBlog && (
+            <EditBlog
+              blog={selectedBlog}
+              setEditing={setIsModalOpen}
+              setBlogs={setBlogs}
+              closeModal={handleCloseModal} // Pass the function to close modal
+            />
+          )}
+        </Modal>
       </div>
     </div>
   );

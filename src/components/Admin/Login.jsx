@@ -1,9 +1,9 @@
-/* eslint-disable react/prop-types */
 // components/Admin/Login.js
+/* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Instance from "./Instance";
-import logo from "../../../public/logo.png";
+import { useNavigate, Link } from "react-router-dom"; // Import Link for navigation
+import Instance from "./Instance"; // Import your axios instance
+import logo from "../../../public/logo.png"; // Update the path if needed
 
 const Login = ({ onLogin }) => {
   const navigate = useNavigate();
@@ -14,15 +14,12 @@ const Login = ({ onLogin }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await Instance.post("/admin/login", {
-        email,
-        password,
-      });
-
+      const response = await Instance.post("/admin/login", { email, password });
+      
       if (response.status === 200 && response.data.token) {
-        localStorage.setItem("jwtToken", response.data.token);
-        onLogin(); // Call the onLogin function to set authenticated state
-        navigate("/admindashboard");
+        localStorage.setItem("jwtToken", response.data.token); // Store the token
+        onLogin(); // Notify App of successful login
+        navigate("/admindashboard"); // Redirect to the dashboard
       } else {
         setError("Invalid email or password");
       }
@@ -33,20 +30,14 @@ const Login = ({ onLogin }) => {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-4 bg-white rounded-lg shadow-md ">
-        <img src={logo} alt="#" width={30} className="m-auto" />
-        <p className="text-center text-gray-500">
-          Please login to your account
-        </p>
-        {error && (
-          <div className="text-red-500 text-center text-sm">{error}</div>
-        )}
+      <div className="w-full max-w-md p-8 space-y-4 bg-white rounded-lg shadow-md">
+        <img src={logo} alt="Logo" width={30} className="m-auto" />
+        <p className="text-center text-gray-500">Please login to your account</p>
+        {error && <div className="text-red-500 text-center text-sm">{error}</div>}
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px flex flex-col gap-4">
             <div>
-              <label htmlFor="email" className="sr-only">
-                Email address
-              </label>
+              <label htmlFor="email" className="sr-only">Email address</label>
               <input
                 id="email"
                 name="email"
@@ -59,9 +50,7 @@ const Login = ({ onLogin }) => {
               />
             </div>
             <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
+              <label htmlFor="password" className="sr-only">Password</label>
               <input
                 id="password"
                 name="password"
@@ -75,6 +64,13 @@ const Login = ({ onLogin }) => {
             </div>
           </div>
 
+          {/* Forgot Password Link */}
+          <div className="flex justify-end">
+            <Link to="/forgotpassword" className="text-sm text-indigo-600 hover:text-indigo-500">
+              Forgot your password?
+            </Link>
+          </div>
+
           <div>
             <button
               type="submit"
@@ -83,6 +79,7 @@ const Login = ({ onLogin }) => {
               Sign in
             </button>
           </div>
+
           <p className="text-center text-gray-500 text-sm">
             @{new Date().getFullYear()} Powered By EvviSolutions
           </p>

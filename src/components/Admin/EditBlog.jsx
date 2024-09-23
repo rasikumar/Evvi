@@ -3,11 +3,12 @@ import { useState } from "react";
 import Instance from "./Instance";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { toast } from "react-toastify"; // Import toast
+import "react-toastify/dist/ReactToastify.css";
 
 const quillModules = {
   toolbar: [
     [{ header: "1" }, { header: "2" }, { font: [] }],
-    [{ list: "ordered" }, { list: "bullet" }],
     ["bold", "italic", "underline", "strike", "blockquote"],
     [{ align: [] }],
     ["link", "image"],
@@ -37,9 +38,10 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
     title: blog.blog_title,
     author: blog.blog_author,
     body: blog.blog_body,
-    image: blog.blog_image,
+    image: blog.blog_image, // existing image URL or File
   });
 
+  const [imagePreview, setImagePreview] = useState(blog.blog_image || null);
   const [error, setError] = useState(null);
 
   const handleChange = (e) => {
@@ -54,7 +56,13 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setFormData((prev) => ({ ...prev, image: file })); // Store the file itself
+      setFormData((prev) => ({ ...prev, image: file }));
+      // Ensure it's a valid image file before previewing
+      if (file.type.startsWith("image/")) {
+        setImagePreview(URL.createObjectURL(file)); // Create preview for new image
+      } else {
+        setError("Please upload a valid image file.");
+      }
     }
   };
 
@@ -66,24 +74,34 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
       data.append("title", formData.title);
       data.append("author", formData.author);
       data.append("body", formData.body);
-      data.append("image", formData.image); 
+
+      // Only append the image if a new file is selected
+      if (formData.image && typeof formData.image !== "string") {
+        data.append("image", formData.image);
+      }
 
       const response = await Instance.post(`/admin/updateBlog`, data, {
         headers: {
-          "Content-Type": "multipart/form-data", // Important for file uploads
+          "Content-Type": "multipart/form-data",
         },
       });
 
-      if (response.data && response.data.blog) {
+      if (response.data.status === true) {
         setBlogs((prev) =>
-          prev.map((b) => (b.id === blog.id ? response.data.blog : b))
+          prev.map((b) =>
+            b.id === blog.id ? { ...b, ...response.data.blog } : b
+          )
         );
         setEditing(false);
-        window.location.reload();
+        window.location.reload()
+        toast.success(response.data.message);
+      } else {
+        throw new Error(response.data.message);
       }
     } catch (err) {
       console.error("Failed to update blog:", err);
       setError("Failed to update blog");
+      toast.error("Failed to update blog");
     }
   };
 
@@ -141,9 +159,10 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
           onChange={handleImageChange}
           className="w-full border rounded p-2"
         />
-        {formData.image && (
+        {/* Display preview only if it's a valid URL or file */}
+        {imagePreview && (
           <img
-            src={formData.image}
+            src={imagePreview}
             alt={formData.title}
             className="mt-4 max-w-full rounded"
           />
