@@ -21,18 +21,31 @@ const DeleteBlog = ({ blogId, setBlogs }) => {
 
   const showConfirmDialog = () => {
     confirmAlert({
-      title: 'Confirm to delete',
-      message: 'Are you sure you want to delete this blog?',
-      buttons: [
-        {
-          label: 'Yes',
-          onClick: handleDelete, // Call the handleDelete function on confirmation
-        },
-        {
-          label: 'No',
-          onClick: () => {} // Do nothing on cancellation
-        }
-      ],
+      customUI: ({ onClose }) => (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white rounded-lg p-6 shadow-md max-w-sm mx-auto">
+            <h2 className="text-lg font-semibold mb-4">Confirm to delete</h2>
+            <p>Are you sure you want to delete this blog?</p>
+            <div className="flex justify-between mt-4">
+              <button
+                className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600"
+                onClick={() => {
+                  handleDelete();
+                  onClose(); // Close modal after confirmation
+                }}
+              >
+                Yes
+              </button>
+              <button
+                className="px-4 py-2 bg-gray-300 rounded-md hover:bg-gray-400"
+                onClick={onClose} // Close modal on cancel
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      ),
       closeOnEscape: true,
       closeOnClickOutside: true,
     });

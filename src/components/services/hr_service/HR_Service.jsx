@@ -20,20 +20,10 @@ const HR_Service = () => {
   return (
     <>
       <Helmet>
-        <title>HR Consulting</title>
+        <title>Professional HR Services in Madurai | Evvi Solutions</title>
         <meta
           name="description"
-          content="Best HR Consulting in Madurai,
-Human Resource Services Thiruparankundram,
-Madurai HR Solutions,
-HR Strategy Consultants Madurai,
-Expert HR Consulting Thiruparankundram,
-Top HR Outsourcing Madurai,
-Employee Management Consultants Madurai,
-HR Compliance Services Thiruparankundram,
-Madurai Recruitment and HR Consulting,
-Professional HR Consultants Madurai,
-"
+          content="Streamline your hiring process with Evvi Solutions' HR services in Madurai. We offer tailored solutions for recruitment, training, and employee management."
         />
         <meta
           name="keywords"

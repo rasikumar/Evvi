@@ -90,7 +90,7 @@ const Blog = () => {
                 dangerouslySetInnerHTML={{ __html: blog.blog_body }}
               />
               <Link
-                to={`/blog/${blog.id}${(blog.blog_title)}`}
+                to={`/blog/${blog.id}`}
                 className="inline-block text-sm font-medium text-blue-600 hover:text-blue-400 transition-colors duration-300"
               >
                 Read More

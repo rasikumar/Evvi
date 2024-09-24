@@ -21,17 +21,12 @@ const IT_Development = () => {
   return (
     <>
       <Helmet>
-        <title>Digital Transformation</title>
+        <title>
+          Best Digital Marketing Services in Madurai | Evvi Solutions
+        </title>
         <meta
           name="description"
-          content="Top digital marketing services in madurai,
-List of digital marketing services in madurai,
-Top 10 digital marketing services in madurai,
-Best digital marketing services in madurai,
-Digital marketing services in madurai pdf,
-Best digital marketing company in Madurai,
-Web design services in madurai,
-Digital marketing services in madurai contact number,"
+          content="Looking for the best digital marketing agency in Madurai? Evvi Solutions offers expert services in SEO, social media marketing, and more to drive growth."
         />
         <meta
           name="keywords"
@@ -45,7 +40,10 @@ Comprehensive Content Creation,
 High-Quality Lead Generation,
 Advanced Online Marketing Solutions,"
         />
-        <link rel="canonical" href="https://evvisolutions.com/DigitalMarketing" />
+        <link
+          rel="canonical"
+          href="https://evvisolutions.com/DigitalMarketing"
+        />
       </Helmet>
       <motion.div
         initial="initial"

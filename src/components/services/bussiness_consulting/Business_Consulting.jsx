@@ -21,30 +21,22 @@ const Digital_Marketing = () => {
   return (
     <>
       <Helmet>
-        <title>Business Consulting</title>
+        <title>Business Consulting Services in Madurai | Evvi Solutions</title>
         <meta
           name="description"
-          content="Business Consulting in Madurai,
-Business Advisors Thiruparankundram,
-Madurai Business Solutions,
-Expert Business Consulting Thiruparankundram,
-Business Strategy Consultants Madurai,
-Business Growth Consulting Madurai,
-Thiruparankundram Business Advisors,
-Corporate Consulting Services Madurai,
-Madurai Business Development Experts,
-Local Business Consulting Madurai,
-"
+          content="Grow your business with Evvi Solutions' expert consulting in strategic planning, operations, change management, and workforce optimization."
         />
         <meta
           name="keywords"
           content="
 Top business consulting in madurai,
 Best business consulting in madurai
-
 "
         />
-        <link rel="canonical" href="https://evvisolutions.com/BusinessConsulting" />
+        <link
+          rel="canonical"
+          href="https://evvisolutions.com/BusinessConsulting"
+        />
       </Helmet>
       <motion.div
         initial="initial"

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import Instance from "./Instance";
 import DOMPurify from "dompurify";
@@ -6,8 +5,10 @@ import EditBlog from "./EditBlog";
 import DeleteBlog from "./DeleteBlog";
 import { FaPencilAlt } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
+import { ThreeCircles } from "react-loader-spinner";
 
 // Custom Modal Component
+// eslint-disable-next-line react/prop-types
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
@@ -32,6 +33,9 @@ const ListBlog = () => {
   const [loading, setLoading] = useState(true);
   const [selectedBlog, setSelectedBlog] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+  const [currentPage, setCurrentPage] = useState(1); // For pagination
+  const [blogsPerPage] = useState(5); // Limit blogs per page
+  const [searchQuery, setSearchQuery] = useState(""); // Search by author
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -57,8 +61,37 @@ const ListBlog = () => {
     setIsModalOpen(false); // Close modal
   };
 
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  // Filter blogs based on search query
+  const filteredBlogs = blogs.filter((blog) =>
+    blog.blog_author.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  // Pagination logic
+  const indexOfLastBlog = currentPage * blogsPerPage;
+  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+  const currentBlogs = filteredBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <ThreeCircles
+          visible={true}
+          height="100"
+          width="100"
+          color="#4fa94d"
+          ariaLabel="three-circles-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          className="text-center"
+        />
+      </div>
+    );
   }
 
   if (error) {
@@ -66,14 +99,27 @@ const ListBlog = () => {
   }
 
   return (
-    <div className="flex max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-md">
-      <div>
-        <h1 className="text-center text-3xl mb-5">Blog List</h1>
+    <div className="max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-md">
+      <h1 className="text-center text-3xl mb-5">Blog List</h1>
+
+      {/* Search bar */}
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Search by author..."
+          value={searchQuery}
+          onChange={handleSearch}
+          className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring focus:ring-teal-300"
+        />
+      </div>
+      {filteredBlogs.length === 0 ? (
+        <div className="text-center text-red-600">No Results Found</div>
+      ) : (
         <ul className="flex flex-wrap gap-3">
-          {blogs.map((blog) => (
+          {currentBlogs.map((blog) => (
             <li
               key={blog.id}
-              className="even:bg-white odd:bg-zinc-300 border-2 border-teal-800 rounded-lg p-4 mb-1 flex gap-6 max-h-32 sm:max-h-36"
+              className="even:bg-white odd:bg-zinc-100 border-2 border-teal-800 rounded-lg p-4 mb-1 flex gap-6 max-h-32 sm:max-h-36"
             >
               <div className="w-full ">
                 <div className="flex text-sm">
@@ -117,19 +163,38 @@ const ListBlog = () => {
             </li>
           ))}
         </ul>
+      )}
 
-        {/* Custom Modal for Edit Blog */}
-        <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-          {selectedBlog && (
-            <EditBlog
-              blog={selectedBlog}
-              setEditing={setIsModalOpen}
-              setBlogs={setBlogs}
-              closeModal={handleCloseModal} // Pass the function to close modal
-            />
-          )}
-        </Modal>
+      {/* Pagination Controls */}
+      <div className="flex justify-center mt-6">
+        {[...Array(Math.ceil(filteredBlogs.length / blogsPerPage)).keys()].map(
+          (number) => (
+            <button
+              key={number}
+              onClick={() => paginate(number + 1)}
+              className={`px-3 py-1 mx-1 rounded-md border ${
+                currentPage === number + 1
+                  ? "bg-teal-600 text-white"
+                  : "bg-gray-200"
+              }`}
+            >
+              {number + 1}
+            </button>
+          )
+        )}
       </div>
+
+      {/* Custom Modal for Edit Blog */}
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        {selectedBlog && (
+          <EditBlog
+            blog={selectedBlog}
+            setEditing={setIsModalOpen}
+            setBlogs={setBlogs}
+            closeModal={handleCloseModal} // Pass the function to close modal
+          />
+        )}
+      </Modal>
     </div>
   );
 };

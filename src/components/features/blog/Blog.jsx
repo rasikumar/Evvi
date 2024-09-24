@@ -32,8 +32,8 @@ const Blog = () => {
   if (error) {
     return <div className="text-red-500">{error}</div>;
   }
-  const itemThreeRender = blogs.slice(0, 3);
-  const itemOneRender = blogs.slice(3, 4);
+  const itemOneRender = blogs.slice(0, 1);
+  const itemThreeRender = blogs.slice(1, 4);
 
   const dateString = itemOneRender[0].blog_date;
   const date = new Date(dateString);
@@ -72,7 +72,7 @@ const Blog = () => {
                     <img
                       src={`http://192.168.20.7:3000/blog_images/${item.blog_image}`}
                       alt={item.title}
-                      className="rounded-lg w-16"
+                      className="rounded-lg w-16 object-cover"
                     />
                   </div>
                   <div className="flex flex-col">
@@ -115,7 +115,7 @@ const Blog = () => {
                       src={`http://192.168.20.7:3000/blog_images/${item.blog_image}`}
                       alt={item.title}
                       width={800}
-                      className="h-[380px] max-mobile:h-[200px] rounded-lg"
+                      className="h-[380px] max-mobile:h-[200px] rounded-lg object-cover"
                     />
                   </div>
                   <div className="flex flex-col w-full px-4 py-10 gap-4 max-mobile:gap-0">

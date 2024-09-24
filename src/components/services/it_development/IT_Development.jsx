@@ -21,32 +21,10 @@ const IT_Development = () => {
   return (
     <>
       <Helmet>
-        <title>IT Consulting</title>
+        <title>Web Design, App Development & IT Support | Evvi Solutions</title>
         <meta
           name="description"
-          content="
-Top Web and Mobile App Development Service,
-Best Web Development Company,
-Leading Mobile App Developers,
-Custom Web and Mobile App Solutions,
-Expert App Development Services,
-Professional Web Development Services,
-Innovative Mobile App Design,
-Reliable Web and App Development,
-High-Quality App Development Company,
-Comprehensive Web and Mobile Solutions,
-Website Designing in Madurai,
-Web Design Services Thiruparankundram,
-Custom Website Design Madurai,
-Professional Web Designers Madurai,
-Madurai Website Development,
-Responsive Web Design Thiruparankundram,
-E-commerce Website Design Madurai,
-Madurai Web Design Experts,
-Website Redesign Services Madurai,
-Creative Website Designers Thiruparankundram,
-
-"
+          content="Evvi Solutions provides web development, app development, cloud services, and technical support to help your business thrive."
         />
         <meta
           name="keywords"
