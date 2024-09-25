@@ -50,7 +50,8 @@ const Logout = () => {
       <button
         onClick={showConfirmDialog} // Show confirmation dialog on click
         className="rounded-lg text-lg bg-red-700 p-2 text-white transition-all"
-      ><BiLogOut />
+      >
+        <BiLogOut />
       </button>
     </div>
   );

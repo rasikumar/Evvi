@@ -31,10 +31,6 @@ import Allproduct from "./components/features/products/Allprod";
 // Blog Pages (your imports)
 import BlogPage from "./components/features/blog/BlogPage";
 import BlogDetail from "./components/features/blog/BlogDetails";
-// import Blog_1 from "./components/features/blog/blogs/Blog_1";
-// import Blog_2 from "./components/features/blog/blogs/Blog_2";
-// import Blog_3 from "./components/features/blog/blogs/Blog_3";
-// import Blog_4 from "./components/features/blog/blogs/Blog_4";
 
 // Admin Pages
 import Admindashboard from "./components/Admin/Admindashboard";
@@ -44,6 +40,8 @@ import Login from "./components/Admin/Login";
 import NotFound from "./components/NotFound";
 import ForgotPassword from "./components/Admin/ForgotPassword";
 import ResetPassword from "./components/Admin/resetPassword";
+import CookieBanner from "./components/CookieBanner";
+import CookiePolicy from "./components/Cookie-policy"; // Import your Cookie Policy component
 
 // Theme
 const theme = createTheme({
@@ -72,12 +70,34 @@ const App = () => {
 
   const handleLogin = () => setIsAuthenticated(true);
 
+  // Cookie Policy state
+  const [showCookiePolicy, setShowCookiePolicy] = useState(false);
+
+  const handleOpenPolicy = () => setShowCookiePolicy(true);
+  const handleClosePolicy = () => setShowCookiePolicy(false);
+
   return (
     <ThemeProvider theme={theme}>
       {!hideHeaderAndFooter && <SideIcons />}
       {!hideHeaderAndFooter && <FloatingIcon />}
-      {!hideHeaderAndFooter && <Header />}
+      {!hideHeaderAndFooter && <Header onOpenPolicy={handleOpenPolicy} />}{" "}
+      {/* Pass function to open the policy */}
+      {!hideHeaderAndFooter && <CookieBanner />}
       <ScrollToTop />
+      {/* Modal for Cookie Policy */}
+      {showCookiePolicy && (
+        <div className="modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <CookiePolicy />
+            <button
+              className="mt-4 p-2 bg-primary text-white rounded"
+              onClick={handleClosePolicy}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route index path="/" element={<Heart />} />
@@ -91,14 +111,11 @@ const App = () => {
           <Route path="/DigitalMarketing" element={<Digital_Marketing />} />
           <Route path="/ITDevelopment" element={<IT_Development />} />
           <Route path="/BusinessConsulting" element={<Business_Consulting />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
 
           {/* Blog Pages */}
           <Route path="/Blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
-          {/* <Route path="/Blog1" element={<Blog_1 />} />
-          <Route path="/Blog2" element={<Blog_2 />} />
-          <Route path="/Blog3" element={<Blog_3 />} />
-          <Route path="/Blog4" element={<Blog_4 />} /> */}
 
           {/* Contact Page */}
           <Route path="/ContactUs" element={<ContactFull />} />

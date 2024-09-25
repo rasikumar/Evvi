@@ -2,6 +2,22 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Instance from "../../Admin/Instance";
 
+const SkeletonLoader = () => {
+  return (
+    <div className="animate-pulse w-[90%] m-auto py-12 flex flex-col bg-white shadow-lg rounded-lg overflow-hidden mb-10">
+      <div className="w-[80%] m-auto">
+        <div className="h-60 bg-gray-300"></div>
+        <div className="p-6 flex flex-col">
+          <div className="h-6 bg-gray-300 rounded mb-2"></div>
+          <div className="h-4 bg-gray-300 rounded mb-2"></div>
+          <div className="h-4 bg-gray-300 rounded mb-4"></div>
+          <div className="h-5 bg-gray-300 rounded"></div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const BlogDetail = () => {
   const { id } = useParams(); // Assuming you pass the blog ID in the URL
   const [blog, setBlog] = useState(null);
@@ -37,15 +53,31 @@ const BlogDetail = () => {
     const fetchComments = async () => {
       try {
         const response = await Instance.get(`/getCommentByBlogId/${id}`);
-        setComments(response.data.comments || []); // Ensure we get an array
+        const fetchedComments = response.data.comments || [];
 
-        // Assuming each comment has replies
-        const repliesData = response.data.comments.reduce((acc, comment) => {
-          acc[comment.id] = comment.replies || []; // Adjust according to your API response structure
-          return acc;
-        }, {});
+        // console.log("Fetched Comments:", fetchedComments);
 
-        setReplies(repliesData);
+        if (fetchedComments.length > 0) {
+          setComments(fetchedComments);
+
+          // Create a replies map for easy access
+          const repliesMap = fetchedComments.reduce((acc, comment) => {
+            console.log(comment);
+
+            if (Array.isArray(comment.replies)) {
+              acc[comment.comment_id] = comment.replies; // Copy replies if they exist
+            } else {
+              acc[comment.comment_id] = []; // No replies, initialize with an empty array
+            }
+            return acc;
+          }, {});
+
+          setReplies(repliesMap);
+          // console.log("Replies Map:", repliesMap);
+        } else {
+          console.log("No comments available.");
+          setComments([]); // Clear comments if none exist
+        }
       } catch (err) {
         console.error("Failed to fetch comments:", err);
         setComments([]); // In case of failure, set to empty array to avoid undefined
@@ -115,7 +147,11 @@ const BlogDetail = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <SkeletonLoader />
+      </div>
+    );
   }
 
   if (error) {
@@ -170,22 +206,27 @@ const BlogDetail = () => {
                   <div className="flex items-center gap-4 mb-2">
                     <div className="w-10 h-10 rounded-full bg-gray-200 flex-shrink-0">
                       <img
-                        src={`https://ui-avatars.com/api/?name=${cmt.username}&background=random`}
-                        alt={cmt.username}
+                        src={`https://ui-avatars.com/api/?name=${cmt.comment_username}&background=random`}
+                        alt={cmt.comment_username}
                         className="rounded-full w-full h-full object-cover"
                       />
                     </div>
 
                     <div className="flex flex-col">
-                      <p className="font-semibold text-lg">{cmt.username}</p>
+                      <p className="font-semibold text-lg">
+                        {cmt.comment_username}
+                      </p>
                       <p className="text-sm text-gray-500">
-                        {new Date(cmt.created_at).toLocaleString("en-IN", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                          hour: "numeric",
-                          minute: "numeric",
-                        })}
+                        {new Date(cmt.comment_created_at).toLocaleString(
+                          "en-IN",
+                          {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                            hour: "numeric",
+                            minute: "numeric",
+                          }
+                        )}
                       </p>
                     </div>
                   </div>
@@ -197,7 +238,11 @@ const BlogDetail = () => {
 
                   {/* Reply Button */}
                   <button
-                    onClick={() => setCommentToReply(prev => prev === cmt.id ? null : cmt.id)}
+                    onClick={() =>
+                      setCommentToReply((prev) =>
+                        prev === cmt.id ? null : cmt.id
+                      )
+                    }
                     className="text-teal-500 hover:text-teal-700"
                   >
                     Reply
@@ -230,31 +275,45 @@ const BlogDetail = () => {
                   )}
 
                   {/* Display Replies */}
-                  {replies[cmt.id] && replies[cmt.id].length > 0 && (
-                    <div className="mt-4 ml-4">
-                      {replies[cmt.id].map((reply) => (
-                        <div
-                          key={reply.id}
-                          className="p-2 bg-gray-100 rounded border mb-2"
-                        >
-                          <div className="flex items-center gap-4 mb-2">
-                            <div className="w-8 h-8 rounded-full bg-gray-200 flex-shrink-0">
-                              <img
-                                src={`https://ui-avatars.com/api/?name=${reply.username}&background=random`}
-                                alt={reply.username}
-                                className="rounded-full w-full h-full object-cover"
-                              />
-                            </div>
+                  {replies[cmt.comment_id] &&
+                    replies[cmt.comment_id].length > 0 && (
+                      <div className="mt-4 ml-4">
+                        {replies[cmt.comment_id].map((reply) => (
+                          <div
+                            key={reply.reply_id}
+                            className="p-2 bg-gray-100 rounded border mb-2"
+                          >
+                            <div className="flex items-center gap-4 mb-2">
+                              <div className="w-8 h-8 rounded-full bg-gray-200 flex-shrink-0">
+                                <img
+                                  src={`https://ui-avatars.com/api/?name=${reply.reply_username}&background=random`}
+                                  alt={reply.reply_username}
+                                  className="rounded-full w-full h-full object-cover"
+                                />
+                              </div>
 
-                            <div className="flex flex-col">
-                              <p className="font-semibold">{reply.username}</p>
+                              <div className="flex flex-col">
+                                <p className="font-semibold">
+                                  {reply.reply_username}
+                                </p>
+                                <p className="font-semibold">
+                                  {new Date(
+                                    reply.reply_created_at
+                                  ).toLocaleString("en-IN", {
+                                    year: "numeric",
+                                    month: "long",
+                                    day: "numeric",
+                                    hour: "numeric",
+                                    minute: "numeric",
+                                  })}
+                                </p>
+                              </div>
                             </div>
+                            <p>{reply.reply}</p>
                           </div>
-                          <p>{reply.reply}</p>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                        ))}
+                      </div>
+                    )}
                 </div>
               ))
             ) : (
@@ -262,7 +321,6 @@ const BlogDetail = () => {
             )}
           </div>
 
-          {/* Comment Input */}
           <form onSubmit={handleCommentSubmit} className="flex flex-col">
             <input
               type="text"
