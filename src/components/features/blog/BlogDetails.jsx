@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Instance from "../../Admin/Instance";
 
 const SkeletonLoader = () => {
@@ -31,6 +31,10 @@ const BlogDetail = () => {
   const [replyError, setReplyError] = useState(null); // State for reply error messages
   const [replies, setReplies] = useState({}); // State to hold replies keyed by comment ID
   const [commentToReply, setCommentToReply] = useState(null); // Track which comment is being replied to
+  const [replyName, setReplyName] = useState(null);
+  const [suggestedBlogs, setSuggestedBlogs] = useState([]);
+  const [suggestedLoading, setSuggestedLoading] = useState(true);
+  const [suggestedError, setSuggestedError] = useState(null);
 
   // Fetch blog details
   useEffect(() => {
@@ -47,6 +51,25 @@ const BlogDetail = () => {
 
     fetchBlogDetail();
   }, [id]);
+
+  useEffect(() => {
+    const fetchSuggestedBlogs = async () => {
+      try {
+        const response = await Instance.post("/getAllBlogs");
+        const sortedBlogs = response.data.blogs.sort(() => 0.5 - Math.random());
+        setSuggestedBlogs(sortedBlogs.slice(0, 3));
+        setSuggestedLoading(false);
+      } catch (error) {
+        setSuggestedError("Error to fetch");
+        setSuggestedLoading(false);
+        console.log(error);
+      }
+    };
+
+    if (blog) {
+      fetchSuggestedBlogs();
+    }
+  }, [blog, id]);
 
   // Fetch comments for this blog
   useEffect(() => {
@@ -75,7 +98,6 @@ const BlogDetail = () => {
           setReplies(repliesMap);
           // console.log("Replies Map:", repliesMap);
         } else {
-          console.log("No comments available.");
           setComments([]); // Clear comments if none exist
         }
       } catch (err) {
@@ -117,16 +139,18 @@ const BlogDetail = () => {
   const handleReplySubmit = async (e, comment_id) => {
     e.preventDefault();
 
-    if (!replyText) {
+    if (replyText && replyName) {
       setReplyError("Reply text is required.");
       return;
     }
 
     try {
-      const response = await Instance.post("/createReplies", {
-        comment_id: comment_id,
+      const response = await Instance.post("/replyToComment", {
+        id: comment_id,
+        username,
         reply: replyText,
       });
+      console.log(response);
 
       // Update replies state for the specific comment
       setReplies((prevReplies) => ({
@@ -160,7 +184,7 @@ const BlogDetail = () => {
 
   return (
     <div className="w-[90%] m-auto py-12 flex justify-between mb-10">
-      <div className="w-[80%] m-auto">
+      <div className="sm:w-[80%] m-auto">
         {blog &&
           blog.map((blog) => (
             <div key={blog.id} className="flex flex-col gap-4">
@@ -250,31 +274,34 @@ const BlogDetail = () => {
 
                   {/* Reply Input */}
                   {commentToReply === cmt.id && (
-                    <form
-                      onSubmit={(e) => handleReplySubmit(e, cmt.id)}
-                      className="mt-2 flex flex-col"
-                    >
+                    <div>
+                      <input
+                        type="text"
+                        className="p-2 border border-gray-300 rounded-lg mb-2"
+                        placeholder="Your Username"
+                        value={username}
+                        onChange={setUsername}
+                        required
+                      />
                       <textarea
                         className="w-full p-2 border border-gray-300 rounded-lg"
                         rows="2"
                         placeholder="Write a reply..."
                         value={replyText}
-                        onChange={(e) => setReplyText(e.target.value)}
+                        onChange={setReplyText}
                         required
                       />
                       {replyError && (
                         <p className="text-red-500">{replyError}</p>
                       )}
                       <button
-                        type="submit"
+                        onClick={() => handleReplySubmit(cmt.id)}
                         className="mt-2 btn-primary rounded-lg"
                       >
                         Submit Reply
                       </button>
-                    </form>
+                    </div>
                   )}
-
-                  {/* Display Replies */}
                   {replies[cmt.comment_id] &&
                     replies[cmt.comment_id].length > 0 && (
                       <div className="mt-4 ml-4">
@@ -292,11 +319,11 @@ const BlogDetail = () => {
                                 />
                               </div>
 
-                              <div className="flex flex-col">
-                                <p className="font-semibold">
+                              <div className="flex items-end gap-2">
+                                <p className="font-medium">
                                   {reply.reply_username}
                                 </p>
-                                <p className="font-semibold">
+                                <p className="text-sm text-gray-500">
                                   {new Date(
                                     reply.reply_created_at
                                   ).toLocaleString("en-IN", {
@@ -326,8 +353,8 @@ const BlogDetail = () => {
               type="text"
               className="p-2 border border-gray-300 rounded-lg mb-2"
               placeholder="Your Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={replyName}
+              onChange={(e) => setReplyName(e.target.value)}
               required
             />
             <textarea
@@ -343,6 +370,54 @@ const BlogDetail = () => {
               Submit Comment
             </button>
           </form>
+        </section>
+
+        {/* Suggested Blogs */}
+        <section className="mt-10">
+          <h3 className="text-2xl font-semibold mb-4">You Might Also Like</h3>
+          {suggestedLoading ? (
+            <SkeletonLoader />
+          ) : suggestedError ? (
+            <div className="text-red-500">{suggestedError}</div>
+          ) : suggestedBlogs.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {suggestedBlogs.map((suggestedBlog) => (
+                <div
+                  key={suggestedBlog.id}
+                  className="p-4 bg-white shadow rounded-lg"
+                >
+                  <img
+                    src={`http://192.168.20.7:3000/blog_images/${suggestedBlog.blog_image}`}
+                    alt={suggestedBlog.blog_title}
+                    className="w-full h-40 object-cover rounded"
+                  />
+                  <h4 className="text-lg font-semibold mt-2">
+                    {suggestedBlog.blog_title}
+                  </h4>
+                  <p className="text-gray-600">{suggestedBlog.blog_author}</p>
+                  <p className="text-sm text-gray-500">
+                    Posted on{" "}
+                    {new Date(suggestedBlog.blog_date).toLocaleDateString(
+                      "en-US",
+                      {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      }
+                    )}
+                  </p>
+                  <Link
+                    to={`/blog/${suggestedBlog.id}`}
+                    className="inline-block text-sm font-medium text-blue-600 hover:text-blue-400 transition-colors duration-300"
+                  >
+                    Read More
+                  </Link>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p>No suggested blogs available.</p>
+          )}
         </section>
       </div>
     </div>

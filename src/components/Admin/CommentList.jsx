@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Instance from "./Instance";
 import { MdDateRange } from "react-icons/md";
-import { FaTrash } from "react-icons/fa";
+import { FaEye, FaTrash } from "react-icons/fa";
 import ConfirmModal from "./ConfirmModal"; // Import the ConfirmModal
 
 // CommentList Component
@@ -114,31 +114,57 @@ const CommentList = () => {
 
   return (
     <div className="max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-md">
-      <h1 className="text-center text-3xl mb-5">Comment List</h1>
+      <h1 className="text-center text-3xl font-bold mb-5">Comment List</h1>
 
-      <div className="mb-4">
+      {/* Search Bar */}
+      <div className="relative mb-6">
         <input
           type="text"
-          placeholder="Search by Fans name..."
+          placeholder="🔍 Search by Fans name..."
           value={searchQuery}
           onChange={handleSearch}
           className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring focus:ring-teal-300"
         />
       </div>
 
-      {/* No comments found */}
-      {filteredComments.length === 0 ? (
+      {loading ? (
+        <div className="text-center">
+          {/* Loader */}
+          <svg
+            className="animate-spin h-8 w-8 text-teal-600"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="4"
+            ></circle>
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8v8H4z"
+            ></path>
+          </svg>
+        </div>
+      ) : error ? (
+        <p className="text-center text-red-500">{error}</p>
+      ) : filteredComments.length === 0 ? (
         <p className="text-center text-red-500">No comments found</p>
       ) : (
         <ul className="flex flex-wrap gap-3">
           {currentComments.map((comment) => (
             <li
               key={comment.id}
-              className="w-full border-2 border-teal-800 rounded-lg p-4 mb-2 flex flex-col"
+              className="w-full border-2 border-teal-800 rounded-lg p-4 mb-4"
             >
               <div>
-                <p className="font-semibold">{comment.username}</p>
-                <div className="flex items-center text-gray-500 text-xs gap-2 mb-2">
+                <p className="font-semibold text-lg">{comment.username}</p>
+                <div className="flex items-center text-gray-500 text-sm gap-2 mb-2">
                   <MdDateRange />
                   {new Date(comment.created_at).toLocaleDateString("en-IN", {
                     year: "numeric",
@@ -148,30 +174,44 @@ const CommentList = () => {
                     minute: "numeric",
                   })}
                 </div>
-                <p className="text-sm">{comment.comment}</p>
+                <p className="text-sm text-gray-700">{comment.comment}</p>
               </div>
 
               <div className="flex justify-between items-center mt-4">
                 <button
                   onClick={() => {
-                    setCommentToReply(prev => (prev === comment.id ? null : comment.id));
-                    setReplyText(""); 
+                    setCommentToReply((prev) =>
+                      prev === comment.id ? null : comment.id
+                    );
+                    setReplyText("");
                   }}
-                  className="text-t-primary hover:text-t-primary/90"
+                  className="text-teal-600 hover:text-teal-500"
                 >
                   Reply
                 </button>
-                <button
-                  onClick={() => handleDeleteComment(comment.blog_id, comment.id)}
-                  className="text-red-500 hover:text-red-700"
-                >
-                  <FaTrash />
-                </button>
+                <div className="flex gap-3">
+                  <button
+                    onClick={() =>
+                      handleDeleteComment(comment.blog_id, comment.id)
+                    }
+                    className="text-red-500 hover:text-red-700"
+                  >
+                    <FaEye />
+                  </button>
+                  <button
+                    onClick={() =>
+                      handleDeleteComment(comment.blog_id, comment.id)
+                    }
+                    className="text-red-500 hover:text-red-700"
+                  >
+                    <FaTrash />
+                  </button>
+                </div>
               </div>
 
-              {/* Reply input */}
+              {/* Reply Input */}
               {commentToReply === comment.id && (
-                <div className="mt-2">
+                <div className="mt-4">
                   <input
                     type="text"
                     value={replyText}
@@ -181,18 +221,21 @@ const CommentList = () => {
                   />
                   <button
                     onClick={() => handleReply(comment.id)}
-                    className="mt-2 px-4 py-2 btn-primary"
+                    className="mt-2 px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700"
                   >
-                    Send
+                    Send Reply
                   </button>
                 </div>
               )}
 
-              {/* Replies display */}
+              {/* Display Replies */}
               {comment.replies && comment.replies.length > 0 && (
-                <ul className="mt-2 ml-4">
+                <ul className="mt-4 ml-6 space-y-2">
                   {comment.replies.map((reply, index) => (
-                    <li key={index} className="text-gray-600 text-sm">
+                    <li
+                      key={index}
+                      className="text-gray-600 text-sm bg-gray-100 rounded-md p-2"
+                    >
                       {reply}
                     </li>
                   ))}
@@ -206,18 +249,16 @@ const CommentList = () => {
       {/* Pagination */}
       {filteredComments.length > commentsPerPage && (
         <div className="flex justify-center mt-6">
-          {[
-            ...Array(
-              Math.ceil(filteredComments.length / commentsPerPage)
-            ).keys(),
-          ].map((number) => (
+          {Array.from({
+            length: Math.ceil(filteredComments.length / commentsPerPage),
+          }).map((_, number) => (
             <button
               key={number}
               onClick={() => paginate(number + 1)}
-              className={`px-3 py-1 mx-1 rounded-md border ${
+              className={`px-4 py-2 mx-1 rounded-md ${
                 currentPage === number + 1
                   ? "bg-teal-600 text-white"
-                  : "bg-gray-200"
+                  : "bg-gray-200 text-gray-600"
               }`}
             >
               {number + 1}

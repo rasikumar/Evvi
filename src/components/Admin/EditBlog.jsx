@@ -3,7 +3,7 @@ import { useState } from "react";
 import Instance from "./Instance";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { toast } from "react-toastify"; // Import toast
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const quillModules = {
@@ -38,11 +38,12 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
     title: blog.blog_title,
     author: blog.blog_author,
     body: blog.blog_body,
-    image: blog.blog_image, // existing image URL or File
+    image: blog.blog_image, // Existing image URL or File
   });
 
   const [imagePreview, setImagePreview] = useState(blog.blog_image || null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false); // Loading state for the update process
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -56,10 +57,9 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setFormData((prev) => ({ ...prev, image: file }));
-      // Ensure it's a valid image file before previewing
       if (file.type.startsWith("image/")) {
-        setImagePreview(URL.createObjectURL(file)); // Create preview for new image
+        setFormData((prev) => ({ ...prev, image: file }));
+        setImagePreview(URL.createObjectURL(file)); // Set preview for the selected image
       } else {
         setError("Please upload a valid image file.");
       }
@@ -68,14 +68,13 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
+    setLoading(true); // Set loading state to true during the update process
     try {
       const data = new FormData();
       data.append("id", formData.id);
       data.append("title", formData.title);
       data.append("author", formData.author);
       data.append("body", formData.body);
-
-      // Only append the image if a new file is selected
       if (formData.image && typeof formData.image !== "string") {
         data.append("image", formData.image);
       }
@@ -93,7 +92,7 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
           )
         );
         setEditing(false);
-        window.location.reload()
+        // window.location.reload();
         toast.success(response.data.message);
       } else {
         throw new Error(response.data.message);
@@ -102,6 +101,8 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
       console.error("Failed to update blog:", err);
       setError("Failed to update blog");
       toast.error("Failed to update blog");
+    } finally {
+      setLoading(false); // Reset loading state after process is complete
     }
   };
 
@@ -159,10 +160,14 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
           onChange={handleImageChange}
           className="w-full border rounded p-2"
         />
-        {/* Display preview only if it's a valid URL or file */}
+        {/* Display preview */}
         {imagePreview && (
           <img
-            src={imagePreview}
+            src={
+              typeof imagePreview === "string"
+                ? "http://192.168.20.7:3000/blog_images/" + imagePreview
+                : URL.createObjectURL(imagePreview)
+            }
             alt={formData.title}
             className="mt-4 max-w-full rounded"
           />
@@ -174,8 +179,9 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
         <button
           type="submit"
           className="text-white bg-blue-500 rounded px-4 py-2"
+          disabled={loading} // Disable button while loading
         >
-          Update Blog
+          {loading ? "Updating..." : "Update Blog"}
         </button>
         <button
           type="button"

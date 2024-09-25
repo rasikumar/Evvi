@@ -119,7 +119,7 @@ const ListBlog = () => {
           {currentBlogs.map((blog) => (
             <li
               key={blog.id}
-              className="even:bg-white odd:bg-zinc-100 border-2 border-teal-800 rounded-lg p-4 mb-1 flex gap-6 max-h-32 sm:max-h-36"
+              className="even:bg-white odd:bg-zinc-100 border border-teal-800 rounded-lg p-4 mb-1 flex gap-6 max-h-32 sm:max-h-36"
             >
               <div className="w-full ">
                 <div className="flex text-sm">
