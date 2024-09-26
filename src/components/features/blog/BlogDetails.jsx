@@ -30,8 +30,8 @@ const BlogDetail = () => {
   const [replyText, setReplyText] = useState(""); // State for the reply text
   const [replyError, setReplyError] = useState(null); // State for reply error messages
   const [replies, setReplies] = useState({}); // State to hold replies keyed by comment ID
-  const [commentToReply, setCommentToReply] = useState(null); // Track which comment is being replied to
   const [replyName, setReplyName] = useState(null);
+  const [commentToReply, setCommentToReply] = useState(null); // Track which comment is being replied to
   const [suggestedBlogs, setSuggestedBlogs] = useState([]);
   const [suggestedLoading, setSuggestedLoading] = useState(true);
   const [suggestedError, setSuggestedError] = useState(null);
@@ -42,6 +42,8 @@ const BlogDetail = () => {
       try {
         const response = await Instance.get(`/getBlogById/${id}`);
         setBlog(response.data.blog);
+        console.log(response.data.blog[0].blog_body);
+
         setLoading(false);
       } catch (err) {
         setError("Failed to load blog details");
@@ -78,15 +80,10 @@ const BlogDetail = () => {
         const response = await Instance.get(`/getCommentByBlogId/${id}`);
         const fetchedComments = response.data.comments || [];
 
-        // console.log("Fetched Comments:", fetchedComments);
-
         if (fetchedComments.length > 0) {
           setComments(fetchedComments);
 
-          // Create a replies map for easy access
           const repliesMap = fetchedComments.reduce((acc, comment) => {
-            console.log(comment);
-
             if (Array.isArray(comment.replies)) {
               acc[comment.comment_id] = comment.replies; // Copy replies if they exist
             } else {
@@ -124,6 +121,8 @@ const BlogDetail = () => {
         username,
         comment,
       });
+      console.log(response);
+
       setComments([...comments, response.data.newComment]);
       setComment("");
       setUsername("");
@@ -139,18 +138,17 @@ const BlogDetail = () => {
   const handleReplySubmit = async (e, comment_id) => {
     e.preventDefault();
 
-    if (replyText && replyName) {
-      setReplyError("Reply text is required.");
+    if (!replyText || !replyName) {
+      setReplyError("*Please Fill the Requirement Fields.");
       return;
     }
 
     try {
       const response = await Instance.post("/replyToComment", {
         id: comment_id,
-        username,
+        username: replyName,
         reply: replyText,
       });
-      console.log(response);
 
       // Update replies state for the specific comment
       setReplies((prevReplies) => ({
@@ -163,7 +161,8 @@ const BlogDetail = () => {
 
       setReplyText(""); // Clear reply text
       setReplyError(null);
-      setCommentToReply(null); // Close the reply input after submission
+      setCommentToReply(null);
+      window.location.reload();
     } catch (err) {
       console.error("Failed to post reply:", err);
       setReplyError("Failed to post reply. Please try again.");
@@ -209,13 +208,13 @@ const BlogDetail = () => {
               />
 
               <div
-                className="mt-4 indent-4"
+                className="mt-4 indent-4 text-justify"
                 dangerouslySetInnerHTML={{ __html: blog.blog_body }}
+                // {blog.blog_body}
               />
             </div>
           ))}
 
-        {/* Comment Section */}
         <section className="mt-10">
           <h3 className="text-2xl font-semibold mb-4">Comments</h3>
 
@@ -224,7 +223,7 @@ const BlogDetail = () => {
             {comments.length > 0 ? (
               comments.map((cmt) => (
                 <div
-                  key={cmt.id}
+                  key={cmt.comment_id}
                   className="mb-4 p-4 bg-slate-300/20 rounded-lg border border-gray-200 duration-300"
                 >
                   <div className="flex items-center gap-4 mb-2">
@@ -255,16 +254,14 @@ const BlogDetail = () => {
                     </div>
                   </div>
 
-                  {/* Comment text */}
                   <p className="text-gray-800 text-base leading-relaxed">
                     {cmt.comment}
                   </p>
 
-                  {/* Reply Button */}
                   <button
                     onClick={() =>
                       setCommentToReply((prev) =>
-                        prev === cmt.id ? null : cmt.id
+                        prev === cmt.comment_id ? null : cmt.comment_id
                       )
                     }
                     className="text-teal-500 hover:text-teal-700"
@@ -272,36 +269,36 @@ const BlogDetail = () => {
                     Reply
                   </button>
 
-                  {/* Reply Input */}
-                  {commentToReply === cmt.id && (
+                  {commentToReply === cmt.comment_id && (
                     <div>
                       <input
                         type="text"
                         className="p-2 border border-gray-300 rounded-lg mb-2"
                         placeholder="Your Username"
-                        value={username}
-                        onChange={setUsername}
+                        value={replyName}
+                        onChange={(e) => setReplyName(e.target.value)} // Fix this line
                         required
                       />
                       <textarea
                         className="w-full p-2 border border-gray-300 rounded-lg"
                         rows="2"
                         placeholder="Write a reply..."
-                        value={replyText}
-                        onChange={setReplyText}
+                        value={replyText} // Change this line to use replyText
+                        onChange={(e) => setReplyText(e.target.value)} // Fix this line
                         required
                       />
                       {replyError && (
                         <p className="text-red-500">{replyError}</p>
                       )}
                       <button
-                        onClick={() => handleReplySubmit(cmt.id)}
+                        onClick={(e) => handleReplySubmit(e, cmt.comment_id)} // Fix this line
                         className="mt-2 btn-primary rounded-lg"
                       >
                         Submit Reply
                       </button>
                     </div>
                   )}
+
                   {replies[cmt.comment_id] &&
                     replies[cmt.comment_id].length > 0 && (
                       <div className="mt-4 ml-4">
@@ -328,7 +325,7 @@ const BlogDetail = () => {
                                     reply.reply_created_at
                                   ).toLocaleString("en-IN", {
                                     year: "numeric",
-                                    month: "long",
+                                    month: "short",
                                     day: "numeric",
                                     hour: "numeric",
                                     minute: "numeric",
@@ -353,8 +350,8 @@ const BlogDetail = () => {
               type="text"
               className="p-2 border border-gray-300 rounded-lg mb-2"
               placeholder="Your Username"
-              value={replyName}
-              onChange={(e) => setReplyName(e.target.value)}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
             <textarea
@@ -372,51 +369,28 @@ const BlogDetail = () => {
           </form>
         </section>
 
-        {/* Suggested Blogs */}
         <section className="mt-10">
           <h3 className="text-2xl font-semibold mb-4">You Might Also Like</h3>
           {suggestedLoading ? (
             <SkeletonLoader />
           ) : suggestedError ? (
             <div className="text-red-500">{suggestedError}</div>
-          ) : suggestedBlogs.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {suggestedBlogs.map((suggestedBlog) => (
-                <div
-                  key={suggestedBlog.id}
-                  className="p-4 bg-white shadow rounded-lg"
-                >
-                  <img
-                    src={`http://192.168.20.7:3000/blog_images/${suggestedBlog.blog_image}`}
-                    alt={suggestedBlog.blog_title}
-                    className="w-full h-40 object-cover rounded"
-                  />
-                  <h4 className="text-lg font-semibold mt-2">
-                    {suggestedBlog.blog_title}
-                  </h4>
-                  <p className="text-gray-600">{suggestedBlog.blog_author}</p>
-                  <p className="text-sm text-gray-500">
-                    Posted on{" "}
-                    {new Date(suggestedBlog.blog_date).toLocaleDateString(
-                      "en-US",
-                      {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      }
-                    )}
-                  </p>
-                  <Link
-                    to={`/blog/${suggestedBlog.id}`}
-                    className="inline-block text-sm font-medium text-blue-600 hover:text-blue-400 transition-colors duration-300"
-                  >
-                    Read More
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {suggestedBlogs.map((blog) => (
+                <div key={blog.id} className="p-4 bg-white rounded shadow-md">
+                  <Link to={`/blog/${blog.id}`}>
+                    <h4 className="font-semibold text-lg">{blog.blog_title}</h4>
+                    <p className="text-gray-600">{blog.blog_author}</p>
+                    <img
+                      src={`http://192.168.20.7:3000/blog_images/${blog.blog_image}`}
+                      alt={blog.blog_title}
+                      className="w-full h-40 object-cover rounded mt-2"
+                    />
                   </Link>
                 </div>
               ))}
             </div>
-          ) : (
-            <p>No suggested blogs available.</p>
           )}
         </section>
       </div>

@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import Instance from "./Instance";
-import { MdDateRange } from "react-icons/md";
-import { FaEye, FaTrash } from "react-icons/fa";
-import ConfirmModal from "./ConfirmModal"; // Import the ConfirmModal
+import CommentItem from "./comment/CommentItem";
+import Pagination from "./comment/Pagination";
+import ConfirmModal from "./comment/ConfirmModal"; // Import the ConfirmModal
+import Loader from "./comment/Loader";
 
 // CommentList Component
 const CommentList = () => {
@@ -12,17 +13,21 @@ const CommentList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [commentsPerPage] = useState(5);
   const [searchQuery, setSearchQuery] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [isToggleModalOpen, setIsToggleModalOpen] = useState(false);
   const [commentToDelete, setCommentToDelete] = useState(null);
-  const [replyText, setReplyText] = useState(""); // State for reply text
-  const [commentToReply, setCommentToReply] = useState(null); // Comment to reply to
+  const [commentToToggle, setCommentToToggle] = useState(null);
+  // const [replies, setReplies] = useState([]);
 
   // Fetch comments on component mount
   useEffect(() => {
     const fetchComments = async () => {
       try {
         const response = await Instance.post("/admin/getAllComments");
+        // console.log(response.data.comments[0].replies[0].reply);
         setComments(response.data.comments);
+        console.log(response);
+        
       } catch (err) {
         setError("Failed to fetch comments");
       } finally {
@@ -34,56 +39,46 @@ const CommentList = () => {
 
   const handleDeleteComment = (blog_id, commentId) => {
     setCommentToDelete({ blog_id, commentId });
-    setIsModalOpen(true);
+    setIsDeleteModalOpen(true);
   };
 
   const confirmDeleteComment = async () => {
     if (!commentToDelete) return;
 
     const { blog_id, commentId } = commentToDelete;
-
     try {
-      await Instance.post(`/admin/deleteComment`, {
-        blog_id,
-        commentId,
-      });
+      await Instance.post(`/admin/deleteComment`, { blog_id, commentId });
       setComments(comments.filter((comment) => comment.id !== commentId));
-      setIsModalOpen(false); // Close modal after deletion
-      setCommentToDelete(null); // Clear comment to delete
+      setIsDeleteModalOpen(false);
+      setCommentToDelete(null);
     } catch (error) {
       console.error("Failed to delete comment:", error);
     }
   };
 
-  const handleReplyChange = (event) => {
-    setReplyText(event.target.value);
+  const handleToggleVisibility = (comment_id) => {
+    setCommentToToggle({ comment_id });
+    setIsToggleModalOpen(true);
   };
 
-  const handleReply = async (comment_id) => {
-    if (!replyText.trim()) return; // Prevent empty replies
+  const confirmToggleVisibility = async () => {
+    if (!commentToToggle) return;
 
+    const { comment_id, isTrue } = commentToToggle;
     try {
-      await Instance.post(`/admin/replyToComment`, {
-        comment_id,
-        reply: replyText,
-      });
+      await Instance.post(`/admin/hideComment`, { comment_id, isTrue });
+      setComments(
+        comments.map((comment) =>
+          comment.id === comment_id
+            ? { ...comment, visible: !comment.visible }
+            : comment
+        )
+      );
 
-      // Optionally, update the comments state to include the new reply
-      const updatedComments = comments.map((comment) => {
-        if (comment.id === comment_id) {
-          return {
-            ...comment,
-            replies: [...(comment.replies || []), replyText], // Add the new reply
-          };
-        }
-        return comment;
-      });
-
-      setComments(updatedComments);
-      setReplyText(""); // Clear the reply input
-      setCommentToReply(null); // Reset comment to reply
+      setIsToggleModalOpen(false);
+      setCommentToToggle(null);
     } catch (error) {
-      console.error("Failed to reply to comment:", error);
+      console.error("Failed to toggle comment visibility:", error);
     }
   };
 
@@ -92,7 +87,7 @@ const CommentList = () => {
   };
 
   const filteredComments = comments.filter((comment) =>
-    comment.username.toLowerCase().includes(searchQuery.toLowerCase())
+    comment.comment_username.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const indexOfLastComment = currentPage * commentsPerPage;
@@ -105,7 +100,7 @@ const CommentList = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   if (loading) {
-    return <div>Loading comments...</div>;
+    return <Loader />; // Display a loader component
   }
 
   if (error) {
@@ -116,7 +111,6 @@ const CommentList = () => {
     <div className="max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-md">
       <h1 className="text-center text-3xl font-bold mb-5">Comment List</h1>
 
-      {/* Search Bar */}
       <div className="relative mb-6">
         <input
           type="text"
@@ -127,152 +121,44 @@ const CommentList = () => {
         />
       </div>
 
-      {loading ? (
-        <div className="text-center">
-          {/* Loader */}
-          <svg
-            className="animate-spin h-8 w-8 text-teal-600"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            ></circle>
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8v8H4z"
-            ></path>
-          </svg>
-        </div>
-      ) : error ? (
-        <p className="text-center text-red-500">{error}</p>
-      ) : filteredComments.length === 0 ? (
-        <p className="text-center text-red-500">No comments found</p>
-      ) : (
-        <ul className="flex flex-wrap gap-3">
-          {currentComments.map((comment) => (
-            <li
-              key={comment.id}
-              className="w-full border-2 border-teal-800 rounded-lg p-4 mb-4"
-            >
-              <div>
-                <p className="font-semibold text-lg">{comment.username}</p>
-                <div className="flex items-center text-gray-500 text-sm gap-2 mb-2">
-                  <MdDateRange />
-                  {new Date(comment.created_at).toLocaleDateString("en-IN", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                    hour: "numeric",
-                    minute: "numeric",
-                  })}
-                </div>
-                <p className="text-sm text-gray-700">{comment.comment}</p>
-              </div>
+      <ul className="flex flex-wrap gap-3">
+        {currentComments.map((comment) => (
+          <CommentItem
+            key={comment.id}
+            comment={comment}
+            onDelete={handleDeleteComment}
+            onToggleVisibility={handleToggleVisibility}
+          />
+        ))}
+      </ul>
 
-              <div className="flex justify-between items-center mt-4">
-                <button
-                  onClick={() => {
-                    setCommentToReply((prev) =>
-                      prev === comment.id ? null : comment.id
-                    );
-                    setReplyText("");
-                  }}
-                  className="text-teal-600 hover:text-teal-500"
-                >
-                  Reply
-                </button>
-                <div className="flex gap-3">
-                  <button
-                    onClick={() =>
-                      handleDeleteComment(comment.blog_id, comment.id)
-                    }
-                    className="text-red-500 hover:text-red-700"
-                  >
-                    <FaEye />
-                  </button>
-                  <button
-                    onClick={() =>
-                      handleDeleteComment(comment.blog_id, comment.id)
-                    }
-                    className="text-red-500 hover:text-red-700"
-                  >
-                    <FaTrash />
-                  </button>
-                </div>
-              </div>
-
-              {/* Reply Input */}
-              {commentToReply === comment.id && (
-                <div className="mt-4">
-                  <input
-                    type="text"
-                    value={replyText}
-                    onChange={handleReplyChange}
-                    placeholder="Type your reply..."
-                    className="w-full px-4 py-2 border rounded-md shadow-sm focus:ring focus:ring-teal-300"
-                  />
-                  <button
-                    onClick={() => handleReply(comment.id)}
-                    className="mt-2 px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700"
-                  >
-                    Send Reply
-                  </button>
-                </div>
-              )}
-
-              {/* Display Replies */}
-              {comment.replies && comment.replies.length > 0 && (
-                <ul className="mt-4 ml-6 space-y-2">
-                  {comment.replies.map((reply, index) => (
-                    <li
-                      key={index}
-                      className="text-gray-600 text-sm bg-gray-100 rounded-md p-2"
-                    >
-                      {reply}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {/* Pagination */}
       {filteredComments.length > commentsPerPage && (
-        <div className="flex justify-center mt-6">
-          {Array.from({
-            length: Math.ceil(filteredComments.length / commentsPerPage),
-          }).map((_, number) => (
-            <button
-              key={number}
-              onClick={() => paginate(number + 1)}
-              className={`px-4 py-2 mx-1 rounded-md ${
-                currentPage === number + 1
-                  ? "bg-teal-600 text-white"
-                  : "bg-gray-200 text-gray-600"
-              }`}
-            >
-              {number + 1}
-            </button>
-          ))}
-        </div>
+        <Pagination
+          commentsPerPage={commentsPerPage}
+          totalComments={filteredComments.length}
+          paginate={paginate}
+          currentPage={currentPage}
+        />
       )}
 
-      {/* Confirmation Modal */}
+      {/* Confirmation Modal for Deletion */}
       <ConfirmModal
-        isOpen={isModalOpen}
+        isOpen={isDeleteModalOpen}
         onConfirm={confirmDeleteComment}
-        onCancel={() => setIsModalOpen(false)}
+        onCancel={() => setIsDeleteModalOpen(false)}
         message="Are you sure you want to delete this comment?"
+        btn1="Cancel"
+        btn2="Delete"
+      />
+
+      {/* Confirmation Modal for Toggling Visibility */}
+      <ConfirmModal
+        isOpen={isToggleModalOpen}
+        onConfirm={confirmToggleVisibility}
+        onCancel={() => setIsToggleModalOpen(false)}
+        message="Are you sure you want to toggle the visibility of this comment?"
+        btn1="Cancel"
+        btn2="Toggle Visibility"
       />
     </div>
   );
