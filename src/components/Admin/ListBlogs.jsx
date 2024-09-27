@@ -132,7 +132,11 @@ const ListBlog = () => {
                   </p>
                   <p className="text-gray-500 inline-flex items-center text-xs gap-2">
                     <MdDateRange />
-                    {new Date(blog.blog_date).toLocaleDateString()}
+                    {new Date(blog.blog_date).toLocaleDateString("en-IN",{
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
                   </p>
                 </div>
 

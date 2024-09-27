@@ -20,12 +20,45 @@ const ContactList = () => {
   }, []);
 
   const exportToExcel = () => {
-    const worksheet = XLSX.utils.json_to_sheet(contacts);
+    // Define column headers
+    const columnHeaders = [
+      { header: "ID", key: "id" },
+      { header: "Name", key: "name" },
+      { header: "Phone", key: "phone" },
+      { header: "Email", key: "email" },
+      { header: "Subject", key: "subject" },
+      { header: "Details", key: "details" },
+      { header: "Created At", key: "createdAt" },
+    ];
+
+    // Map contacts data to match headers
+    const data = contacts.map((contact) => ({
+      id: contact.id,
+      name: contact.name,
+      phone: contact.phone,
+      email: contact.email,
+      subject: contact.subject,
+      details: contact.details,
+      createdAt: new Date(contact.createdAt).toLocaleString("en-IN", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      }),
+    }));
+
+    // Add headers to the data
+    const worksheetData = [
+      columnHeaders.map((header) => header.header),
+      ...data.map((contact) => Object.values(contact)),
+    ];
+
+    // Create worksheet from data
+    const worksheet = XLSX.utils.aoa_to_sheet(worksheetData);
 
     const workbook = XLSX.utils.book_new();
-
     XLSX.utils.book_append_sheet(workbook, worksheet, "Contacts");
 
+    // Write the Excel file
     XLSX.writeFile(workbook, "contact_list.xlsx");
   };
 

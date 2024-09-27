@@ -91,7 +91,7 @@ const Blog = () => {
                       </li>
                     </div>
                     <Link
-                      to={`/blog/${item.id}${item.blog_title}`}
+                      to={`/blog/${item.id}`}
                       className="font-bold w-52 text-lg line-clamp-4 transition-all delay-75"
                     >
                       <h1 className="line-clamp-1">{item.blog_title}</h1>
@@ -141,7 +141,7 @@ const Blog = () => {
                       dangerouslySetInnerHTML={{ __html: item.blog_body }} // Correct usage here
                     />
                     <Link
-                      to={`/blog/${item.id}${item.blog_title}`}
+                      to={`/blog/${item.id}`}
                       className="text-t-secondary font-semibold w-[50%] inline-flex items-center gap-2 "
                     >
                       ReadMore

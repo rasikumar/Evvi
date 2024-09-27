@@ -17,17 +17,14 @@ const CommentList = () => {
   const [isToggleModalOpen, setIsToggleModalOpen] = useState(false);
   const [commentToDelete, setCommentToDelete] = useState(null);
   const [commentToToggle, setCommentToToggle] = useState(null);
-  // const [replies, setReplies] = useState([]);
+  const [isCommentHidden, setIsCommentHidden] = useState(null);
 
   // Fetch comments on component mount
   useEffect(() => {
     const fetchComments = async () => {
       try {
         const response = await Instance.post("/admin/getAllComments");
-        // console.log(response.data.comments[0].replies[0].reply);
         setComments(response.data.comments);
-        console.log(response);
-        
       } catch (err) {
         setError("Failed to fetch comments");
       } finally {
@@ -37,6 +34,7 @@ const CommentList = () => {
     fetchComments();
   }, []);
 
+  // Handle comment deletion with modal confirmation
   const handleDeleteComment = (blog_id, commentId) => {
     setCommentToDelete({ blog_id, commentId });
     setIsDeleteModalOpen(true);
@@ -46,8 +44,9 @@ const CommentList = () => {
     if (!commentToDelete) return;
 
     const { blog_id, commentId } = commentToDelete;
+
     try {
-      await Instance.post(`/admin/deleteComment`, { blog_id, commentId });
+      await Instance.post(`/admin/deleteComment`, { commentId, blog_id });
       setComments(comments.filter((comment) => comment.id !== commentId));
       setIsDeleteModalOpen(false);
       setCommentToDelete(null);
@@ -56,25 +55,39 @@ const CommentList = () => {
     }
   };
 
-  const handleToggleVisibility = (comment_id) => {
+  // Handle comment visibility toggle with modal confirmation
+  const handleToggleVisibility = (comment_id, isHidden) => {
     setCommentToToggle({ comment_id });
-    setIsToggleModalOpen(true);
+    setIsCommentHidden(isHidden); // Track the current visibility state
+    setIsToggleModalOpen(true); // Open the modal for confirmation
   };
 
   const confirmToggleVisibility = async () => {
     if (!commentToToggle) return;
 
-    const { comment_id, isTrue } = commentToToggle;
+    const { comment_id } = commentToToggle;
+    const isCurrentlyHidden = isCommentHidden; // Reflect the current state
+    const newVisibilityState = !isCurrentlyHidden; // Toggle the visibility state
+    const endpoint = isCurrentlyHidden
+      ? `/admin/unhideComment`
+      : `/admin/hideComment`; // Decide the endpoint based on current state
+
     try {
-      await Instance.post(`/admin/hideComment`, { comment_id, isTrue });
+      await Instance.post(endpoint, {
+        comment_id,
+        Is_hidden: newVisibilityState,
+      });
+
+      // Update the comments list to reflect the new visibility
       setComments(
         comments.map((comment) =>
           comment.id === comment_id
-            ? { ...comment, visible: !comment.visible }
+            ? { ...comment, visible: newVisibilityState } // Update visibility in state
             : comment
         )
       );
 
+      // Close the modal and reset the state
       setIsToggleModalOpen(false);
       setCommentToToggle(null);
     } catch (error) {
@@ -82,14 +95,17 @@ const CommentList = () => {
     }
   };
 
+  // Handle search
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
   };
 
+  // Filter comments by search query
   const filteredComments = comments.filter((comment) =>
     comment.comment_username.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  // Pagination logic
   const indexOfLastComment = currentPage * commentsPerPage;
   const indexOfFirstComment = indexOfLastComment - commentsPerPage;
   const currentComments = filteredComments.slice(
@@ -99,8 +115,9 @@ const CommentList = () => {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  // Handle loading and error states
   if (loading) {
-    return <Loader />; // Display a loader component
+    return <Loader />;
   }
 
   if (error) {
@@ -132,6 +149,7 @@ const CommentList = () => {
         ))}
       </ul>
 
+      {/* Pagination */}
       {filteredComments.length > commentsPerPage && (
         <Pagination
           commentsPerPage={commentsPerPage}
@@ -154,11 +172,13 @@ const CommentList = () => {
       {/* Confirmation Modal for Toggling Visibility */}
       <ConfirmModal
         isOpen={isToggleModalOpen}
-        onConfirm={confirmToggleVisibility}
+        onConfirm={() => confirmToggleVisibility(isCommentHidden)}
         onCancel={() => setIsToggleModalOpen(false)}
-        message="Are you sure you want to toggle the visibility of this comment?"
+        message={`Are you sure you want to ${
+          isCommentHidden ? "unhide" : "hide"
+        } this comment?`}
         btn1="Cancel"
-        btn2="Toggle Visibility"
+        btn2={isCommentHidden ? "Unhide" : "Hide"}
       />
     </div>
   );

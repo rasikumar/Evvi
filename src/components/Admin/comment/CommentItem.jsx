@@ -3,6 +3,7 @@ import { MdDateRange } from "react-icons/md";
 import { FaEyeSlash, FaEye, FaTrash } from "react-icons/fa";
 import { useState } from "react";
 import Instance from "../Instance";
+import { BiDownArrow, BiUpArrow } from "react-icons/bi";
 
 const CommentItem = ({ comment, onDelete, onToggleVisibility }) => {
   const [replyText, setReplyText] = useState("");
@@ -19,7 +20,7 @@ const CommentItem = ({ comment, onDelete, onToggleVisibility }) => {
   };
 
   const handleReply = async (comment_id) => {
-    if (!replyText.trim()) return; // Prevent empty replies
+    if (!replyText.trim()) return;
 
     try {
       await Instance.post(`/admin/replyToComment`, {
@@ -79,13 +80,13 @@ const CommentItem = ({ comment, onDelete, onToggleVisibility }) => {
         </button>
         <div className="flex gap-3">
           <button
-            onClick={() => onToggleVisibility(comment.id)}
+            onClick={() => onToggleVisibility(comment.comment_id, comment.comment_is_hidden)}
             className="text-red-500 hover:text-red-700"
           >
-            {comment.visible ? <FaEyeSlash /> : <FaEye />}
+            {comment.comment_is_hidden ? <FaEyeSlash /> : <FaEye />}
           </button>
           <button
-            onClick={() => onDelete(comment.blog_id, comment.id)}
+            onClick={() => onDelete(comment.blog_id, comment.comment_id)}
             className="text-red-500 hover:text-red-700"
           >
             <FaTrash />
@@ -112,7 +113,15 @@ const CommentItem = ({ comment, onDelete, onToggleVisibility }) => {
       )}
 
       <button onClick={toggleShow} className="text-blue-500">
-        {showReplies ? "Hide Replies" : "Show Replies"}{" "}
+        {showReplies ? (
+          <div className="inline-flex items-center gap-2">
+            Hide Reply <BiUpArrow className="mt-1" />{" "}
+          </div>
+        ) : (
+          <div className="inline-flex items-center gap-2 ">
+            Show Reply <BiDownArrow className="mt-1" />{" "}
+          </div>
+        )}
       </button>
       {showReplies && comment.replies && comment.replies.length > 0 && (
         <ul className="mt-4 ml-6 space-y-2">

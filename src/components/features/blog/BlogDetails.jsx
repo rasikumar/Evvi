@@ -93,7 +93,6 @@ const BlogDetail = () => {
           }, {});
 
           setReplies(repliesMap);
-          // console.log("Replies Map:", repliesMap);
         } else {
           setComments([]); // Clear comments if none exist
         }
@@ -121,7 +120,7 @@ const BlogDetail = () => {
         username,
         comment,
       });
-      console.log(response);
+      // console.log(response);
 
       setComments([...comments, response.data.newComment]);
       setComment("");
