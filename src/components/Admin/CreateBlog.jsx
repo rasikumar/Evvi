@@ -10,6 +10,7 @@ const CreateBlog = () => {
   const [head, setHead] = useState("");
   const [author, setAuthor] = useState("");
   const [image, setImage] = useState(null); // State to handle image upload
+  const [blog, setBlog] = useState(null); // State to track the latest blog
   const quillRef = useRef(null); // Ref to access Quill editor instance
 
   // Handle content change
@@ -38,8 +39,18 @@ const CreateBlog = () => {
         },
       });
       if (response.data.status === true) {
+        // Update blog state without refreshing the entire page
+        setBlog({
+          head,
+          author,
+          content,
+        });
         alert(response.data.message);
-        window.location.reload();
+        // Clear form fields after successful submission
+        setHead("");
+        setAuthor("");
+        setContent("");
+        setImage(null);
       } else {
         alert(response.data.message);
       }
@@ -48,20 +59,6 @@ const CreateBlog = () => {
       console.error("Error submitting blog:", error);
     }
   };
-  // const quill = new Quill(editor, {
-  //   modules: {
-  //     imageCompress: {
-  //       quality: 0.7, // default
-  //       maxWidth: 1000, // default
-  //       maxHeight: 1000, // default
-  //       imageType: "image/jpeg", // default
-  //       debug: true, // default
-  //       suppressErrorLogging: false, // default
-  //       handleOnPaste: true, //default
-  //       insertIntoEditor: undefined, // default
-  //     },
-  //   },
-  // });
 
   const Formats = [
     "header",
@@ -166,7 +163,10 @@ const CreateBlog = () => {
               htmlFor="content"
               className="block text-sm font-medium text-gray-700 w-full"
             >
-              Blog Content <span className="text-slate-500 ml-24">Maximum Image Value is 50Kb</span>
+              Blog Content{" "}
+              <span className="text-slate-500 ml-24">
+                Maximum Image Value is 50Kb
+              </span>
             </label>
             <ReactQuill
               ref={quillRef}
@@ -194,12 +194,12 @@ const CreateBlog = () => {
         <h2 className="text-2xl font-bold mb-2">Preview</h2>
         <hr />
         <div className="flex flex-col gap-4 mb-4 mt-2">
-          <h3 className="text-2xl">{head}</h3>
-          <p className="text-slate-600 text-sm">{author}</p>
+          <h3 className="text-2xl">{blog?.head || head}</h3>
+          <p className="text-slate-600 text-sm">{blog?.author || author}</p>
         </div>
         <div
-          className="quill-content"
-          dangerouslySetInnerHTML={{ __html: content }}
+          className="quill-content ql-editor"
+          dangerouslySetInnerHTML={{ __html: blog?.content || content }}
         />
       </div>
     </div>

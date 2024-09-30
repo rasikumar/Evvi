@@ -149,7 +149,6 @@ const CommentList = () => {
         ))}
       </ul>
 
-      {/* Pagination */}
       {filteredComments.length > commentsPerPage && (
         <Pagination
           commentsPerPage={commentsPerPage}
@@ -159,7 +158,6 @@ const CommentList = () => {
         />
       )}
 
-      {/* Confirmation Modal for Deletion */}
       <ConfirmModal
         isOpen={isDeleteModalOpen}
         onConfirm={confirmDeleteComment}
@@ -169,7 +167,6 @@ const CommentList = () => {
         btn2="Delete"
       />
 
-      {/* Confirmation Modal for Toggling Visibility */}
       <ConfirmModal
         isOpen={isToggleModalOpen}
         onConfirm={() => confirmToggleVisibility(isCommentHidden)}

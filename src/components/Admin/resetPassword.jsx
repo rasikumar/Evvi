@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Instance from "./Instance"; // Import your axios instance
+import { toast } from "react-toastify";
 
 const ResetPassword = () => {
   const location = useLocation(); // Get the location object
@@ -31,9 +32,11 @@ const ResetPassword = () => {
         token,
         newPassword,
       });
-      setMessage(response.data.message); // Assuming the API returns a message
+      setMessage(response.data.message);
+      toast.success(response.data.message);
+      navigate("/admin");
     } catch (err) {
-      setError("Failed to reset password.",err);
+      setError("Failed to reset password.", err);
     }
   };
 

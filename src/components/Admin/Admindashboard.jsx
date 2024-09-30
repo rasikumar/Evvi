@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import CreateBlog from "./CreateBlog";
 import ListBlogs from "./ListBlogs";
 import Logout from "./Logout";
@@ -7,6 +8,22 @@ import CommentList from "./CommentList";
 
 const Admindashboard = () => {
   const [activeTab, setActiveTab] = useState("listBlog");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("jwtToken");
+
+    if (!token || isTokenExpired(token)) {
+      navigate("/admin");
+      localStorage.removeItem("jwtToken");
+    }
+  }, [navigate]);
+
+  const isTokenExpired = (token) => {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    const expiry = payload.exp * 1000; // Convert to milliseconds
+    return Date.now() > expiry;
+  };
 
   const renderContent = () => {
     switch (activeTab) {
@@ -24,7 +41,7 @@ const Admindashboard = () => {
   };
 
   return (
-    <div className="flex  min-h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-gray-100">
       {/* Sidebar */}
       <div className="w-64 bg-white shadow-lg flex-shrink-0">
         <div className="p-6 fixed lg:relative h-screen w-64">

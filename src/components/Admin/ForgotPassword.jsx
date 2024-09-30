@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Instance from "./Instance";
+import { toast } from "react-toastify";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -13,6 +14,7 @@ const ForgotPassword = () => {
         email,
       });
       if (response.status === 200) {
+        toast.success(response.data.message);
         setMessage(response.data.message);
       } else {
         setError("Failed to send password reset link.");

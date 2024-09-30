@@ -38,7 +38,7 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
     title: blog.blog_title,
     author: blog.blog_author,
     body: blog.blog_body,
-    image: blog.blog_image, // Existing image URL or File
+    image: blog.blog_image,
   });
 
   const [imagePreview, setImagePreview] = useState(blog.blog_image || null);
@@ -59,7 +59,7 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
     if (file) {
       if (file.type.startsWith("image/")) {
         setFormData((prev) => ({ ...prev, image: file }));
-        setImagePreview(URL.createObjectURL(file)); // Set preview for the selected image
+        setImagePreview(URL.createObjectURL(file));
       } else {
         setError("Please upload a valid image file.");
       }
@@ -75,11 +75,13 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
       data.append("title", formData.title);
       data.append("author", formData.author);
       data.append("body", formData.body);
-      if (formData.image && typeof formData.image !== "string") {
+
+      if (formData.image) {
         data.append("image", formData.image);
       }
+      console.log(formData.image);
 
-      const response = await Instance.post(`/admin/updateBlog`, data, {
+      const response = await Instance.put(`/admin/updateBlog`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

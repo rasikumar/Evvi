@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom"; // Import Link for navigation
 import Instance from "./Instance"; // Import your axios instance
-import logo from "../../../public/logo.png"; // Update the path if needed
+import Evvi_new from "../../assets/Evvi_new.png";
 
 const Login = ({ onLogin }) => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
     try {
       const response = await Instance.post("/admin/login", { email, password });
-      
+
       if (response.status === 200 && response.data.token) {
         localStorage.setItem("jwtToken", response.data.token); // Store the token
         onLogin(); // Notify App of successful login
@@ -31,13 +31,19 @@ const Login = ({ onLogin }) => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-4 bg-white rounded-lg shadow-md">
-        <img src={logo} alt="Logo" width={30} className="m-auto" />
-        <p className="text-center text-gray-500">Please login to your account</p>
-        {error && <div className="text-red-500 text-center text-sm">{error}</div>}
+        <img src={Evvi_new} alt="Logo" width={100} className="m-auto" />
+        <p className="text-center text-gray-500">
+          Please login to your account
+        </p>
+        {error && (
+          <div className="text-red-500 text-center text-sm">{error}</div>
+        )}
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px flex flex-col gap-4">
             <div>
-              <label htmlFor="email" className="sr-only">Email address</label>
+              <label htmlFor="email" className="sr-only">
+                Email address
+              </label>
               <input
                 id="email"
                 name="email"
@@ -50,7 +56,9 @@ const Login = ({ onLogin }) => {
               />
             </div>
             <div>
-              <label htmlFor="password" className="sr-only">Password</label>
+              <label htmlFor="password" className="sr-only">
+                Password
+              </label>
               <input
                 id="password"
                 name="password"
@@ -66,7 +74,10 @@ const Login = ({ onLogin }) => {
 
           {/* Forgot Password Link */}
           <div className="flex justify-end">
-            <Link to="/forgotpassword" className="text-sm text-indigo-600 hover:text-indigo-500">
+            <Link
+              to="/forgotpassword"
+              className="text-sm text-indigo-600 hover:text-indigo-500"
+            >
               Forgot your password?
             </Link>
           </div>

@@ -23,7 +23,7 @@ const Blog = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 6; // Number of blogs per page
   const pageLimit = 10; // Number of pages before showing dots
-
+ 
   useEffect(() => {
     const fetchBlogs = async () => {
       try {

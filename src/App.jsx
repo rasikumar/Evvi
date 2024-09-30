@@ -3,9 +3,9 @@ import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import { lazy, useState, Suspense } from "react";
-import { Helmet } from "react-helmet-async";
+// import { Helmet } from "react-helmet-async";
 import Loaders from "./components/Loader";
-import FacebookPixel from "./components/Facebook";
+// import FacebookPixel from "./components/Facebook";
 
 // Fallback component for lazy loading
 const Loader = () => (
@@ -98,7 +98,7 @@ const App = () => {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <meta
           name="description"
           content="Discover innovative solutions with us."
@@ -107,7 +107,7 @@ const App = () => {
         <meta name="twitter:site" content="https://twitter.com/evvisolutions" />
         <meta name="twitter:title" content="Evvi Solutions" />
         <FacebookPixel />
-      </Helmet>
+      </Helmet> */}
       <ThemeProvider theme={theme}>
         {!hideHeaderAndFooter && (
           <Suspense fallback={<Loader />}>

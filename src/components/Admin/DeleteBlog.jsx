@@ -11,7 +11,6 @@ const DeleteBlog = ({ blogId, setBlogs }) => {
   const handleDelete = async () => {
     try {
       await Instance.delete(`/admin/deleteBlog/${blogId}`);
-      // Update the blogs state to remove the deleted blog
       setBlogs((prev) => prev.filter((blog) => blog.id !== blogId));
     } catch (err) {
       setError("Failed to delete blog");

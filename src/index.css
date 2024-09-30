@@ -175,3 +175,7 @@
         transform: rotate(360deg);
     }
 }
+
+.line {
+    transform-origin: 0%;
+}

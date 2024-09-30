@@ -41,7 +41,10 @@ const ListBlog = () => {
     const fetchBlogs = async () => {
       try {
         const response = await Instance.get("/admin/getAllBlogs");
-        setBlogs(response.data.blogs);
+        const sortedBlogList = response.data.blogs.sort(
+          (a, b) => new Date(b.blog_date) - new Date(a.blog_date)
+        );
+        setBlogs(sortedBlogList);
       } catch (err) {
         setError("Failed to fetch blogs");
       } finally {
@@ -132,7 +135,7 @@ const ListBlog = () => {
                   </p>
                   <p className="text-gray-500 inline-flex items-center text-xs gap-2">
                     <MdDateRange />
-                    {new Date(blog.blog_date).toLocaleDateString("en-IN",{
+                    {new Date(blog.blog_date).toLocaleDateString("en-IN", {
                       year: "numeric",
                       month: "short",
                       day: "numeric",
