@@ -6,7 +6,7 @@ const Cf = () => {
   return (
     <div className="bg-t-primary rounded-xl max-tablet:rounded-none py-1 max-tablet:py-12 max-mobile:py-6 max-w-[17rem] max-tablet:max-w-full gap-3 px-5 flex flex-col">
       <div className="flex flex-col items-center mt-4">
-        <img src={Evvi_icon} alt="Evvi_icon" width={80} />
+        <img src={Evvi_icon} alt="Evvi_icon" width={80} height={80} />
         <h2 className="text-white font-semibold">Evvi Solutions Private Limited</h2>
       </div>
       <hr />

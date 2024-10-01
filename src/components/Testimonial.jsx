@@ -10,7 +10,7 @@ const Testimonial = () => {
   const textRef = useRef(false);
   const inview = useInView(textRef, { triggeronce: true });
   const { title, heading, subtitle } = Testimonials[0];
-  const [ hover , sethover ] = useState(0)
+  const [hover, sethover] = useState(0);
 
   const handleMouseEnter = (id) => {
     sethover(id);
@@ -19,7 +19,7 @@ const Testimonial = () => {
   const handleMouseLeave = () => {
     sethover(null);
   };
-  
+
   return (
     <div className="flex overflow-x-hidden items-end max-tablet:flex-col gap-4 w-full p-14 max-tablet:p-5 max-tablet:gap-10 max-mobile:gap-5">
       <div className="flex flex-col w-[55%] max-tablet:w-full gap-12">
@@ -36,7 +36,7 @@ const Testimonial = () => {
             type: "spring",
             damping: 5,
             stiffness: 100,
-            ease: 'linear',
+            ease: "linear",
           }}
           className="flex flex-col gap-3"
         >
@@ -44,19 +44,36 @@ const Testimonial = () => {
           <h2 className="text-4xl max-tablet:text-3xl max-mobile:text-2xl font-semibold">
             {title}
           </h2>
-          <p >{subtitle}</p>
+          <p>{subtitle}</p>
           <div>
-            {Testimonials.map(i => (
+            {Testimonials.map((i) => (
               <ul key={i.id} className="flex flex-col gap-2">
-                {i.items.map(j => (
+                {i.items.map((j) => (
                   <motion.li
-                  whileHover={{x:0, scale:1.02}}
-                  key={j.id} className="cursor-pointer rounded-lg bg-gray-300 p-3 flex max-mobile:flex-col gap-1 m-auto w-[38rem] max-mobile:w-[20rem]"
-                  onMouseEnter={() => handleMouseEnter(j.id)}
-                  onMouseLeave={handleMouseLeave}
+                    whileHover={{ x: 0, scale: 1.02 }}
+                    key={j.id}
+                    className="cursor-pointer rounded-lg bg-gray-300 p-3 flex max-mobile:flex-col gap-1 m-auto w-[38rem] max-mobile:w-[20rem]"
+                    onMouseEnter={() => handleMouseEnter(j.id)}
+                    onMouseLeave={handleMouseLeave}
                   >
-                    <h2 className={`font-bold text-t-primary text-justify text-sm m-auto  ${hover === j.id ? "transition duration-700" : "text-center max-tablet:ml-0  flex items-center justify-center"}`} onMouseEnter={() =>handleMouseEnter(j.id)}>{j.heading}</h2>
-                    <p className={`transition-opacity duration-100 font-medium text-sm m-auto ${ hover === j.id ? "block" : "hidden" }`} > - {j.content}</p>
+                    <h2
+                      className={`font-bold text-t-primary text-justify text-sm m-auto  ${
+                        hover === j.id
+                          ? "transition duration-700"
+                          : "text-center max-tablet:ml-0  flex items-center justify-center"
+                      }`}
+                      onMouseEnter={() => handleMouseEnter(j.id)}
+                    >
+                      {j.heading}
+                    </h2>
+                    <p
+                      className={`transition-opacity duration-100 font-medium text-sm m-auto ${
+                        hover === j.id ? "block" : "hidden"
+                      }`}
+                    >
+                      {" "}
+                      - {j.content}
+                    </p>
                   </motion.li>
                 ))}
               </ul>
@@ -72,6 +89,8 @@ const Testimonial = () => {
         <div className="col-span-2 max-mobile:hidden row-span-4 rounded-3xl overflow-hidden">
           <img
             src={Ratings}
+            width={300}
+            height={200}
             alt="Ratings image"
             className="w-full h-full object-cover"
           />
@@ -96,6 +115,8 @@ const Testimonial = () => {
         <div className="col-span-2 max-mobile:col-span-4 row-span-4 rounded-3xl overflow-hidden shadow-xl">
           <img
             src={Happy_Clients}
+            width={300}
+            height={200}
             alt="Happy clients Image"
             className="w-full h-full object-cover"
           />
