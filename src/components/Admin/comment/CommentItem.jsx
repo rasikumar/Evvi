@@ -12,7 +12,7 @@ const CommentItem = ({ comment, onDelete, onToggleVisibility }) => {
   const [comments, setComments] = useState([]);
   const [showReplies, setShowReplies] = useState(false);
   const [replyToToggle, setReplyToToggle] = useState(null); // Track the reply being toggled
-  const [isReplyHidden, setIsReplyHidden] = useState(false); // Track the current visibility state for replies
+  const [isReplyHidden, setIsReplyHidden] = useState(0); // Track the current visibility state for replies
   const [isReplyToggleModalOpen, setIsReplyToggleModalOpen] = useState(false); // Modal state for reply toggle
 
   const toggleShow = () => {
@@ -50,37 +50,46 @@ const CommentItem = ({ comment, onDelete, onToggleVisibility }) => {
     }
   };
 
+  // Inside the CommentItem Component
   const handleReplyVisibilityToggle = (reply) => {
     setReplyToToggle(reply); // Set the reply to toggle
-    setIsReplyHidden(reply.reply_is_hidden); // Track the current visibility state
+    setIsReplyHidden(reply.reply_is_hidden == 1 ? 0 : 1); // Track the current visibility state
+
+    // Log the current visibility state immediately using reply object
+    console.log(reply.reply_is_hidden);
+
     setIsReplyToggleModalOpen(true); // Open the modal for confirmation
   };
 
   const confirmReplyToggleVisibility = async () => {
     if (!replyToToggle) return;
 
-    const { reply_id, reply_is_hidden } = replyToToggle; // Extract reply_id
-    const isCurrentlyHidden = reply_is_hidden; // Reflect the current state
-    const newVisibilityState = !isCurrentlyHidden; // Toggle the visibility state
+    const { reply_id, reply_is_hidden } = replyToToggle;
+    const isCurrentlyHidden = reply_is_hidden;
+    console.log(isCurrentlyHidden);
 
-    const endpoint = reply_is_hidden
-      ? `/admin/hideReply`
-      : `/admin/unhideReply`; // Decide the endpoint based on current state
+    // Toggle visibility state: if hidden (1), make it visible (0) and vice versa
+    const newVisibilityState = isCurrentlyHidden == 1 ? 0 : 1;
+    console.log(newVisibilityState);
+
+    const endpoint =
+      newVisibilityState === 0
+        ? `/admin/unhideReply` // Unhide reply if the new state is 0 (visible)
+        : `/admin/hideReply`; // Hide reply if the new state is 1 (hidden)
 
     try {
       await Instance.post(endpoint, {
         reply_id,
-        hide_status: newVisibilityState ? true : false,
+        hide_status: newVisibilityState == 1 ? 1 : 0, // Send the updated hide status
       });
 
-      // Update the replies list to reflect the new visibility
       const updatedComments = comments.map((com) => {
         if (com.id === comment.id) {
           return {
             ...com,
             replies: com.replies.map((r) => {
               if (r.reply_id === reply_id) {
-                return { ...r, reply_is_hidden: newVisibilityState }; // Update visibility in state
+                return { ...r, reply_is_hidden: newVisibilityState };
               }
               return r;
             }),
@@ -89,9 +98,7 @@ const CommentItem = ({ comment, onDelete, onToggleVisibility }) => {
         return com;
       });
 
-      setComments(updatedComments); // Update the comments state
-
-      // Close the modal and reset the state
+      setComments(updatedComments);
       setIsReplyToggleModalOpen(false);
       setReplyToToggle(null);
     } catch (error) {
@@ -186,28 +193,31 @@ const CommentItem = ({ comment, onDelete, onToggleVisibility }) => {
             {comment.replies.map((reply) => (
               <li
                 key={reply.reply_id}
-                className="text-sm bg-gray-100 rounded-md p-2"
+                className="text-sm bg-gray-100 rounded-md p-2 flex items-start justify-between"
               >
-                <p className="text-sm text-gray-500">
-                  {new Date(reply.reply_created_at).toLocaleString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                    hour: "numeric",
-                    minute: "numeric",
-                  })}
-                </p>
-                <p className="text-sm text-t-primary font-semibold">
-                  {reply.reply_username}
-                </p>
-                <p className="mt-1 text-sm text-green-600">{reply.reply}</p>
-
-                <button
-                  onClick={() => handleReplyVisibilityToggle(reply)}
-                  className="text-red-500 hover:text-red-700"
-                >
-                  {reply.reply_is_hidden ? <FaEyeSlash /> : <FaEye />}
-                </button>
+                <div>
+                  <p className="text-sm text-gray-500">
+                    {new Date(reply.reply_created_at).toLocaleString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                      hour: "numeric",
+                      minute: "numeric",
+                    })}
+                  </p>
+                  <p className="text-sm text-t-primary font-semibold">
+                    {reply.reply_username}
+                  </p>
+                  <p className="mt-1 text-sm text-green-600">{reply.reply}</p>
+                </div>
+                <div>
+                  <button
+                    onClick={() => handleReplyVisibilityToggle(reply)}
+                    className="text-red-500 hover:text-red-700"
+                  >
+                    {reply.reply_is_hidden == 1 ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
               </li>
             ))}
           </ul>
@@ -218,10 +228,10 @@ const CommentItem = ({ comment, onDelete, onToggleVisibility }) => {
         onConfirm={confirmReplyToggleVisibility} // Correctly assign the confirm function here
         onCancel={() => setIsReplyToggleModalOpen(false)}
         message={`Are you sure you want to ${
-          isReplyHidden ? "unhide" : "hide"
+          isReplyHidden ? "Hide" : "Unhide"
         } this reply?`}
         btn1="Cancel"
-        btn2={isReplyHidden ? "Unhide" : "Hide"}
+        btn2={isReplyHidden ? "Hide" : "Unhide"}
       />
     </>
   );

@@ -68,6 +68,8 @@ const Hero = () => {
               src={bgvid}
               className="absolute top-0 left-0 w-full h-full object-cover"
               autoPlay
+              width={640}
+              height={360}
               muted
               loop
               playsInline

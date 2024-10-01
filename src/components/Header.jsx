@@ -53,6 +53,7 @@ const Header = () => {
           src={Evvi_icon}
           alt="Evvi_icon"
           width={100}
+          height={100}
           className="max-mobile:w-16 desktop:w-32"
         />
       </Link>
@@ -84,7 +85,6 @@ const Header = () => {
                 <Link
                   to={navigate.url}
                   onClick={closeMenu}
-
                   className={`text-t-primary mr-7 font-medium p-3 max-tablet:p-2 
               hover:text-t-secondary 
               border-t-secondary desktop:text-2xl laptop:text-sm 
@@ -121,7 +121,7 @@ const Header = () => {
                             stiffness: 40,
                             duration: 0.2,
                           }}
-                          onClick={()=>{
+                          onClick={() => {
                             closeMenu();
                             handleMouseLeave();
                           }}

@@ -13,7 +13,7 @@ const Cf = () => {
       <div>
         {Address.map(address => (
           <div key={address.id} className="flex items-start gap-2 mb-3">
-            <img src={address.icon} width={20} alt="icons" />
+            <img src={address.icon} width={20} height={20} alt="icons" />
             <div className="text-white font-medium text-sm leading-tight">
               <p>{address.content}</p>
               {address.content2 && <p>{address.content2}</p>}

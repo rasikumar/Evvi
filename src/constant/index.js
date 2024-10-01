@@ -271,22 +271,22 @@ export const OurServices = [
       {
         id: 0,
         content: "Business Consulting",
-        url: "/Business_Consulting",
+        url: "/BusinessConsulting",
       },
       {
         id: 1,
         content: "Digital Transformation",
-        url: "/Digital_Marketing",
+        url: "/DigitalMarketing",
       },
       {
         id: 2,
         content: "HR Consulting",
-        url: "/HR_Service",
+        url: "/HRService",
       },
       {
         id: 3,
         content: "IT Consulting",
-        url: "/IT_Development",
+        url: "/ITDevelopment",
       },
     ],
     lists_items: [
@@ -339,7 +339,7 @@ export const OurServices = [
           // },
         ],
         btn: "Read More",
-        url: "/Business_Consulting",
+        url: "/BusinessConsulting",
       },
       {
         id: 1,
@@ -390,7 +390,7 @@ export const OurServices = [
           // },
         ],
         btn: "Read More",
-        url: "/Digital_Marketing",
+        url: "/DigitalMarketing",
       },
       {
         id: 2,
@@ -441,7 +441,7 @@ export const OurServices = [
           // },
         ],
         btn: "Read More",
-        url: "/HR_Service",
+        url: "/HRService",
       },
       {
         id: 3,
@@ -492,7 +492,7 @@ export const OurServices = [
           // },
         ],
         btn: "Read More",
-        url: "/IT_Development",
+        url: "/ITDevelopment",
       },
     ],
   },
