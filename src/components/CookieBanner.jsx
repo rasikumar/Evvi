@@ -39,7 +39,11 @@ const CookieBanner = () => {
         personalize content & offerings, to provide social media features and to
         analyze traffic. By clicking “Accept Cookies” you agree to our use of
         cookies.
-        <Link to="/cookie-policy" className="underline">
+        <Link
+          to="/cookie-policy"
+          title="Learn more about our Cookie Policy"
+          className="underline"
+        >
           Learn more
         </Link>
       </p>
