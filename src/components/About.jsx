@@ -74,6 +74,7 @@ const About = () => {
             <p className="font-normal text-justify">{about.description3}</p>
             <Link
               to={about.url}
+              title={about.btntitle}
               className="btn-primary mt-5 w-[25%] max-tablet:w-full"
             >
               {about.btn}

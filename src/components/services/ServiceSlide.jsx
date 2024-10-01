@@ -109,7 +109,11 @@ const ServiceSlide = () => {
                   </button>
                 )} */}
             </div>
-            <Link to={lists_items[0].url} className="btn-secondary">
+            <Link
+              to={lists_items[0].url}
+              className="btn-secondary md:text-base text-sm"
+              title={lists_items[0].btntitle}
+            >
               {lists_items[0].btn}
             </Link>
           </div>
@@ -164,7 +168,11 @@ const ServiceSlide = () => {
                 </button>
               )} */}
             </div>
-            <Link to={lists_items[1].url} className="btn-secondary">
+            <Link
+              to={lists_items[1].url}
+              className="btn-secondary md:text-base text-sm"
+              title={lists_items[1].btntitle}
+            >
               {lists_items[1].btn}
             </Link>
           </div>
@@ -219,7 +227,11 @@ const ServiceSlide = () => {
                   </button>
                 )} */}
             </div>
-            <Link to={lists_items[2].url} className="btn-secondary">
+            <Link
+              to={lists_items[2].url}
+              className="btn-secondary md:text-base text-sm"
+              title={lists_items[0].btntitle}
+            >
               {lists_items[2].btn}
             </Link>
           </div>
@@ -276,7 +288,11 @@ const ServiceSlide = () => {
                   </button>
                 )} */}
             </div>
-            <Link to={lists_items[3].url} className="btn-secondary">
+            <Link
+              to={lists_items[3].url}
+              className="btn-secondary md:text-base text-sm"
+              title={lists_items[0].btntitle}
+            >
               {lists_items[3].btn}
             </Link>
           </div>

@@ -146,8 +146,9 @@ export const AboutUs = [
     description2:
       "Trust in our expertise, embrace tailored solutions, and set your course for unparalleled success. At Evvi Solutions, we are more than just a choice; we are your partner on the path to excellence. Choose Evvi for your journey to greatness!",
     description3: "Ready to take the next step?",
-    btn: "Read More",
+    btn: "Discover more about our company",
     url: "/About",
+    btntitle: "About Us - Discover more about our company",
     // lists : [
     //     {
     //         id : 0,
@@ -338,7 +339,8 @@ export const OurServices = [
           //     content : 'Labouratory and Diagnostic Service',
           // },
         ],
-        btn: "Read More",
+        btntitle: "Learn more about our Business Consulting services",
+        btn: "Learn more about our Business Consulting services",
         url: "/BusinessConsulting",
       },
       {
@@ -389,7 +391,8 @@ export const OurServices = [
           //     content : 'Labouratory and Diagnostic Service',
           // },
         ],
-        btn: "Read More",
+        btn: "Explore our Digital Marketing solutions",
+        btntitle: "Explore our Digital Marketing solutions",
         url: "/DigitalMarketing",
       },
       {
@@ -440,7 +443,8 @@ export const OurServices = [
           //     content : 'Labouratory and Diagnostic Service',
           // },
         ],
-        btn: "Read More",
+        btntitle: "Find out more about our HR Services",
+        btn: "Find out more about our HR Services",
         url: "/HRService",
       },
       {
@@ -491,7 +495,8 @@ export const OurServices = [
           //     content : 'Labouratory and Diagnostic Service',
           // },
         ],
-        btn: "Read More",
+        btntitle: "Discover our IT Development services",
+        btn: "Discover our IT Development services",
         url: "/ITDevelopment",
       },
     ],
