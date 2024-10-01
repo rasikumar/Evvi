@@ -44,7 +44,7 @@ const CookieBanner = () => {
           title="Learn more about our Cookie Policy"
           className="underline"
         >
-          Learn more
+          Learn more about our Cookie Policy
         </Link>
       </p>
       <div className="flex gap-4">
