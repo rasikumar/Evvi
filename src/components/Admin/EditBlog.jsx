@@ -79,25 +79,26 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
       if (formData.image) {
         data.append("image", formData.image);
       }
-      console.log(formData.image);
+      // console.log(formData.image);
 
       const response = await Instance.put(`/admin/updateBlog`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       });
-
-      if (response.data.status === true) {
-        setBlogs((prev) =>
-          prev.map((b) =>
-            b.id === blog.id ? { ...b, ...response.data.blog } : b
-          )
-        );
-        setEditing(false);
-        // window.location.reload();
-        toast.success(response.data.message);
-      } else {
-        throw new Error(response.data.message);
+      if (response.data.statusCode !== 700 && response.data.status !== false) {
+        if (response.data.status === true) {
+          setBlogs((prev) =>
+            prev.map((b) =>
+              b.id === blog.id ? { ...b, ...response.data.blog } : b
+            )
+          );
+          setEditing(false);
+          // window.location.reload();
+          toast.success(response.data.message);
+        } else {
+          throw new Error(response.data.message);
+        }
       }
     } catch (err) {
       console.error("Failed to update blog:", err);
@@ -167,7 +168,7 @@ const EditBlog = ({ blog, setEditing, setBlogs }) => {
           <img
             src={
               typeof imagePreview === "string"
-                ? "https://evvisolutions.com/blog_images/" + imagePreview
+                ? "http://192.168.20.5:3000/blog_images/" + imagePreview
                 : URL.createObjectURL(imagePreview)
             }
             alt={formData.title}

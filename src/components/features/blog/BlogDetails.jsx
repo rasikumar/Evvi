@@ -50,7 +50,9 @@ const BlogDetail = () => {
     const fetchBlogDetail = async () => {
       try {
         const response = await Instance.get(`/getBlogById/${id}`);
-        setBlog(response.data.blog);
+        if (response.data.statusCode !== 700) {
+          setBlog(response.data.blog);
+        }
 
         setLoading(false);
       } catch (err) {
@@ -66,9 +68,13 @@ const BlogDetail = () => {
     const fetchSuggestedBlogs = async () => {
       try {
         const response = await Instance.post("/getAllBlogs");
-        const sortedBlogs = response.data.blogs.sort(() => 0.5 - Math.random());
-        setSuggestedBlogs(sortedBlogs.slice(0, 3));
-        setSuggestedLoading(false);
+        if (response.data.statusCode !== 700) {
+          const sortedBlogs = response.data.blogs.sort(
+            () => 0.5 - Math.random()
+          );
+          setSuggestedBlogs(sortedBlogs.slice(0, 3));
+          setSuggestedLoading(false);
+        }
       } catch (error) {
         setSuggestedError("Error to fetch");
         setSuggestedLoading(false);
@@ -86,23 +92,25 @@ const BlogDetail = () => {
     const fetchComments = async () => {
       try {
         const response = await Instance.get(`/getCommentByBlogId/${id}`);
-        const fetchedComments = response.data.comments || [];
+        if (response.data.statusCode !== 700) {
+          const fetchedComments = response.data.comments || [];
 
-        if (fetchedComments.length > 0) {
-          setComments(fetchedComments);
+          if (fetchedComments.length > 0) {
+            setComments(fetchedComments);
 
-          const repliesMap = fetchedComments.reduce((acc, comment) => {
-            if (Array.isArray(comment.replies)) {
-              acc[comment.comment_id] = comment.replies; // Copy replies if they exist
-            } else {
-              acc[comment.comment_id] = []; // No replies, initialize with an empty array
-            }
-            return acc;
-          }, {});
+            const repliesMap = fetchedComments.reduce((acc, comment) => {
+              if (Array.isArray(comment.replies)) {
+                acc[comment.comment_id] = comment.replies; // Copy replies if they exist
+              } else {
+                acc[comment.comment_id] = []; // No replies, initialize with an empty array
+              }
+              return acc;
+            }, {});
 
-          setReplies(repliesMap);
-        } else {
-          setComments([]); // Clear comments if none exist
+            setReplies(repliesMap);
+          } else {
+            setComments([]); // Clear comments if none exist
+          }
         }
       } catch (err) {
         console.error("Failed to fetch comments:", err);
@@ -128,12 +136,13 @@ const BlogDetail = () => {
         username,
         comment,
       });
-
-      setComments([...comments, response.data.newComment]);
-      setComment("");
-      setUsername("");
-      setCommentError(null);
-      window.location.reload();
+      if (response.data.statusCode !== 700) {
+        setComments([...comments, response.data.newComment]);
+        setComment("");
+        setUsername("");
+        setCommentError(null);
+        window.location.reload();
+      }
     } catch (err) {
       console.error("Failed to post comment:", err);
       setCommentError("Failed to post comment. Please try again.");
@@ -156,18 +165,20 @@ const BlogDetail = () => {
         reply: replyText,
       });
       // Update replies state for the specific comment
-      setReplies((prevReplies) => ({
-        ...prevReplies,
-        [comment_id]: [
-          ...(prevReplies[comment_id] || []),
-          response.data.newReply,
-        ],
-      }));
+      if (response.data.statusCode !== 700) {
+        setReplies((prevReplies) => ({
+          ...prevReplies,
+          [comment_id]: [
+            ...(prevReplies[comment_id] || []),
+            response.data.newReply,
+          ],
+        }));
 
-      setReplyText(""); // Clear reply text
-      setReplyError(null);
-      setCommentToReply(null);
-      window.location.reload();
+        setReplyText(""); // Clear reply text
+        setReplyError(null);
+        setCommentToReply(null);
+        window.location.reload();
+      }
     } catch (err) {
       console.error("Failed to post reply:", err);
       setReplyError("Failed to post reply. Please try again.");
@@ -197,9 +208,7 @@ const BlogDetail = () => {
           {blog &&
             blog.map((blog) => (
               <div key={blog.id} className="flex flex-col gap-4">
-                <h2 className="text-4xl font-semibold">
-                  {blog.blog_title}
-                </h2>
+                <h2 className="text-4xl font-semibold">{blog.blog_title}</h2>
                 <div className="flex gap-5 items-center">
                   <p className="text-gray-600">{blog.blog_author}</p>
                   <p className="text-gray-600">
@@ -212,13 +221,13 @@ const BlogDetail = () => {
                   </p>
                 </div>
                 <img
-                  src={`https://evvisolutions.com/blog_images/${blog.blog_image}`}
+                  src={`http://192.168.20.5:3000/blog_images/${blog.blog_image}`}
                   alt={blog.blog_title}
                   className="min-w-full h-72 object-cover rounded-xl"
                 />
 
                 <div
-                  className="mt-4 indent-4 text-justify ql-editor quill-content"
+                  className="mt-4 text-justify ql-editor quill-content"
                   dangerouslySetInnerHTML={{ __html: blog.blog_body }}
                 />
               </div>
@@ -431,7 +440,7 @@ const BlogDetail = () => {
                       </h4>
                       <p className="text-gray-600">{blog.blog_author}</p>
                       <img
-                        src={`https://evvisolutions.com/blog_images/${blog.blog_image}`}
+                        src={`http://192.168.20.5:3000/blog_images/${blog.blog_image}`}
                         alt={blog.blog_title}
                         className="w-full h-40 object-cover rounded mt-2"
                       />

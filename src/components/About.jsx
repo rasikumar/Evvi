@@ -75,7 +75,7 @@ const About = () => {
             <Link
               to={about.url}
               title={about.btntitle}
-              className="btn-primary mt-5 w-[25%] max-tablet:w-full"
+              className="btn-primary mt-5  max-tablet:w-full"
             >
               {about.btn}
             </Link>

@@ -24,7 +24,9 @@ const CommentList = () => {
     const fetchComments = async () => {
       try {
         const response = await Instance.post("/admin/getAllComments");
-        setComments(response.data.comments);
+        if (response.data.statusCode !== 700) {
+          setComments(response.data.comments);
+        }
       } catch (err) {
         setError("Failed to fetch comments");
       } finally {

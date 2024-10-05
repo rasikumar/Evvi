@@ -33,23 +33,19 @@ export const products = [
   {
     imgURL: shoe4,
     name: "Digital Marketing Strategy",
-    price: "Crafting tailored plans to enhance your online presence and drive growth.",
-    list :[
-      {id: 0,
-       content : "Social Media Marketing"
-      },
-      {id: 1,
-        content : "SEO & SEM"
-       },
-       {id: 2,
-        content : "PPC"
-       }
-    ]
+    price:
+      "Crafting tailored plans to enhance your online presence and drive growth.",
+    list: [
+      { id: 0, content: "Social Media Marketing" },
+      { id: 1, content: "SEO & SEM" },
+      { id: 2, content: "PPC" },
+    ],
   },
-  { 
+  {
     imgURL: shoe5,
     name: "Telemarketing & WhatsApp Marketing",
-    price: "Leveraging direct communication channels to boost engagement and conversions.",
+    price:
+      "Leveraging direct communication channels to boost engagement and conversions.",
   },
   {
     imgURL: shoe6,
@@ -59,7 +55,8 @@ export const products = [
   {
     imgURL: shoe7,
     name: "Google My Business Optimization",
-    price: "Improving your local search visibility and attracting more customers.",
+    price:
+      "Improving your local search visibility and attracting more customers.",
   },
 ];
 
@@ -67,7 +64,8 @@ export const services = [
   {
     imgURL: truckFast,
     label: "Startups",
-    subtext: "Tailored strategies to get your business off the ground and attract your first customers.",
+    subtext:
+      "Tailored strategies to get your business off the ground and attract your first customers.",
   },
   {
     imgURL: shieldTick,
@@ -78,7 +76,8 @@ export const services = [
   {
     imgURL: support,
     label: "Solopreneurs",
-    subtext: "Personalized services to maximize your reach and streamline your digital efforts.",
+    subtext:
+      "Personalized services to maximize your reach and streamline your digital efforts.",
   },
 ];
 

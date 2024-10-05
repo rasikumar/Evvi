@@ -38,23 +38,25 @@ const CreateBlog = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      if (response.data.status === true) {
-        // Update blog state without refreshing the entire page
-        setBlog({
-          head,
-          author,
-          content,
-        });
-        alert(response.data.message);
-        // Clear form fields after successful submission
-        setHead("");
-        setAuthor("");
-        setContent("");
-        setImage(null);
-      } else {
-        alert(response.data.message);
+      if (response.data.statusCode !== 700) {
+        if (response.data.status === true) {
+          // Update blog state without refreshing the entire page
+          setBlog({
+            head,
+            author,
+            content,
+          });
+          alert(response.data.message);
+          // Clear form fields after successful submission
+          setHead("");
+          setAuthor("");
+          setContent("");
+          setImage(null);
+        } else {
+          alert(response.data.message);
+        }
+        console.log("Blog submitted successfully:", response.data);
       }
-      console.log("Blog submitted successfully:", response.data);
     } catch (error) {
       console.error("Error submitting blog:", error);
     }

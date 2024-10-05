@@ -13,11 +13,13 @@ const ForgotPassword = () => {
       const response = await Instance.post("/auth/requestPasswordReset", {
         email,
       });
-      if (response.status === 200) {
-        toast.success(response.data.message);
-        setMessage(response.data.message);
-      } else {
-        setError("Failed to send password reset link.");
+      if (response.statusCode !== 700) {
+        if (response.status === 200) {
+          toast.success(response.data.message);
+          setMessage(response.data.message);
+        } else {
+          setError("Failed to send password reset link.");
+        }
       }
     } catch (err) {
       setError("Error sending password reset link.");

@@ -16,12 +16,17 @@ const Login = ({ onLogin }) => {
     try {
       const response = await Instance.post("/admin/login", { email, password });
 
-      if (response.status === 200 && response.data.token) {
-        localStorage.setItem("jwtToken", response.data.token); // Store the token
-        onLogin(); // Notify App of successful login
-        navigate("/admindashboard"); // Redirect to the dashboard
+      if (response.data.statusCode !== 700) {
+        if (response.status === 200 && response.data.token) {
+          localStorage.setItem("jwtToken", response.data.token); // Store the token
+          onLogin(); // Notify App of successful login
+          navigate("/admindashboard"); // Redirect to the dashboard
+        } else {
+          setError("Invalid email or password");
+        }
       } else {
-        setError("Invalid email or password");
+        setError(response.data.message);
+        navigate("/admin/login");
       }
     } catch (err) {
       setError("Invalid email or password");

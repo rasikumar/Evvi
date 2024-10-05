@@ -5,9 +5,10 @@ import ListBlogs from "./ListBlogs";
 import Logout from "./Logout";
 import ContactList from "./contactList";
 import CommentList from "./CommentList";
+import Dashboard from "../Admin/dashboard/dashboard";
 
 const Admindashboard = () => {
-  const [activeTab, setActiveTab] = useState("listBlog");
+  const [activeTab, setActiveTab] = useState("dashboard");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -27,6 +28,8 @@ const Admindashboard = () => {
 
   const renderContent = () => {
     switch (activeTab) {
+      case "dashboard":
+        return <Dashboard />;
       case "createBlog":
         return <CreateBlog />;
       case "listBlog":
@@ -54,13 +57,25 @@ const Admindashboard = () => {
               <li className="w-full">
                 <button
                   className={`w-full text-left px-4 py-2 rounded-lg ${
+                    activeTab === "dashboard"
+                      ? "bg-indigo-600 text-white"
+                      : "bg-gray-200"
+                  }`}
+                  onClick={() => setActiveTab("dashboard")}
+                >
+                  Dashboard
+                </button>
+              </li>
+              <li className="w-full">
+                <button
+                  className={`w-full text-left px-4 py-2 rounded-lg ${
                     activeTab === "listBlog"
                       ? "bg-indigo-600 text-white"
                       : "bg-gray-200"
                   }`}
                   onClick={() => setActiveTab("listBlog")}
                 >
-                  Show Blog
+                  Blog List
                 </button>
               </li>
               <li className="w-full">

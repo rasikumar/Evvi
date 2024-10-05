@@ -12,7 +12,7 @@ function SuperQuality() {
         <p className='mt-6 lg:max-w-lg info-text'>
         We offer end-to-end support to help you excel in the digital age.
         </p>
-        <Link to={"/ContactUs"} className='btn-primary w-[25%] max-mobile:w-[45%] mt-4'>Learn More</Link>
+        <Link to={"/ContactUs"} className='btn-primary w-[25%] max-mobile:w-full mt-4'>Learn More</Link>
       </div> 
       <div>
       <img

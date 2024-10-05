@@ -9,8 +9,10 @@ const ContactList = () => {
     const fetchContacts = async () => {
       try {
         const response = await Instance.post("/admin/getleads");
-        console.log(response);
-        setContacts(response.data);
+        // console.log(response);
+        if (response.data.statusCode !== 700) {
+          setContacts(response.data);
+        }
       } catch (error) {
         console.error("Error fetching contacts:", error);
       }
