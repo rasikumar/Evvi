@@ -162,7 +162,7 @@ const Blog = () => {
             {/* Image Section */}
             <div className="relative w-full overflow-hidden">
               <img
-                src={`http://192.168.20.5:3000/blog_images/${blog.blog_image}`}
+                src={`https://evvisolutions.com/blog_images/${blog.blog_image}`}
                 alt={blog.blog_title}
                 className="transition-transform duration-500 ease-in-out group-hover:scale-110 w-full h-60 object-cover"
               />
